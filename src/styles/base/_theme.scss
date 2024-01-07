@@ -1,0 +1,139 @@
+@use '../colors' as colors;
+
+$focus: colors.$blue-50;
+
+$dark-base: hsl(0, 0%, 08%);
+$dark-text: colors.use-dark-surface(97%);
+
+$dark-text-01: colors.use-dark-surface(87%);
+$dark-text-02: colors.use-dark-surface(67%);
+$dark-text-03: colors.use-dark-surface(47%);
+
+$dark-surface-01: colors.use-dark-surface(08%);
+$dark-surface-02: colors.use-dark-surface(12%);
+$dark-surface-03: colors.use-dark-surface(16%);
+$dark-surface-04: colors.use-dark-surface(20%);
+$dark-surface-05: colors.use-dark-surface(24%);
+$dark-surface-06: colors.use-dark-surface(28%);
+$dark-surface-07: colors.use-dark-surface(32%);
+$dark-surface-08: colors.use-dark-surface(36%);
+$dark-surface-09: colors.use-dark-surface(40%);
+
+$dark-surface-01-hover: colors.use-dark-surface(10%);
+$dark-surface-02-hover: colors.use-dark-surface(14%);
+$dark-surface-03-hover: colors.use-dark-surface(18%);
+$dark-surface-04-hover: colors.use-dark-surface(22%);
+$dark-surface-05-hover: colors.use-dark-surface(26%);
+$dark-surface-06-hover: colors.use-dark-surface(30%);
+$dark-surface-07-hover: colors.use-dark-surface(34%);
+$dark-surface-08-hover: colors.use-dark-surface(38%);
+$dark-surface-09-hover: colors.use-dark-surface(42%);
+
+$dark-surface-01-active: colors.use-dark-surface(12%);
+$dark-surface-02-active: colors.use-dark-surface(16%);
+$dark-surface-03-active: colors.use-dark-surface(20%);
+$dark-surface-04-active: colors.use-dark-surface(24%);
+$dark-surface-05-active: colors.use-dark-surface(28%);
+$dark-surface-06-active: colors.use-dark-surface(32%);
+$dark-surface-07-active: colors.use-dark-surface(36%);
+$dark-surface-08-active: colors.use-dark-surface(40%);
+$dark-surface-09-active: colors.use-dark-surface(44%);
+
+$dark-surface-01-border: colors.use-dark-surface(20%);
+$dark-surface-02-border: colors.use-dark-surface(24%);
+$dark-surface-03-border: colors.use-dark-surface(28%);
+$dark-surface-04-border: colors.use-dark-surface(32%);
+$dark-surface-05-border: colors.use-dark-surface(36%);
+$dark-surface-06-border: colors.use-dark-surface(40%);
+$dark-surface-07-border: colors.use-dark-surface(44%);
+$dark-surface-08-border: colors.use-dark-surface(48%);
+$dark-surface-09-border: colors.use-dark-surface(52%);
+
+$light-base: hsl(0, 0%, 96%);
+$light-text: colors.use-light-surface(97%);
+
+$light-text-01: colors.use-light-surface(87%);
+$light-text-02: colors.use-light-surface(67%);
+$light-text-03: colors.use-light-surface(47%);
+
+$light-surface-01: colors.use-light-surface(08%);
+$light-surface-02: colors.use-light-surface(12%);
+$light-surface-03: colors.use-light-surface(16%);
+$light-surface-04: colors.use-light-surface(20%);
+$light-surface-05: colors.use-light-surface(24%);
+$light-surface-06: colors.use-light-surface(28%);
+$light-surface-07: colors.use-light-surface(32%);
+$light-surface-08: colors.use-light-surface(36%);
+$light-surface-09: colors.use-light-surface(40%);
+
+$light-surface-01-hover: colors.use-light-surface(10%);
+$light-surface-02-hover: colors.use-light-surface(14%);
+$light-surface-03-hover: colors.use-light-surface(18%);
+$light-surface-04-hover: colors.use-light-surface(22%);
+$light-surface-05-hover: colors.use-light-surface(26%);
+$light-surface-06-hover: colors.use-light-surface(30%);
+$light-surface-07-hover: colors.use-light-surface(34%);
+$light-surface-08-hover: colors.use-light-surface(38%);
+$light-surface-09-hover: colors.use-light-surface(42%);
+
+$light-surface-01-active: colors.use-light-surface(12%);
+$light-surface-02-active: colors.use-light-surface(16%);
+$light-surface-03-active: colors.use-light-surface(20%);
+$light-surface-04-active: colors.use-light-surface(24%);
+$light-surface-05-active: colors.use-light-surface(28%);
+$light-surface-06-active: colors.use-light-surface(32%);
+$light-surface-07-active: colors.use-light-surface(36%);
+$light-surface-08-active: colors.use-light-surface(40%);
+$light-surface-09-active: colors.use-light-surface(44%);
+
+$light-surface-01-border: colors.use-light-surface(20%);
+$light-surface-02-border: colors.use-light-surface(24%);
+$light-surface-03-border: colors.use-light-surface(28%);
+$light-surface-04-border: colors.use-light-surface(32%);
+$light-surface-05-border: colors.use-light-surface(36%);
+$light-surface-06-border: colors.use-light-surface(40%);
+$light-surface-07-border: colors.use-light-surface(44%);
+$light-surface-08-border: colors.use-light-surface(48%);
+$light-surface-09-border: colors.use-light-surface(52%);
+
+:root {
+  color-scheme: light dark;
+}
+
+.Button {
+  outline: 1.5px solid transparent;
+  border: 1.5px solid transparent;
+
+  &:focus:not(:focus-visible) {
+    outline-color: transparent;
+  }
+  &:focus:focus-visible {
+    outline-color: colors.$blue-60;
+  }
+}
+
+[data-theme-mode='dark'] {
+  background-color: $dark-base;
+  color: $dark-text;
+
+  .Button {
+    background-color: $dark-surface-01;
+    color: $dark-text;
+  }
+  .Button:hover {
+    background-color: $dark-surface-01-hover;
+  }
+}
+
+[data-theme-mode='light'] {
+  background-color: $light-base;
+  color: $light-text;
+
+  .Button {
+    background-color: $light-surface-01;
+    color: $dark-text;
+  }
+  .Button:hover {
+    background-color: $light-surface-01-hover;
+  }
+}

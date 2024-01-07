@@ -1,0 +1,30 @@
+.Button {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.8rem;
+
+  line-height: 1;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+
+  &[data-block] {
+    display: block;
+  }
+}
+
+.Button--xs {
+  height: 2rem;
+}
+.Button--sm {
+  height: 2.5rem;
+}
+.Button--md {
+  height: 3rem;
+}
+.Button--lg {
+  height: 3.5rem;
+}
+.Button--xl {
+  height: 4rem;
+}

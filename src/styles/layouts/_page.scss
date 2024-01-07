@@ -1,0 +1,33 @@
+.Page {
+  z-index: 0;
+  position: relative;
+  isolation: isolate;
+  overflow-x: hidden;
+
+  /* TEMPORARY */
+  min-height: 300vh;
+}
+
+.Page-hero,
+.Page-content {
+  width: 100%;
+  display: grid;
+  justify-content: start;
+  padding-inline: 1rem;
+}
+
+.Page-hero {
+  min-height: 16rem;
+  align-items: end;
+  padding-top: 2rem;
+}
+
+.Page-content {
+  align-items: start;
+  padding-bottom: 2rem;
+}
+
+.Page-title {
+  display: block;
+  margin-bottom: 0.5rem;
+}
