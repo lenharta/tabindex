@@ -34,6 +34,7 @@ export default defineConfig(({ mode, command }) => {
           '@': path.resolve(__dirname, './src'),
           '@/app': path.resolve(__dirname, './src/app'),
           '@/tests': path.resolve(__dirname, './src/tests'),
+          '@/utils': path.resolve(__dirname, './src/utils'),
           '@/assets': path.resolve(__dirname, './src/assets'),
           '@/common': path.resolve(__dirname, './src/common'),
           '@/styles': path.resolve(__dirname, './src/styles'),

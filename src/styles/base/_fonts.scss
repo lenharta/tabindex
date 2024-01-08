@@ -1,0 +1,58 @@
+@use '../tokens' as tokens;
+
+$font-map: (
+  'standard': (
+    200: tokens.$font-xlt,
+    300: tokens.$font-lgt,
+    400: tokens.$font-reg,
+    500: tokens.$font-med,
+    600: tokens.$font-bld,
+    700: tokens.$font-xbd,
+  ),
+  'italic': (
+    200: tokens.$font-xlt-ital,
+    300: tokens.$font-lgt-ital,
+    400: tokens.$font-reg-ital,
+    500: tokens.$font-med-ital,
+    600: tokens.$font-bld-ital,
+    700: tokens.$font-xbd-ital,
+  ),
+);
+
+@each $font-type, $family-map in $font-map {
+  @each $weight, $family in $family-map {
+    @font-face {
+      font-family: $family;
+      src:
+        url('/fonts/general-sans/ttf/#{$family}.ttf') format('ttf'),
+        url('/fonts/general-sans/woff/#{$family}.woff') format('woff'),
+        url('/fonts/general-sans/woff2/#{$family}.woff2') format('woff2');
+      font-weight: $weight;
+      display: swap;
+    }
+  }
+}
+
+html,
+body {
+  font-family: tokens.$font-reg;
+}
+
+h1 {
+  font-family: tokens.$font-reg;
+}
+h2 {
+  font-family: tokens.$font-reg;
+}
+h3 {
+  font-family: tokens.$font-reg;
+}
+h4 {
+  font-family: tokens.$font-reg;
+}
+h5 {
+  font-family: tokens.$font-reg;
+}
+h6 {
+  font-family: tokens.$font-reg;
+}

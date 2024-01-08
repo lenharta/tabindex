@@ -31,7 +31,8 @@
       "@/tests/*": ["src/tests/*"],
       "@/assets/*": ["./src/assets/*"],
       "@/common/*": ["./src/common/*"],
-      "@/styles/*": ["./src/styles/*"]
+      "@/styles/*": ["./src/styles/*"],
+      "@/utils/*": ["./src/utils/*"]
     }
   },
   "include": ["src"],
