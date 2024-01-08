@@ -100,25 +100,13 @@ $light-surface-09-border: colors.use-light-surface(52%);
   color-scheme: light dark;
 }
 
-.Button {
-  outline: 1.5px solid transparent;
-  border: 1.5px solid transparent;
-
-  &:focus:not(:focus-visible) {
-    outline-color: transparent;
-  }
-  &:focus:focus-visible {
-    outline-color: colors.$blue-60;
-  }
-}
-
 [data-theme-mode='dark'] {
-  background-color: $dark-base;
   color: $dark-text;
+  background-color: $dark-base;
 
   .Button {
-    background-color: $dark-surface-01;
     color: $dark-text;
+    background-color: $dark-surface-01;
   }
   .Button:hover {
     background-color: $dark-surface-01-hover;
@@ -126,12 +114,12 @@ $light-surface-09-border: colors.use-light-surface(52%);
 }
 
 [data-theme-mode='light'] {
-  background-color: $light-base;
   color: $light-text;
+  background-color: $light-base;
 
   .Button {
-    background-color: $light-surface-01;
     color: $dark-text;
+    background-color: $light-surface-01;
   }
   .Button:hover {
     background-color: $light-surface-01-hover;

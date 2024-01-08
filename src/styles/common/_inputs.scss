@@ -1,0 +1,45 @@
+@use '../tokens' as tokens;
+
+// Inline Inputs
+
+.InlineInput {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  &--xs {
+    height: 2.2rem;
+  }
+  &--sm {
+    height: 2.2rem;
+  }
+  &--md {
+    height: 2.2rem;
+  }
+  &--lg {
+    height: 2.2rem;
+  }
+  &--xl {
+    height: 2.2rem;
+  }
+}
+
+.Checkbox {
+}
+.Radio {
+}
+
+// Select Inputs
+
+.Control {
+}
+.Switch {
+}
+
+// Text Inputs
+
+.Textarea {
+}
+.Textbox {
+}

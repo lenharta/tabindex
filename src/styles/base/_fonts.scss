@@ -2,20 +2,20 @@
 
 $font-map: (
   'standard': (
-    200: tokens.$font-xlt,
-    300: tokens.$font-lgt,
-    400: tokens.$font-reg,
-    500: tokens.$font-med,
-    600: tokens.$font-bld,
-    700: tokens.$font-xbd,
+    200: tokens.$font-family-xlt,
+    300: tokens.$font-family-lgt,
+    400: tokens.$font-family-reg,
+    500: tokens.$font-family-med,
+    600: tokens.$font-family-bld,
+    700: tokens.$font-family-xbd,
   ),
   'italic': (
-    200: tokens.$font-xlt-ital,
-    300: tokens.$font-lgt-ital,
-    400: tokens.$font-reg-ital,
-    500: tokens.$font-med-ital,
-    600: tokens.$font-bld-ital,
-    700: tokens.$font-xbd-ital,
+    200: tokens.$font-family-xlt-ital,
+    300: tokens.$font-family-lgt-ital,
+    400: tokens.$font-family-reg-ital,
+    500: tokens.$font-family-med-ital,
+    600: tokens.$font-family-bld-ital,
+    700: tokens.$font-family-xbd-ital,
   ),
 );
 
@@ -35,24 +35,5 @@ $font-map: (
 
 html,
 body {
-  font-family: tokens.$font-reg;
-}
-
-h1 {
-  font-family: tokens.$font-reg;
-}
-h2 {
-  font-family: tokens.$font-reg;
-}
-h3 {
-  font-family: tokens.$font-reg;
-}
-h4 {
-  font-family: tokens.$font-reg;
-}
-h5 {
-  font-family: tokens.$font-reg;
-}
-h6 {
-  font-family: tokens.$font-reg;
+  font-family: tokens.$font-family-reg;
 }

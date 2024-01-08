@@ -28,6 +28,7 @@
     "paths": {
       "@/*": ["./src"],
       "@/app/*": ["./src/app/*"],
+      "@/core/*": ["./src/core/*"],
       "@/tests/*": ["src/tests/*"],
       "@/assets/*": ["./src/assets/*"],
       "@/common/*": ["./src/common/*"],

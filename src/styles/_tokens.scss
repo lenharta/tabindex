@@ -1,13 +1,41 @@
-$font-xlt: 'GeneralSans-Extralight';
-$font-lgt: 'GeneralSans-Light';
-$font-reg: 'GeneralSans-Regular';
-$font-med: 'GeneralSans-Medium';
-$font-bld: 'GeneralSans-Semibold';
-$font-xbd: 'GeneralSans-Bold';
+$breakpoint-xs: 36em;
+$breakpoint-sm: 48em;
+$breakpoint-md: 62em;
+$breakpoint-lg: 75em;
+$breakpoint-xl: 88em;
 
-$font-xlt-ital: 'GeneralSans-ExtralightItalic';
-$font-lgt-ital: 'GeneralSans-LightItalic';
-$font-reg-ital: 'GeneralSans-Italic';
-$font-med-ital: 'GeneralSans-MediumItalic';
-$font-bld-ital: 'GeneralSans-BoldItalic';
-$font-xbd-ital: 'GeneralSans-SemiboldItalic';
+$border-sm: 1.5px;
+$border-md: 2.5px;
+$border-lg: 3.5px;
+
+$font-family-xlt: 'GeneralSans-Extralight';
+$font-family-lgt: 'GeneralSans-Light';
+$font-family-reg: 'GeneralSans-Regular';
+$font-family-med: 'GeneralSans-Medium';
+$font-family-bld: 'GeneralSans-Semibold';
+$font-family-xbd: 'GeneralSans-Bold';
+
+$font-family-xlt-ital: 'GeneralSans-ExtralightItalic';
+$font-family-lgt-ital: 'GeneralSans-LightItalic';
+$font-family-reg-ital: 'GeneralSans-Italic';
+$font-family-med-ital: 'GeneralSans-MediumItalic';
+$font-family-bld-ital: 'GeneralSans-BoldItalic';
+$font-family-xbd-ital: 'GeneralSans-SemiboldItalic';
+
+$font-size-01: 0.75rem;
+$font-size-02: 0.875rem;
+$font-size-03: 1rem;
+$font-size-04: 1.125rem;
+$font-size-05: 1.25rem;
+$font-size-06: 1.5rem;
+$font-size-07: 1.75rem;
+$font-size-08: 2rem;
+$font-size-09: 2.25rem;
+$font-size-10: 2.625rem;
+$font-size-11: 3rem;
+$font-size-12: 3.375rem;
+$font-size-13: 3.75rem;
+$font-size-14: 4.25rem;
+$font-size-15: 4.75rem;
+$font-size-16: 5.25rem;
+$font-size-17: 5.75rem;

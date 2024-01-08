@@ -1,4 +1,4 @@
-import { cssObjectToString } from '@/utils/css-object-to-string';
+import { cssObjectToString } from '@/utils/object-css-to-string';
 import { IMediaQueryInput, IStyleInput } from './types';
 
 export function createInlineStyles(props: IStyleInput) {

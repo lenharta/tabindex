@@ -14,7 +14,21 @@ export function Home() {
     <Page>
       <Page.Hero title="Home" />
       <Page.Content>
-        <Title as="h2">Content</Title>
+        <Title size="xl" align="left">
+          Title XL
+        </Title>
+        <Title size="lg" align="left">
+          Title LG
+        </Title>
+        <Title size="md" align="left">
+          Title MD
+        </Title>
+        <Title size="sm" align="left">
+          Title SM
+        </Title>
+        <Title size="xs" align="left">
+          Title XS
+        </Title>
       </Page.Content>
     </Page>
   );
