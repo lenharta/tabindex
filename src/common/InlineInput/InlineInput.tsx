@@ -1,36 +1,55 @@
+import clsx from 'clsx';
 import React from 'react';
-import { IPropsInlineInput, TElementInlineInput } from './types';
+import type { IPropsInlineInput } from './types';
 
-const useInlineInputProps = (props: Omit<IPropsInlineInput, 'children'>) => {
-  const { id, disabled, readonly, className, ...otherProps } = props;
+type TOmittedHookProps = 'children' | 'ref' | 'leftContent' | 'rightContent';
 
-  const labelProps = { htmlFor: id };
+const useInlineInputProps = (props: Omit<IPropsInlineInput, TOmittedHookProps>) => {
+  const { id, label, isDisabled, isReadonly, className, ...otherProps } = props;
 
   const dataProps = {
-    'data-disabled': disabled,
-    'data-readonly': readonly,
+    'data-disabled': isDisabled,
+    'data-readonly': isReadonly,
   };
 
   const ariaProps = {
-    'aria-disabled': disabled,
-    'aria-readonly': readonly,
+    'aria-label': label || id,
+    'aria-disabled': isDisabled,
+    'aria-readonly': isReadonly,
   };
 
-  const rootProps = { ...otherProps, ...ariaProps, ...dataProps, disabled, id };
+  const css = {
+    root: clsx('InlineInput', className),
+    label: 'InlineInput-label',
+    leftContent: 'InlineInput-content--left',
+    rightContent: 'InlineInput-content--right',
+  };
 
   return {
-    rootProps,
-    labelProps,
+    rootProps: {
+      ...otherProps,
+      ...ariaProps,
+      ...dataProps,
+      id,
+      disabled: isDisabled,
+      className: css.root,
+    },
+    labelProps: {
+      htmlFor: id,
+      children: label,
+      className: css.label,
+    },
   };
 };
 
-export const InlineInput = React.forwardRef<TElementInlineInput, IPropsInlineInput>(
-  (props, ref) => {
-    const { children, ...otherProps } = props;
-    return (
-      <button {...otherProps} ref={ref}>
-        {children}
-      </button>
-    );
-  }
-);
+export const InlineInput = React.forwardRef<HTMLButtonElement, IPropsInlineInput>((props, ref) => {
+  const { children, dir = 'ltr', ...otherProps } = props;
+  const { rootProps, labelProps } = useInlineInputProps(otherProps);
+  return (
+    <button role="checkbox" {...rootProps} ref={ref}>
+      {dir === 'ltr' && children}
+      <label {...labelProps} />
+      {dir === 'rtl' && children}
+    </button>
+  );
+});

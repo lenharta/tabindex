@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import Root from './Root.tsx';
-import { RootError, Home } from '@/app/routes';
+import { RootError, Home, Toolbox } from '@/app/routes';
 import './styles/index.scss';
 
 const router = createBrowserRouter([
@@ -15,6 +15,7 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: '/about', element: <h1>About</h1> },
       { path: '/contact', element: <h1>Contact</h1> },
+      { path: '/toolbox', element: <Toolbox /> },
     ],
   },
 ]);

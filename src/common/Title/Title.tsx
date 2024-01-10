@@ -15,10 +15,11 @@ export const Title = React.forwardRef<HTMLHeadingElement, IPropsTitle>((props, r
     ...otherProps
   } = props;
 
-  const modifiers = { as, size, alignment, fontStyle, fontWeight };
-  const css = createModifierClasses({ base: 'Title', modifiers, className });
-
-  console.log(css);
+  const css = createModifierClasses({
+    base: 'Title',
+    modifiers: { as, size, alignment, fontStyle, fontWeight },
+    className,
+  });
 
   return (
     <UnstyledTitle {...otherProps} className={css} ref={ref}>

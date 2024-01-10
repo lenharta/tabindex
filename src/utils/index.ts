@@ -1,3 +1,4 @@
+export * from './create-factory';
 export * from './create-modifier-classes';
 export * from './format-camel-to-kebab';
 export * from './format-capitalize-string';

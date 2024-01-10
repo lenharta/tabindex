@@ -1,4 +1,5 @@
 import { Page } from '@/app/layouts';
+import { DemoCheckbox } from '@/common/Checkbox/demo';
 import { Title } from '@/common/Title';
 
 export const themeBreakpoints = {
@@ -14,21 +15,8 @@ export function Home() {
     <Page>
       <Page.Hero title="Home" />
       <Page.Content>
-        <Title size="xl" align="left">
-          Title XL
-        </Title>
-        <Title size="lg" align="left">
-          Title LG
-        </Title>
-        <Title size="md" align="left">
-          Title MD
-        </Title>
-        <Title size="sm" align="left">
-          Title SM
-        </Title>
-        <Title size="xs" align="left">
-          Title XS
-        </Title>
+        <Title size="xl">Title XL</Title>
+        <DemoCheckbox />
       </Page.Content>
     </Page>
   );
