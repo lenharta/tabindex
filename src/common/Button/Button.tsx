@@ -1,30 +1,36 @@
-import * as React from 'react';
-import { UnstyledButton } from './Unstyled';
-import { type Factory, factory } from '@/utils/create-factory';
-import { Icon, TKeyICON } from '../Icon';
+import { factory } from '@/utils/create-factory';
+import { createModifierClasses } from '@/utils/create-modifier-classes';
+import { type TFactoryButton } from '@/common/Button/types';
+import { UnstyledButton } from '@/common/Button/Unstyled';
+import { Icon } from '@/common/Icon';
 
-type ButtonIconProps = { name?: TKeyICON } & React.SVGAttributes<SVGElement>;
-
-const ButtonIcon = (props: ButtonIconProps) => {
+const ButtonIcon: TFactoryButton['components']['Icon'] = (props) => {
   const { name, ...otherProps } = props;
   return name ? <Icon name={name} {...otherProps} /> : null;
 };
 
-type ButtonFactory = Factory<{
-  ref: HTMLButtonElement;
-  props: React.ButtonHTMLAttributes<HTMLButtonElement>;
-  components: {
-    Icon: typeof ButtonIcon;
-  };
-}>;
+export const Button = factory<TFactoryButton>((props, ref) => {
+  const {
+    size = 'sm',
+    align = 'start',
+    scheme = 'default',
+    className,
+    children,
+    ...otherProps
+  } = props;
 
-export const Button = factory<ButtonFactory>((props, ref) => {
-  const { children, ...otherProps } = props;
+  const css = createModifierClasses({
+    base: 'Button',
+    modifiers: { size, align, scheme },
+    className,
+  });
+
   return (
-    <UnstyledButton {...otherProps} ref={ref}>
+    <UnstyledButton ref={ref} {...otherProps} className={css}>
       {children}
     </UnstyledButton>
   );
 });
 
+Button.displayName = '@/common/Button';
 Button.Icon = ButtonIcon;

@@ -1,19 +1,19 @@
 import { describe, expect, test } from 'vitest';
 import { render, screen } from '@/tests/utils';
-import { Checkbox, CheckboxGroup } from '@/common/Checkbox';
+import { Switch, SwitchGroup } from '@/common/Switch';
 
-describe('[@/common/Checkbox]', async () => {
+describe('[@/common/Switch]', async () => {
   test('renders basic component', async () => {
-    const testId = 'Checkbox-id';
-    render(<Checkbox data-testid={testId} />);
+    const testId = 'Switch-id';
+    render(<Switch data-testid={testId} />);
     expect(screen.getByTestId(testId)).toBeInTheDocument();
   });
 });
 
-describe('[@/common/CheckboxGroup]', async () => {
+describe('[@/common/SwitchGroup]', async () => {
   test('renders basic component', async () => {
-    const testId = 'CheckboxGroup-id';
-    render(<CheckboxGroup data-testid={testId} />);
+    const testId = 'SwitchGroup-id';
+    render(<SwitchGroup data-testid={testId} />);
     expect(screen.getByTestId(testId)).toBeInTheDocument();
   });
 });

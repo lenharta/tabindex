@@ -1,13 +1,13 @@
 import { factory } from '@/utils/create-factory';
 import { createModifierClasses } from '@/utils/create-modifier-classes';
-import { type TFactoryCheckbox } from '@/common/Checkbox';
+import { type TFactorySwitch } from '@/common/Switch';
 import { InlineInput } from '@/common/InlineInput';
 
-export const Checkbox = factory<TFactoryCheckbox>((props, ref) => {
+export const Switch = factory<TFactorySwitch>((props, ref) => {
   const { children, className, align = 'start', size = 'sm', ...otherProps } = props;
 
   const css = createModifierClasses({
-    base: 'Checkbox',
+    base: 'Switch',
     modifiers: { size, align },
     className,
   });
@@ -19,4 +19,4 @@ export const Checkbox = factory<TFactoryCheckbox>((props, ref) => {
   );
 });
 
-Checkbox.displayName = '@/common/Checkbox';
+Switch.displayName = '@/common/Switch';

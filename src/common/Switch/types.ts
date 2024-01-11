@@ -1,17 +1,17 @@
 import * as React from 'react';
 import { type Factory } from '@/utils/create-factory';
 
-export type TPropsCheckbox = React.ButtonHTMLAttributes<HTMLButtonElement>;
-export type TPropsCheckboxGroup = React.HTMLAttributes<HTMLDivElement>;
+export type TPropsSwitch = React.ButtonHTMLAttributes<HTMLButtonElement>;
+export type TPropsSwitchGroup = React.HTMLAttributes<HTMLDivElement>;
 
-export interface IPropsCheckbox extends TPropsCheckbox {
+export interface IPropsSwitch extends TPropsSwitch {
   /** Specifies a size for the element */
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | (string & {});
   /** Specifies the alignment (x-axis) the element content */
   align?: 'start' | 'center' | 'end';
 }
 
-export interface IPropsCheckboxGroup extends TPropsCheckboxGroup {
+export interface IPropsSwitchGroup extends TPropsSwitchGroup {
   /** Specifies a size for the element */
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | (string & {});
   /** Specifies the alignment (x-axis) the element content */
@@ -20,12 +20,12 @@ export interface IPropsCheckboxGroup extends TPropsCheckboxGroup {
   orientation?: 'horizontal' | 'vertical';
 }
 
-export type TFactoryCheckbox = Factory<{
+export type TFactorySwitch = Factory<{
   ref: HTMLButtonElement;
-  props: IPropsCheckbox;
+  props: IPropsSwitch;
 }>;
 
-export type TFactoryCheckboxGroup = Factory<{
+export type TFactorySwitchGroup = Factory<{
   ref: HTMLDivElement;
-  props: IPropsCheckboxGroup;
+  props: IPropsSwitchGroup;
 }>;

@@ -1,26 +1,30 @@
-import type { ButtonHTMLAttributes } from 'react';
+import * as React from 'react';
+import { type Factory } from '@/utils/create-factory';
+import { type TKeyIcon, Icon } from '@/common/Icon';
 
-/** Defines the element type for the input */
-export type TElementInlineInput = HTMLButtonElement;
+export type TPropsInlineInput = React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-/** Defines intrinsic attributes for the input wrapper */
-export type TPropsInlineInput = ButtonHTMLAttributes<TElementInlineInput>;
-
-export type TFilterPropsInlineInput = Omit<TPropsInlineInput, 'disabled'>;
-
-export interface IPropsInlineInput extends TFilterPropsInlineInput {
-  /** Specifies a label for the input */
-  label?: string;
-
-  /** Indicates the disabled state of the input */
-  isDisabled?: boolean;
-
-  /** Indicates the readonly state of the input */
-  isReadonly?: boolean;
-
-  /** Specifies content to the left of the input label */
+export interface IPropsInlineInput extends TPropsInlineInput {
+  /** Specifies the role for the element */
+  role?: React.AriaRole;
+  /** Specifies a size for the element */
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | (string & {});
+  /** Specifies the alignment (x-axis) the element content */
+  align?: 'start' | 'center' | 'end';
+  /** Specifies a name for the icon that will be rendered by the element */
+  icon?: TKeyIcon;
+  /** Specifies the icon `height` and `width` property (% of button size). Set to 80% by default. */
+  iconSize?: number;
+  /** Specifies content to the left of the element label */
   leftContent?: React.ReactNode;
-
-  /** Specifies content to the right of the input label */
+  /** Specifies content to the right of the element label */
   rightContent?: React.ReactNode;
 }
+
+export type TFactoryInlineInput = Factory<{
+  ref: HTMLButtonElement;
+  props: IPropsInlineInput;
+  components: {
+    Icon: typeof Icon;
+  };
+}>;

@@ -1,10 +1,8 @@
-import React from 'react';
-import type { IPropsUnstyledTitle } from '../types';
+import * as React from 'react';
+import { factory } from '@/utils/create-factory';
+import { type TFactoryUnstyledTitle } from '@/common/Title';
 
-export const UnstyledTitle = React.forwardRef<HTMLHeadingElement, IPropsUnstyledTitle>(
-  (props, ref) => {
-    const { as = 'h2', children, ...otherProps } = props;
-    const baseProps = { ref };
-    return React.createElement(as, { ...otherProps, ...baseProps }, children);
-  }
-);
+export const UnstyledTitle = factory<TFactoryUnstyledTitle>((props, ref) => {
+  const { as = 'h3', children, ...otherProps } = props;
+  return React.createElement(as, { ref, ...otherProps }, children);
+});

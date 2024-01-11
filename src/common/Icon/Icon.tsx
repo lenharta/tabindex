@@ -2,6 +2,7 @@ import * as Icons from './library';
 import { defaultIconProps, type IPropsIcon } from './types';
 
 const formatIconLabel = (name: IPropsIcon['name']): string => {
+  if (!name) return '';
   const format = name.split('_').join(' ').trim();
   return [format, 'icon'].join();
 };
@@ -36,5 +37,7 @@ export const Icon = (props: IPropsIcon) => {
       return <Icons.IconSquareDashFill {...iconProps} />;
     case 'square_fill':
       return <Icons.IconSquareFill {...iconProps} />;
+    default:
+      return null;
   }
 };

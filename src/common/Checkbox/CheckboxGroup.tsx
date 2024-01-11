@@ -1,15 +1,25 @@
-import * as React from 'react';
-import { type Factory, factory } from '@/utils/create-factory';
+import { factory } from '@/utils/create-factory';
+import { createModifierClasses } from '@/utils/create-modifier-classes';
+import { type TFactoryCheckboxGroup } from '@/common/Checkbox';
 
-type CheckboxGroupFactory = Factory<{
-  props: React.HTMLAttributes<HTMLDivElement>;
-  ref: HTMLDivElement;
-}>;
+export const CheckboxGroup = factory<TFactoryCheckboxGroup>((props, ref) => {
+  const {
+    size = 'sm',
+    align = 'start',
+    orientation = 'vertical',
+    className,
+    children,
+    ...otherProps
+  } = props;
 
-export const CheckboxGroup = factory<CheckboxGroupFactory>((props, ref) => {
-  const { children, ...otherProps } = props;
+  const css = createModifierClasses({
+    base: 'CheckboxGroup',
+    modifiers: { size, align, orientation },
+    className,
+  });
+
   return (
-    <div {...otherProps} ref={ref}>
+    <div ref={ref} {...otherProps} className={css}>
       {children}
     </div>
   );

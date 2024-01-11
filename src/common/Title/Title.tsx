@@ -1,15 +1,15 @@
-import React from 'react';
-import { UnstyledTitle } from './Unstyled';
+import { factory } from '@/utils/create-factory';
 import { createModifierClasses } from '@/utils/create-modifier-classes';
-import type { IPropsTitle } from './types';
+import { type TFactoryTitle } from '@/common/Title';
+import { UnstyledTitle } from '@/common/Title/Unstyled';
 
-export const Title = React.forwardRef<HTMLHeadingElement, IPropsTitle>((props, ref) => {
+export const Title = factory<TFactoryTitle>((props, ref) => {
   const {
-    as = 'h2',
-    size = 'md',
+    as = 'h3',
+    size = 'sm',
+    align = 'start',
     fontStyle = 'normal',
     fontWeight = 'reg',
-    alignment = 'left',
     className,
     children,
     ...otherProps
@@ -17,12 +17,12 @@ export const Title = React.forwardRef<HTMLHeadingElement, IPropsTitle>((props, r
 
   const css = createModifierClasses({
     base: 'Title',
-    modifiers: { as, size, alignment, fontStyle, fontWeight },
+    modifiers: { size, align, fontStyle, fontWeight },
     className,
   });
 
   return (
-    <UnstyledTitle {...otherProps} className={css} ref={ref}>
+    <UnstyledTitle ref={ref} as={as} {...otherProps} className={css}>
       {children}
     </UnstyledTitle>
   );

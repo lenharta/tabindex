@@ -1,42 +1,24 @@
-import { TCoreAlignment, TCoreFontStyle, TCoreFontWeight, TCoreSize } from '@/core/types';
-import type { HTMLAttributes, ForwardRefExoticComponent, RefAttributes } from 'react';
+import { type Factory } from '@/utils/create-factory';
 
-type TPropsBody = Omit<HTMLAttributes<HTMLParagraphElement>, 'ref'>;
-
-export interface IPropsUnstyledBody extends TPropsBody {
-  /** Specifies the size style of the element. */
-  size?: TCoreSize;
-
-  /** Specifies the text-align style property of the element. */
-  alignment?: TCoreAlignment;
-
-  /** Specifies the font-size style property of the element. */
-  fontStyle?: TCoreFontStyle;
-
-  /** Specifies the font-weight style property of the element. */
-  fontWeight?: TCoreFontWeight;
-}
+export type TPropsBody = React.HTMLAttributes<HTMLParagraphElement>;
 
 export interface IPropsBody extends TPropsBody {
-  /** Specifies the size style of the element. */
-  size?: TCoreSize;
-
-  /** Specifies the text-align style property of the element. */
-  alignment?: TCoreAlignment;
-
-  /** Specifies the font-size style property of the element. */
-  fontStyle?: TCoreFontStyle;
-
-  /** Specifies the font-weight style property of the element. */
-  fontWeight?: TCoreFontWeight;
+  /** Specifies a size for the element */
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | (string & {});
+  /** Specifies the alignment (x-axis) the elements' content */
+  align?: 'start' | 'center' | 'end';
+  /** Specifies the `font-style` property of the element */
+  fontStyle?: 'normal' | 'italic';
+  /** Specifies the `font-weight` property of the element */
+  fontWeight?: 'xlt' | 'lgt' | 'reg' | 'med' | 'bld' | 'xbd';
 }
 
-/** Defines a unstyled button component */
-export type TUnstyledBodyComponent = ForwardRefExoticComponent<
-  IPropsUnstyledBody & RefAttributes<HTMLParagraphElement>
->;
+export type TFactoryBody = Factory<{
+  props: TPropsBody & IPropsBody;
+  ref: HTMLParagraphElement;
+}>;
 
-/** Defines a button component */
-export type TBodyComponent = ForwardRefExoticComponent<
-  IPropsBody & RefAttributes<HTMLParagraphElement>
->;
+export type TFactoryUnstyledBody = Factory<{
+  props: TPropsBody;
+  ref: HTMLParagraphElement;
+}>;

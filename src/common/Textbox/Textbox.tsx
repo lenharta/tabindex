@@ -1,12 +1,24 @@
-import * as React from 'react';
-import { type Factory, factory } from '@/utils/create-factory';
+import { factory } from '@/utils/create-factory';
+import { createModifierClasses } from '@/utils/create-modifier-classes';
+import { type TFactoryTextbox } from '@/common/Textbox/types';
+import { Icon } from '@/common/Icon';
 
-type TextboxFactory = Factory<{
-  props: React.HTMLAttributes<HTMLInputElement>;
-  ref: HTMLInputElement;
-}>;
+const TextboxIcon: TFactoryTextbox['components']['Icon'] = (props) => {
+  const { name, ...otherProps } = props;
+  return name ? <Icon name={name} {...otherProps} /> : null;
+};
 
-export const Textbox = factory<TextboxFactory>((props, ref) => {
-  const { children, ...otherProps } = props;
-  return <input type="text" {...otherProps} ref={ref} />;
+export const Textbox = factory<TFactoryTextbox>((props, ref) => {
+  const { children, className, size, ...otherProps } = props;
+
+  const css = createModifierClasses({
+    base: 'Textbox',
+    modifiers: { size },
+    className,
+  });
+
+  return <input type="text" ref={ref} {...otherProps} className={css} />;
 });
+
+Textbox.displayName = '@/common/Textbox';
+Textbox.Icon = TextboxIcon;

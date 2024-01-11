@@ -6,21 +6,19 @@ type Payload = {
   ref?: any;
 };
 
-type Components<T> = T extends Record<string, any> ? T : Record<string, never>;
+type TSubComponent<T> = T extends Record<string, any> ? T : Record<string, never>;
 
-type Component<FactoryPayload extends Payload> = React.ForwardRefExoticComponent<
-  FactoryPayload['props'] & React.RefAttributes<FactoryPayload['ref']>
-> &
-  Components<FactoryPayload['components']>;
-
-type ComponentRender<FactoryPayload extends Payload> = React.ForwardRefRenderFunction<
-  FactoryPayload['ref'],
-  FactoryPayload['props']
+type TComponent<T extends Payload> = React.ForwardRefExoticComponent<
+  T['props'] & React.RefAttributes<T['ref']>
 >;
 
-export function factory<FactoryPayload extends Payload>(ui: ComponentRender<FactoryPayload>) {
-  const AtomComponent = React.forwardRef(ui) as Component<FactoryPayload>;
-  return AtomComponent as Component<FactoryPayload>;
+type TFactoryComponent<T extends Payload> = TComponent<T> & TSubComponent<T['components']>;
+
+export function factory<T extends Payload>(
+  ui: React.ForwardRefRenderFunction<T['ref'], T['props']>
+) {
+  const CoreComponent = React.forwardRef(ui) as TFactoryComponent<T>;
+  return CoreComponent as TFactoryComponent<T>;
 }
 
-export type Factory<FactoryPayload extends Payload> = FactoryPayload;
+export type Factory<T extends Payload> = T;

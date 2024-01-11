@@ -1,32 +1,22 @@
-import * as React from 'react';
-import { InlineInput } from '../InlineInput';
-import { type Factory, factory } from '@/utils/create-factory';
+import { factory } from '@/utils/create-factory';
 import { createModifierClasses } from '@/utils/create-modifier-classes';
+import { type TFactoryRadio } from '@/common/Radio';
+import { InlineInput } from '@/common/InlineInput';
 
-export type TPropsRadio = React.ButtonHTMLAttributes<HTMLButtonElement>;
-
-export interface IPropsRadioProps extends TPropsRadio {
-  size?: 'sm' | 'md' | 'lg';
-  align?: 'start' | 'center' | 'end';
-}
-
-export type RadioFactory = Factory<{
-  props: IPropsRadioProps;
-  ref: HTMLButtonElement;
-}>;
-
-export const Radio = factory<RadioFactory>((props, ref) => {
+export const Radio = factory<TFactoryRadio>((props, ref) => {
   const { children, className, align = 'start', size = 'sm', ...otherProps } = props;
 
   const css = createModifierClasses({
     base: 'Radio',
-    modifiers: { align, size },
+    modifiers: { size, align },
     className,
   });
 
   return (
-    <InlineInput {...otherProps} ref={ref} className={css}>
+    <InlineInput ref={ref} {...otherProps} className={css}>
       {children}
     </InlineInput>
   );
 });
+
+Radio.displayName = '@/common/Radio';

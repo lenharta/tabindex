@@ -2,9 +2,9 @@ import * as React from 'react';
 import { type Factory } from '@/utils/create-factory';
 import { Icon, type TKeyIcon } from '@/common/Icon';
 
-export type TPropsClose = React.ButtonHTMLAttributes<HTMLButtonElement>;
+export type TPropsTool = React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-export interface IPropsClose extends TPropsClose {
+export interface IPropsTool extends TPropsTool {
   /** Specifies a size for the element */
   size?: 'sm' | 'md' | 'lg' | (string & {}) | number;
   /** Specifies the alignment (x-axis) the element content */
@@ -15,9 +15,9 @@ export interface IPropsClose extends TPropsClose {
   iconSize?: number;
 }
 
-export type TFactoryClose = Factory<{
+export type TFactoryTool = Factory<{
   ref: HTMLButtonElement;
-  props: IPropsClose;
+  props: IPropsTool;
   components: {
     Icon: typeof Icon;
   };

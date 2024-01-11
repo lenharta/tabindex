@@ -1,8 +1,8 @@
 import { factory } from '@/utils/create-factory';
 import { createModifierClasses } from '@/utils/create-modifier-classes';
-import { type TFactoryRadioGroup } from '@/common/Radio';
+import { type TFactorySwitchGroup } from '@/common/Switch';
 
-export const RadioGroup = factory<TFactoryRadioGroup>((props, ref) => {
+export const SwitchGroup = factory<TFactorySwitchGroup>((props, ref) => {
   const {
     size = 'sm',
     align = 'start',
@@ -13,7 +13,7 @@ export const RadioGroup = factory<TFactoryRadioGroup>((props, ref) => {
   } = props;
 
   const css = createModifierClasses({
-    base: 'RadioGroup',
+    base: 'SwitchGroup',
     modifiers: { size, align, orientation },
     className,
   });
@@ -25,4 +25,4 @@ export const RadioGroup = factory<TFactoryRadioGroup>((props, ref) => {
   );
 });
 
-RadioGroup.displayName = '@/common/Radio.Group';
+SwitchGroup.displayName = '@/common/Switch.Group';

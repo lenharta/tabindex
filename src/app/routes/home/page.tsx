@@ -1,6 +1,4 @@
 import { Page } from '@/app/layouts';
-import { DemoCheckbox } from '@/common/Checkbox/demo';
-import { Title } from '@/common/Title';
 
 export const themeBreakpoints = {
   xs: '36em',
@@ -15,8 +13,7 @@ export function Home() {
     <Page>
       <Page.Hero title="Home" />
       <Page.Content>
-        <Title size="xl">Title XL</Title>
-        <DemoCheckbox />
+        <span>Page Content</span>
       </Page.Content>
     </Page>
   );

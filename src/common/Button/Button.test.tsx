@@ -1,11 +1,19 @@
 import { describe, expect, test } from 'vitest';
 import { render, screen } from '@/tests/utils';
-import { Button } from './Button';
+import { Button, ButtonGroup } from '@/common/Button';
 
-describe('<Button />', async () => {
-  test('<Button /> basics', async () => {
-    const testId = 'button-id';
+describe('[@/common/Button]', async () => {
+  test('renders basic component', async () => {
+    const testId = 'Button-id';
     render(<Button data-testid={testId} />);
+    expect(screen.getByTestId(testId)).toBeInTheDocument();
+  });
+});
+
+describe('[@/common/ButtonGroup]', async () => {
+  test('renders basic component', async () => {
+    const testId = 'ButtonGroup-id';
+    render(<ButtonGroup data-testid={testId} />);
     expect(screen.getByTestId(testId)).toBeInTheDocument();
   });
 });

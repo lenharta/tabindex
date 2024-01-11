@@ -1,32 +1,32 @@
-import type { HTMLAttributes } from 'react';
-import type {
-  TCoreAlignment,
-  TCoreFontStyle,
-  TCoreFontWeight,
-  TCoreHeading,
-  TCoreSize,
-} from '@/core/types';
+import { type Factory } from '@/utils/create-factory';
 
-type TPropsTitle = Omit<HTMLAttributes<HTMLHeadingElement>, 'ref'>;
-
-export interface IPropsUnstyledTitle extends TPropsTitle {
-  /** Specifies the HTML Heading level tag to be rendered. */
-  as?: TCoreHeading;
-}
+export type TPropsTitle = React.HTMLAttributes<HTMLHeadingElement>;
+export type TPropsTitleAs = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
 export interface IPropsTitle extends TPropsTitle {
-  /** Specifies the HTML Heading level tag to be rendered. */
-  as?: TCoreHeading;
-
-  /** Specifies the size style of the element. */
-  size?: TCoreSize;
-
-  /** Specifies the text-align style property of the element. */
-  alignment?: TCoreAlignment;
-
-  /** Specifies the font-size style property of the element. */
-  fontStyle?: TCoreFontStyle;
-
-  /** Specifies the font-weight style property of the element. */
-  fontWeight?: TCoreFontWeight;
+  /** Specifies the type of element to render */
+  as?: TPropsTitleAs;
+  /** Specifies a size for the element */
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | (string & {});
+  /** Specifies the alignment (x-axis) the elements' content */
+  align?: 'start' | 'center' | 'end';
+  /** Specifies the `font-style` property of the element */
+  fontStyle?: 'normal' | 'italic';
+  /** Specifies the `font-weight` property of the element */
+  fontWeight?: 'xlt' | 'lgt' | 'reg' | 'med' | 'bld' | 'xbd';
 }
+
+export interface IPropsUnstyledTitle extends TPropsTitle {
+  /** Specifies the type of element to render */
+  as?: TPropsTitleAs;
+}
+
+export type TFactoryTitle = Factory<{
+  props: TPropsTitle & IPropsTitle;
+  ref: HTMLParagraphElement;
+}>;
+
+export type TFactoryUnstyledTitle = Factory<{
+  props: IPropsUnstyledTitle;
+  ref: HTMLParagraphElement;
+}>;

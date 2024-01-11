@@ -1,11 +1,12 @@
 import { factory } from '@/utils/create-factory';
 import { createModifierClasses } from '@/utils/create-modifier-classes';
-import { type TFactoryRadioGroup } from '@/common/Radio';
+import { type TFactoryControlGroup } from '@/common/Control';
 
-export const RadioGroup = factory<TFactoryRadioGroup>((props, ref) => {
+export const ControlGroup = factory<TFactoryControlGroup>((props, ref) => {
   const {
     size = 'sm',
     align = 'start',
+    scheme = 'default',
     orientation = 'vertical',
     className,
     children,
@@ -13,8 +14,8 @@ export const RadioGroup = factory<TFactoryRadioGroup>((props, ref) => {
   } = props;
 
   const css = createModifierClasses({
-    base: 'RadioGroup',
-    modifiers: { size, align, orientation },
+    base: 'ControlGroup',
+    modifiers: { size, align, scheme, orientation },
     className,
   });
 
@@ -24,5 +25,3 @@ export const RadioGroup = factory<TFactoryRadioGroup>((props, ref) => {
     </div>
   );
 });
-
-RadioGroup.displayName = '@/common/Radio.Group';

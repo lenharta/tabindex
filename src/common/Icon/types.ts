@@ -8,12 +8,12 @@ export const defaultIconProps = {
   width: 16,
 };
 
-export type TKeyICON = keyof typeof ICON;
+export type TKeyIcon = keyof typeof ICON;
 
 export type TPropsIcon = SVGAttributes<SVGElement>;
 
 export interface IPropsIcon extends Omit<TPropsIcon, 'name'> {
-  name: TKeyICON;
+  name?: TKeyIcon;
 }
 
 export enum ICON {

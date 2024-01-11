@@ -1,12 +1,24 @@
-import * as React from 'react';
-import { type Factory, factory } from '@/utils/create-factory';
+import { factory } from '@/utils/create-factory';
+import { createModifierClasses } from '@/utils/create-modifier-classes';
+import { type TFactoryTextarea } from '@/common/Textarea/types';
+import { Icon } from '@/common/Icon';
 
-type TextareaFactory = Factory<{
-  props: React.HTMLAttributes<HTMLTextAreaElement>;
-  ref: HTMLTextAreaElement;
-}>;
+const TextareaIcon: TFactoryTextarea['components']['Icon'] = (props) => {
+  const { name, ...otherProps } = props;
+  return name ? <Icon name={name} {...otherProps} /> : null;
+};
 
-export const Textarea = factory<TextareaFactory>((props, ref) => {
-  const { children, ...otherProps } = props;
-  return <textarea {...otherProps} ref={ref} />;
+export const Textarea = factory<TFactoryTextarea>((props, ref) => {
+  const { children, className, size, ...otherProps } = props;
+
+  const css = createModifierClasses({
+    base: 'Textarea',
+    modifiers: { size },
+    className,
+  });
+
+  return <textarea ref={ref} {...otherProps} className={css} />;
 });
+
+Textarea.displayName = '@/common/Textarea';
+Textarea.Icon = TextareaIcon;

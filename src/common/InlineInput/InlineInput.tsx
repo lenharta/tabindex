@@ -1,73 +1,28 @@
-import * as React from 'react';
-import { UnstyledButton } from '../Button/Unstyled';
-import { type Factory, factory } from '@/utils/create-factory';
+import { factory } from '@/utils/create-factory';
+import { createModifierClasses } from '@/utils/create-modifier-classes';
+import { type TFactoryInlineInput } from '@/common/InlineInput';
+import { Icon } from '@/common/Icon';
 
-type InlineInputFactory = Factory<{
-  props: React.ButtonHTMLAttributes<HTMLButtonElement>;
-  ref: HTMLButtonElement;
-}>;
+const InlineInputIcon: TFactoryInlineInput['components']['Icon'] = (props) => {
+  const { name, ...otherProps } = props;
+  return name ? <Icon name={name} {...otherProps} /> : null;
+};
 
-export const InlineInput = factory<InlineInputFactory>((props, ref) => {
-  const { children, ...otherProps } = props;
+export const InlineInput = factory<TFactoryInlineInput>((props, ref) => {
+  const { children, className, align = 'start', size = 'sm', ...otherProps } = props;
+
+  const css = createModifierClasses({
+    base: 'InlineInput',
+    modifiers: { size, align },
+    className,
+  });
+
   return (
-    <UnstyledButton {...otherProps} ref={ref}>
+    <button ref={ref} {...otherProps} className={css}>
       {children}
-    </UnstyledButton>
+    </button>
   );
 });
 
-// import clsx from 'clsx';
-// import React from 'react';
-// import type { IPropsInlineInput } from './types';
-
-// type TOmittedHookProps = 'children' | 'ref' | 'leftContent' | 'rightContent';
-
-// const useInlineInputProps = (props: Omit<IPropsInlineInput, TOmittedHookProps>) => {
-//   const { id, label, isDisabled, isReadonly, className, ...otherProps } = props;
-
-//   const dataProps = {
-//     'data-disabled': isDisabled,
-//     'data-readonly': isReadonly,
-//   };
-
-//   const ariaProps = {
-//     'aria-label': label || id,
-//     'aria-disabled': isDisabled,
-//     'aria-readonly': isReadonly,
-//   };
-
-//   const css = {
-//     root: clsx('InlineInput', className),
-//     label: 'InlineInput-label',
-//     leftContent: 'InlineInput-content--left',
-//     rightContent: 'InlineInput-content--right',
-//   };
-
-//   return {
-//     rootProps: {
-//       ...otherProps,
-//       ...ariaProps,
-//       ...dataProps,
-//       id,
-//       disabled: isDisabled,
-//       className: css.root,
-//     },
-//     labelProps: {
-//       htmlFor: id,
-//       children: label,
-//       className: css.label,
-//     },
-//   };
-// };
-
-// export const InlineInput = React.forwardRef<HTMLButtonElement, IPropsInlineInput>((props, ref) => {
-//   const { children, dir = 'ltr', ...otherProps } = props;
-//   const { rootProps, labelProps } = useInlineInputProps(otherProps);
-//   return (
-//     <button role="checkbox" {...rootProps} ref={ref}>
-//       {dir === 'ltr' && children}
-//       <label {...labelProps} />
-//       {dir === 'rtl' && children}
-//     </button>
-//   );
-// });
+InlineInput.displayName = '@/common/InlineInput';
+InlineInput.Icon = InlineInputIcon;
