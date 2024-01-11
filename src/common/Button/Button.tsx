@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { UnstyledButton } from './Unstyled';
 import { type Factory, factory } from '@/utils/create-factory';
-import { Icon, TIconKey } from '../Icon';
+import { Icon, TKeyICON } from '../Icon';
 
-type ButtonIconProps = { name?: TIconKey } & React.SVGAttributes<SVGElement>;
+type ButtonIconProps = { name?: TKeyICON } & React.SVGAttributes<SVGElement>;
 
 const ButtonIcon = (props: ButtonIconProps) => {
   const { name, ...otherProps } = props;

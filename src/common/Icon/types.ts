@@ -18,9 +18,9 @@ export interface IPropsIcon extends Omit<TPropsIcon, 'name'> {
 
 export enum ICON {
   square = 'square',
-  squareFill = 'square-fill',
-  squareCheck = 'square-check',
-  squareCheckFill = 'square-check-fill',
-  squareDash = 'square-dash',
-  squareDashFill = 'square-dash-fill',
+  square_check = 'square_check',
+  square_check_fill = 'square_check_fill',
+  square_dash = 'square_dash',
+  square_dash_fill = 'square_dash_fill',
+  square_fill = 'square_fill',
 }
