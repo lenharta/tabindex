@@ -1,7 +1,16 @@
-import { forwardRef } from 'react';
-import type { IPropsCheckboxGroup } from '@/common/Checkbox/types';
+import * as React from 'react';
+import { type Factory, factory } from '@/utils/create-factory';
 
-export const CheckboxGroup = forwardRef<HTMLDivElement, IPropsCheckboxGroup>((props, ref) => {
-  const { children, onChange, ...otherProps } = props;
-  return <div {...otherProps} ref={ref}></div>;
+type CheckboxGroupFactory = Factory<{
+  props: React.HTMLAttributes<HTMLDivElement>;
+  ref: HTMLDivElement;
+}>;
+
+export const CheckboxGroup = factory<CheckboxGroupFactory>((props, ref) => {
+  const { children, ...otherProps } = props;
+  return (
+    <div {...otherProps} ref={ref}>
+      {children}
+    </div>
+  );
 });

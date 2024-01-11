@@ -1,13 +1,25 @@
-import { forwardRef } from 'react';
-import type { IPropsUnstyledButton } from '../types';
+import * as React from 'react';
+import { type Factory, factory } from '@/utils/create-factory';
 
-export const UnstyledButton = forwardRef<HTMLButtonElement, IPropsUnstyledButton>((props, ref) => {
+type UnstyledButtonFactory = Factory<{
+  ref: HTMLButtonElement;
+  props: React.ButtonHTMLAttributes<HTMLButtonElement>;
+}>;
+
+export const UnstyledButton = factory<UnstyledButtonFactory>((props, ref) => {
   const { children, ...otherProps } = props;
   return (
-    <button {...otherProps} ref={ref}>
+    <button ref={ref} {...otherProps}>
       {children}
     </button>
   );
 });
 
-UnstyledButton.displayName = 'UnstyledButton';
+// React.forwardRef<HTMLTextAreaElement>((props, ref) => {
+//   const {} = props;
+//   return (
+//     <textarea ref={ref}>
+//       <span>UnstyledButton</span>
+//     </textarea>
+//   );
+// });

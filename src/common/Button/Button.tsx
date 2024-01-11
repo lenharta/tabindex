@@ -1,22 +1,30 @@
-import React from 'react';
+import * as React from 'react';
 import { UnstyledButton } from './Unstyled';
-import { createModifierClasses } from '@/utils/create-modifier-classes';
-import type { IPropsButtonProps } from './types';
+import { type Factory, factory } from '@/utils/create-factory';
+import { Icon, TIconKey } from '../Icon';
 
-export const Button = React.forwardRef<HTMLButtonElement, IPropsButtonProps>((props, ref) => {
-  const { children, scheme = 'secondary', size = 'md', className, ...otherProps } = props;
+type ButtonIconProps = { name?: TIconKey } & React.SVGAttributes<SVGElement>;
 
-  const css = createModifierClasses({
-    base: 'Button',
-    modifiers: { size, scheme },
-    className,
-  });
+const ButtonIcon = (props: ButtonIconProps) => {
+  const { name, ...otherProps } = props;
+  return name ? <Icon name={name} {...otherProps} /> : null;
+};
 
+type ButtonFactory = Factory<{
+  ref: HTMLButtonElement;
+  props: React.ButtonHTMLAttributes<HTMLButtonElement>;
+  components: {
+    Icon: typeof ButtonIcon;
+  };
+}>;
+
+export const Button = factory<ButtonFactory>((props, ref) => {
+  const { children, ...otherProps } = props;
   return (
-    <UnstyledButton {...otherProps} className={css} ref={ref}>
+    <UnstyledButton {...otherProps} ref={ref}>
       {children}
     </UnstyledButton>
   );
 });
 
-Button.displayName = 'Button';
+Button.Icon = ButtonIcon;

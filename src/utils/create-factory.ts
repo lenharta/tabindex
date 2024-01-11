@@ -1,22 +1,26 @@
-import { forwardRef } from 'react';
+import * as React from 'react';
 
 type Payload = {
-  ref: any;
-  props?: Record<any, any>;
-  components?: Record<any, any>;
+  components?: Record<string, any>;
+  props?: Record<string, any>;
+  ref?: any;
 };
 
-type SubComponents<P> = P extends Record<string, any> ? P : Record<string, never>;
+type Components<T> = T extends Record<string, any> ? T : Record<string, never>;
 
-type Component<P extends Payload> = React.ForwardRefExoticComponent<
-  P['props'] & React.RefAttributes<P['ref']>
+type Component<FactoryPayload extends Payload> = React.ForwardRefExoticComponent<
+  FactoryPayload['props'] & React.RefAttributes<FactoryPayload['ref']>
+> &
+  Components<FactoryPayload['components']>;
+
+type ComponentRender<FactoryPayload extends Payload> = React.ForwardRefRenderFunction<
+  FactoryPayload['ref'],
+  FactoryPayload['props']
 >;
 
-export function factory<P extends Payload>(
-  ui: React.ForwardRefRenderFunction<P['ref'], P['props']>
-) {
-  const Component = forwardRef(ui) as Component<P> & SubComponents<P['components']>;
-  return Component as Component<P> & SubComponents<P['components']>;
+export function factory<FactoryPayload extends Payload>(ui: ComponentRender<FactoryPayload>) {
+  const AtomComponent = React.forwardRef(ui) as Component<FactoryPayload>;
+  return AtomComponent as Component<FactoryPayload>;
 }
 
-export type Factory<P extends Payload> = P;
+export type Factory<FactoryPayload extends Payload> = FactoryPayload;
