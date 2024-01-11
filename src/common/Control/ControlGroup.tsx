@@ -25,3 +25,5 @@ export const ControlGroup = factory<TFactoryControlGroup>((props, ref) => {
     </div>
   );
 });
+
+ControlGroup.displayName = '@/common/ControlGroup';

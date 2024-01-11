@@ -24,3 +24,5 @@ export const CheckboxGroup = factory<TFactoryCheckboxGroup>((props, ref) => {
     </div>
   );
 });
+
+CheckboxGroup.displayName = '@/common/CheckboxGroup';

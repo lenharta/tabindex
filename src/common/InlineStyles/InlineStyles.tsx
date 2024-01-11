@@ -55,3 +55,5 @@ export const DemoInlineStyle = () => {
     </>
   );
 };
+
+InlineStyle.displayName = '@/common/InlineStyle';

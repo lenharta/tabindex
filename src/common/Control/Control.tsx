@@ -25,4 +25,7 @@ export const Control = factory<TFactoryControl>((props, ref) => {
   );
 });
 
+ControlIcon.displayName = '@/common/Control.Icon';
+Control.displayName = '@/common/Control';
+
 Control.Icon = ControlIcon;

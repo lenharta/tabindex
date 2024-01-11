@@ -41,3 +41,5 @@ export const Icon = (props: IPropsIcon) => {
       return null;
   }
 };
+
+Icon.displayName = '@/common/Icon';

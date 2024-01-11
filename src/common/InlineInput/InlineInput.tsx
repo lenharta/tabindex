@@ -24,5 +24,6 @@ export const InlineInput = factory<TFactoryInlineInput>((props, ref) => {
   );
 });
 
+InlineInputIcon.displayName = '@/common/InlineInput.Icon';
 InlineInput.displayName = '@/common/InlineInput';
 InlineInput.Icon = InlineInputIcon;

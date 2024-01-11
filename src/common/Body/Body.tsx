@@ -26,3 +26,5 @@ export const Body = factory<TFactoryBody>((props, ref) => {
     </UnstyledBody>
   );
 });
+
+Body.displayName = '@/common/Body';

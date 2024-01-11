@@ -25,4 +25,7 @@ export const Close = factory<TFactoryClose>((props, ref) => {
   );
 });
 
+CloseIcon.displayName = '@/common/Close.Icon';
+Close.displayName = '@/common/Close';
+
 Close.Icon = CloseIcon;

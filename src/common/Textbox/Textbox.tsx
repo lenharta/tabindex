@@ -20,5 +20,7 @@ export const Textbox = factory<TFactoryTextbox>((props, ref) => {
   return <input type="text" ref={ref} {...otherProps} className={css} />;
 });
 
+TextboxIcon.displayName = '@/common/Textbox.Icon';
 Textbox.displayName = '@/common/Textbox';
+
 Textbox.Icon = TextboxIcon;

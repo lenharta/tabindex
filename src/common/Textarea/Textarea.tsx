@@ -20,5 +20,7 @@ export const Textarea = factory<TFactoryTextarea>((props, ref) => {
   return <textarea ref={ref} {...otherProps} className={css} />;
 });
 
+TextareaIcon.displayName = '@/common/Textarea.Icon';
 Textarea.displayName = '@/common/Textarea';
+
 Textarea.Icon = TextareaIcon;

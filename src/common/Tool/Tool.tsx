@@ -25,4 +25,7 @@ export const Tool = factory<TFactoryTool>((props, ref) => {
   );
 });
 
+ToolIcon.displayName = '@/common/Tool.Icon';
+Tool.displayName = '@/common/Tool';
+
 Tool.Icon = ToolIcon;

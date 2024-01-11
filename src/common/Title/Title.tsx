@@ -27,3 +27,5 @@ export const Title = factory<TFactoryTitle>((props, ref) => {
     </UnstyledTitle>
   );
 });
+
+Title.displayName = '@/common/Title';

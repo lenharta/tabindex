@@ -25,3 +25,5 @@ export const ButtonGroup = factory<TFactoryButtonGroup>((props, ref) => {
     </div>
   );
 });
+
+ButtonGroup.displayName = '@/common/ButtonGroup';
