@@ -1,10 +1,12 @@
 import * as React from 'react';
+import { type Factory, factory } from '@/utils/create-factory';
 
-export const TextInput = React.forwardRef<HTMLTextAreaElement, {}>((props, ref) => {
-  const {} = props;
-  return (
-    <textarea ref={ref}>
-      <span>TextInput</span>
-    </textarea>
-  );
+type TextareaFactory = Factory<{
+  props: React.HTMLAttributes<HTMLTextAreaElement>;
+  ref: HTMLTextAreaElement;
+}>;
+
+export const Textarea = factory<TextareaFactory>((props, ref) => {
+  const { children, ...otherProps } = props;
+  return <textarea {...otherProps} ref={ref} />;
 });

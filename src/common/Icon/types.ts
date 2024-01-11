@@ -8,16 +8,19 @@ export const defaultIconProps = {
   width: 16,
 };
 
-export type TIconKey =
-  | 'square'
-  | 'square-fill'
-  | 'square-check'
-  | 'square-check-fill'
-  | 'square-dash'
-  | 'square-dash-fill';
+export type TKeyICON = keyof typeof ICON;
 
-export interface IPropsIcon extends SVGAttributes<SVGElement> {
-  name: TIconKey;
+export type TPropsIcon = SVGAttributes<SVGElement>;
+
+export interface IPropsIcon extends Omit<TPropsIcon, 'name'> {
+  name: TKeyICON;
 }
 
-export type TLibraryIcon = (props: Omit<IPropsIcon, 'name'>) => JSX.Element;
+export enum ICON {
+  square = 'square',
+  squareFill = 'square-fill',
+  squareCheck = 'square-check',
+  squareCheckFill = 'square-check-fill',
+  squareDash = 'square-dash',
+  squareDashFill = 'square-dash-fill',
+}
