@@ -1,22 +1,19 @@
-import { createFactory, createModifierClasses } from '@/utils';
+import { createFactory, createThemeClasses, mergeProps } from '@/utils';
 import { type TFactoryBody, UnstyledBody } from '@/common/Body';
 
-export const Body = createFactory<TFactoryBody>((props, ref) => {
-  const {
-    children,
-    className,
-    fontWeight = 'reg',
-    fontStyle = 'normal',
-    align = 'start',
-    size = 'sm',
-    ...otherProps
-  } = props;
+const defaultModifiers: Partial<TFactoryBody['props']> = {
+  size: 'sm',
+  align: 'start',
+  fontStyle: 'normal',
+  fontWeight: 'reg',
+};
 
-  const css = createModifierClasses({
-    base: 'Body',
-    modifiers: { size, align, fontStyle, fontWeight },
-    className,
-  });
+export const Body = createFactory<TFactoryBody>((props, ref) => {
+  const { children, className, size, align, fontStyle, fontWeight, ...otherProps } = props;
+
+  const modifiers = mergeProps(defaultModifiers, { size, align, fontStyle, fontWeight });
+
+  const css = createThemeClasses({ base: 'Body', modifiers, className });
 
   return (
     <UnstyledBody ref={ref} {...otherProps} className={css}>

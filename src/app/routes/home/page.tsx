@@ -1,4 +1,4 @@
-import { Page } from '../../layouts';
+import { Page } from '@/app/layouts';
 
 export const themeBreakpoints = {
   xs: '36em',
@@ -13,7 +13,9 @@ export function Home() {
     <Page>
       <Page.Hero title="Home" />
       <Page.Content>
-        <span>Content Here</span>
+        <section>
+          <span>Content Here</span>
+        </section>
       </Page.Content>
     </Page>
   );

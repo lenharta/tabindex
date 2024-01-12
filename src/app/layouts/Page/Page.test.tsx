@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest';
 import { render, screen } from '@/tests/utils';
-import { Page } from './Page';
+import { Page } from '@/app/layouts';
 
 describe('[@/app/Page]', async () => {
   test('renders basic component', async () => {

@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import './styles/index.scss';
 
-import { Root, RootError } from './app';
-import { Home, Toolbox } from './app/routes';
+import { Root, RootError } from '@/app';
+import { Home, Sandbox, Toolbox } from '@/app/routes';
+import './styles/index.scss';
 
 const router = createBrowserRouter([
   {
@@ -13,16 +13,17 @@ const router = createBrowserRouter([
     errorElement: <RootError />,
     children: [
       { index: true, element: <Home /> },
-      { path: '/about', element: <h1>About</h1> },
-      { path: '/contact', element: <h1>Contact</h1> },
+      { path: '/sandbox', element: <Sandbox /> },
       { path: '/toolbox', element: <Toolbox /> },
     ],
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById('root')!, {
+const rootOptions: ReactDOM.RootOptions = {
   identifierPrefix: 'tabindex:',
-}).render(
+};
+
+ReactDOM.createRoot(document.getElementById('root')!, rootOptions).render(
   <React.StrictMode>
     <RouterProvider router={router} />
   </React.StrictMode>

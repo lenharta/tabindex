@@ -100,8 +100,9 @@ $light-surface-09-border: colors.use-light-surface(52%);
   color-scheme: light dark;
 }
 
-.Checkbox--filled,
-.Checkbox--outlined {
+.Button,
+.Control,
+.InlineInput {
   outline: 1.5px solid transparent;
   border: 1.5px solid transparent;
 

@@ -1,7 +1,7 @@
-import { createFactory, createModifierClasses, mergeProps } from '@/utils';
+import { createFactory, createThemeClasses, mergeProps } from '@/utils';
 import { type TFactoryButtonGroup } from '@/common/Button';
 
-const defaultProps: Partial<TFactoryButtonGroup['props']> = {
+const defaultModifiers: Partial<TFactoryButtonGroup['props']> = {
   size: 'sm',
   align: 'start',
   scheme: 'default',
@@ -11,11 +11,8 @@ const defaultProps: Partial<TFactoryButtonGroup['props']> = {
 export const ButtonGroup = createFactory<TFactoryButtonGroup>((props, ref) => {
   const { size, align, scheme, children, className, orientation, ...otherProps } = props;
 
-  const css = createModifierClasses({
-    base: 'ButtonGroup',
-    modifiers: mergeProps(defaultProps, { size, align, scheme, orientation }),
-    className,
-  });
+  const modifiers = mergeProps(defaultModifiers, { size, align, scheme, orientation });
+  const css = createThemeClasses({ base: 'ButtonGroup', modifiers, className });
 
   return (
     <div ref={ref} {...otherProps} className={css}>

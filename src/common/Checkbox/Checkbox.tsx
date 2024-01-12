@@ -1,8 +1,8 @@
-import { createFactory, createModifierClasses } from '@/utils';
+import { createFactory, createThemeClasses, mergeProps } from '@/utils';
 import { type TFactoryCheckbox } from '@/common/Checkbox';
 import { InlineInput } from '@/common/InlineInput';
 
-const CHECKBOX_ICONS = {
+export const LOOKUP_CHECKBOX_ICON = {
   default: {
     true: 'square_check_fill',
     false: 'square_fill',
@@ -15,14 +15,16 @@ const CHECKBOX_ICONS = {
   },
 };
 
-export const Checkbox = createFactory<TFactoryCheckbox>((props, ref) => {
-  const { children, className, align = 'start', size = 'sm', ...otherProps } = props;
+const defaultModifiers: Partial<TFactoryCheckbox['props']> = {
+  size: 'sm',
+  align: 'start',
+};
 
-  const css = createModifierClasses({
-    base: 'Checkbox',
-    modifiers: { size, align },
-    className,
-  });
+export const Checkbox = createFactory<TFactoryCheckbox>((props, ref) => {
+  const { children, className, size, align, ...otherProps } = props;
+
+  const modifiers = mergeProps(defaultModifiers, { size, align });
+  const css = createThemeClasses({ base: 'Checkbox', modifiers, className });
 
   return (
     <InlineInput ref={ref} {...otherProps} className={css}>

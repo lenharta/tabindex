@@ -1,4 +1,4 @@
-import { createFactory, createModifierClasses, mergeProps } from '@/utils';
+import { createFactory, mergeProps, createThemeClasses } from '@/utils';
 import { type TFactoryControl } from '@/common/Control';
 import { UnstyledButton } from '@/common/Button';
 import { Icon } from '@/common/Icon';
@@ -8,7 +8,7 @@ export const ControlIcon: TFactoryControl['components']['Icon'] = (props) => {
   return name ? <Icon name={name} {...otherProps} /> : null;
 };
 
-const defaultProps: Partial<TFactoryControl['props']> = {
+const defaultModifiers: Partial<TFactoryControl['props']> = {
   size: 'sm',
   align: 'start',
   scheme: 'default',
@@ -17,11 +17,8 @@ const defaultProps: Partial<TFactoryControl['props']> = {
 export const Control = createFactory<TFactoryControl>((props, ref) => {
   const { children, className, size, align, scheme, ...otherProps } = props;
 
-  const css = createModifierClasses({
-    base: 'Control',
-    modifiers: mergeProps(defaultProps, { size, align, scheme }),
-    className,
-  });
+  const modifiers = mergeProps(defaultModifiers, { size, align, scheme });
+  const css = createThemeClasses({ base: 'Control', modifiers, className });
 
   return (
     <UnstyledButton ref={ref} {...otherProps} className={css}>

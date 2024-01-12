@@ -1,4 +1,4 @@
-import { createFactory, createModifierClasses } from '@/utils';
+import { createFactory, createThemeClasses, mergeProps } from '@/utils';
 import { type TFactoryClose } from '@/common/Close';
 import { UnstyledButton } from '@/common/Button';
 import { Icon } from '@/common/Icon';
@@ -8,14 +8,15 @@ const CloseIcon: TFactoryClose['components']['Icon'] = (props) => {
   return name ? <Icon name={name} {...otherProps} /> : null;
 };
 
-export const Close = createFactory<TFactoryClose>((props, ref) => {
-  const { children, className, size = 'sm', ...otherProps } = props;
+const defaultModifiers: Partial<TFactoryClose['props']> = {
+  size: 'sm',
+};
 
-  const css = createModifierClasses({
-    base: 'Close',
-    modifiers: { size },
-    className,
-  });
+export const Close = createFactory<TFactoryClose>((props, ref) => {
+  const { children, className, size, ...otherProps } = props;
+
+  const modifiers = mergeProps(defaultModifiers, { size });
+  const css = createThemeClasses({ base: 'Close', modifiers, className });
 
   return (
     <UnstyledButton ref={ref} {...otherProps} className={css}>

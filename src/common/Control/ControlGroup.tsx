@@ -1,7 +1,7 @@
-import { createFactory, mergeProps, createModifierClasses } from '@/utils';
+import { createFactory, mergeProps, createThemeClasses } from '@/utils';
 import { type TFactoryControlGroup } from '@/common/Control';
 
-const defaultProps: Partial<TFactoryControlGroup['props']> = {
+const defaultModifiers: Partial<TFactoryControlGroup['props']> = {
   size: 'sm',
   align: 'start',
   scheme: 'default',
@@ -11,11 +11,8 @@ const defaultProps: Partial<TFactoryControlGroup['props']> = {
 export const ControlGroup = createFactory<TFactoryControlGroup>((props, ref) => {
   const { className, children, size, align, scheme, orientation, ...otherProps } = props;
 
-  const css = createModifierClasses({
-    base: 'ControlGroup',
-    modifiers: mergeProps(defaultProps, { size, align, scheme, orientation }),
-    className,
-  });
+  const modifiers = mergeProps(defaultModifiers, { size, align, scheme, orientation });
+  const css = createThemeClasses({ base: 'ControlGroup', modifiers, className });
 
   return (
     <div ref={ref} {...otherProps} className={css}>

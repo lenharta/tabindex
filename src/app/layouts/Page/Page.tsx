@@ -1,5 +1,6 @@
 import { createFactory } from '@/utils';
 import { type TFactoryPage } from './types';
+import { Title } from '@/common/Title';
 
 export const Page = createFactory<TFactoryPage>((props, ref) => {
   const { children, ...otherProps } = props;
@@ -11,9 +12,10 @@ export const Page = createFactory<TFactoryPage>((props, ref) => {
 });
 
 const PageHero: TFactoryPage['components']['Hero'] = (props) => {
-  const { children, ...otherProps } = props;
+  const { title, children, ...otherProps } = props;
   return (
     <div className="Page-hero" {...otherProps}>
+      {title && <Title as="h1" size="lg" children={title} />}
       {children}
     </div>
   );

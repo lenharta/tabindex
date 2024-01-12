@@ -1,7 +1,7 @@
-import { createFactory, createModifierClasses, mergeProps } from '@/utils';
+import { createFactory, mergeProps, createThemeClasses } from '@/utils';
 import { type TFactoryTitle, UnstyledTitle } from '@/common/Title';
 
-const defaultProps: Partial<TFactoryTitle['props']> = {
+const defaultModifiers: Partial<TFactoryTitle['props']> = {
   as: 'h3',
   size: 'sm',
   align: 'start',
@@ -12,11 +12,8 @@ const defaultProps: Partial<TFactoryTitle['props']> = {
 export const Title = createFactory<TFactoryTitle>((props, ref) => {
   const { as, size, align, fontStyle, fontWeight, className, children, ...otherProps } = props;
 
-  const css = createModifierClasses({
-    base: 'Title',
-    modifiers: mergeProps(defaultProps, { size, align, fontStyle, fontWeight }),
-    className,
-  });
+  const modifiers = mergeProps(defaultModifiers, { as, size, align, fontStyle, fontWeight });
+  const css = createThemeClasses({ base: 'Title', modifiers, className });
 
   return (
     <UnstyledTitle ref={ref} as={as} {...otherProps} className={css}>

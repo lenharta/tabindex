@@ -1,4 +1,4 @@
-import { createFactory, mergeProps, createModifierClasses } from '@/utils';
+import { createFactory, mergeProps, createThemeClasses } from '@/utils';
 import { type TFactoryInlineInput } from '@/common/InlineInput';
 import { Icon } from '@/common/Icon';
 
@@ -15,11 +15,8 @@ const defaultModifiers: Partial<TFactoryInlineInput['props']> = {
 export const InlineInput = createFactory<TFactoryInlineInput>((props, ref) => {
   const { id, children, className, size, align, label, infoText, ...otherProps } = props;
 
-  const css = createModifierClasses({
-    base: 'InlineInput',
-    modifiers: mergeProps(defaultModifiers, { size, align }),
-    className,
-  });
+  const modifiers = mergeProps(defaultModifiers, { size, align });
+  const css = createThemeClasses({ base: 'InlineInput', modifiers, className });
 
   return (
     <button ref={ref} {...otherProps} id={id} className={css}>

@@ -1,4 +1,4 @@
-import { createFactory, createModifierClasses, mergeProps } from '@/utils';
+import { createFactory, createThemeClasses, mergeProps } from '@/utils';
 import { type TFactoryRadio } from '@/common/Radio';
 import { InlineInput } from '@/common/InlineInput';
 
@@ -8,13 +8,10 @@ const defaultModifiers: Partial<TFactoryRadio['props']> = {
 };
 
 export const Radio = createFactory<TFactoryRadio>((props, ref) => {
-  const { id, children, className, size, align, label, infoText, ...otherProps } = props;
+  const { children, className, size, align, ...otherProps } = props;
 
-  const css = createModifierClasses({
-    base: 'Radio',
-    modifiers: mergeProps(defaultModifiers, { size, align }),
-    className,
-  });
+  const modifiers = mergeProps(defaultModifiers, { size, align });
+  const css = createThemeClasses({ base: 'Radio', modifiers, className });
 
   return (
     <InlineInput ref={ref} {...otherProps} className={css}>

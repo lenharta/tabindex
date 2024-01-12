@@ -1,4 +1,4 @@
-import { createFactory, createModifierClasses, mergeProps } from '@/utils';
+import { createFactory, mergeProps, createThemeClasses } from '@/utils';
 import { type TFactoryTextbox } from '@/common/Textbox';
 import { Icon } from '@/common/Icon';
 
@@ -7,18 +7,15 @@ const TextboxIcon: TFactoryTextbox['components']['Icon'] = (props) => {
   return name ? <Icon name={name} {...otherProps} /> : null;
 };
 
-const defaultProps: Partial<TFactoryTextbox['props']> = {
+const defaultModifiers: Partial<TFactoryTextbox['props']> = {
   size: 'md',
 };
 
 export const Textbox = createFactory<TFactoryTextbox>((props, ref) => {
   const { children, className, size, ...otherProps } = props;
 
-  const css = createModifierClasses({
-    base: 'Textbox',
-    modifiers: mergeProps(defaultProps, { size }),
-    className,
-  });
+  const modifiers = mergeProps(defaultModifiers, { size });
+  const css = createThemeClasses({ base: 'Textbox', modifiers, className });
 
   return <input type="text" ref={ref} {...otherProps} className={css} />;
 });

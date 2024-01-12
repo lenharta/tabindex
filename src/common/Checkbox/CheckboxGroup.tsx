@@ -1,21 +1,17 @@
-import { createFactory, createModifierClasses } from '@/utils';
+import { createFactory, createThemeClasses, mergeProps } from '@/utils';
 import { type TFactoryCheckboxGroup } from '@/common/Checkbox';
 
-export const CheckboxGroup = createFactory<TFactoryCheckboxGroup>((props, ref) => {
-  const {
-    size = 'sm',
-    align = 'start',
-    orientation = 'vertical',
-    className,
-    children,
-    ...otherProps
-  } = props;
+const defaultModifiers: Partial<TFactoryCheckboxGroup['props']> = {
+  size: 'sm',
+  align: 'start',
+  orientation: 'vertical',
+};
 
-  const css = createModifierClasses({
-    base: 'CheckboxGroup',
-    modifiers: { size, align, orientation },
-    className,
-  });
+export const CheckboxGroup = createFactory<TFactoryCheckboxGroup>((props, ref) => {
+  const { size, align, children, className, orientation, ...otherProps } = props;
+
+  const modifiers = mergeProps(defaultModifiers, { size, align, orientation });
+  const css = createThemeClasses({ base: 'CheckboxGroup', modifiers, className });
 
   return (
     <div ref={ref} {...otherProps} className={css}>

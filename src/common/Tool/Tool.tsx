@@ -1,4 +1,4 @@
-import { createFactory, createModifierClasses, mergeProps } from '@/utils';
+import { createFactory, mergeProps, createThemeClasses } from '@/utils';
 import { type TFactoryTool } from '@/common/Tool';
 import { UnstyledButton } from '@/common/Button';
 import { Icon } from '@/common/Icon';
@@ -8,19 +8,16 @@ const ToolIcon: TFactoryTool['components']['Icon'] = (props) => {
   return name ? <Icon name={name} {...otherProps} /> : null;
 };
 
-const defaultProps: Partial<TFactoryTool['props']> = {
+const defaultModifiers: Partial<TFactoryTool['props']> = {
   size: 'sm',
   align: 'center',
 };
 
 export const Tool = createFactory<TFactoryTool>((props, ref) => {
-  const { children, className, size = 'sm', ...otherProps } = props;
+  const { children, className, size, align, ...otherProps } = props;
 
-  const css = createModifierClasses({
-    base: 'Tool',
-    modifiers: mergeProps(defaultProps, { size }),
-    className,
-  });
+  const modifiers = mergeProps(defaultModifiers, { size, align });
+  const css = createThemeClasses({ base: 'Tool', modifiers, className });
 
   return (
     <UnstyledButton ref={ref} {...otherProps} className={css}>

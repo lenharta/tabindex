@@ -1,7 +1,7 @@
+import { createFactory, mergeProps, createThemeClasses } from '@/utils';
 import { type TFactorySwitchGroup } from '@/common/Switch';
-import { createFactory, createModifierClasses, mergeProps } from '@/utils';
 
-const defaultProps: Partial<TFactorySwitchGroup['props']> = {
+const defaultModifiers: Partial<TFactorySwitchGroup['props']> = {
   size: 'sm',
   align: 'start',
   orientation: 'vertical',
@@ -10,11 +10,8 @@ const defaultProps: Partial<TFactorySwitchGroup['props']> = {
 export const SwitchGroup = createFactory<TFactorySwitchGroup>((props, ref) => {
   const { size, align, children, className, orientation, ...otherProps } = props;
 
-  const css = createModifierClasses({
-    base: 'SwitchGroup',
-    modifiers: mergeProps(defaultProps, { size, align, orientation }),
-    className,
-  });
+  const modifiers = mergeProps(defaultModifiers, { size, align, orientation });
+  const css = createThemeClasses({ base: 'SwitchGroup', modifiers, className });
 
   return (
     <div ref={ref} {...otherProps} className={css}>
