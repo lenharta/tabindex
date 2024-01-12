@@ -1,20 +1,18 @@
-import { factory } from '@/utils/create-factory';
-import { createModifierClasses } from '@/utils/create-modifier-classes';
+import { createFactory, mergeProps, createModifierClasses } from '@/utils';
 import { type TFactoryRadioGroup } from '@/common/Radio';
 
-export const RadioGroup = factory<TFactoryRadioGroup>((props, ref) => {
-  const {
-    size = 'sm',
-    align = 'start',
-    orientation = 'vertical',
-    className,
-    children,
-    ...otherProps
-  } = props;
+const defaultProps: Partial<TFactoryRadioGroup['props']> = {
+  size: 'sm',
+  align: 'start',
+  orientation: 'vertical',
+};
+
+export const RadioGroup = createFactory<TFactoryRadioGroup>((props, ref) => {
+  const { size, align, children, className, orientation, ...otherProps } = props;
 
   const css = createModifierClasses({
     base: 'RadioGroup',
-    modifiers: { size, align, orientation },
+    modifiers: mergeProps(defaultProps, { size, align, orientation }),
     className,
   });
 

@@ -26,14 +26,24 @@
 
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src"],
+      // "@/*": ["src"],
+      // "@/app/*": ["src/app/*"],
+      // "@/core/*": ["src/core/*"],
+      // "@/assets/*": ["src/assets/*"],
+      // "@/common/*": ["src/common/*"],
+      // "@/styles/*": ["src/styles/*"],
+      // "@/hooks/*": ["src/hooks/*"],
+      // "@/tests/*": ["src/tests/*"],
+      // "@/utils/*": ["src/utils/*"],
+
+      "@/*": ["./src/*"],
       "@/app/*": ["./src/app/*"],
       "@/core/*": ["./src/core/*"],
-      "@/tests/*": ["src/tests/*"],
+      "@/tests/*": ["./src/tests/*"],
+      "@/utils/*": ["./src/utils/*"],
       "@/assets/*": ["./src/assets/*"],
       "@/common/*": ["./src/common/*"],
-      "@/styles/*": ["./src/styles/*"],
-      "@/utils/*": ["./src/utils/*"]
+      "@/styles/*": ["./src/styles/*"]
     }
   },
   "include": ["src"],

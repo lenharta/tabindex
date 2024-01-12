@@ -1,14 +1,18 @@
-import { factory } from '@/utils/create-factory';
-import { createModifierClasses } from '@/utils/create-modifier-classes';
+import { createFactory, mergeProps, createModifierClasses } from '@/utils';
 import { type TFactorySwitch } from '@/common/Switch';
 import { InlineInput } from '@/common/InlineInput';
 
-export const Switch = factory<TFactorySwitch>((props, ref) => {
-  const { children, className, align = 'start', size = 'sm', ...otherProps } = props;
+const defaultProps: TFactorySwitch['props'] = {
+  size: 'sm',
+  align: 'start',
+};
+
+export const Switch = createFactory<TFactorySwitch>((props, ref) => {
+  const { children, className, align, size, ...otherProps } = props;
 
   const css = createModifierClasses({
     base: 'Switch',
-    modifiers: { size, align },
+    modifiers: mergeProps(defaultProps, { size, align }),
     className,
   });
 

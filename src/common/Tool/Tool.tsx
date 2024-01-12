@@ -1,7 +1,6 @@
-import { factory } from '@/utils/create-factory';
-import { createModifierClasses } from '@/utils/create-modifier-classes';
+import { createFactory, createModifierClasses, mergeProps } from '@/utils';
 import { type TFactoryTool } from '@/common/Tool';
-import { UnstyledButton } from '@/common/Button/Unstyled';
+import { UnstyledButton } from '@/common/Button';
 import { Icon } from '@/common/Icon';
 
 const ToolIcon: TFactoryTool['components']['Icon'] = (props) => {
@@ -9,12 +8,17 @@ const ToolIcon: TFactoryTool['components']['Icon'] = (props) => {
   return name ? <Icon name={name} {...otherProps} /> : null;
 };
 
-export const Tool = factory<TFactoryTool>((props, ref) => {
+const defaultProps: Partial<TFactoryTool['props']> = {
+  size: 'sm',
+  align: 'center',
+};
+
+export const Tool = createFactory<TFactoryTool>((props, ref) => {
   const { children, className, size = 'sm', ...otherProps } = props;
 
   const css = createModifierClasses({
     base: 'Tool',
-    modifiers: { size },
+    modifiers: mergeProps(defaultProps, { size }),
     className,
   });
 
@@ -27,5 +31,4 @@ export const Tool = factory<TFactoryTool>((props, ref) => {
 
 ToolIcon.displayName = '@/common/Tool.Icon';
 Tool.displayName = '@/common/Tool';
-
 Tool.Icon = ToolIcon;

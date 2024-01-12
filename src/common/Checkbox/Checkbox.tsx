@@ -1,9 +1,21 @@
-import { factory } from '@/utils/create-factory';
-import { createModifierClasses } from '@/utils/create-modifier-classes';
+import { createFactory, createModifierClasses } from '@/utils';
 import { type TFactoryCheckbox } from '@/common/Checkbox';
 import { InlineInput } from '@/common/InlineInput';
 
-export const Checkbox = factory<TFactoryCheckbox>((props, ref) => {
+const CHECKBOX_ICONS = {
+  default: {
+    true: 'square_check_fill',
+    false: 'square_fill',
+    mixed: 'square_dash_fill',
+  },
+  outlined: {
+    true: 'square_check',
+    false: 'square',
+    mixed: 'square_dash',
+  },
+};
+
+export const Checkbox = createFactory<TFactoryCheckbox>((props, ref) => {
   const { children, className, align = 'start', size = 'sm', ...otherProps } = props;
 
   const css = createModifierClasses({

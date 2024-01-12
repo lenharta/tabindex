@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { type Factory } from '@/utils/create-factory';
-import { Icon, type TKeyIcon } from '@/common/Icon';
+import { type Factory } from '@/utils';
+import { type TKeyIcon } from '@/common/Icon';
 
 export type TPropsButton = React.ButtonHTMLAttributes<HTMLButtonElement>;
 export type TPropsButtonGroup = React.HTMLAttributes<HTMLDivElement>;
@@ -16,6 +16,10 @@ export interface IPropsButton extends TPropsButton {
   icon?: TKeyIcon;
   /** Specifies the icon `height` and `width` property (% of button size). Set to 80% by default. */
   iconSize?: number;
+  /** Specifies content to the left of the label */
+  leftContent?: React.ReactNode;
+  /** Specifies content to the right of the label */
+  rightContent?: React.ReactNode;
 }
 
 export interface IPropsButtonGroup extends TPropsButtonGroup {
@@ -41,9 +45,6 @@ export type TFactoryUnstyledButton = Factory<{
 export type TFactoryButton = Factory<{
   ref: HTMLButtonElement;
   props: IPropsButton;
-  components: {
-    Icon: typeof Icon;
-  };
 }>;
 
 export type TFactoryButtonGroup = Factory<{

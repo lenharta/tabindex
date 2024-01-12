@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest';
 import { render, screen } from '@/tests/utils';
-import { Close } from './Close';
+import { Close } from '@/common/Close';
 
 describe('[@/common/Close]', async () => {
   test('renders basic component', async () => {

@@ -1,5 +1,5 @@
-import { objecCssToString } from '@/utils/object-css-to-string';
-import { type IMediaQueryInput, type IStyleInput } from './types';
+import { cssToString } from '@/utils';
+import { type IMediaQueryInput, type IStyleInput } from '@/common/InlineStyles';
 
 export function createInlineStyles(props: IStyleInput) {
   const { selector, media, styles } = props;
@@ -7,13 +7,13 @@ export function createInlineStyles(props: IStyleInput) {
   let result: string[] = [];
 
   if (styles !== undefined) {
-    const formatBaseStyles = `${selector}{${objecCssToString(styles)}}`;
+    const formatBaseStyles = `${selector}{${cssToString(styles)}}`;
     result.push(formatBaseStyles || '');
   }
 
   if (media && Array.isArray(media)) {
     media.map((item) => {
-      const formatStyles = objecCssToString(item.styles);
+      const formatStyles = cssToString(item.styles);
       result.push(`@media${item.query}{${selector}{${formatStyles}}}`);
     });
   }

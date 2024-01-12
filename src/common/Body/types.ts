@@ -1,4 +1,5 @@
-import { type Factory } from '@/utils/create-factory';
+import * as React from 'react';
+import { type Factory } from '@/utils';
 
 export type TPropsBody = React.HTMLAttributes<HTMLParagraphElement>;
 

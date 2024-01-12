@@ -1,14 +1,30 @@
-import type { TComponentPage, TSubComponentsPage } from './types';
-import { PageContent } from './Content';
-import { PageHero } from './Hero';
+import { createFactory } from '@/utils';
+import { type TFactoryPage } from './types';
 
-export const Page: TComponentPage & TSubComponentsPage = (props) => {
-  const { children, className, ...otherProps } = props;
-  const baseProps = { className: 'Page' };
+export const Page = createFactory<TFactoryPage>((props, ref) => {
+  const { children, ...otherProps } = props;
   return (
-    <section {...otherProps} {...baseProps} data-theme-mode="dark">
-      {children ?? null}
-    </section>
+    <div ref={ref} {...otherProps} className="Page">
+      {children}
+    </div>
+  );
+});
+
+const PageHero: TFactoryPage['components']['Hero'] = (props) => {
+  const { children, ...otherProps } = props;
+  return (
+    <div className="Page-hero" {...otherProps}>
+      {children}
+    </div>
+  );
+};
+
+const PageContent: TFactoryPage['components']['Content'] = (props) => {
+  const { children, ...otherProps } = props;
+  return (
+    <main {...otherProps} className="Page-content" id="mainContent">
+      {children}
+    </main>
   );
 };
 

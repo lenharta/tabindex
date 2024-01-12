@@ -1,6 +1,5 @@
-import { factory } from '@/utils/create-factory';
-import { createModifierClasses } from '@/utils/create-modifier-classes';
-import { type TFactoryTextbox } from '@/common/Textbox/types';
+import { createFactory, createModifierClasses, mergeProps } from '@/utils';
+import { type TFactoryTextbox } from '@/common/Textbox';
 import { Icon } from '@/common/Icon';
 
 const TextboxIcon: TFactoryTextbox['components']['Icon'] = (props) => {
@@ -8,12 +7,16 @@ const TextboxIcon: TFactoryTextbox['components']['Icon'] = (props) => {
   return name ? <Icon name={name} {...otherProps} /> : null;
 };
 
-export const Textbox = factory<TFactoryTextbox>((props, ref) => {
+const defaultProps: Partial<TFactoryTextbox['props']> = {
+  size: 'md',
+};
+
+export const Textbox = createFactory<TFactoryTextbox>((props, ref) => {
   const { children, className, size, ...otherProps } = props;
 
   const css = createModifierClasses({
     base: 'Textbox',
-    modifiers: { size },
+    modifiers: mergeProps(defaultProps, { size }),
     className,
   });
 
@@ -22,5 +25,4 @@ export const Textbox = factory<TFactoryTextbox>((props, ref) => {
 
 TextboxIcon.displayName = '@/common/Textbox.Icon';
 Textbox.displayName = '@/common/Textbox';
-
 Textbox.Icon = TextboxIcon;

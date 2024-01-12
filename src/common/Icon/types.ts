@@ -1,4 +1,4 @@
-import { SVGAttributes } from 'react';
+import * as React from 'react';
 
 export const defaultIconProps = {
   fill: 'currentColor',
@@ -10,7 +10,7 @@ export const defaultIconProps = {
 
 export type TKeyIcon = keyof typeof ICON;
 
-export type TPropsIcon = SVGAttributes<SVGElement>;
+export type TPropsIcon = React.SVGAttributes<SVGElement>;
 
 export interface IPropsIcon extends Omit<TPropsIcon, 'name'> {
   name?: TKeyIcon;

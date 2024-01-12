@@ -1,9 +1,7 @@
-import { factory } from '@/utils/create-factory';
-import { createModifierClasses } from '@/utils/create-modifier-classes';
-import { type TFactoryBody } from '@/common/Body';
-import { UnstyledBody } from '@/common/Body/Unstyled';
+import { createFactory, createModifierClasses } from '@/utils';
+import { type TFactoryBody, UnstyledBody } from '@/common/Body';
 
-export const Body = factory<TFactoryBody>((props, ref) => {
+export const Body = createFactory<TFactoryBody>((props, ref) => {
   const {
     children,
     className,

@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest';
 import { render, screen } from '@/tests/utils';
-import { InlineInput } from './InlineInput';
+import { InlineInput } from '@/common/InlineInput';
 
 describe('[@/common/InlineInput]', async () => {
   test('renders basic component', async () => {

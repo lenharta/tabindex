@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { factory } from '@/utils/create-factory';
+import { createFactory } from '@/utils';
 import { type TFactoryUnstyledBody } from '@/common/Body';
 
-export const UnstyledBody = factory<TFactoryUnstyledBody>((props, ref) => {
+export const UnstyledBody = createFactory<TFactoryUnstyledBody>((props, ref) => {
   const { children, ...otherProps } = props;
   return React.createElement('p', { ref, ...otherProps }, children);
 });

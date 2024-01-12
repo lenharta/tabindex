@@ -1,4 +1,5 @@
-import { type Factory } from '@/utils/create-factory';
+import * as React from 'react';
+import { type Factory } from '@/utils';
 
 export type TPropsTitle = React.HTMLAttributes<HTMLHeadingElement>;
 export type TPropsTitleAs = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';

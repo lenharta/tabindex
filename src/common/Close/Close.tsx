@@ -1,7 +1,6 @@
-import { factory } from '@/utils/create-factory';
-import { createModifierClasses } from '@/utils/create-modifier-classes';
+import { createFactory, createModifierClasses } from '@/utils';
 import { type TFactoryClose } from '@/common/Close';
-import { UnstyledButton } from '@/common/Button/Unstyled';
+import { UnstyledButton } from '@/common/Button';
 import { Icon } from '@/common/Icon';
 
 const CloseIcon: TFactoryClose['components']['Icon'] = (props) => {
@@ -9,7 +8,7 @@ const CloseIcon: TFactoryClose['components']['Icon'] = (props) => {
   return name ? <Icon name={name} {...otherProps} /> : null;
 };
 
-export const Close = factory<TFactoryClose>((props, ref) => {
+export const Close = createFactory<TFactoryClose>((props, ref) => {
   const { children, className, size = 'sm', ...otherProps } = props;
 
   const css = createModifierClasses({
@@ -27,5 +26,4 @@ export const Close = factory<TFactoryClose>((props, ref) => {
 
 CloseIcon.displayName = '@/common/Close.Icon';
 Close.displayName = '@/common/Close';
-
 Close.Icon = CloseIcon;

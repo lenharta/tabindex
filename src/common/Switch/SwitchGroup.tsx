@@ -1,20 +1,18 @@
-import { factory } from '@/utils/create-factory';
-import { createModifierClasses } from '@/utils/create-modifier-classes';
 import { type TFactorySwitchGroup } from '@/common/Switch';
+import { createFactory, createModifierClasses, mergeProps } from '@/utils';
 
-export const SwitchGroup = factory<TFactorySwitchGroup>((props, ref) => {
-  const {
-    size = 'sm',
-    align = 'start',
-    orientation = 'vertical',
-    className,
-    children,
-    ...otherProps
-  } = props;
+const defaultProps: Partial<TFactorySwitchGroup['props']> = {
+  size: 'sm',
+  align: 'start',
+  orientation: 'vertical',
+};
+
+export const SwitchGroup = createFactory<TFactorySwitchGroup>((props, ref) => {
+  const { size, align, children, className, orientation, ...otherProps } = props;
 
   const css = createModifierClasses({
     base: 'SwitchGroup',
-    modifiers: { size, align, orientation },
+    modifiers: mergeProps(defaultProps, { size, align, orientation }),
     className,
   });
 

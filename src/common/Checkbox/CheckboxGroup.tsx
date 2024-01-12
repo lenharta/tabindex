@@ -1,8 +1,7 @@
-import { factory } from '@/utils/create-factory';
-import { createModifierClasses } from '@/utils/create-modifier-classes';
+import { createFactory, createModifierClasses } from '@/utils';
 import { type TFactoryCheckboxGroup } from '@/common/Checkbox';
 
-export const CheckboxGroup = factory<TFactoryCheckboxGroup>((props, ref) => {
+export const CheckboxGroup = createFactory<TFactoryCheckboxGroup>((props, ref) => {
   const {
     size = 'sm',
     align = 'start',

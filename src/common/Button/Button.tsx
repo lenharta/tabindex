@@ -1,27 +1,18 @@
-import { factory } from '@/utils/create-factory';
-import { createModifierClasses } from '@/utils/create-modifier-classes';
-import { type TFactoryButton } from '@/common/Button/types';
-import { UnstyledButton } from '@/common/Button/Unstyled';
-import { Icon } from '@/common/Icon';
+import { createFactory, createModifierClasses, mergeProps } from '@/utils';
+import { type TFactoryButton, UnstyledButton } from '@/common/Button';
 
-const ButtonIcon: TFactoryButton['components']['Icon'] = (props) => {
-  const { name, ...otherProps } = props;
-  return name ? <Icon name={name} {...otherProps} /> : null;
+const defaultProps: Partial<TFactoryButton['props']> = {
+  size: 'sm',
+  align: 'start',
+  scheme: 'default',
 };
 
-export const Button = factory<TFactoryButton>((props, ref) => {
-  const {
-    size = 'sm',
-    align = 'start',
-    scheme = 'default',
-    className,
-    children,
-    ...otherProps
-  } = props;
+export const Button = createFactory<TFactoryButton>((props, ref) => {
+  const { size, align, scheme, children, className, ...otherProps } = props;
 
   const css = createModifierClasses({
     base: 'Button',
-    modifiers: { size, align, scheme },
+    modifiers: mergeProps(defaultProps, { size, align, scheme }),
     className,
   });
 
@@ -33,4 +24,3 @@ export const Button = factory<TFactoryButton>((props, ref) => {
 });
 
 Button.displayName = '@/common/Button';
-Button.Icon = ButtonIcon;

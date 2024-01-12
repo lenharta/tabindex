@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-
-import Root from './Root.tsx';
-import { RootError, Home, Toolbox } from '@/app/routes';
 import './styles/index.scss';
+
+import { Root, RootError } from './app';
+import { Home, Toolbox } from './app/routes';
 
 const router = createBrowserRouter([
   {
@@ -20,7 +20,9 @@ const router = createBrowserRouter([
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+ReactDOM.createRoot(document.getElementById('root')!, {
+  identifierPrefix: 'tabindex:',
+}).render(
   <React.StrictMode>
     <RouterProvider router={router} />
   </React.StrictMode>

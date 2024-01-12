@@ -1,6 +1,5 @@
-import { factory } from '@/utils/create-factory';
-import { createModifierClasses } from '@/utils/create-modifier-classes';
-import { type TFactoryTextarea } from '@/common/Textarea/types';
+import { createFactory, createModifierClasses, mergeProps } from '@/utils';
+import { type TFactoryTextarea } from '@/common/Textarea';
 import { Icon } from '@/common/Icon';
 
 const TextareaIcon: TFactoryTextarea['components']['Icon'] = (props) => {
@@ -8,12 +7,16 @@ const TextareaIcon: TFactoryTextarea['components']['Icon'] = (props) => {
   return name ? <Icon name={name} {...otherProps} /> : null;
 };
 
-export const Textarea = factory<TFactoryTextarea>((props, ref) => {
+const defaultProps: Partial<TFactoryTextarea['props']> = {
+  size: 'sm',
+};
+
+export const Textarea = createFactory<TFactoryTextarea>((props, ref) => {
   const { children, className, size, ...otherProps } = props;
 
   const css = createModifierClasses({
     base: 'Textarea',
-    modifiers: { size },
+    modifiers: mergeProps(defaultProps, { size }),
     className,
   });
 
@@ -22,5 +25,4 @@ export const Textarea = factory<TFactoryTextarea>((props, ref) => {
 
 TextareaIcon.displayName = '@/common/Textarea.Icon';
 Textarea.displayName = '@/common/Textarea';
-
 Textarea.Icon = TextareaIcon;

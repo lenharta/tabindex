@@ -1,23 +1,20 @@
-import { factory } from '@/utils/create-factory';
-import { createModifierClasses } from '@/utils/create-modifier-classes';
-import { type TFactoryTitle } from '@/common/Title';
-import { UnstyledTitle } from '@/common/Title/Unstyled';
+import { createFactory, createModifierClasses, mergeProps } from '@/utils';
+import { type TFactoryTitle, UnstyledTitle } from '@/common/Title';
 
-export const Title = factory<TFactoryTitle>((props, ref) => {
-  const {
-    as = 'h3',
-    size = 'sm',
-    align = 'start',
-    fontStyle = 'normal',
-    fontWeight = 'reg',
-    className,
-    children,
-    ...otherProps
-  } = props;
+const defaultProps: Partial<TFactoryTitle['props']> = {
+  as: 'h3',
+  size: 'sm',
+  align: 'start',
+  fontStyle: 'normal',
+  fontWeight: 'reg',
+};
+
+export const Title = createFactory<TFactoryTitle>((props, ref) => {
+  const { as, size, align, fontStyle, fontWeight, className, children, ...otherProps } = props;
 
   const css = createModifierClasses({
     base: 'Title',
-    modifiers: { size, align, fontStyle, fontWeight },
+    modifiers: mergeProps(defaultProps, { size, align, fontStyle, fontWeight }),
     className,
   });
 
