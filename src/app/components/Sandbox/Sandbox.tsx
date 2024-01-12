@@ -3,9 +3,9 @@ import { SandboxControl } from './SandboxControl';
 import { SandboxDisplay } from './SandboxDisplay';
 
 export function Sandbox(props: IPropsSandbox) {
-  const {} = props;
+  const { ...otherProps } = props;
   return (
-    <div className="Sandbox">
+    <div {...otherProps} className="Sandbox">
       <SandboxControl />
       <SandboxDisplay />
     </div>

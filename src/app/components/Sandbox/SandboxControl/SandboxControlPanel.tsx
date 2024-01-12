@@ -10,3 +10,5 @@ export const SandboxControlPanel = createFactory<TFactorySandboxControlPanel>((p
     </div>
   );
 });
+
+SandboxControlPanel.displayName = '@tabindex/SandboxControl.Option';

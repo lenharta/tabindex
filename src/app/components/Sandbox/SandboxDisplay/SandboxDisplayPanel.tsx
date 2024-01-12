@@ -9,3 +9,5 @@ export const SandboxDisplayPanel = createFactory<TFactorySandboxDisplayPanel>((p
     </div>
   );
 });
+
+SandboxDisplayPanel.displayName = '@tabindex/SandboxDisplay.Panel';

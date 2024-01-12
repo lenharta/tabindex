@@ -11,3 +11,5 @@ export const SandboxControlOptionMenu = createFactory<TFactorySandboxControlOpti
     );
   }
 );
+
+SandboxControlOptionMenu.displayName = '@tabindex/SandboxControl.Option';

@@ -19,8 +19,4 @@ export const SandboxControl = createFactory<TFactorySandboxControl>((props, ref)
 SandboxControl.Panel = SandboxControlPanel;
 SandboxControl.Option = SandboxControlOption;
 SandboxControl.OptionMenu = SandboxControlOptionMenu;
-
 SandboxControl.displayName = '@tabindex/SandboxControl';
-SandboxControl.Panel.displayName = '@tabindex/SandboxControl.Panel';
-SandboxControl.Option.displayName = '@tabindex/SandboxControl.Option';
-SandboxControl.OptionMenu.displayName = '@tabindex/SandboxControl.OptionMenu';

@@ -19,8 +19,4 @@ export const SandboxDisplay = createFactory<TFactorySandboxDisplay>((props, ref)
 SandboxDisplay.Panel = SandboxDisplayPanel;
 SandboxDisplay.Action = SandboxDisplayAction;
 SandboxDisplay.ActionMenu = SandboxDisplayActionMenu;
-
 SandboxDisplay.displayName = '@tabindex/SandboxDisplay';
-SandboxDisplay.Panel.displayName = '@tabindex/SandboxDisplay.Panel';
-SandboxDisplay.Action.displayName = '@tabindex/SandboxDisplay.Action';
-SandboxDisplay.ActionMenu.displayName = '@tabindex/SandboxDisplay.ActionMenu';

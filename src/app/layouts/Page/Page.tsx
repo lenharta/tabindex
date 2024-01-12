@@ -1,34 +1,27 @@
-import { createFactory } from '@/utils';
-import { type TFactoryPage } from './types';
-import { Title } from '@/common/Title';
+import { createFactory, createThemeClasses, mergeProps } from '@/utils';
+import { PageContextProvider } from '@/app/layouts/Page/Page.context';
+import { type TFactoryPage } from '@/app/layouts';
+import { PageContent } from './PageContent';
+import { PageFooter } from './PageFooter';
+import { PageHero } from './PageHero';
+
+const defaultModifiers: Partial<TFactoryPage['props']> = {
+  variant: 'default',
+};
 
 export const Page = createFactory<TFactoryPage>((props, ref) => {
-  const { children, ...otherProps } = props;
+  const { children, id, variant = 'default', ...otherProps } = props;
+
+  const modifiers = mergeProps(defaultModifiers, { variant });
+  const css = createThemeClasses({ base: 'Page', modifiers });
+
   return (
-    <div ref={ref} {...otherProps} className="Page">
-      {children}
+    <div ref={ref} {...otherProps} className={css}>
+      <PageContextProvider value={{ id, variant }}>{children}</PageContextProvider>
     </div>
   );
 });
 
-const PageHero: TFactoryPage['components']['Hero'] = (props) => {
-  const { title, children, ...otherProps } = props;
-  return (
-    <div className="Page-hero" {...otherProps}>
-      {title && <Title as="h1" size="lg" children={title} />}
-      {children}
-    </div>
-  );
-};
-
-const PageContent: TFactoryPage['components']['Content'] = (props) => {
-  const { children, ...otherProps } = props;
-  return (
-    <main {...otherProps} className="Page-content" id="mainContent">
-      {children}
-    </main>
-  );
-};
-
 Page.Hero = PageHero;
+Page.Footer = PageFooter;
 Page.Content = PageContent;

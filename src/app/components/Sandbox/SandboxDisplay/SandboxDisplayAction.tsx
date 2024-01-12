@@ -9,3 +9,5 @@ export const SandboxDisplayAction = createFactory<TFactorySandboxDisplayAction>(
     </button>
   );
 });
+
+SandboxDisplayAction.displayName = '@tabindex/SandboxDisplay.Action';
