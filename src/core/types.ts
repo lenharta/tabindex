@@ -1,19 +1,20 @@
-export type TCoreMode = 'dark' | 'light';
+// GLOBAL
+export type TNoop = () => void;
+export type TBoolish = boolean | 'true' | 'false';
+export type TCodeLanguage = 'tsx' | 'scss' | 'html' | 'bash' | 'json';
 
-export type TCoreSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-export type TCorePosition = 'top' | 'right' | 'bottom' | 'left';
-export type TCoreAlignment = 'start' | 'center' | 'end';
-export type TCorePlacement = TCorePosition | `${TCorePosition}-${TCoreAlignment}`;
+// THEME
+export type TMode = 'light' | 'dark';
+export type TSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+export type TFontStyle = 'normal' | 'italic';
+export type TFontWeight = 'xlt' | 'lgt' | 'med' | 'reg' | 'bld' | 'xbd';
 
-export type TCoreHeading = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-export type TCoreFontStyle = 'normal' | 'italic';
-export type TCoreFontWeight = 'xlt' | 'lgt' | 'med' | 'reg' | 'bld' | 'xbd';
+// DIMENSION & POSITION
+export type TPosition = 'top' | 'right' | 'bottom' | 'left';
+export type TAlignment = 'start' | 'center' | 'end';
+export type TPlacement = TPosition | `${TPosition}-${TAlignment}`;
+export type TDimension<T = number | string> = { height: T; width: T };
+export type TCoordinate<T = number | string> = { x: T; y: T };
 
-export interface TCoreThemeOptions {
-  size?: TCoreSize;
-  position?: TCorePosition;
-  placement?: TCorePlacement;
-  alignment?: TCoreAlignment;
-  fontStyle?: TCoreFontStyle;
-  fontWeight?: TCoreFontWeight;
-}
+// ELEMENTS
+export type THeading = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
