@@ -1,119 +1,77 @@
 @use '../tokens' as tokens;
 
+.Radio,
+.Switch,
+.Checkbox,
 .InlineInput {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  --input-cursor: pointer;
+
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+  box-sizing: border-box;
   background-color: transparent;
-  gap: 0.8rem;
+  cursor: var(--input-cursor);
+
+  svg,
+  label {
+    cursor: var(--input-cursor);
+  }
+
+  &:disabled,
+  &[data-disabled],
+  &[data-readonly] {
+    --input-cursor: default;
+
+    svg,
+    label {
+      --input-cursor: default;
+    }
+  }
 }
 
 .Radio,
+.Switch,
 .Checkbox {
-  --inline-scale: 0.2rem;
-
-  --inline-size-height-xs: calc(var(--inline-scale) * 8);
-  --inline-size-height-sm: calc(var(--inline-scale) * 10);
-  --inline-size-height-md: calc(var(--inline-scale) * 12);
-  --inline-size-height-lg: calc(var(--inline-scale) * 14);
-  --inline-size-height-xl: calc(var(--inline-scale) * 16);
-
-  --inline-size-indicator-xs: calc(var(--inline-size-height-xs) * 0.8);
-  --inline-size-indicator-sm: calc(var(--inline-size-height-sm) * 0.8);
-  --inline-size-indicator-md: calc(var(--inline-size-height-md) * 0.8);
-  --inline-size-indicator-lg: calc(var(--inline-size-height-lg) * 0.8);
-  --inline-size-indicator-xl: calc(var(--inline-size-height-xl) * 0.8);
-
-  --inline-size-label-xs: calc(var(--inline-size-indicator-xs) - 0.4rem);
-  --inline-size-label-sm: calc(var(--inline-size-indicator-sm) - 0.4rem);
-  --inline-size-label-md: calc(var(--inline-size-indicator-md) - 0.4rem);
-  --inline-size-label-lg: calc(var(--inline-size-indicator-lg) - 0.4rem);
-  --inline-size-label-xl: calc(var(--inline-size-indicator-xl) - 0.4rem);
+  --input-align: center;
+  --input-justify: flex-start;
+  --input-display: inline-block;
+  --input-text-size: 1rem;
+  --input-text-align: start;
+  --input-padding-x: 0.4rem;
+  --input-padding-y: 0.4rem;
+  --input-height: 1.8rem;
 
   width: 100%;
-  display: inline-flex;
-  border-radius: 3.5px;
-  padding-inline: 0.2rem;
+  cursor: var(--input-cursor);
+  height: var(--input-height);
+  display: var(--input-display);
+  align-items: var(--input-text-align);
+  justify-content: var(--input-justify);
+  padding-inline: var(--input-padding-x);
+  padding-block: var(--input-padding-y);
+  font-size: var(--input-text-size);
   font-family: tokens.$font-family-reg;
+  text-align: var(--input-text-align);
   line-height: 1;
 
-  &-label {
-    width: 100%;
-    display: flex;
+  &--end {
+    --input-justify: flex-end;
   }
-  &-indicator {
-    display: flex;
-    border-radius: 2px;
+  &--center {
+    --input-justify: center;
   }
-}
 
-.Radio.Radio--xs,
-.Checkbox.Checkbox--xs {
-  height: var(--inline-size-height-xs);
-
-  .Radio-indicator,
-  .Checkbox-indicator {
-    width: var(--inline-size-indicator-xs);
-    height: var(--inline-size-indicator-xs);
+  &--sm {
+    --input-height: 2.4rem;
   }
-  .InlineInput-label {
-    font-size: var(--inline-size-label-xs);
+  &--md {
+    --input-height: 2.4rem;
   }
-}
-
-.Radio.Radio--sm,
-.Checkbox.Checkbox--sm {
-  height: var(--inline-size-height-sm);
-
-  .Radio-indicator,
-  .Checkbox-indicator {
-    width: var(--inline-size-indicator-sm);
-    height: var(--inline-size-indicator-sm);
+  &--lg {
+    --input-height: 2.4rem;
   }
-  .InlineInput-label {
-    font-size: var(--inline-size-label-sm);
-  }
-}
-
-.Radio.Radio--md,
-.Checkbox.Checkbox--md {
-  height: var(--inline-size-height-md);
-
-  .Radio-indicator,
-  .Checkbox-indicator {
-    width: var(--inline-size-indicator-md);
-    height: var(--inline-size-indicator-md);
-  }
-  .InlineInput-label {
-    font-size: var(--inline-size-label-md);
-  }
-}
-
-.Radio.Radio--lg,
-.Checkbox.Checkbox--lg {
-  height: var(--inline-size-height-lg);
-
-  .Radio-indicator,
-  .Checkbox-indicator {
-    width: var(--inline-size-indicator-lg);
-    height: var(--inline-size-indicator-lg);
-  }
-  .InlineInput-label {
-    font-size: var(--inline-size-label-lg);
-  }
-}
-
-.Radio.Radio--xl,
-.Checkbox.Checkbox--xl {
-  height: var(--inline-size-height-xl);
-
-  .Radio-indicator,
-  .Checkbox-indicator {
-    width: var(--inline-size-indicator-xl);
-    height: var(--inline-size-indicator-xl);
-  }
-  .InlineInput-label {
-    font-size: var(--inline-size-label-xl);
+  &--xl {
+    --input-height: 2.4rem;
   }
 }

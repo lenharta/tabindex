@@ -100,8 +100,8 @@ $light-surface-09-border: colors.use-light-surface(52%);
   color-scheme: light dark;
 }
 
+.Tool,
 .Button,
-.Control,
 .InlineInput {
   outline: 1.5px solid transparent;
   border: 1.5px solid transparent;
@@ -118,35 +118,14 @@ $light-surface-09-border: colors.use-light-surface(52%);
   color: $dark-text;
   background-color: $dark-base;
 
+  .Tool,
   .Button {
     color: $dark-text;
     background-color: $dark-surface-01;
   }
+  .Tool:hover,
   .Button:hover {
     background-color: $dark-surface-01-hover;
-  }
-  .InlineInput-label {
-    color: $dark-text;
-  }
-  .Checkbox--filled,
-  .Checkbox--outlined {
-    background-color: $dark-surface-01;
-  }
-  .Checkbox--filled .Checkbox-indicator,
-  .Checkbox--outlined .Checkbox-indicator {
-    border-color: $dark-surface-03;
-  }
-  .Checkbox--filled.Checkbox--checked svg {
-    background-color: $dark-surface-03;
-    color: colors.$blue-50;
-  }
-  .Checkbox--filled.Checkbox--unchecked svg {
-    background-color: $dark-surface-03;
-    color: $dark-surface-03;
-  }
-  .Checkbox--filled.Checkbox--indeterminate svg {
-    background-color: $dark-surface-03;
-    color: colors.$yellow-20;
   }
 }
 
@@ -154,34 +133,13 @@ $light-surface-09-border: colors.use-light-surface(52%);
   color: $light-text;
   background-color: $light-base;
 
+  .Tool,
   .Button {
     color: $light-text;
     background-color: $light-surface-01;
   }
-  .InlineInput-label {
-    color: $light-text;
-  }
+  .Tool:hover,
   .Button:hover {
     background-color: $light-surface-01-hover;
-  }
-  .Checkbox--filled,
-  .Checkbox--outlined {
-    background-color: $light-surface-01;
-  }
-  .Checkbox--filled .Checkbox-indicator,
-  .Checkbox--outlined .Checkbox-indicator {
-    border-color: $light-surface-03;
-  }
-  .Checkbox--filled.Checkbox--checked svg {
-    background-color: $light-surface-03;
-    color: colors.$blue-50;
-  }
-  .Checkbox--filled.Checkbox--unchecked svg {
-    background-color: $light-surface-03;
-    color: $light-surface-03;
-  }
-  .Checkbox--filled.Checkbox--indeterminate svg {
-    background-color: $light-surface-03;
-    color: colors.$yellow-20;
   }
 }
