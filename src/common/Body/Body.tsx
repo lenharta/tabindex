@@ -1,5 +1,6 @@
 import { createFactory, createThemeClasses, mergeProps } from '@/utils';
-import { type TFactoryBody, UnstyledBody } from '@/common/Body';
+import { type TFactoryBody } from './Body.types';
+import { UnstyledBody } from './Unstyled';
 
 const defaultModifiers: Partial<TFactoryBody['props']> = {
   size: 'sm',

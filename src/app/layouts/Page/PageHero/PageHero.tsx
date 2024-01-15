@@ -1,6 +1,6 @@
-import { type TFactoryPageHero } from '@/app/layouts/Page';
-import { createFactory } from '@/utils';
 import { Title } from '@/common/Title';
+import { createFactory } from '@/utils';
+import { type TFactoryPageHero } from '../Page.types';
 
 export const PageHero = createFactory<TFactoryPageHero>((props, ref) => {
   const { children, title, ...otherProps } = props;

@@ -1,5 +1,5 @@
 import { createFactory, createThemeClasses, mergeProps } from '@/utils';
-import { type TFactoryButtonGroup } from '@/common/Button';
+import { type TFactoryButtonGroup } from './Button.types';
 
 const defaultModifiers: Partial<TFactoryButtonGroup['props']> = {
   size: 'sm',

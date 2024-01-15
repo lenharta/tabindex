@@ -1,6 +1,6 @@
 import { createFactory, createThemeClasses, mergeProps } from '@/utils';
-import { PageContextProvider } from '@/app/layouts/Page/Page.context';
-import { type TFactoryPage } from '@/app/layouts';
+import { PageContextProvider } from './Page.context';
+import { type TFactoryPage } from './Page.types';
 import { PageContent } from './PageContent';
 import { PageFooter } from './PageFooter';
 import { PageHero } from './PageHero';

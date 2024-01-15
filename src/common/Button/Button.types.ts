@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { type Factory } from '@/utils';
-import { type TKeyIcon } from '@/common/Icon';
+import { type TKeyIcon } from '../Icon';
 
 export type TPropsButton = React.ButtonHTMLAttributes<HTMLButtonElement>;
 export type TPropsButtonGroup = React.HTMLAttributes<HTMLDivElement>;

@@ -1,11 +1,11 @@
 import { describe, expect, test } from 'vitest';
 import { render, screen } from '@/tests/utils';
-import { Sandbox } from './Sandbox';
+import { SandboxDisplay } from './SandboxDisplay';
 
-describe('[@/app/Sandbox]', async () => {
+describe('[@/app/SandboxDisplay]', async () => {
   test('renders basic component', async () => {
-    const testId = 'Sandbox-id';
-    render(<Sandbox data-testid={testId} />);
+    const testId = 'SandboxDisplay-id';
+    render(<SandboxDisplay data-testid={testId} />);
     expect(screen.getByTestId(testId)).toBeInTheDocument();
   });
 });

@@ -1,4 +1,3 @@
-export * from './types';
+export * from './Button.types';
 export * from './Button';
-export * from './Unstyled';
 export * from './ButtonGroup';
