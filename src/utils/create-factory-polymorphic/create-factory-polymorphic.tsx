@@ -1,16 +1,16 @@
 import * as React from 'react';
-import { type FilterProps, type MergeProps } from '@/core/types';
+import { type TFilterProps, type TMergeProps } from '@/core/types';
 
 type FactoryAttributes<E extends keyof JSX.IntrinsicElements> =
   E extends keyof JSX.IntrinsicElements ? JSX.IntrinsicElements[E] : {};
 
 type FactoryPropsWithoutRef<P> = P extends any
   ? 'ref' extends keyof P
-    ? FilterProps<P, 'ref'>
+    ? TFilterProps<P, 'ref'>
     : P
   : P;
 
-type FactoryMergedProps<E extends keyof JSX.IntrinsicElements, P = {}> = MergeProps<
+type FactoryMergedProps<E extends keyof JSX.IntrinsicElements, P = {}> = TMergeProps<
   FactoryPropsWithoutRef<FactoryAttributes<E>>,
   React.ComponentProps<E> & P & { component?: any }
 >;
