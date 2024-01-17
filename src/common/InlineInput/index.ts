@@ -1,2 +1,2 @@
-export * from './types';
+export * from './InlineInput.types';
 export * from './InlineInput';

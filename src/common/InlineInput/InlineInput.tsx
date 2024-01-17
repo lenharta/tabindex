@@ -1,11 +1,6 @@
-import { createFactory, mergeProps, createThemeClasses } from '@/utils';
-import { type TFactoryInlineInput } from '@/common/InlineInput';
-import { Icon } from '@/common/Icon';
-
-const InlineInputIcon: TFactoryInlineInput['components']['Icon'] = (props) => {
-  const { name, ...otherProps } = props;
-  return name ? <Icon name={name} {...otherProps} /> : null;
-};
+import { createFactory, createThemeClasses, mergeProps } from '@/utils';
+import { type TFactoryInlineInput } from './InlineInput.types';
+import { Button, Text } from '@/common/Unstyled';
 
 const defaultModifiers: Partial<TFactoryInlineInput['props']> = {
   align: 'start',
@@ -13,22 +8,43 @@ const defaultModifiers: Partial<TFactoryInlineInput['props']> = {
 };
 
 export const InlineInput = createFactory<TFactoryInlineInput>((props, ref) => {
-  const { id, children, className, size, align, label, infoText, ...otherProps } = props;
+  const { id, children, className, align, size, label, text, ...otherProps } = props;
 
-  const modifiers = mergeProps(defaultModifiers, { size, align });
+  const noteId = id && `${id}-message`;
+  const modifiers = mergeProps(defaultModifiers, { align, size });
   const css = createThemeClasses({ base: 'InlineInput', modifiers, className });
 
   return (
-    <button ref={ref} {...otherProps} id={id} className={css}>
+    <Button {...otherProps} id={id} aria-describedby={noteId} ref={ref} className={css}>
       {children}
-      <div className="InlineInput-content">
-        {label && <label htmlFor={id}>{label}</label>}
-        {infoText && <p>{infoText}</p>}
+      <div>
+        <InlineInput.Label id={id} label={label} />
+        <InlineInput.Note id={noteId} text={text} />
       </div>
-    </button>
+    </Button>
   );
 });
 
-InlineInputIcon.displayName = '@/common/InlineInput.Icon';
-InlineInput.displayName = '@/common/InlineInput';
-InlineInput.Icon = InlineInputIcon;
+export const InlineInputLabel = ({ id, label }: { id?: string; label?: string }) => {
+  if (!label || !id) return null;
+  return (
+    <label htmlFor={id} className="label">
+      {label}
+    </label>
+  );
+};
+
+export const InlineInputNote = ({ id, text }: { id?: string; text?: string }) => {
+  if (!text || !id) return null;
+  return (
+    <Text id={id} className="note" span>
+      {text}
+    </Text>
+  );
+};
+
+InlineInput.displayName = '@tabindex/InlineInput';
+InlineInputNote.displayName = '@tabindex/InlineInput.Note';
+InlineInputLabel.displayName = '@tabindex/InlineInput.Label';
+InlineInput.Note = InlineInputNote;
+InlineInput.Label = InlineInputLabel;
