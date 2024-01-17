@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 export type TNoop = () => void;
 export type TBoolish = boolean | 'true' | 'false';
 export type TCodeLanguage = 'tsx' | 'scss' | 'html' | 'bash' | 'json';
@@ -15,7 +13,6 @@ export type TPlacement = TPosition | `${TPosition}-${TAlignment}`;
 export type TDimension<T = number | string> = { height: T; width: T };
 export type TCoordinate<T = number | string> = { x: T; y: T };
 
-export type THeading = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+export type MergeProps<P = {}, O = {}> = O & Omit<P, keyof O>;
 
-export type TPropsExtended<P = {}, O = {}> = O & Omit<P, keyof O>;
-export type TPropsInherited<O = {}, P = {}> = TPropsExtended<O, P>;
+export type FilterProps<P, U> = Pick<P, Exclude<keyof P, U>>;

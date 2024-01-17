@@ -1,78 +1,54 @@
 import * as React from 'react';
+import { type FilterProps, type MergeProps } from '@/core/types';
 
-export interface PolymorphicFactoryPayload {
-  defaultRef: any;
-  defaultComponent: any;
+type FactoryAttributes<E extends keyof JSX.IntrinsicElements> =
+  E extends keyof JSX.IntrinsicElements ? JSX.IntrinsicElements[E] : {};
+
+type FactoryPropsWithoutRef<P> = P extends any
+  ? 'ref' extends keyof P
+    ? FilterProps<P, 'ref'>
+    : P
+  : P;
+
+type FactoryMergedProps<E extends keyof JSX.IntrinsicElements, P = {}> = MergeProps<
+  FactoryPropsWithoutRef<FactoryAttributes<E>>,
+  React.ComponentProps<E> & P & { component?: any }
+>;
+
+type FactoryElement<E extends keyof JSX.IntrinsicElements = keyof JSX.IntrinsicElements> = {
+  [K in E]: K extends keyof HTMLElementTagNameMap ? HTMLElementTagNameMap[K] : never;
+}[E];
+
+type FactoryComponentFunction<E extends keyof JSX.IntrinsicElements, P = {}> = {
+  (props: FactoryMergedProps<E, P>, ref: React.ForwardedRef<FactoryElement<E>>): React.ReactElement;
+  displayName?: string | undefined;
+};
+
+interface PolymorphicPayload {
+  component: keyof JSX.IntrinsicElements;
   components?: Record<string, any>;
   props?: Record<string, any>;
 }
 
-export type StaticComponents<Input> = Input extends Record<string, any>
-  ? Input
-  : Record<string, never>;
-
-type ExtendedProps<Props = {}, OverrideProps = {}> = OverrideProps &
-  Omit<Props, keyof OverrideProps>;
-
-type ElementType = keyof JSX.IntrinsicElements | React.JSXElementConstructor<any>;
-
-type PropsOf<C extends ElementType> = JSX.LibraryManagedAttributes<
-  C,
-  React.ComponentPropsWithoutRef<C>
->;
-
-type ComponentProp<C> = {
-  component?: C;
+const createPolymorphicFactory = <Payload extends PolymorphicPayload>(
+  ui: FactoryComponentFunction<Payload['component'], Payload['props']>
+) => {
+  type ComponentType = React.ForwardRefExoticComponent<
+    FactoryMergedProps<Payload['component'], Payload['props']>
+  >;
+  const Component = React.forwardRef(ui) as unknown as ComponentType;
+  return Component as ComponentType;
 };
 
-type InheritedProps<C extends ElementType, Props = {}> = ExtendedProps<PropsOf<C>, Props>;
+type PolymorphicFactory<Payload extends PolymorphicPayload> = Payload;
 
-export type PolymorphicRef<C> = C extends React.ElementType
-  ? React.ComponentPropsWithRef<C>['ref']
-  : never;
-
-export type PolymorphicComponentProps<C, Props = {}> = C extends React.ElementType
-  ? InheritedProps<C, Props & ComponentProp<C>> & {
-      ref?: PolymorphicRef<C>;
-      renderRoot?: (props: any) => any;
-    }
-  : Props & { component: React.ElementType; renderRoot?: (props: Record<string, any>) => any };
-
-export function createPolymorphicComponent<
-  ComponentDefaultType,
-  Props,
-  StaticComponents = Record<string, never>,
->(component: any) {
-  type ComponentProps<C> = PolymorphicComponentProps<C, Props>;
-
-  type _PolymorphicComponent = <C = ComponentDefaultType>(
-    props: ComponentProps<C>
-  ) => React.ReactElement;
-
-  type ComponentProperties = Omit<React.FunctionComponent<ComponentProps<any>>, never>;
-
-  type PolymorphicComponent = _PolymorphicComponent & ComponentProperties & StaticComponents;
-
-  return component as PolymorphicComponent;
-}
-
-export function polymorphicFactory<Payload extends PolymorphicFactoryPayload>(
-  ui: React.ForwardRefRenderFunction<Payload['defaultRef'], Payload['props']>
-) {
-  type TFactoryComponentProps<C> = PolymorphicComponentProps<C, Payload['props']>;
-
-  type _PolymorphicComponent = <C = Payload['defaultComponent']>(
-    props: TFactoryComponentProps<C>
-  ) => React.ReactElement;
-
-  type ComponentProperties = Omit<React.FC<TFactoryComponentProps<any>>, never>;
-
-  type PolymorphicComponent = _PolymorphicComponent &
-    ComponentProperties &
-    StaticComponents<Payload['components']>;
-
-  const Component = React.forwardRef(ui) as unknown as PolymorphicComponent;
-  return Component as PolymorphicComponent;
-}
-
-export type PolymorphicFactory<Payload extends PolymorphicFactoryPayload> = Payload;
+export {
+  type FactoryElement as PolymorphicFactoryElement,
+  type FactoryAttributes as PolymorphicFactoryAttributes,
+  type FactoryMergedProps as PolymorphicFactoryMergedProps,
+  type FactoryPropsWithoutRef as PolymorphicFactoryPropsWithoutRef,
+  type FactoryComponentFunction as PolymorphicFactoryComponentFunction,
+  createPolymorphicFactory,
+  type PolymorphicPayload,
+  type PolymorphicFactory,
+};

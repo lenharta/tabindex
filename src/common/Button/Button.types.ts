@@ -1,11 +1,9 @@
 import * as React from 'react';
-import { type Factory } from '@/utils';
 import { type TKeyIcon } from '../Icon';
 
-export type TPropsButton = React.ButtonHTMLAttributes<HTMLButtonElement>;
-export type TPropsButtonGroup = React.HTMLAttributes<HTMLDivElement>;
+export type TComponentButton = 'button' | 'a';
 
-export interface IPropsButton extends TPropsButton {
+export interface IPropsButton {
   /** Specifies a size for the element */
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | (string & {});
   /** Specifies a style scheme for the element */
@@ -22,7 +20,7 @@ export interface IPropsButton extends TPropsButton {
   rightContent?: React.ReactNode;
 }
 
-export interface IPropsButtonGroup extends TPropsButtonGroup {
+export interface IPropsButtonGroup {
   /** Specifies a size for the element */
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | (string & {});
   /** Specifies a style scheme for the element */
@@ -36,18 +34,3 @@ export interface IPropsButtonGroup extends TPropsButtonGroup {
   /** Specifies a directional layout for the element group */
   orientation?: 'horizontal' | 'vertical';
 }
-
-export type TFactoryUnstyledButton = Factory<{
-  ref: HTMLButtonElement;
-  props: TPropsButton;
-}>;
-
-export type TFactoryButton = Factory<{
-  ref: HTMLButtonElement;
-  props: IPropsButton;
-}>;
-
-export type TFactoryButtonGroup = Factory<{
-  ref: HTMLDivElement;
-  props: IPropsButtonGroup;
-}>;

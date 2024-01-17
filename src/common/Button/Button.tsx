@@ -1,23 +1,36 @@
-import { createFactory, createThemeClasses, mergeProps } from '@/utils';
-import { type TFactoryButton } from './Button.types';
-import { UnstyledButton } from './Unstyled';
+import { mergeProps, createThemeClasses, createPolymorphicFactory } from '@/utils';
+import { type IPropsButton, type TComponentButton } from './Button.types';
+import { type PolymorphicFactory } from '@/utils';
 
-const defaultModifiers: Partial<TFactoryButton['props']> = {
+const defaultModifiers: Partial<IPropsButton> = {
   size: 'sm',
   align: 'start',
   scheme: 'default',
 };
 
-export const Button = createFactory<TFactoryButton>((props, ref) => {
-  const { size, align, scheme, children, className, ...otherProps } = props;
+type TButtonFactory = PolymorphicFactory<{
+  component: TComponentButton;
+  props: IPropsButton;
+}>;
+
+export const Button = createPolymorphicFactory<TButtonFactory>((props, ref) => {
+  const {
+    size,
+    align,
+    scheme,
+    children,
+    className,
+    component: Component = 'button',
+    ...otherProps
+  } = props;
 
   const modifiers = mergeProps(defaultModifiers, { size, align, scheme });
   const css = createThemeClasses({ base: 'Button', modifiers, className });
 
   return (
-    <UnstyledButton ref={ref} {...otherProps} className={css}>
+    <Component ref={ref} {...otherProps} className={css}>
       {children}
-    </UnstyledButton>
+    </Component>
   );
 });
 
