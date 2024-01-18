@@ -1,1 +1,2 @@
-export { Button, type IPropsBaseButton, type TFactoryButton } from './Button';
+export { Button } from './Button';
+export type { ButtonBaseProps, ButtonFactory } from './Button';

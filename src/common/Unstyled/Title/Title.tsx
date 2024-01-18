@@ -1,12 +1,18 @@
-import { createPolymorphicFactory } from '@/utils';
-import { type TFactoryTitle } from './Title.types';
+import { type PolymorphicFactory } from '@/core/factory';
+import { createPolymorphicFactory } from '@/core/factory';
 
-const defaultProps: Partial<TFactoryTitle['props']> = {};
+export interface TitleBaseProps {}
 
-export const Title = createPolymorphicFactory<TFactoryTitle>((props, ref) => {
+export type TitleFactory = PolymorphicFactory<{
+  props: TitleBaseProps;
+  component: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  components: {};
+}>;
+
+export const Title = createPolymorphicFactory<TitleFactory>((props, ref) => {
   const { component: Component = 'h3', children, ...otherProps } = props;
   return (
-    <Component {...defaultProps} {...otherProps} ref={ref}>
+    <Component {...otherProps} ref={ref}>
       {children}
     </Component>
   );
