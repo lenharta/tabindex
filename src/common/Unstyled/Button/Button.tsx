@@ -1,7 +1,7 @@
-import { createPolymorphicFactory } from '@/utils';
-import type { PolymorphicFactory } from '@/utils';
+import { createPolymorphicFactory } from '@/core/factory';
+import type { PolymorphicFactory } from '@/core/factory';
 
-export interface IPropsBaseButton {
+export interface ButtonBaseProps {
   loading?: boolean;
   disabled?: boolean;
   readonly?: boolean;
@@ -10,14 +10,14 @@ export interface IPropsBaseButton {
   excludeTabOrder?: boolean;
 }
 
-export type TFactoryButton = PolymorphicFactory<{
-  props: IPropsBaseButton;
+export type ButtonFactory = PolymorphicFactory<{
+  props: ButtonBaseProps;
   component: 'button' | 'a';
 }>;
 
-const defaultProps: Partial<TFactoryButton['props']> = {};
+const defaultProps: Partial<ButtonFactory['props']> = {};
 
-export const Button = createPolymorphicFactory<TFactoryButton>((props, ref) => {
+export const Button = createPolymorphicFactory<ButtonFactory>((props, ref) => {
   const {
     loading,
     disabled,

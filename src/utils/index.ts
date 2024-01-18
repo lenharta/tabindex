@@ -1,6 +1,4 @@
 export * from './clamp-value';
-export * from './create-factory-polymorphic';
-export * from './create-factory';
 export * from './create-keydown-scope';
 export * from './create-random-id';
 export * from './create-secure-context';
