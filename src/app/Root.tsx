@@ -11,7 +11,7 @@ async function loadShiki() {
   return shiki;
 }
 
-export function Root() {
+export default function Root() {
   return (
     <ThemeContextProvider>
       <ShikiContextProvider loadShiki={loadShiki}>

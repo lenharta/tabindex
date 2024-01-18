@@ -1,5 +1,11 @@
-import { createPolymorphicFactory } from '@/utils';
-import { type TFactoryCard } from './Card.types';
+import { type PolymorphicFactory, createPolymorphicFactory } from '@/utils';
+
+export interface IPropsBaseCard {}
+
+export type TFactoryCard = PolymorphicFactory<{
+  component: 'div' | 'article' | 'section' | 'button' | 'a';
+  props: IPropsBaseCard;
+}>;
 
 const defaultProps: Partial<TFactoryCard['props']> = {};
 

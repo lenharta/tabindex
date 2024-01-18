@@ -1,2 +1,1 @@
-export { Card } from './Card';
-export { type IPropsBaseCard, type TComponentCard, type TFactoryCard } from './Card.types';
+export { Card, type IPropsBaseCard, type TFactoryCard } from './Card';
