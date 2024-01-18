@@ -1,32 +1,31 @@
-import { createFactory, createThemeClasses } from '@/utils';
-import { type TFactoryCheckboxGroup } from '../Checkbox.types';
+import * as React from 'react';
+import type { TOrientation, TSize } from '@/core/types';
+import { CheckboxGroupProvider } from '@/common/Checkbox/Group';
 
-const css = {
-  root: 'CheckboxGroup-root',
-};
+interface IPropsInputGroup {
+  size: TSize | (string & {}) | undefined;
+  orientation: TOrientation | undefined;
+  label: string | undefined;
+  id: string | undefined;
+}
 
-const CheckboxGroup = createFactory<TFactoryCheckboxGroup>((props, ref) => {
-  const {
-    size = 'sm',
-    align = 'start',
-    variant = 'outlined',
-    orientation = 'vertical',
-    className,
-    children,
-    ...otherProps
-  } = props;
+export interface IPropsCheckboxGroup {
+  value: string[];
+  onChange: (value: string[]) => void;
+  orientation: TOrientation | (string & {}) | undefined;
+  variant: 'outlined' | 'filled' | undefined;
+  size: TSize | (string & {}) | undefined;
+}
 
-  const classes = createThemeClasses({
-    base: css.root,
-    modifiers: { orientation, size, variant, align },
-    className,
-  });
+// const CheckboxGroup = (props: IPropsCheckboxGroup) => {
+//   const { size, variant, orientation, ...otherProps } = props;
+//   return (
+//     <CheckboxGroupProvider value={{ size, variant, orientation }}>
+//       <div {...otherProps} className="CheckboxGroup">
+//         {children}
+//       </div>
+//     </CheckboxGroupProvider>
+//   );
+// };
 
-  return (
-    <div {...otherProps} ref={ref} className={classes}>
-      {children}
-    </div>
-  );
-});
-
-export { CheckboxGroup };
+// CheckboxGroup.displayName = '@tabindex/CheckboxGroup';

@@ -6,7 +6,7 @@ export const Toolbox = () => {
     <Page>
       <Page.Hero title="Toolbox" />
       <Page.Content>
-        <Checkbox />
+        <span>Content Here</span>
       </Page.Content>
     </Page>
   );
