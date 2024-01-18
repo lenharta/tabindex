@@ -1,77 +1,94 @@
 @use '../tokens' as tokens;
 
-.Radio,
-.Switch,
-.Checkbox,
-.InlineInput {
-  --input-cursor: pointer;
-
-  margin: 0;
-  padding: 0;
-  min-width: 0;
-  box-sizing: border-box;
-  background-color: transparent;
-  cursor: var(--input-cursor);
-
-  svg,
-  label {
-    cursor: var(--input-cursor);
-  }
-
-  &:disabled,
-  &[data-disabled],
-  &[data-readonly] {
-    --input-cursor: default;
-
-    svg,
-    label {
-      --input-cursor: default;
-    }
-  }
+.InlineInput-Root {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 0.6rem;
 }
 
-.Radio,
-.Switch,
-.Checkbox {
-  --input-align: center;
-  --input-justify: flex-start;
-  --input-display: inline-block;
-  --input-text-size: 1rem;
-  --input-text-align: start;
-  --input-padding-x: 0.4rem;
-  --input-padding-y: 0.4rem;
-  --input-height: 1.8rem;
-
-  width: 100%;
-  cursor: var(--input-cursor);
-  height: var(--input-height);
-  display: var(--input-display);
-  align-items: var(--input-text-align);
-  justify-content: var(--input-justify);
-  padding-inline: var(--input-padding-x);
-  padding-block: var(--input-padding-y);
-  font-size: var(--input-text-size);
-  font-family: tokens.$font-family-reg;
-  text-align: var(--input-text-align);
+.InlineInput-Label {
+  font-size: 1rem;
   line-height: 1;
-
-  &--end {
-    --input-justify: flex-end;
-  }
-  &--center {
-    --input-justify: center;
-  }
-
-  &--sm {
-    --input-height: 2.4rem;
-  }
-  &--md {
-    --input-height: 2.4rem;
-  }
-  &--lg {
-    --input-height: 2.4rem;
-  }
-  &--xl {
-    --input-height: 2.4rem;
-  }
 }
+
+.InlineInput-Note {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+// .Radio,
+// .Switch,
+// .Checkbox,
+// .InlineInput {
+//   --input-cursor: pointer;
+
+//   margin: 0;
+//   padding: 0;
+//   min-width: 0;
+//   box-sizing: border-box;
+//   background-color: transparent;
+//   cursor: var(--input-cursor);
+
+//   svg,
+//   label {
+//     cursor: var(--input-cursor);
+//   }
+
+//   &:disabled,
+//   &[data-disabled],
+//   &[data-readonly] {
+//     --input-cursor: default;
+
+//     svg,
+//     label {
+//       --input-cursor: default;
+//     }
+//   }
+// }
+
+// .Radio,
+// .Switch,
+// .Checkbox {
+//   --input-align: center;
+//   --input-justify: flex-start;
+//   --input-display: inline-block;
+//   --input-text-size: 1rem;
+//   --input-text-align: start;
+//   --input-padding-x: 0.4rem;
+//   --input-padding-y: 0.4rem;
+//   --input-height: 1.8rem;
+
+//   width: 100%;
+//   cursor: var(--input-cursor);
+//   height: var(--input-height);
+//   display: var(--input-display);
+//   align-items: var(--input-text-align);
+//   justify-content: var(--input-justify);
+//   padding-inline: var(--input-padding-x);
+//   padding-block: var(--input-padding-y);
+//   font-size: var(--input-text-size);
+//   font-family: tokens.$font-family-reg;
+//   text-align: var(--input-text-align);
+//   line-height: 1;
+
+//   &--end {
+//     --input-justify: flex-end;
+//   }
+//   &--center {
+//     --input-justify: center;
+//   }
+
+//   &--sm {
+//     --input-height: 2.4rem;
+//   }
+//   &--md {
+//     --input-height: 2.4rem;
+//   }
+//   &--lg {
+//     --input-height: 2.4rem;
+//   }
+//   &--xl {
+//     --input-height: 2.4rem;
+//   }
+// }

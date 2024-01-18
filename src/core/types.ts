@@ -14,6 +14,7 @@ export type TFontWeight = 'xlt' | 'lgt' | 'med' | 'reg' | 'bld' | 'xbd';
 export type TPosition = 'top' | 'right' | 'bottom' | 'left';
 export type TAlignment = 'start' | 'center' | 'end';
 export type TPlacement = TPosition | `${TPosition}-${TAlignment}`;
+export type TOrientation = 'horizontal' | 'vertical';
 export type TDimension<T = number | string> = { height: T; width: T };
 export type TCoordinate<T = number | string> = { x: T; y: T };
 export type TCodeLanguage = 'tsx' | 'scss' | 'html' | 'bash' | 'json';

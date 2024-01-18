@@ -1,36 +1,62 @@
-import { createFactory, createThemeClasses, mergeProps } from '@/utils';
-import { type TFactoryCheckbox } from '@/common/Checkbox';
+import { Icon } from '@/common/Icon';
 import { InlineInput } from '@/common/InlineInput';
+import { createFactory, createThemeClasses } from '@/utils';
+import { checkboxIconLookup } from './Checkbox.utils';
+import {
+  type TFactoryCheckbox,
+  type IPropsCheckboxIcon,
+  type IPropsCheckboxIndicator,
+} from './Checkbox.types';
 
-export const LOOKUP_CHECKBOX_ICON = {
-  default: {
-    true: 'square_check_fill',
-    false: 'square_fill',
-    mixed: 'square_dash_fill',
-  },
-  outlined: {
-    true: 'square_check',
-    false: 'square',
-    mixed: 'square_dash',
-  },
+const css = {
+  root: 'Checkbox-root',
+  indicator: 'Checkbox-indicator',
+  indicatorIcon: 'Checkbox-indicator-icon',
 };
 
-const defaultModifiers: Partial<TFactoryCheckbox['props']> = {
-  size: 'sm',
-  align: 'start',
-};
+const Checkbox = createFactory<TFactoryCheckbox>((props, ref) => {
+  const {
+    size = 'sm',
+    align = 'start',
+    variant = 'outlined',
+    className,
+    checked,
+    ...otherProps
+  } = props;
 
-export const Checkbox = createFactory<TFactoryCheckbox>((props, ref) => {
-  const { children, className, size, align, ...otherProps } = props;
-
-  const modifiers = mergeProps(defaultModifiers, { size, align });
-  const css = createThemeClasses({ base: 'Checkbox', modifiers, className });
+  const classes = createThemeClasses({
+    base: css.root,
+    modifiers: { variant, align, size },
+    className,
+  });
 
   return (
-    <InlineInput ref={ref} {...otherProps} className={css}>
-      {children}
+    <InlineInput {...otherProps} ref={ref} className={classes}>
+      <Checkbox.Indicator checked={checked} variant={variant} />
     </InlineInput>
   );
 });
 
-Checkbox.displayName = '@/common/Checkbox';
+const CheckboxIndicator = (props: IPropsCheckboxIndicator) => {
+  const { checked, variant } = props;
+  const name = checkboxIconLookup(checked, variant);
+  return (
+    <div className={css.indicator}>
+      <Checkbox.Icon name={name} />
+    </div>
+  );
+};
+
+const CheckboxIcon = (props: IPropsCheckboxIcon) => {
+  const { name } = props;
+  return <Icon className={css.indicatorIcon} name={name} />;
+};
+
+Checkbox.displayName = '@tabindex/Checkbox';
+CheckboxIcon.displayName = '@tabindex/Checkbox.Icon';
+CheckboxIndicator.displayName = '@tabindex/Checkbox.Indicator';
+
+Checkbox.Icon = CheckboxIcon;
+Checkbox.Indicator = CheckboxIndicator;
+
+export { Checkbox };

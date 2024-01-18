@@ -8,6 +8,7 @@ export interface IPropsInlineInput {
   size?: TSize;
   align?: TAlignment;
   scheme?: 'default' | 'secondary';
+  required?: boolean;
 }
 
 export type TFactoryInlineInput = Factory<{
