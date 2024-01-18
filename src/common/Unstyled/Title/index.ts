@@ -1,2 +1,2 @@
 export { Title } from './Title';
-export { type IPropsBaseTitle, type TComponentTitle, type TFactoryTitle } from './Title.types';
+export type { TitleBaseProps, TitleFactory } from './Title';

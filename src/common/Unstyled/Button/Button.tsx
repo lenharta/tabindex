@@ -1,9 +1,23 @@
-import { createPolymorphicFactory } from '@/utils';
-import { type TFactoryButton } from './Button.types';
+import type { PolymorphicFactory } from '@/core/factory';
+import { createPolymorphicFactory } from '@/core/factory';
 
-const defaultProps: Partial<TFactoryButton['props']> = {};
+export interface ButtonBaseProps {
+  loading?: boolean;
+  disabled?: boolean;
+  readonly?: boolean;
+  leftContent?: React.ReactNode;
+  rightContent?: React.ReactNode;
+  excludeTabOrder?: boolean;
+}
 
-export const Button = createPolymorphicFactory<TFactoryButton>((props, ref) => {
+export type ButtonFactory = PolymorphicFactory<{
+  props: ButtonBaseProps;
+  component: 'button' | 'a';
+}>;
+
+const defaultProps: Partial<ButtonFactory['props']> = {};
+
+export const Button = createPolymorphicFactory<ButtonFactory>((props, ref) => {
   const {
     loading,
     disabled,
@@ -16,14 +30,8 @@ export const Button = createPolymorphicFactory<TFactoryButton>((props, ref) => {
     ...otherProps
   } = props;
 
-  const dataProps = {
-    'data-loading': loading,
-    'data-disabled': disabled,
-    'data-readonly': readonly,
-  };
-
   return (
-    <Component ref={ref} {...defaultProps} {...dataProps} {...otherProps}>
+    <Component ref={ref} {...defaultProps} {...otherProps}>
       {leftContent && <div>{leftContent}</div>}
       {children}
       {rightContent && <div>{rightContent}</div>}

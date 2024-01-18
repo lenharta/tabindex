@@ -1,12 +1,18 @@
-import { createPolymorphicFactory } from '@/utils';
-import { type TFactoryCard } from './Card.types';
+import type { PolymorphicFactory } from '@/core/factory';
+import { createPolymorphicFactory } from '@/core/factory';
 
-const defaultProps: Partial<TFactoryCard['props']> = {};
+export interface CardBaseProps {}
 
-export const Card = createPolymorphicFactory<TFactoryCard>((props, ref) => {
+export type CardFactory = PolymorphicFactory<{
+  props: CardBaseProps;
+  component: 'div' | 'a' | 'button';
+  components: {};
+}>;
+
+export const Card = createPolymorphicFactory<CardFactory>((props, ref) => {
   const { component: Component = 'div', children, ...otherProps } = props;
   return (
-    <Component {...defaultProps} {...otherProps} ref={ref}>
+    <Component {...otherProps} ref={ref}>
       {children}
     </Component>
   );

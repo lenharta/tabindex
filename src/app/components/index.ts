@@ -1,1 +1,1 @@
-export * from './Sandbox';
+export * from './Page';

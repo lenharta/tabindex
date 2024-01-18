@@ -1,5 +1,22 @@
+import * as React from 'react';
 import { cssToString } from '@/utils';
-import { type IMediaQueryInput, type IStyleInput } from '@/common/InlineStyles';
+
+export interface MediaQueryInput {
+  query: string;
+  styles: React.CSSProperties;
+}
+
+export interface IStyleInput {
+  selector: string;
+  styles?: React.CSSProperties;
+  media?: MediaQueryInput[];
+}
+
+export interface IInlineStyles {
+  selector: string;
+  styles?: React.CSSProperties;
+  media?: MediaQueryInput[];
+}
 
 export function createInlineStyles(props: IStyleInput) {
   const { selector, media, styles } = props;
@@ -30,30 +47,5 @@ export function InlineStyle(props: IStyleInput & { nonce?: () => string }) {
     />
   );
 }
-
-const demoMediaQueries: IMediaQueryInput[] = [
-  { query: '(min-width: 40em)', styles: { backgroundColor: 'dodgerBlue' } },
-  { query: '(min-width: 60em)', styles: { backgroundColor: 'indianred' } },
-];
-
-const demoBaseStyles: React.CSSProperties = {
-  backgroundColor: 'orange',
-  height: '100px',
-  width: '100px',
-  color: 'white',
-};
-
-export const DemoInlineStyle = () => {
-  return (
-    <>
-      <InlineStyle
-        selector="[data-inline-style-box]"
-        styles={demoBaseStyles}
-        media={demoMediaQueries}
-      />
-      <div data-demo-style-target />
-    </>
-  );
-};
 
 InlineStyle.displayName = '@/common/InlineStyle';
