@@ -6,6 +6,7 @@ export interface TitleProps {}
 export type TitleFactory = PolymorphicFactory<{
   props: TitleProps;
   component: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  components: {};
 }>;
 
 export const Title = createPolymorphicFactory((props, ref) => {
@@ -16,3 +17,5 @@ export const Title = createPolymorphicFactory((props, ref) => {
     </Component>
   );
 });
+
+Title.displayName = '@tabindex/Unstyled/Title';

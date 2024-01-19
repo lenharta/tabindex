@@ -17,3 +17,5 @@ export const AnchorLink = createFactory<AnchorLinkFactory>((props, ref) => {
     </a>
   );
 });
+
+AnchorLink.displayName = '@tabindex/Unstyled/AnchorLink';

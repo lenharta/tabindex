@@ -8,6 +8,7 @@ export interface TextProps {
 export type TextFactory = PolymorphicFactory<{
   props: TextProps;
   component: 'p';
+  components: {};
 }>;
 
 export const Text = createPolymorphicFactory<TextFactory>((props, ref) => {
@@ -19,3 +20,5 @@ export const Text = createPolymorphicFactory<TextFactory>((props, ref) => {
     </Component>
   );
 });
+
+Text.displayName = '@tabindex/Unstyled/Text';

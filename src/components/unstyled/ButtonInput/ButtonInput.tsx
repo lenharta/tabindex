@@ -1,39 +1,13 @@
-import { Button } from '@/common/Unstyled';
-import type { Factory } from '@/core/factory';
-import { createFactory } from '@/core/factory';
+import { Button } from '@/components/unstyled';
+import { createFactory, type Factory } from '@/core/factory';
+import { ButtonInputNote, type ButtonInputNoteProps } from './ButtonInputNote';
+import { ButtonInputError, type ButtonInputErrorProps } from './ButtonInputError';
+import { ButtonInputLabel, type ButtonInputLabelProps } from './ButtonInputLabel';
 
-export interface ButtonInputTextProps {
+export interface ButtonInputSharedProps {
   id?: string | undefined;
   text?: string | undefined;
 }
-
-export interface ButtonInputNoteProps extends ButtonInputTextProps {}
-
-export interface ButtonInputErrorProps extends ButtonInputTextProps {}
-
-export interface ButtonInputLabelProps extends ButtonInputTextProps {
-  htmlFor?: string | undefined;
-  position?: 'left' | 'right';
-}
-
-export const ButtonInputNote = (props: ButtonInputNoteProps) => {
-  const { id, text } = props;
-  return <div id={id}>{text}</div>;
-};
-
-export const ButtonInputError = (props: ButtonInputErrorProps) => {
-  const { id, text } = props;
-  return <div id={id}>{text}</div>;
-};
-
-export const ButtonInputLabel = (props: ButtonInputLabelProps) => {
-  const { id, text, htmlFor } = props;
-  return (
-    <label id={id} htmlFor={htmlFor}>
-      {text}
-    </label>
-  );
-};
 
 export interface ButtonInputProps {
   loading?: boolean | undefined;
@@ -78,7 +52,7 @@ export const ButtonInput = createFactory<ButtonInputFactory>((props, ref) => {
   );
 });
 
-ButtonInput.displayName = '@tabindex/ButtonInput';
+ButtonInput.displayName = '@tabindex/Unstyled/ButtonInput';
 ButtonInput.Label = ButtonInputLabel;
 ButtonInput.Error = ButtonInputError;
 ButtonInput.Note = ButtonInputNote;

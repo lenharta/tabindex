@@ -10,6 +10,7 @@ export interface ButtonProps {
 export type ButtonFactory = PolymorphicFactory<{
   props: ButtonProps;
   component: 'button' | 'a';
+  components: {};
 }>;
 
 export const Button = createPolymorphicFactory<ButtonFactory>((props, ref) => {
@@ -34,3 +35,5 @@ export const Button = createPolymorphicFactory<ButtonFactory>((props, ref) => {
     </Component>
   );
 });
+
+Button.displayName = '@tabindex/Unstyled/Button';
