@@ -8,18 +8,12 @@ type FactoryPayload = {
 
 type MergeProps<P = {}, O = {}> = O & Omit<P, keyof O>;
 
-type FilterProps<P = {}, U = any> = Pick<P, Exclude<keyof P, U>>;
-
-type PropsWithoutRef<P> = P extends any ? ('ref' extends keyof P ? FilterProps<P, 'ref'> : P) : P;
-
 type ElementType<E extends keyof JSX.IntrinsicElements> = {
   [K in E]: K extends keyof HTMLElementTagNameMap ? HTMLElementTagNameMap[K] : never;
 }[E];
 
-type BaseProps<E extends keyof JSX.IntrinsicElements> = PropsWithoutRef<E>;
-
 type ComponentProps<E extends keyof JSX.IntrinsicElements, P = {}> = MergeProps<
-  BaseProps<E>,
+  React.ComponentPropsWithoutRef<E>,
   React.ComponentProps<E> & P & { component?: any }
 >;
 
@@ -33,10 +27,11 @@ type Components<R> = R extends Record<string, any> ? R : Record<string, never>;
 export const createPolymorphicFactory = <Payload extends FactoryPayload>(
   ui: RefComponentFunction<Payload['component'], Payload['props']>
 ) => {
-  type _FactoryProps = ComponentProps<Payload['component'], Payload['props']>;
-  type _FactoryComponent = React.ForwardRefExoticComponent<_FactoryProps>;
-  type FactoryComponent = _FactoryComponent & Components<Payload['components']>;
-  return React.forwardRef(ui) as unknown as FactoryComponent;
+  type Props = ComponentProps<Payload['component'], Payload['props']>;
+  type Component = React.ForwardRefExoticComponent<Props>;
+  type FactoryComponent = Component & Components<Payload['components']>;
+  const Factory = React.forwardRef(ui) as unknown as FactoryComponent;
+  return Factory as FactoryComponent;
 };
 
 export type PolymorphicFactory<Payload extends FactoryPayload> = Payload;
