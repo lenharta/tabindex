@@ -1,6 +1,5 @@
-import { Label } from '@/components/unstyled';
-import type { LabelBaseProps } from '@/components/unstyled';
-import type { ButtonInputSharedProps } from './ButtonInput';
+import { type LabelBaseProps, Label } from '@/components/unstyled';
+import { type ButtonInputSharedProps } from './ButtonInput';
 
 export interface ButtonInputLabelProps extends ButtonInputSharedProps, LabelBaseProps {}
 

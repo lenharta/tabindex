@@ -1,8 +1,8 @@
 import { Button } from '@/components/unstyled';
-import { createFactory, type Factory } from '@/core/factory';
-import { ButtonInputNote, type ButtonInputNoteProps } from './ButtonInputNote';
-import { ButtonInputError, type ButtonInputErrorProps } from './ButtonInputError';
-import { ButtonInputLabel, type ButtonInputLabelProps } from './ButtonInputLabel';
+import { type Factory, createFactory } from '@/core/factory';
+import { type ButtonInputNoteProps, ButtonInputNote } from './ButtonInputNote';
+import { type ButtonInputErrorProps, ButtonInputError } from './ButtonInputError';
+import { type ButtonInputLabelProps, ButtonInputLabel } from './ButtonInputLabel';
 
 export interface ButtonInputSharedProps {
   id?: string | undefined;

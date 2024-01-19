@@ -1,6 +1,6 @@
-import { useContext } from 'react';
+import * as React from 'react';
 import { ThemeContext } from '@/core/theme';
 
 export const useThemeStore = () => {
-  return useContext(ThemeContext);
+  return React.useContext(ThemeContext);
 };

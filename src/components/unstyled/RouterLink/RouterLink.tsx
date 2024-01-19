@@ -1,7 +1,5 @@
-import { Link } from 'react-router-dom';
-import type { LinkProps } from 'react-router-dom';
-import { createFactory } from '@/core/factory';
-import type { Factory } from '@/core/factory';
+import { type LinkProps, Link } from 'react-router-dom';
+import { type Factory, createFactory } from '@/core/factory';
 
 export interface RouterLinkProps extends LinkProps {}
 

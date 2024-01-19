@@ -1,7 +1,7 @@
+import { type TextBaseProps, Text } from '@/components/unstyled';
 import { type ButtonInputSharedProps } from './ButtonInput';
-import { Text, type TextProps } from '@/components/unstyled';
 
-export interface ButtonInputNoteProps extends ButtonInputSharedProps, TextProps {}
+export interface ButtonInputNoteProps extends ButtonInputSharedProps, TextBaseProps {}
 
 export const ButtonInputNote = (props: ButtonInputNoteProps) => {
   const { id, text, ...otherProps } = props;

@@ -1,4 +1,3 @@
-import { Title } from '@/common/Unstyled';
 import * as React from 'react';
 
 export interface IPageHero extends React.ComponentPropsWithoutRef<'div'> {
@@ -9,7 +8,7 @@ export default function PageHero(props: IPageHero) {
   const { children, headline, ...otherProps } = props;
   return (
     <div {...otherProps}>
-      {headline && <Title>{headline}</Title>}
+      {headline && <h1>{headline}</h1>}
       {children}
     </div>
   );

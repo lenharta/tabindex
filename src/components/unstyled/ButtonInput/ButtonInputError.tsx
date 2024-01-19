@@ -1,7 +1,7 @@
+import { type TextBaseProps, Text } from '@/components/unstyled';
 import { type ButtonInputSharedProps } from './ButtonInput';
-import { Text, type TextProps } from '@/components/unstyled';
 
-export interface ButtonInputErrorProps extends ButtonInputSharedProps, TextProps {}
+export interface ButtonInputErrorProps extends ButtonInputSharedProps, TextBaseProps {}
 
 export const ButtonInputError = (props: ButtonInputErrorProps) => {
   const { id, text, ...otherProps } = props;

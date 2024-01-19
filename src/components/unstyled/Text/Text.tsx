@@ -1,12 +1,11 @@
-import { type PolymorphicFactory } from '@/core/factory';
-import { createPolymorphicFactory } from '@/core/factory';
+import { type PolymorphicFactory, createPolymorphicFactory } from '@/core/factory';
 
-export interface TextProps {
+export interface TextBaseProps {
   span?: boolean | undefined;
 }
 
 export type TextFactory = PolymorphicFactory<{
-  props: TextProps;
+  props: TextBaseProps;
   component: 'p';
   components: {};
 }>;

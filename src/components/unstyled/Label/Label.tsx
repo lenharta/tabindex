@@ -1,5 +1,4 @@
-import type { Factory } from '@/core/factory';
-import { createFactory } from '@/core/factory';
+import { type Factory, createFactory } from '@/core/factory';
 
 export interface LabelBaseProps {
   htmlFor?: string | undefined;

@@ -1,5 +1,4 @@
-import type { PolymorphicFactory } from '@/core/factory';
-import { createPolymorphicFactory } from '@/core/factory';
+import { type PolymorphicFactory, createPolymorphicFactory } from '@/core/factory';
 
 export interface ButtonProps {
   loading?: boolean | undefined;
