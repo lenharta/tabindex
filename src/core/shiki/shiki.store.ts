@@ -1,4 +1,3 @@
-import { useContext } from 'react';
 import * as React from 'react';
 import { ShikiContext } from '@/core/shiki';
 

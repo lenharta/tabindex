@@ -37,8 +37,9 @@ export default defineConfig(({ mode, command }) => {
           '@/tests': path.resolve(__dirname, './src/tests/'),
           '@/utils': path.resolve(__dirname, './src/utils/'),
           '@/assets': path.resolve(__dirname, './src/assets/'),
-          '@/common': path.resolve(__dirname, './src/common/'),
           '@/styles': path.resolve(__dirname, './src/styles/'),
+          '@/common': path.resolve(__dirname, './src/common/'),
+          '@/components': path.resolve(__dirname, './src/components/'),
         },
       },
       define: {

@@ -1,4 +1,4 @@
 export * from './Button';
-export * from './Card';
+export * from './InlineStyle';
 export * from './Text';
 export * from './Title';

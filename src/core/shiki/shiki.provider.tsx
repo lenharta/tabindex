@@ -1,18 +1,17 @@
 import * as React from 'react';
-import { ShikiContext } from '@/core/shiki';
-import { useThemeStore } from '@/core/theme';
+import { type TBDXThemeMode, useThemeStore } from '@/core/theme';
+import { ShikiContext } from './shiki.context';
 import {
-  type TMode,
-  type TShikiHighlight,
-  type TShikiHighlightState,
-  type TShikiProviderValue,
-} from '@/core/types';
+  type ShikiHighlight,
+  type ShikiProviderProps,
+  type ShikiHighlightState,
+} from './shiki.types';
 
-export function ShikiContextProvider({ children, loadShiki }: TShikiProviderValue) {
-  const [shiki, setShiki] = React.useState<TShikiHighlightState>(null);
+export function ShikiContextProvider({ children, loadShiki }: ShikiProviderProps) {
+  const [shiki, setShiki] = React.useState<ShikiHighlightState>(null);
   const theme = useThemeStore();
 
-  const getCodeTheme = (mode: TMode): string =>
+  const getCodeTheme = (mode: TBDXThemeMode): string =>
     ({
       light: `tabindex-code-theme-light`,
       dark: `tabindex-code-theme-dark`,
@@ -22,7 +21,7 @@ export function ShikiContextProvider({ children, loadShiki }: TShikiProviderValu
     loadShiki().then((s) => setShiki(s));
   }, []);
 
-  const highlight: TShikiHighlight = React.useCallback(
+  const highlight: ShikiHighlight = React.useCallback(
     (code, language = 'tsx') => {
       if (!shiki) {
         return { code, highlighted: false };
