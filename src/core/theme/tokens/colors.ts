@@ -1,4 +1,4 @@
-export type TBDXColorKey =
+export type TBDXColorName =
   | 'blue'
   | 'coolGrey'
   | 'cyan'
@@ -16,7 +16,7 @@ export type TBDXColorShade = '100' | '200' | '300' | '400' | '500' | '600' | '70
 
 export type TBDXColorObject = Record<TBDXColorShade, string>;
 
-export type TBDXColorLookup = Record<TBDXColorKey, TBDXColorObject>;
+export type TBDXColorLookup = Record<TBDXColorName, TBDXColorObject>;
 
 export const TBDX_COLOR_BLUE: TBDXColorObject = {
   '100': '#edf5ff',

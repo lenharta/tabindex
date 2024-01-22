@@ -1,4 +1,4 @@
 import * as React from 'react';
-import { type TShikiHighlight } from '@/core/types';
+import { type ShikiHighlight } from './shiki.types';
 
-export const ShikiContext = React.createContext<TShikiHighlight | null>(null);
+export const ShikiContext = React.createContext<ShikiHighlight | null>(null);

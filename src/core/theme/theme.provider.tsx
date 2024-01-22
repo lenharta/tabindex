@@ -1,13 +1,12 @@
 import * as React from 'react';
-import { type TMode } from '@/core/types';
-import { ThemeContext, createThemeStoreManager } from '@/core/theme';
+import { ThemeContext } from './theme.context';
+import { type TBDXThemeMode } from './theme.types';
+import { createThemeStoreManager } from './theme.manager';
 
 export const ThemeContextProvider = ({ children }: { children: React.ReactNode }) => {
-  const storage = createThemeStoreManager('theme-mode');
-
-  const [mode, dispatch] = React.useState<TMode>(storage.get() || 'dark');
-
-  const next: TMode = mode === 'dark' ? 'light' : 'dark';
+  const storage = createThemeStoreManager('data-prefers-theme-mode');
+  const [mode, dispatch] = React.useState<TBDXThemeMode>(storage.get() || 'dark');
+  const next: TBDXThemeMode = mode === 'dark' ? 'light' : 'dark';
 
   const dark = React.useCallback(() => {
     storage.set('dark');

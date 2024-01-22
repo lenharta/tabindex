@@ -1,7 +1,11 @@
-import { type TManagerTheme, type TMode } from '@/core/types';
+import {
+  type TBDXThemeMode,
+  type TBDXThemeStorageKey,
+  type TBDXThemeManagerReturn,
+} from './theme.types';
 
-export const createThemeStoreManager = (key: string): TManagerTheme => ({
-  get: () => window.localStorage.getItem(key) as TMode | null,
+export const createThemeStoreManager = (key: TBDXThemeStorageKey): TBDXThemeManagerReturn => ({
+  get: () => window.localStorage.getItem(key) as TBDXThemeMode | null,
   set: (value) => window.localStorage.setItem(key, value),
   clear: () => window.localStorage.removeItem(key),
 });

@@ -42,7 +42,7 @@ $light-surface-09: colors.use-light-surface(40%);
   color-scheme: light dark;
 }
 
-.InlineInput-Root {
+.InputButton-Root {
   border: 1.5px solid transparent;
   outline: 1.5px solid transparent;
 
@@ -54,7 +54,7 @@ $light-surface-09: colors.use-light-surface(40%);
   }
 }
 
-.InlineInput-Root {
+.InputButton-Root {
   background-color: transparent;
   color: inherit;
 }
@@ -63,10 +63,10 @@ $light-surface-09: colors.use-light-surface(40%);
   color: $dark-text;
   background-color: $dark-base;
 
-  .InlineInput-Root {
+  .InputButton-Root {
     background-color: $dark-surface-00;
   }
-  .InlineInput-Root:hover {
+  .InputButton-Root:hover {
     background-color: $dark-surface-01;
   }
 }
@@ -75,10 +75,10 @@ $light-surface-09: colors.use-light-surface(40%);
   color: $light-text;
   background-color: $light-base;
 
-  .InlineInput-Root {
+  .InputButton-Root {
     background-color: $light-surface-00;
   }
-  .InlineInput-Root:hover {
+  .InputButton-Root:hover {
     background-color: $light-surface-01;
   }
 }
