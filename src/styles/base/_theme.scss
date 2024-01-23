@@ -1,48 +1,10 @@
 @use '../colors' as colors;
 
-$focus: colors.$blue-60;
-
-$dark-base: colors.use-dark-surface(04%);
-$dark-text: colors.use-dark-surface(97%);
-
-$dark-text-01: colors.use-dark-surface(87%);
-$dark-text-02: colors.use-dark-surface(67%);
-$dark-text-03: colors.use-dark-surface(47%);
-
-$dark-surface-00: colors.use-dark-surface(04%);
-$dark-surface-01: colors.use-dark-surface(08%);
-$dark-surface-02: colors.use-dark-surface(12%);
-$dark-surface-03: colors.use-dark-surface(16%);
-$dark-surface-04: colors.use-dark-surface(20%);
-$dark-surface-05: colors.use-dark-surface(24%);
-$dark-surface-06: colors.use-dark-surface(28%);
-$dark-surface-07: colors.use-dark-surface(32%);
-$dark-surface-08: colors.use-dark-surface(36%);
-$dark-surface-09: colors.use-dark-surface(40%);
-
-$light-base: colors.use-light-surface(04%);
-$light-text: colors.use-light-surface(97%);
-
-$light-text-01: colors.use-light-surface(87%);
-$light-text-02: colors.use-light-surface(67%);
-$light-text-03: colors.use-light-surface(47%);
-
-$light-surface-00: colors.use-light-surface(04%);
-$light-surface-01: colors.use-light-surface(08%);
-$light-surface-02: colors.use-light-surface(12%);
-$light-surface-03: colors.use-light-surface(16%);
-$light-surface-04: colors.use-light-surface(20%);
-$light-surface-05: colors.use-light-surface(24%);
-$light-surface-06: colors.use-light-surface(28%);
-$light-surface-07: colors.use-light-surface(32%);
-$light-surface-08: colors.use-light-surface(36%);
-$light-surface-09: colors.use-light-surface(40%);
-
 :root {
   color-scheme: light dark;
 }
 
-.InlineInput-Root {
+.InlineInput {
   border: 1.5px solid transparent;
   outline: 1.5px solid transparent;
 
@@ -50,35 +12,48 @@ $light-surface-09: colors.use-light-surface(40%);
     outline-color: transparent;
   }
   &:focus:focus-visible {
-    outline-color: $focus;
+    outline-color: var(--blue-60);
   }
 }
 
-.InlineInput-Root {
-  background-color: transparent;
+.InlineInput {
   color: inherit;
+  border-color: transparent;
+  background-color: transparent;
 }
 
 [data-prefers-color-scheme='dark'] {
-  color: $dark-text;
-  background-color: $dark-base;
+  color: var(--dark-surface-100);
+  background-color: var(--dark-surface-04);
 
-  .InlineInput-Root {
-    background-color: $dark-surface-00;
+  .InlineInput {
+    background-color: var(--dark-surface-04);
   }
-  .InlineInput-Root:hover {
-    background-color: $dark-surface-01;
+  .InlineInput:hover {
+    background-color: var(--dark-surface-06);
+  }
+  .InlineInput--elevated {
+    background-color: var(--dark-surface-06);
+  }
+  .InlineInput--elevated:hover {
+    background-color: var(--dark-surface-08);
   }
 }
 
 [data-prefers-color-scheme='light'] {
-  color: $light-text;
-  background-color: $light-base;
+  color: var(--light-surface-100);
+  background-color: var(--light-surface-02);
 
-  .InlineInput-Root {
-    background-color: $light-surface-00;
+  .InlineInput {
+    background-color: var(--light-surface-04);
   }
-  .InlineInput-Root:hover {
-    background-color: $light-surface-01;
+  .InlineInput:hover {
+    background-color: var(--light-surface-06);
+  }
+  .InlineInput--elevated {
+    background-color: var(--light-surface-06);
+  }
+  .InlineInput--elevated:hover {
+    background-color: var(--light-surface-08);
   }
 }

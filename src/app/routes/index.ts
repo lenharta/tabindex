@@ -1,3 +1,4 @@
-export * from './home';
-export * from './sandbox';
-export * from './toolbox';
+export * from './Home';
+export * from './Sandbox';
+export * from './Toolbox';
+export * from './NotFound';

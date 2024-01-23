@@ -1,125 +1,20 @@
 @use '../tokens' as tokens;
+@use '../colors' as colors;
 
-.Title {
-  width: 100%;
-  display: block;
-  font-family: tokens.$font-family-reg;
-
-  &--xl {
-    font-size: tokens.$font-size-12;
-    line-height: 1.1;
-  }
-  &--lg {
-    font-size: tokens.$font-size-10;
-    line-height: 1.2;
-  }
-  &--md {
-    font-size: tokens.$font-size-08;
-    line-height: 1.3;
+.Text {
+  &--xs {
+    font-size: var(--font-size-02);
   }
   &--sm {
-    font-size: tokens.$font-size-06;
-    line-height: 1.4;
-  }
-  &--xs {
-    font-size: tokens.$font-size-05;
-    line-height: 1.5;
-  }
-}
-
-.Body {
-  line-height: 1.5;
-
-  &--xl {
-    font-size: tokens.$font-size-12;
-  }
-  &--lg {
-    font-size: tokens.$font-size-10;
+    font-size: var(--font-size-03);
   }
   &--md {
-    font-size: tokens.$font-size-08;
+    font-size: var(--font-size-04);
   }
-  &--sm {
-    font-size: tokens.$font-size-06;
+  &--lg {
+    font-size: var(--font-size-05);
   }
-  &--xs {
-    font-size: tokens.$font-size-05;
-  }
-}
-
-.Body--xlt.Body--normal,
-.Title--xlt.Title--normal {
-  font-family: tokens.$font-family-xlt;
-}
-.Body--lgt.Body--normal,
-.Title--lgt.Title--normal {
-  font-family: tokens.$font-family-lgt;
-}
-.Body--reg.Body--normal,
-.Title--reg.Title--normal {
-  font-family: tokens.$font-family-reg;
-}
-.Body--med.Body--normal,
-.Title--med.Title--normal {
-  font-family: tokens.$font-family-med;
-}
-.Body--bld.Body--normal,
-.Title--bld.Title--normal {
-  font-family: tokens.$font-family-bld;
-}
-.Body--xbd.Body--normal,
-.Title--xbd.Title--normal {
-  font-family: tokens.$font-family-xbd;
-}
-
-.Title--xlt.Title--italic,
-.Body--xlt.Body--italic {
-  font-family: tokens.$font-family-xlt-ital;
-}
-.Title--lgt.Title--italic,
-.Body--lgt.Body--italic {
-  font-family: tokens.$font-family-lgt-ital;
-}
-.Title--reg.Title--italic,
-.Body--reg.Body--italic {
-  font-family: tokens.$font-family-reg-ital;
-}
-.Title--med.Title--italic,
-.Body--med.Body--italic {
-  font-family: tokens.$font-family-med-ital;
-}
-.Title--bld.Title--italic,
-.Body--bld.Body--italic {
-  font-family: tokens.$font-family-bld-ital;
-}
-.Title--xbd.Title--italic,
-.Body--xbd.Body--italic {
-  font-family: tokens.$font-family-xbd-ital;
-}
-
-.Body--center,
-.Title--center {
-  text-align: center;
-}
-
-[data-direction='ltr'] {
-  .Title--start,
-  .Body--start {
-    text-align: start;
-  }
-  .Title--end,
-  .Body--end {
-    text-align: end;
-  }
-}
-
-[data-direction='rtl'] {
-  .Title--start,
-  .Body--start {
-    text-align: end;
-  }
-  .Title--end,
-  .Body--end {
-    text-align: start;
+  &--xl {
+    font-size: var(--font-size-06);
   }
 }
