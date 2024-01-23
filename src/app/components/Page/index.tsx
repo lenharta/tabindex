@@ -1,10 +1,11 @@
-import { StaticFactory, createStaticFactory } from '@/core/factory';
+import clsx from 'clsx';
+import { useThemeStore } from '@/core/theme';
+import { type StaticFactory, createStaticFactory } from '@/core/factory';
 
 import PageContent from './PageContent';
 import PageFooter from './PageFooter';
 import PageHeader from './PageHeader';
 import PageHero from './PageHero';
-import clsx from 'clsx';
 
 interface IPageProps {}
 
@@ -22,9 +23,12 @@ type PageFactory = StaticFactory<{
 export const Page = createStaticFactory<PageFactory>((props) => {
   const { children, className, ...otherProps } = props;
   const classList = clsx('Page', className);
+  const theme = useThemeStore();
+  console.log(theme.mode);
   return (
     <div {...otherProps} className={classList}>
       {children}
+      <button onClick={() => theme.toggle()}>GO {theme.next.toUpperCase()} MODE</button>
     </div>
   );
 });

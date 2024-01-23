@@ -127,12 +127,6 @@ button {
   font-weight: 500;
   font-family: inherit;
   cursor: pointer;
-
-  transition:
-    background-color 130ms ease-out,
-    outline-color 130ms ease-out,
-    border-color 130ms ease-out,
-    color 130ms ease-out;
 }
 
 a[data-disabled],

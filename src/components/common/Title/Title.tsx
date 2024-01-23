@@ -1,35 +1,39 @@
-import { createThemeClasses } from '@/utils';
-import { type TBDXTitleThemeOptions } from '@/core/theme';
-import { type PolymorphicFactory, createPolymorphicFactory } from '@/core/factory';
+import clsx from 'clsx';
+import * as React from 'react';
 
-export interface TitleProps extends TBDXTitleThemeOptions {}
+export type TitleBaseProps = React.ComponentPropsWithoutRef<'h3'>;
 
-export type TitleFactory = PolymorphicFactory<{
-  props: TitleProps;
-  component: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-  components: {};
-}>;
+export type TitleProps = TitleBaseProps & {
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+  wieght?: 'xlt' | 'lgt' | 'reg' | 'med' | 'bld' | 'xbd';
+  scheme?: 'default' | 'secondary' | 'action';
+  alignment?: 'start' | 'center' | 'end';
+  component?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+};
 
-export const Title = createPolymorphicFactory<TitleFactory>((props, ref) => {
+export const Title = (props: TitleProps) => {
   const {
-    size,
-    scheme,
-    variant,
-    className: defaultClassName,
-    component: Component = 'h3',
+    size = 'small',
+    scheme = 'default',
+    alignment = 'start',
+    component,
+    className,
     children,
     ...otherProps
   } = props;
 
-  const className = createThemeClasses({
-    base: 'Title',
-    modifiers: { Component, size, scheme, variant },
-    className: defaultClassName,
+  const Component = component || 'h3';
+
+  const css = clsx('Title', {
+    [`Title--${size}`]: size,
+    [`Title--${scheme}`]: scheme,
+    [`Title--${alignment}`]: alignment,
+    [`Title--${component}`]: component,
   });
 
   return (
-    <Component {...otherProps} ref={ref} classNam={className}>
+    <Component {...otherProps} className={css}>
       {children}
     </Component>
   );
-});
+};

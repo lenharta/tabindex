@@ -1,0 +1,14 @@
+.Button,
+.InlineInput {
+  transition:
+    background-color 170ms ease-out,
+    outline-color 170ms ease-out,
+    border-color 170ms ease-out,
+    color 170ms ease-out;
+}
+
+.Page {
+  transition:
+    background-color 680ms ease-out,
+    color 680ms ease-out;
+}

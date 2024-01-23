@@ -1,94 +1,101 @@
 @use '../tokens' as tokens;
+@use '../colors' as colors;
 
-.InlineInput-Root {
-  display: inline-flex;
+.InlineInput {
+  --inline-input-display: flex;
+
+  --toggle-input-height-xs: 16px;
+  --toggle-input-height-sm: 20px;
+  --toggle-input-height-md: 24px;
+  --toggle-input-height-lg: 30px;
+  --toggle-input-height-xl: 36px;
+
+  --toggle-thumb-height-xs: 14px;
+  --toggle-thumb-height-xs: 18px;
+  --toggle-thumb-height-xs: 22px;
+  --toggle-thumb-height-xs: 28px;
+  --toggle-thumb-height-xs: 34px;
+
+  --checkbox-input-height-xs: 16px;
+  --checkbox-input-height-sm: 20px;
+  --checkbox-input-height-md: 24px;
+  --checkbox-input-height-lg: 30px;
+  --checkbox-input-height-xl: 36px;
+
+  --checkbox-thumb-height-xs: 14px;
+  --checkbox-thumb-height-xs: 18px;
+  --checkbox-thumb-height-xs: 22px;
+  --checkbox-thumb-height-xs: 28px;
+  --checkbox-thumb-height-xs: 34px;
+
+  width: 100%;
+  user-select: none;
+  display: var(--inline-input-display);
   align-items: center;
-  cursor: pointer;
-  gap: 0.6rem;
 }
 
-.InlineInput-Label {
-  font-size: 1rem;
-  line-height: 1;
+.Checkbox {
+  &--xs {
+    font-size: var(--font-size-01);
+    height: var(--checkbox-input-height-xs);
+  }
+  &--sm {
+    font-size: var(--font-size-01);
+    height: var(--checkbox-input-height-sm);
+  }
+  &--md {
+    font-size: var(--font-size-01);
+    height: var(--checkbox-input-height-md);
+  }
+  &--lg {
+    font-size: var(--font-size-01);
+    height: var(--checkbox-input-height-lg);
+  }
+  &--xl {
+    font-size: var(--font-size-01);
+    height: var(--checkbox-input-height-xl);
+  }
 }
 
-.InlineInput-Note {
-  font-size: 1rem;
-  line-height: 1;
+.Toggle {
+  &--xs {
+    font-size: var(--font-size-01);
+    height: var(--toggle-input-height-xs);
+    .Thumb {
+      width: var(--toggle-thumb-height-xs);
+      height: var(--toggle-thumb-height-xs);
+    }
+  }
+  &--sm {
+    font-size: var(--font-size-01);
+    height: var(--toggle-input-height-sm);
+    .Thumb {
+      width: var(--toggle-thumb-height-sm);
+      height: var(--toggle-thumb-height-sm);
+    }
+  }
+  &--md {
+    font-size: var(--font-size-01);
+    height: var(--toggle-input-height-md);
+    .Thumb {
+      width: var(--toggle-thumb-height-md);
+      height: var(--toggle-thumb-height-md);
+    }
+  }
+  &--lg {
+    font-size: var(--font-size-01);
+    height: var(--toggle-input-height-lg);
+    .Thumb {
+      width: var(--toggle-thumb-height-lg);
+      height: var(--toggle-thumb-height-lg);
+    }
+  }
+  &--xl {
+    font-size: var(--font-size-01);
+    height: var(--toggle-input-height-xl);
+    .Thumb {
+      width: var(--toggle-thumb-height-xl);
+      height: var(--toggle-thumb-height-xl);
+    }
+  }
 }
-
-// .Radio,
-// .Switch,
-// .Checkbox,
-// .InlineInput {
-//   --input-cursor: pointer;
-
-//   margin: 0;
-//   padding: 0;
-//   min-width: 0;
-//   box-sizing: border-box;
-//   background-color: transparent;
-//   cursor: var(--input-cursor);
-
-//   svg,
-//   label {
-//     cursor: var(--input-cursor);
-//   }
-
-//   &:disabled,
-//   &[data-disabled],
-//   &[data-readonly] {
-//     --input-cursor: default;
-
-//     svg,
-//     label {
-//       --input-cursor: default;
-//     }
-//   }
-// }
-
-// .Radio,
-// .Switch,
-// .Checkbox {
-//   --input-align: center;
-//   --input-justify: flex-start;
-//   --input-display: inline-block;
-//   --input-text-size: 1rem;
-//   --input-text-align: start;
-//   --input-padding-x: 0.4rem;
-//   --input-padding-y: 0.4rem;
-//   --input-height: 1.8rem;
-
-//   width: 100%;
-//   cursor: var(--input-cursor);
-//   height: var(--input-height);
-//   display: var(--input-display);
-//   align-items: var(--input-text-align);
-//   justify-content: var(--input-justify);
-//   padding-inline: var(--input-padding-x);
-//   padding-block: var(--input-padding-y);
-//   font-size: var(--input-text-size);
-//   font-family: tokens.$font-family-reg;
-//   text-align: var(--input-text-align);
-//   line-height: 1;
-
-//   &--end {
-//     --input-justify: flex-end;
-//   }
-//   &--center {
-//     --input-justify: center;
-//   }
-
-//   &--sm {
-//     --input-height: 2.4rem;
-//   }
-//   &--md {
-//     --input-height: 2.4rem;
-//   }
-//   &--lg {
-//     --input-height: 2.4rem;
-//   }
-//   &--xl {
-//     --input-height: 2.4rem;
-//   }
-// }

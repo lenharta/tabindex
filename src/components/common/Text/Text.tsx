@@ -1,45 +1,38 @@
+import clsx from 'clsx';
 import * as React from 'react';
-import { createThemeClasses } from '@/utils';
-import { type TBDXTextThemeOptions } from '@/core/theme';
-import { type PolymorphicFactory, createPolymorphicFactory } from '@/core/factory';
 
-export interface TextProps extends TBDXTextThemeOptions {
-  span?: boolean;
-  strong?: boolean;
-  children?: React.ReactNode;
-}
+export type TextBaseProps = React.ComponentPropsWithoutRef<'p'>;
 
-export type TextFactory = PolymorphicFactory<{
-  props: TextProps;
-  component: 'p' | 'span' | 'strong';
-  components: {};
-}>;
+export type TextProps = TextBaseProps & {
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+  weight?: 'xlt' | 'lgt' | 'reg' | 'med' | 'bld' | 'xbd';
+  scheme?: 'default' | 'secondary' | 'action';
+  alignment?: 'start' | 'center' | 'end';
+  component?: 'span' | 'p';
+};
 
-export const Text = createPolymorphicFactory<TextFactory>((props, ref) => {
+export const Text = (props: TextProps) => {
   const {
-    span,
-    strong,
-    size = 'sm',
+    size = 'small',
+    weight = 'reg',
     scheme = 'default',
-    variant = 'default',
     alignment = 'start',
-    className: defaultClassName,
-    component = 'p',
+    component: Component = 'p',
+    className,
     children,
     ...otherProps
   } = props;
 
-  const Component = span ? 'span' : strong ? 'strong' : component;
-
-  const className = createThemeClasses({
-    base: 'Text',
-    modifiers: { Component, size, scheme, variant, alignment },
-    className: defaultClassName,
+  const css = clsx('Text', {
+    [`Text--${size}`]: size,
+    [`Text--${weight}`]: weight,
+    [`Text--${scheme}`]: scheme,
+    [`Text--${alignment}`]: alignment,
   });
 
   return (
-    <Component {...otherProps} ref={ref} className={className}>
+    <Component {...otherProps} className={css}>
       {children}
     </Component>
   );
-});
+};
