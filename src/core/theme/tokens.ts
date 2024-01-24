@@ -1,4 +1,4 @@
-export type TBDXColorName =
+export type ColorName =
   | 'blue'
   | 'coolGrey'
   | 'cyan'
@@ -12,13 +12,13 @@ export type TBDXColorName =
   | 'warmGrey'
   | 'yellow';
 
-export type TBDXColorShade = '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900';
+export type ColorShade = '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900';
 
-export type TBDXColorObject = Record<TBDXColorShade, string>;
+export type ColorObject = Record<ColorShade, string>;
 
-export type TBDXColorLookup = Record<TBDXColorName, TBDXColorObject>;
+export type ColorLookup = Record<ColorName, ColorObject>;
 
-export const TBDX_COLOR_BLUE: TBDXColorObject = {
+export const COLOR_BLUE: ColorObject = {
   '100': '#edf5ff',
   '200': '#d0e2ff',
   '300': '#a6c8ff',
@@ -30,7 +30,7 @@ export const TBDX_COLOR_BLUE: TBDXColorObject = {
   '900': '#001d6c',
 };
 
-export const TBDX_COLOR_GREY: TBDXColorObject = {
+export const COLOR_GREY: ColorObject = {
   '100': '#f4f4f4',
   '200': '#e0e0e0',
   '300': '#c6c6c6',
@@ -42,7 +42,7 @@ export const TBDX_COLOR_GREY: TBDXColorObject = {
   '900': '#262626',
 };
 
-export const TBDX_COLOR_COOLGREY: TBDXColorObject = {
+export const COLOR_COOLGREY: ColorObject = {
   '100': '#f2f4f8',
   '200': '#dde1e6',
   '300': '#c1c7cd',
@@ -54,7 +54,7 @@ export const TBDX_COLOR_COOLGREY: TBDXColorObject = {
   '900': '#21272a',
 };
 
-export const TBDX_COLOR_CYAN: TBDXColorObject = {
+export const COLOR_CYAN: ColorObject = {
   '100': '#e5f6ff',
   '200': '#bae6ff',
   '300': '#82cfff',
@@ -66,7 +66,7 @@ export const TBDX_COLOR_CYAN: TBDXColorObject = {
   '900': '#012749',
 };
 
-export const TBDX_COLOR_GREEN: TBDXColorObject = {
+export const COLOR_GREEN: ColorObject = {
   '100': '#defbe6',
   '200': '#a7f0ba',
   '300': '#6fdc8c',
@@ -78,7 +78,7 @@ export const TBDX_COLOR_GREEN: TBDXColorObject = {
   '900': '#022d0d',
 };
 
-export const TBDX_COLOR_MAGENTA: TBDXColorObject = {
+export const COLOR_MAGENTA: ColorObject = {
   '100': '#fff0f7',
   '200': '#ffd6e8',
   '300': '#ffafd2',
@@ -90,7 +90,7 @@ export const TBDX_COLOR_MAGENTA: TBDXColorObject = {
   '900': '#510224',
 };
 
-export const TBDX_COLOR_ORANGE: TBDXColorObject = {
+export const COLOR_ORANGE: ColorObject = {
   '100': '#fff2e8',
   '200': '#ffd9be',
   '300': '#ffb784',
@@ -102,7 +102,7 @@ export const TBDX_COLOR_ORANGE: TBDXColorObject = {
   '900': '#3e1a00',
 };
 
-export const TBDX_COLOR_PURPLE: TBDXColorObject = {
+export const COLOR_PURPLE: ColorObject = {
   '100': '#f6f2ff',
   '200': '#e8daff',
   '300': '#d4bbff',
@@ -114,7 +114,7 @@ export const TBDX_COLOR_PURPLE: TBDXColorObject = {
   '900': '#31135e',
 };
 
-export const TBDX_COLOR_RED: TBDXColorObject = {
+export const COLOR_RED: ColorObject = {
   '100': '#fff1f1',
   '200': '#ffd7d9',
   '300': '#ffb3b8',
@@ -126,7 +126,7 @@ export const TBDX_COLOR_RED: TBDXColorObject = {
   '900': '#520408',
 };
 
-export const TBDX_COLOR_TEAL: TBDXColorObject = {
+export const COLOR_TEAL: ColorObject = {
   '100': '#d9fbfb',
   '200': '#9ef0f0',
   '300': '#3ddbd9',
@@ -138,7 +138,7 @@ export const TBDX_COLOR_TEAL: TBDXColorObject = {
   '900': '#022b30',
 };
 
-export const TBDX_COLOR_WARMGREY: TBDXColorObject = {
+export const COLOR_WARMGREY: ColorObject = {
   '100': '#f7f3f2',
   '200': '#e5e0df',
   '300': '#cac5c4',
@@ -150,7 +150,7 @@ export const TBDX_COLOR_WARMGREY: TBDXColorObject = {
   '900': '#272525',
 };
 
-export const TBDX_COLOR_YELLOW: TBDXColorObject = {
+export const COLOR_YELLOW: ColorObject = {
   '100': '#fcf4d6',
   '200': '#fddc69',
   '300': '#f1c21b',
@@ -162,17 +162,17 @@ export const TBDX_COLOR_YELLOW: TBDXColorObject = {
   '900': '#302400',
 };
 
-export const TBDX_COLOR: TBDXColorLookup = {
-  blue: TBDX_COLOR_BLUE,
-  coolGrey: TBDX_COLOR_COOLGREY,
-  cyan: TBDX_COLOR_CYAN,
-  green: TBDX_COLOR_GREEN,
-  grey: TBDX_COLOR_GREY,
-  magenta: TBDX_COLOR_MAGENTA,
-  orange: TBDX_COLOR_ORANGE,
-  purple: TBDX_COLOR_PURPLE,
-  red: TBDX_COLOR_RED,
-  teal: TBDX_COLOR_TEAL,
-  warmGrey: TBDX_COLOR_WARMGREY,
-  yellow: TBDX_COLOR_YELLOW,
+export const COLORS: ColorLookup = {
+  blue: COLOR_BLUE,
+  coolGrey: COLOR_COOLGREY,
+  cyan: COLOR_CYAN,
+  green: COLOR_GREEN,
+  grey: COLOR_GREY,
+  magenta: COLOR_MAGENTA,
+  orange: COLOR_ORANGE,
+  purple: COLOR_PURPLE,
+  red: COLOR_RED,
+  teal: COLOR_TEAL,
+  warmGrey: COLOR_WARMGREY,
+  yellow: COLOR_YELLOW,
 };

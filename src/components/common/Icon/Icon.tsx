@@ -1,77 +1,39 @@
-import * as Icons from './library';
-import { type IconComponent, type IconProps } from './config';
+import { iconPaths, iconNames, type IconBaseProps, type IconProps } from './config';
 
-const defaultProps: IconProps = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  fill: 'none',
+const Icon = (props: IconProps & IconBaseProps) => {
+  const { size = 'sm', name = 'radio_checked' } = props;
+  return (
+    <svg
+      id={name}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={`Icon Icon--${size}`}
+      viewBox="0 0 24 24"
+      height={24}
+      width={24}
+    >
+      <path
+        d={iconPaths[name]}
+        id={[name, '_inner'].join('')}
+        className="Icon-path"
+        fill="currentColor"
+      />
+    </svg>
+  );
 };
 
-export const Icon: IconComponent = (props) => {
-  const { name = 'checkbox_checked_filled', size = 'sm', ...otherProps } = props;
-  const iconProps = { ...defaultProps, ...otherProps };
-
-  switch (name) {
-    case 'checkbox_checked_filled':
-      switch (size) {
-        case 'sm':
-          return <Icons.CheckboxCheckedFilledSmall {...iconProps} />;
-        case 'md':
-          return <Icons.CheckboxCheckedFilledMedium {...iconProps} />;
-        case 'lg':
-          return <Icons.CheckboxCheckedFilledLarge {...iconProps} />;
-      }
-
-    case 'checkbox_checked_outlined':
-      switch (size) {
-        case 'sm':
-          return <Icons.CheckboxCheckedOutlinedSmall {...iconProps} />;
-        case 'md':
-          return <Icons.CheckboxCheckedOutlinedMedium {...iconProps} />;
-        case 'lg':
-          return <Icons.CheckboxCheckedOutlinedLarge {...iconProps} />;
-      }
-
-    case 'checkbox_unchecked_outlined':
-      switch (size) {
-        case 'sm':
-          return <Icons.CheckboxUncheckedOutlinedSmall {...iconProps} />;
-        case 'md':
-          return <Icons.CheckboxUncheckedOutlinedMedium {...iconProps} />;
-        case 'lg':
-          return <Icons.CheckboxUncheckedOutlinedLarge {...iconProps} />;
-      }
-
-    case 'checkbox_unchecked_filled':
-      switch (size) {
-        case 'sm':
-          return <Icons.CheckboxUncheckedFilledSmall {...iconProps} />;
-        case 'md':
-          return <Icons.CheckboxUncheckedFilledMedium {...iconProps} />;
-        case 'lg':
-          return <Icons.CheckboxUncheckedFilledLarge {...iconProps} />;
-      }
-
-    case 'checkbox_indeterminate_outlined':
-      switch (size) {
-        case 'sm':
-          return <Icons.CheckboxIndeterminateOutlinedSmall {...iconProps} />;
-        case 'md':
-          return <Icons.CheckboxIndeterminateOutlinedMedium {...iconProps} />;
-        case 'lg':
-          return <Icons.CheckboxIndeterminateOutlinedLarge {...iconProps} />;
-      }
-
-    case 'checkbox_indeterminate_filled':
-      switch (size) {
-        case 'sm':
-          return <Icons.CheckboxIndeterminateFilledSmall {...iconProps} />;
-        case 'md':
-          return <Icons.CheckboxIndeterminateFilledMedium {...iconProps} />;
-        case 'lg':
-          return <Icons.CheckboxIndeterminateFilledLarge {...iconProps} />;
-      }
-
-    default:
-      return <Icons.CheckboxCheckedOutlinedSmall {...iconProps} />;
-  }
+export const IconGallery = () => {
+  return (
+    <div className="IconGallery">
+      {iconNames.map((key) => {
+        return (
+          <div key={key} className="IconGallery-card">
+            <Icon size="sm" name={key} />
+            <Icon size="md" name={key} />
+            <Icon size="lg" name={key} />
+          </div>
+        );
+      })}
+    </div>
+  );
 };

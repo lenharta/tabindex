@@ -1,0 +1,25 @@
+.Icon {
+  display: flex;
+  flex-shrink: 0;
+  width: var(--icon-width, 24px);
+  height: var(--icon-height, 24px);
+
+  &--sm {
+    --icon-width: 20px;
+    --icon-height: 20px;
+  }
+  &--md {
+    --icon-width: 26px;
+    --icon-height: 26px;
+  }
+  &--lg {
+    --icon-width: 32px;
+    --icon-height: 32px;
+  }
+}
+
+.IconGallery {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
