@@ -74,36 +74,24 @@ export type BaseStrongProps = {
   weight?: FontWeight;
 };
 
-export type BasePageProps = {};
+export type BaseTitleProps = {
+  size?: FontSize;
+  weight?: FontWeight;
+};
 
 export type BasePageHeroProps = {
   headline?: string;
 };
 
-export type BasePageHeaderProps = {};
-
-export type BasePageFooterProps = {};
-
-export type BasePageContentProps = {};
-
-export type BaseTitleProps = {
-  h1?: boolean | undefined;
-  h2?: boolean | undefined;
-  h3?: boolean | undefined;
-  h4?: boolean | undefined;
-  h5?: boolean | undefined;
-  h6?: boolean | undefined;
-  size?: FontSize;
-  weight?: FontWeight;
-};
-
 export interface BaseProps {
+  // common
   Link: BaseLinkProps;
   NavLink: BaseNavLinkProps;
   Button: BaseButtonProps;
   ButtonUnstyled: BaseButtonUnstyledProps;
   Checkbox: BaseCheckboxProps;
   Control: BaseControlProps;
+  InlineStyle: {};
   InlineInput: BaseInlineInputProps;
   Radio: BaseRadioProps;
   Switch: BaseSwitchProps;
@@ -111,20 +99,24 @@ export interface BaseProps {
   Span: BaseSpanProps;
   Strong: BaseStrongProps;
   Title: BaseTitleProps;
-  Page: BasePageProps;
+
+  // layouts
+  Page: {};
   PageHero: BasePageHeroProps;
-  PageHeader: BasePageHeaderProps;
-  PageFooter: BasePageFooterProps;
-  PageContent: BasePageContentProps;
+  PageHeader: {};
+  PageFooter: {};
+  PageContent: {};
 }
 
 export interface Tags {
+  // common
   Link: 'a';
   NavLink: 'a';
   Button: 'button';
   ButtonUnstyled: 'button';
   Checkbox: 'button';
   Control: 'button';
+  InlineStyle: 'style';
   InlineInput: 'button';
   Radio: 'button';
   Switch: 'button';
@@ -132,6 +124,8 @@ export interface Tags {
   Span: 'span';
   Strong: 'strong';
   Title: 'h1';
+
+  // layouts
   Page: 'div';
   PageHero: 'div';
   PageHeader: 'header';
@@ -140,12 +134,14 @@ export interface Tags {
 }
 
 export interface Elements {
+  // common
   Link: HTMLAnchorElement;
   NavLink: HTMLAnchorElement;
   Button: HTMLButtonElement;
   ButtonUnstyled: HTMLButtonElement;
   Checkbox: HTMLButtonElement;
   Control: HTMLButtonElement;
+  InlineStyle: HTMLStyleElement;
   InlineInput: HTMLButtonElement;
   Radio: HTMLButtonElement;
   Switch: HTMLButtonElement;
@@ -153,6 +149,8 @@ export interface Elements {
   Span: HTMLSpanElement;
   Strong: HTMLElement;
   Title: HTMLHeadingElement;
+
+  // layouts
   Page: HTMLDivElement;
   PageHero: HTMLDivElement;
   PageHeader: HTMLElement;
@@ -168,6 +166,7 @@ export interface CoreProps {
   ButtonUnstyled: JSX.IntrinsicElements['button'] & BaseProps['ButtonUnstyled'];
   Checkbox: JSX.IntrinsicElements['button'] & BaseProps['Checkbox'];
   Control: JSX.IntrinsicElements['button'] & BaseProps['Control'];
+  InlineStyle: JSX.IntrinsicElements['style'] & BaseProps['InlineStyle'];
   InlineInput: JSX.IntrinsicElements['button'] & BaseProps['InlineInput'];
   Radio: JSX.IntrinsicElements['button'] & BaseProps['Radio'];
   Switch: JSX.IntrinsicElements['button'] & BaseProps['Switch'];

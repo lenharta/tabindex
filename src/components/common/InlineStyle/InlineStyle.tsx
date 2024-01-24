@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { cssToString } from '@/utils';
-import { type StaticFactory, createStaticFactory } from '@/core/factory';
+import { type Factory, factory } from '@/components/factory';
 
 export interface InlineMediaQuery {
   query: string;
@@ -17,9 +17,9 @@ export interface InlineStyleProps extends InlineStyleInput {
   nonce?: () => string;
 }
 
-export type InlineStyleFactory = StaticFactory<{
+export type InlineStyleFactory = Factory<{
   props: InlineStyleProps;
-  component: 'style';
+  component: 'InlineStyle';
   components: {};
 }>;
 
@@ -41,10 +41,11 @@ export const createInlineStyles = (input: InlineStyleInput) => {
   return result.join('').trim();
 };
 
-export const InlineStyle = createStaticFactory<InlineStyleFactory>((props: InlineStyleProps) => {
+export const InlineStyle = factory<InlineStyleFactory>((props, ref) => {
   const { selector, media, styles, nonce = () => '' } = props;
   return (
     <style
+      ref={ref}
       nonce={nonce?.()}
       dangerouslySetInnerHTML={{ __html: createInlineStyles({ selector, styles, media }) }}
     />
