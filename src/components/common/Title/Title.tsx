@@ -1,10 +1,20 @@
 import { type Factory, factory } from '@/components/factory';
 
-type TitleFactory = Factory<{
+export type TitleElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+
+export type TitleProps = {
+  h1?: boolean | undefined;
+  h2?: boolean | undefined;
+  h3?: boolean | undefined;
+  h4?: boolean | undefined;
+  h5?: boolean | undefined;
+  h6?: boolean | undefined;
+};
+
+export type TitleFactory = Factory<{
+  props: TitleProps;
   component: 'Title';
 }>;
-
-type TitleElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
 const findComponent = (props: Record<TitleElement, boolean | undefined>): TitleElement => {
   const elements = Object.keys(props) as TitleElement[];
