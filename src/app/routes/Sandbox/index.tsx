@@ -1,4 +1,4 @@
-import { Page } from '@/app/components';
+import { Page } from '@/components/layouts';
 
 export default function Sandbox() {
   return (

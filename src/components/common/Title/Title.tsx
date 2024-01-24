@@ -1,39 +1,22 @@
-import clsx from 'clsx';
-import * as React from 'react';
+import { type Factory, factory } from '@/components/factory';
 
-export type TitleBaseProps = React.ComponentPropsWithoutRef<'h3'>;
+type TitleFactory = Factory<{
+  component: 'Title';
+}>;
 
-export type TitleProps = TitleBaseProps & {
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-  wieght?: 'xlt' | 'lgt' | 'reg' | 'med' | 'bld' | 'xbd';
-  scheme?: 'default' | 'secondary' | 'action';
-  alignment?: 'start' | 'center' | 'end';
-  component?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+type TitleElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+
+const findComponent = (props: Record<TitleElement, boolean | undefined>): TitleElement => {
+  const elements = Object.keys(props) as TitleElement[];
+  return elements.find((v) => props[v] === true) as TitleElement;
 };
 
-export const Title = (props: TitleProps) => {
-  const {
-    size = 'small',
-    scheme = 'default',
-    alignment = 'start',
-    component,
-    className,
-    children,
-    ...otherProps
-  } = props;
-
-  const Component = component || 'h3';
-
-  const css = clsx('Title', {
-    [`Title--${size}`]: size,
-    [`Title--${scheme}`]: scheme,
-    [`Title--${alignment}`]: alignment,
-    [`Title--${component}`]: component,
-  });
-
+export const Title = factory<TitleFactory>((props, ref) => {
+  const { h1, h2, h3, h4, h5, h6, children, ...otherProps } = props;
+  const Component = findComponent({ h1, h2, h3, h4, h5, h6 });
   return (
-    <Component {...otherProps} className={css}>
+    <Component ref={ref} {...otherProps}>
       {children}
     </Component>
   );
-};
+});

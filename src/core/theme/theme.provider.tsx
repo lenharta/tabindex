@@ -1,12 +1,22 @@
 import * as React from 'react';
-import { ThemeContext } from './theme.context';
-import { type TBDXThemeMode } from './theme.types';
-import { createThemeStoreManager } from './theme.manager';
+import { ThemeProvider } from './theme.context';
+import {
+  type ThemeMode,
+  type ThemeStorageKey,
+  type ThemeManagerReturn,
+  type ThemeContextProviderProps,
+} from './types';
 
-export const ThemeContextProvider = ({ children }: { children: React.ReactNode }) => {
+export const createThemeStoreManager = (key: ThemeStorageKey): ThemeManagerReturn => ({
+  get: () => window.localStorage.getItem(key) as ThemeMode | null,
+  set: (value) => window.localStorage.setItem(key, value),
+  clear: () => window.localStorage.removeItem(key),
+});
+
+export const ThemeContextProvider = ({ children }: ThemeContextProviderProps) => {
   const storage = createThemeStoreManager('data-prefers-theme-mode');
-  const [mode, dispatch] = React.useState<TBDXThemeMode>(storage.get() || 'dark');
-  const next: TBDXThemeMode = mode === 'dark' ? 'light' : 'dark';
+  const [mode, dispatch] = React.useState<ThemeMode>(storage.get() || 'dark');
+  const next: ThemeMode = mode === 'dark' ? 'light' : 'dark';
 
   const dark = React.useCallback(() => {
     storage.set('dark');
@@ -30,7 +40,7 @@ export const ThemeContextProvider = ({ children }: { children: React.ReactNode }
   }, [mode]);
 
   return (
-    <ThemeContext.Provider
+    <ThemeProvider
       value={{
         mode,
         next,
@@ -40,6 +50,6 @@ export const ThemeContextProvider = ({ children }: { children: React.ReactNode }
       }}
     >
       {children}
-    </ThemeContext.Provider>
+    </ThemeProvider>
   );
 };

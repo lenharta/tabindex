@@ -1,4 +1,6 @@
-import { createContext } from 'react';
-import { type TContextTheme } from '@/core/types';
+import * as React from 'react';
+import { type ThemeContextValue } from './types';
 
-export const ThemeContext = createContext({} as TContextTheme);
+export const ThemeContext = React.createContext({} as ThemeContextValue);
+export const ThemeProvider = ThemeContext.Provider;
+export const useThemeCTX = () => React.useContext(ThemeContext);

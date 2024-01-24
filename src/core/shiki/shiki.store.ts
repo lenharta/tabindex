@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ShikiContext } from '@/core/shiki';
+import { ShikiContext } from './shiki.context';
 
 export function useShiki() {
   const shiki = React.useContext(ShikiContext);

@@ -1,21 +1,17 @@
 import * as React from 'react';
-import { type TBDXThemeMode, useThemeStore } from '@/core/theme';
-import { ShikiContext } from './shiki.context';
-import {
-  type ShikiHighlight,
-  type ShikiProviderProps,
-  type ShikiHighlightState,
-} from './shiki.types';
+import { ShikiProvider } from './shiki.context';
+import { type ThemeMode, useThemeCTX } from '../theme';
+import { type ShikiHighlight, type ShikiProviderProps, type ShikiHighlightState } from './types';
+
+const codeThemeModes: Record<ThemeMode, string> = {
+  dark: 'tabindex-code-theme-dark',
+  light: 'tabindex-code-theme-light',
+};
 
 export function ShikiContextProvider({ children, loadShiki }: ShikiProviderProps) {
   const [shiki, setShiki] = React.useState<ShikiHighlightState>(null);
-  const theme = useThemeStore();
-
-  const getCodeTheme = (mode: TBDXThemeMode): string =>
-    ({
-      light: `tabindex-code-theme-light`,
-      dark: `tabindex-code-theme-dark`,
-    })[mode];
+  const findCodeTheme = (mode: ThemeMode): string => codeThemeModes[mode || 'dark'];
+  const theme = useThemeCTX();
 
   React.useEffect(() => {
     loadShiki().then((s) => setShiki(s));
@@ -28,15 +24,15 @@ export function ShikiContextProvider({ children, loadShiki }: ShikiProviderProps
       }
 
       return {
-        code: shiki.codeToHtml(code, {
-          lang: language,
-          theme: getCodeTheme(theme.mode) || 'tabindex-code-theme-dark',
-        }),
         highlighted: true,
+        code: shiki.codeToHtml(code, {
+          theme: findCodeTheme(theme.mode),
+          lang: language,
+        }),
       };
     },
     [shiki, theme]
   );
 
-  return <ShikiContext.Provider value={highlight}>{children}</ShikiContext.Provider>;
+  return <ShikiProvider value={highlight}>{children}</ShikiProvider>;
 }
