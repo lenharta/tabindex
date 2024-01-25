@@ -1,0 +1,134 @@
+.Radio,
+.Switch,
+.Checkbox {
+  cursor: var(--input-cursor, pointer);
+  height: var(--input-height, 18px);
+  display: var(--input-display, inline-flex);
+  user-select: none;
+
+  &:disabled,
+  &[data-disabled],
+  &[data-readonly] {
+    --input-cursor: default;
+  }
+  &:focus:not(:focus-visible) {
+    border-color: transparent;
+  }
+  &:focus:focus-visible {
+    border-color: var(--blue-60);
+  }
+}
+
+.Radio {
+  --radio-height-xs: calc(18px * var(--scale));
+  --radio-height-sm: calc(20px * var(--scale));
+  --radio-height-md: calc(24px * var(--scale));
+  --radio-height-lg: calc(30px * var(--scale));
+  --radio-height-xl: calc(36px * var(--scale));
+
+  --radio-font-size-xs: calc(12px * var(--scale));
+  --radio-font-size-sm: calc(14px * var(--scale));
+  --radio-font-size-md: calc(16px * var(--scale));
+  --radio-font-size-lg: calc(18px * var(--scale));
+  --radio-font-size-xl: calc(20px * var(--scale));
+
+  height: var(--radio-height, var(--radio-height-xs));
+  font-size: var(--radio-font-size, var(--radio-font-size-xs));
+
+  &--xs {
+    --radio-height: var(--radio-height-xs);
+    --radio-font-size: var(--radio-font-size-xs);
+  }
+  &--sm {
+    --radio-height: var(--radio-height-sm);
+    --radio-font-size: var(--radio-font-size-sm);
+  }
+  &--md {
+    --radio-height: var(--radio-height-md);
+    --radio-font-size: var(--radio-font-size-md);
+  }
+  &--lg {
+    --radio-height: var(--radio-height-lg);
+    --radio-font-size: var(--radio-font-size-lg);
+  }
+  &--xl {
+    --radio-height: var(--radio-height-xl);
+    --radio-font-size: var(--radio-font-size-xl);
+  }
+}
+
+.Switch {
+  --switch-height-xs: calc(18px * var(--scale));
+  --switch-height-sm: calc(20px * var(--scale));
+  --switch-height-md: calc(24px * var(--scale));
+  --switch-height-lg: calc(30px * var(--scale));
+  --switch-height-xl: calc(36px * var(--scale));
+
+  --switch-font-size-xs: calc(12px * var(--scale));
+  --switch-font-size-sm: calc(14px * var(--scale));
+  --switch-font-size-md: calc(16px * var(--scale));
+  --switch-font-size-lg: calc(18px * var(--scale));
+  --switch-font-size-xl: calc(20px * var(--scale));
+
+  height: var(--switch-height, var(--switch-height-xs));
+  font-size: var(--switch-font-size, var(--switch-font-size-xs));
+
+  &--xs {
+    --switch-height: var(--switch-height-xs);
+    --switch-font-size: var(--switch-font-size-xs);
+  }
+  &--sm {
+    --switch-height: var(--switch-height-sm);
+    --switch-font-size: var(--switch-font-size-sm);
+  }
+  &--md {
+    --switch-height: var(--switch-height-md);
+    --switch-font-size: var(--switch-font-size-md);
+  }
+  &--lg {
+    --switch-height: var(--switch-height-lg);
+    --switch-font-size: var(--switch-font-size-lg);
+  }
+  &--xl {
+    --switch-height: var(--switch-height-xl);
+    --switch-font-size: var(--switch-font-size-xl);
+  }
+}
+
+.Checkbox {
+  --checkbox-height-xs: calc(18px * var(--scale));
+  --checkbox-height-sm: calc(20px * var(--scale));
+  --checkbox-height-md: calc(24px * var(--scale));
+  --checkbox-height-lg: calc(30px * var(--scale));
+  --checkbox-height-xl: calc(36px * var(--scale));
+
+  --checkbox-font-size-xs: calc(12px * var(--scale));
+  --checkbox-font-size-sm: calc(14px * var(--scale));
+  --checkbox-font-size-md: calc(16px * var(--scale));
+  --checkbox-font-size-lg: calc(18px * var(--scale));
+  --checkbox-font-size-xl: calc(20px * var(--scale));
+
+  height: var(--checkbox-height, var(--checkbox-height-xs));
+  font-size: var(--checkbox-font-size, var(--checkbox-font-size-xs));
+
+  &--xs {
+    --checkbox-height: var(--checkbox-height-xs);
+    --checkbox-font-size: var(--checkbox-font-size-xs);
+  }
+  &--sm {
+    --checkbox-height: var(--checkbox-height-sm);
+    --checkbox-font-size: var(--checkbox-font-size-sm);
+  }
+  &--md {
+    --checkbox-height: var(--checkbox-height-md);
+    --checkbox-font-size: var(--checkbox-font-size-md);
+  }
+  &--lg {
+    --checkbox-height: var(--checkbox-height-lg);
+    --checkbox-font-size: var(--checkbox-font-size-lg);
+  }
+  &--xl {
+    --checkbox-height: var(--checkbox-height-xl);
+    --checkbox-font-size: var(--checkbox-font-size-xl);
+  }
+}

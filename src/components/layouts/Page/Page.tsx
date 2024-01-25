@@ -1,14 +1,16 @@
 import clsx from 'clsx';
 import { useThemeCTX } from '@/core/theme';
 import { type Factory, factory } from '@/components/factory';
-
 import { PageContent } from './PageContent';
 import { PageFooter } from './PageFooter';
 import { PageHeader } from './PageHeader';
 import { PageHero } from './PageHero';
 
+type PageProps = {};
+
 type PageFactory = Factory<{
-  component: 'Page';
+  props: PageProps;
+  component: 'div';
   components: {
     Content: typeof PageContent;
     Footer: typeof PageFooter;
@@ -18,14 +20,14 @@ type PageFactory = Factory<{
 }>;
 
 export const Page = factory<PageFactory>((props, ref) => {
-  const { children, className, ...otherProps } = props;
+  const { component: Component = 'div', children, className, ...otherProps } = props;
   const classList = clsx('Page', className);
   const theme = useThemeCTX();
   return (
-    <div {...otherProps} className={classList} ref={ref}>
+    <Component {...otherProps} className={classList} ref={ref}>
       {children}
       <button onClick={() => theme.toggle()}>GO {theme.next.toUpperCase()} MODE</button>
-    </div>
+    </Component>
   );
 });
 

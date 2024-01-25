@@ -1,31 +1,33 @@
 import * as React from 'react';
-import { type CoreProps, type Elements, type Tags } from './types';
-
-type FactoryKey = keyof CoreProps;
-type FactoryRef<K extends FactoryKey> = Elements[K];
-type FactoryProp<K extends FactoryKey> = { component?: Tags[K] };
-type FactoryCoreProps<K extends FactoryKey> = CoreProps[K];
-type FactoryProps<K extends FactoryKey> = Omit<FactoryCoreProps<K> & FactoryProp<K>, 'ref'>;
+import { type CoreElements, type CoreProps } from './types';
+import { ExtendProps, FilterProps } from '@/core/types';
 
 export type FactoryPayload = {
   props?: Record<string, any>;
   component: FactoryKey;
   components?: Record<string, any>;
+  omittedProps?: string;
 };
 
-type FactoryRender<Payload extends FactoryPayload> = React.ForwardRefRenderFunction<
-  FactoryRef<Payload['component']>,
-  FactoryProps<Payload['component']> & Payload['props']
->;
+type FactoryKey = keyof CoreElements;
+type FactoryRef<K extends FactoryKey> = CoreElements[K];
+type FactoryCore<K extends FactoryKey> = CoreProps[K];
+type FactoryRefProp<K extends FactoryKey> = { ref?: React.ForwardedRef<FactoryRef<K>> };
 
-type FactoryComponent<Payload extends FactoryPayload> = React.ForwardRefExoticComponent<
-  FactoryProps<Payload['component']> & Payload['props']
+type FactoryProps<Payload extends FactoryPayload> = FilterProps<
+  FactoryCore<Payload['component']> & { component?: any } & Payload['props'],
+  'ref' & Payload['omittedProps']
 >;
-
-export function factory<Payload extends FactoryPayload>(ui: FactoryRender<Payload>) {
-  type Factory = FactoryComponent<Payload> & Payload['components'];
-  const Component = React.forwardRef(ui) as Factory;
-  return Component as Factory;
-}
 
 export type Factory<Payload extends FactoryPayload> = Payload;
+
+export function factory<Payload extends FactoryPayload>(
+  ui: React.ForwardRefRenderFunction<FactoryRef<Payload['component']>, FactoryProps<Payload>>
+) {
+  type FactoryComponent = React.ForwardRefExoticComponent<
+    FactoryProps<Payload> & FactoryRefProp<Payload['component']>
+  >;
+  type Component = FactoryComponent & Payload['components'];
+  const Component = React.forwardRef(ui) as unknown as Component;
+  return Component as Component;
+}

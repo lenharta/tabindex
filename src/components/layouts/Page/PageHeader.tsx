@@ -1,15 +1,18 @@
 import { type Factory, factory } from '@/components/factory';
 
+type PageHeaderProps = {};
+
 type PageHeaderFactory = Factory<{
-  component: 'PageHeader';
+  props: PageHeaderProps;
+  component: 'header';
 }>;
 
 export const PageHeader = factory<PageHeaderFactory>((props, ref) => {
-  const { children, ...otherProps } = props;
+  const { component: Component = 'header', children, ...otherProps } = props;
   return (
-    <header {...otherProps} className="PageHeader" ref={ref}>
+    <Component {...otherProps} className="PageHeader" ref={ref}>
       {children}
-    </header>
+    </Component>
   );
 });
 
