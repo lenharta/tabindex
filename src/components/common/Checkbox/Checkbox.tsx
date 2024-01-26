@@ -1,16 +1,20 @@
 import clsx from 'clsx';
+import { CheckboxGroup } from './CheckboxGroup';
 import { type Factory, createPolymorphic } from '@/components/factory';
-import { type OmittedInlineInputProps, InlineInput } from '../InlineInput';
+import { type InlineInputConsumerProps, InlineInput } from '../InlineInput';
 
-export type CheckboxProps = OmittedInlineInputProps & {
+export type CheckboxProps = InlineInputConsumerProps & {
   scheme?: 'primary' | 'secondary' | 'action';
   radius?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'rd';
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 };
 
 type CheckboxFactory = Factory.Config<{
-  component: 'button';
   props: CheckboxProps;
+  component: 'button';
+  components: {
+    Group: typeof CheckboxGroup;
+  };
 }>;
 
 export const CheckboxIcon = () => <div>Icon</div>;
