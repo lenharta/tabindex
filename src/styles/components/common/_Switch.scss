@@ -1,0 +1,37 @@
+.Switch {
+  --switch-height-xs: calc(18px * var(--scale));
+  --switch-height-sm: calc(20px * var(--scale));
+  --switch-height-md: calc(24px * var(--scale));
+  --switch-height-lg: calc(30px * var(--scale));
+  --switch-height-xl: calc(36px * var(--scale));
+
+  --switch-font-size-xs: calc(12px * var(--scale));
+  --switch-font-size-sm: calc(14px * var(--scale));
+  --switch-font-size-md: calc(16px * var(--scale));
+  --switch-font-size-lg: calc(18px * var(--scale));
+  --switch-font-size-xl: calc(20px * var(--scale));
+
+  height: var(--switch-height, var(--switch-height-xs));
+  font-size: var(--switch-font-size, var(--switch-font-size-xs));
+
+  &--xs {
+    --switch-height: var(--switch-height-xs);
+    --switch-font-size: var(--switch-font-size-xs);
+  }
+  &--sm {
+    --switch-height: var(--switch-height-sm);
+    --switch-font-size: var(--switch-font-size-sm);
+  }
+  &--md {
+    --switch-height: var(--switch-height-md);
+    --switch-font-size: var(--switch-font-size-md);
+  }
+  &--lg {
+    --switch-height: var(--switch-height-lg);
+    --switch-font-size: var(--switch-font-size-lg);
+  }
+  &--xl {
+    --switch-height: var(--switch-height-xl);
+    --switch-font-size: var(--switch-font-size-xl);
+  }
+}

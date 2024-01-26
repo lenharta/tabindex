@@ -1,21 +1,18 @@
-import { type Factory, factory } from '@/components/factory';
+import { type Factory, createStatic } from '@/components/factory';
 
-type PageHeroProps = {
-  headline?: string;
-};
+export type PageHeroProps = {};
 
-type PageHeroFactory = Factory<{
-  props: PageHeroProps;
+type PageHeroFactory = Factory.Config<{
   component: 'div';
+  props: PageHeroProps;
 }>;
 
-export const PageHero = factory<PageHeroFactory>((props, ref) => {
-  const { component: Component = 'div', children, headline, ...otherProps } = props;
+export const PageHero = createStatic<PageHeroFactory>((props) => {
+  const { children, ...otherProps } = props;
   return (
-    <Component {...otherProps} className="PageHero" ref={ref}>
-      {headline && <h1>{headline}</h1>}
+    <div {...otherProps} className="Page-hero">
       {children}
-    </Component>
+    </div>
   );
 });
 

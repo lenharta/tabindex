@@ -1,21 +1,19 @@
-@use '../tokens' as tokens;
-
 $font-map: (
   'standard': (
-    200: tokens.$font-family-xlt,
-    300: tokens.$font-family-lgt,
-    400: tokens.$font-family-reg,
-    500: tokens.$font-family-med,
-    600: tokens.$font-family-bld,
-    700: tokens.$font-family-xbd,
+    200: 'GeneralSans-Extralight',
+    300: 'GeneralSans-Light',
+    400: 'GeneralSans-Regular',
+    500: 'GeneralSans-Medium',
+    600: 'GeneralSans-Semibold',
+    700: 'GeneralSans-Bold',
   ),
   'italic': (
-    200: tokens.$font-family-xlt-ital,
-    300: tokens.$font-family-lgt-ital,
-    400: tokens.$font-family-reg-ital,
-    500: tokens.$font-family-med-ital,
-    600: tokens.$font-family-bld-ital,
-    700: tokens.$font-family-xbd-ital,
+    200: 'GeneralSans-ExtralightItalic',
+    300: 'GeneralSans-LightItalic',
+    400: 'GeneralSans-Italic',
+    500: 'GeneralSans-MediumItalic',
+    600: 'GeneralSans-BoldItalic',
+    700: 'GeneralSans-SemiboldItalic',
   ),
 );
 
@@ -35,5 +33,5 @@ $font-map: (
 
 html,
 body {
-  font-family: tokens.$font-family-reg;
+  font-family: 'GeneralSans-Regular';
 }

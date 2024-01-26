@@ -1,59 +1,86 @@
-@use '../colors' as colors;
-
 :root {
-  color-scheme: light dark;
+  color-scheme: var(--tbdx-scheme);
 }
 
-.InlineInput {
-  border: 1.5px solid transparent;
-  outline: 1.5px solid transparent;
-
-  &:focus:not(:focus-visible) {
-    outline-color: transparent;
-  }
-  &:focus:focus-visible {
-    outline-color: var(--blue-60);
-  }
-}
-
-.InlineInput {
+.Button {
   color: inherit;
   border-color: transparent;
   background-color: transparent;
 }
 
-[data-prefers-color-scheme='dark'] {
-  color: var(--dark-surface-100);
-  background-color: var(--dark-surface-04);
+.Radio,
+.Button,
+.Switch,
+.Checkbox {
+  --focus-border: unset;
+  --focus-outline: unset;
+  --focus-background: unset;
 
-  .InlineInput {
-    background-color: var(--dark-surface-04);
+  border: 1.5px solid var(--focus-border, transparent);
+  outline: 1.5px solid var(--focus-outline, transparent);
+
+  &:focus:not(:focus-visible) {
+    --focus-outline: transparent;
+    outline-offset: -1.5px;
   }
-  .InlineInput:hover {
-    background-color: var(--dark-surface-06);
-  }
-  .InlineInput--elevated {
-    background-color: var(--dark-surface-06);
-  }
-  .InlineInput--elevated:hover {
-    background-color: var(--dark-surface-08);
+
+  &:focus:focus-visible {
+    --focus-outline: var(--tbdx-blue-60);
+    outline-offset: 1px;
   }
 }
 
-[data-prefers-color-scheme='light'] {
-  color: var(--light-surface-100);
-  background-color: var(--light-surface-02);
+html[data-prefers-color-scheme='dark'],
+html[data-prefers-color-scheme='light'] {
+  color: var(--tbdx-surface-text);
+  background-color: var(--tbdx-surface-base);
 
-  .InlineInput {
-    background-color: var(--light-surface-04);
+  .Button--solid.Button--primary {
+    color: var(--tbdx-surface-06);
+    background-color: var(--tbdx-surface-94);
   }
-  .InlineInput:hover {
-    background-color: var(--light-surface-06);
+  .Button--solid.Button--secondary {
+    color: var(--tbdx-surface-80);
+    background-color: var(--tbdx-surface-06);
   }
-  .InlineInput--elevated {
-    background-color: var(--light-surface-06);
+
+  .Button--solid.Button--primary:hover {
+    background-color: var(--tbdx-surface-88);
   }
-  .InlineInput--elevated:hover {
-    background-color: var(--light-surface-08);
+  .Button--solid.Button--secondary:hover {
+    background-color: var(--tbdx-surface-12);
+  }
+
+  .Button--solid.Button--primary:focus:focus-visible {
+    outline-color: var(--tbdx-surface-94);
+  }
+  .Button--solid.Button--secondary:focus:focus-visible {
+    outline-color: var(--tbdx-blue-60);
+  }
+}
+
+html[data-prefers-color-scheme='dark'] {
+  .Button--solid.Button--action {
+    color: var(--tbdx-surface-94);
+    background-color: var(--tbdx-blue-60);
+  }
+  .Button--solid.Button--action:hover {
+    background-color: var(--tbdx-blue-70);
+  }
+  .Button--solid.Button--action:focus:focus-visible {
+    outline-color: var(--tbdx-blue-60);
+  }
+}
+
+html[data-prefers-color-scheme='light'] {
+  .Button--solid.Button--action {
+    color: var(--tbdx-surface-06);
+    background-color: var(--tbdx-blue-70);
+  }
+  .Button--solid.Button--action:hover {
+    background-color: var(--tbdx-blue-80);
+  }
+  .Button--solid.Button--action:focus:focus-visible {
+    outline-color: var(--tbdx-blue-70);
   }
 }

@@ -1,0 +1,37 @@
+.Radio {
+  --radio-height-xs: calc(18px * var(--scale));
+  --radio-height-sm: calc(20px * var(--scale));
+  --radio-height-md: calc(24px * var(--scale));
+  --radio-height-lg: calc(30px * var(--scale));
+  --radio-height-xl: calc(36px * var(--scale));
+
+  --radio-font-size-xs: calc(12px * var(--scale));
+  --radio-font-size-sm: calc(14px * var(--scale));
+  --radio-font-size-md: calc(16px * var(--scale));
+  --radio-font-size-lg: calc(18px * var(--scale));
+  --radio-font-size-xl: calc(20px * var(--scale));
+
+  height: var(--radio-height, var(--radio-height-xs));
+  font-size: var(--radio-font-size, var(--radio-font-size-xs));
+
+  &--xs {
+    --radio-height: var(--radio-height-xs);
+    --radio-font-size: var(--radio-font-size-xs);
+  }
+  &--sm {
+    --radio-height: var(--radio-height-sm);
+    --radio-font-size: var(--radio-font-size-sm);
+  }
+  &--md {
+    --radio-height: var(--radio-height-md);
+    --radio-font-size: var(--radio-font-size-md);
+  }
+  &--lg {
+    --radio-height: var(--radio-height-lg);
+    --radio-font-size: var(--radio-font-size-lg);
+  }
+  &--xl {
+    --radio-height: var(--radio-height-xl);
+    --radio-font-size: var(--radio-font-size-xl);
+  }
+}
