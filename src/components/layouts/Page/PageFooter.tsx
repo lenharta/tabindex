@@ -1,15 +1,18 @@
 import { type Factory, factory } from '@/components/factory';
 
+type PageFooterProps = {};
+
 type PageFooterFactory = Factory<{
-  component: 'PageFooter';
+  props: PageFooterProps;
+  component: 'footer';
 }>;
 
 export const PageFooter = factory<PageFooterFactory>((props, ref) => {
-  const { children, ...otherProps } = props;
+  const { component: Component = 'main', children, ...otherProps } = props;
   return (
-    <footer {...otherProps} className="PageFooter" ref={ref}>
+    <Component {...otherProps} className="PageFooter" ref={ref}>
       {children}
-    </footer>
+    </Component>
   );
 });
 

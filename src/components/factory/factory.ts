@@ -1,31 +1,38 @@
 import * as React from 'react';
-import { type CoreProps, type Elements, type Tags } from './types';
 
-type FactoryKey = keyof CoreProps;
-type FactoryRef<K extends FactoryKey> = Elements[K];
-type FactoryProp<K extends FactoryKey> = { component?: Tags[K] };
-type FactoryCoreProps<K extends FactoryKey> = CoreProps[K];
-type FactoryProps<K extends FactoryKey> = Omit<FactoryCoreProps<K> & FactoryProp<K>, 'ref'>;
+// TODO: Replace `ElementType` with `ComponentType`
 
-export type FactoryPayload = {
-  props?: Record<string, any>;
-  component: FactoryKey;
-  components?: Record<string, any>;
-};
+export declare namespace Factory {
+  export type Tag = React.ElementType;
 
-type FactoryRender<Payload extends FactoryPayload> = React.ForwardRefRenderFunction<
-  FactoryRef<Payload['component']>,
-  FactoryProps<Payload['component']> & Payload['props']
->;
+  export interface Payload {
+    props?: Record<string, any>;
+    component?: any;
+    components?: Record<string, any>;
+  }
 
-type FactoryComponent<Payload extends FactoryPayload> = React.ForwardRefExoticComponent<
-  FactoryProps<Payload['component']> & Payload['props']
->;
+  export type Prop<T extends Tag> = { component?: T };
+  export type Attributes<T extends Tag> = React.ComponentPropsWithoutRef<T>;
+  export type Reference<T extends Tag> = React.ComponentPropsWithRef<T>['ref'];
+  export type Properties<T extends Tag, P = {}> = Attributes<T> & Prop<T> & P;
 
-export function factory<Payload extends FactoryPayload>(ui: FactoryRender<Payload>) {
-  type Factory = FactoryComponent<Payload> & Payload['components'];
-  const Component = React.forwardRef(ui) as Factory;
-  return Component as Factory;
+  export type Render<Payload extends Factory.Payload> = <T extends Tag>(
+    props: Properties<T, Payload['props']>,
+    ref: React.ForwardedRef<Reference<T>>
+  ) => React.ReactNode;
+
+  export type Component<Payload extends Factory.Payload> = <T extends Tag = Payload['component']>(
+    props: Properties<T, Payload['props']> & { ref?: Reference<T> }
+  ) => React.ReactNode;
+
+  export type Config<Payload extends Factory.Payload> = Payload;
+
+  export function createPolymorphic<Payload extends Factory.Payload>(
+    ui: Factory.Render<Payload>
+  ): Factory.Component<Payload> & Payload['components'];
 }
 
-export type Factory<Payload extends FactoryPayload> = Payload;
+export const createPolymorphic: typeof Factory.createPolymorphic = (ui) => {
+  const FactoryComponent = React.forwardRef(ui);
+  return FactoryComponent;
+};

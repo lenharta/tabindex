@@ -1,16 +1,21 @@
 import { type Factory, factory } from '@/components/factory';
 
+type PageHeroProps = {
+  headline?: string;
+};
+
 type PageHeroFactory = Factory<{
-  component: 'PageHero';
+  props: PageHeroProps;
+  component: 'div';
 }>;
 
 export const PageHero = factory<PageHeroFactory>((props, ref) => {
-  const { children, headline, ...otherProps } = props;
+  const { component: Component = 'div', children, headline, ...otherProps } = props;
   return (
-    <div {...otherProps} className="PageHero" ref={ref}>
+    <Component {...otherProps} className="PageHero" ref={ref}>
       {headline && <h1>{headline}</h1>}
       {children}
-    </div>
+    </Component>
   );
 });
 

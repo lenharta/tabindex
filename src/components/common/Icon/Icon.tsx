@@ -1,6 +1,6 @@
-import { iconPaths, iconNames, type IconBaseProps, type IconProps } from './config';
+import { iconPaths, iconNames, type IconProps } from './config';
 
-const Icon = (props: IconProps & IconBaseProps) => {
+export const Icon = (props: IconProps) => {
   const { size = 'sm', name = 'radio_checked' } = props;
   return (
     <svg
@@ -28,9 +28,11 @@ export const IconGallery = () => {
       {iconNames.map((key) => {
         return (
           <div key={key} className="IconGallery-card">
+            <Icon size="xs" name={key} />
             <Icon size="sm" name={key} />
             <Icon size="md" name={key} />
             <Icon size="lg" name={key} />
+            <Icon size="xl" name={key} />
           </div>
         );
       })}

@@ -1,15 +1,18 @@
 import { Factory, factory } from '@/components/factory';
 
+type PageContentProps = {};
+
 type PageContentFactory = Factory<{
-  component: 'PageContent';
+  props: PageContentProps;
+  component: 'main';
 }>;
 
 export const PageContent = factory<PageContentFactory>((props, ref) => {
-  const { children, ...otherProps } = props;
+  const { component: Component = 'main', children, ...otherProps } = props;
   return (
-    <main {...otherProps} className="PageContent" ref={ref}>
+    <Component {...otherProps} className="PageContent" ref={ref} id="main_content">
       {children}
-    </main>
+    </Component>
   );
 });
 

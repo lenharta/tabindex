@@ -1,18 +1,25 @@
-import { type Factory, factory } from '@/components/factory';
+import * as React from 'react';
+import { Factory } from '@/components/factory';
+import { ButtonUnstyled } from './ButtonUnstyled';
 
-export type ButtonProps = {};
+type ButtonProps = {
+  label?: string;
+  disabled?: boolean;
+  readonly?: boolean;
+  leftContent?: React.ReactNode;
+  rightContent?: React.ReactNode;
+};
 
-export type ButtonFactory = Factory<{
+type ButtonFactory = Factory.Config<{
+  component: 'button';
   props: ButtonProps;
-  component: 'Button';
-  components: {};
 }>;
 
-export const Button = factory<ButtonFactory>((props, ref) => {
-  const { component: Component = 'button', children, ...otherProps } = props;
+export const Button = Factory.createPolymorphic<ButtonFactory>((props, ref) => {
+  const { component = 'button', children, ...otherProps } = props;
   return (
-    <Component {...otherProps} ref={ref}>
+    <ButtonUnstyled component={component} {...otherProps} ref={ref}>
       {children}
-    </Component>
+    </ButtonUnstyled>
   );
 });

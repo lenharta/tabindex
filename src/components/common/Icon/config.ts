@@ -1,3 +1,5 @@
+import { type Size } from '@/components/factory';
+
 export const iconPaths = {
   checkbox_checked: `M6.25 3C4.45507 3 3 4.45508 3 6.25V17.75C3 19.5449 4.45508 21 6.25 21H17.75C19.5449 21 21 19.5449 21 17.75V6.25C21 4.45507 19.5449 3 17.75 3H6.25ZM17.28 9.28064L10.5263 16.0266C10.2333 16.3192 9.75868 16.319 9.46591 16.0262L6.72014 13.2803C6.42726 12.9874 6.42727 12.5125 6.72018 12.2196C7.01308 11.9268 7.48795 11.9268 7.78084 12.2197L9.99658 14.4356L16.22 8.21936C16.513 7.92664 16.9879 7.92691 17.2806 8.21998C17.5734 8.51304 17.5731 8.98791 17.28 9.28064Z`,
   checkbox_unchecked: `M3 6.25C3 4.45507 4.45507 3 6.25 3H17.75C19.5449 3 21 4.45507 21 6.25V17.75C21 19.5449 19.5449 21 17.75 21H6.25C4.45507 21 3 19.5449 3 17.75V6.25ZM6.25 4.5C5.2835 4.5 4.5 5.2835 4.5 6.25V17.75C4.5 18.7165 5.2835 19.5 6.25 19.5H17.75C18.7165 19.5 19.5 18.7165 19.5 17.75V6.25C19.5 5.2835 18.7165 4.5 17.75 4.5H6.25Z`,
@@ -7,14 +9,14 @@ export const iconPaths = {
 };
 
 export const iconNames: IconName[] = [
-  'checkbox_checked',
   'checkbox_indeterminate',
   'checkbox_unchecked',
-  'radio_checked',
+  'checkbox_checked',
   'radio_unchecked',
+  'radio_checked',
 ];
 
 export type IconName = keyof typeof iconPaths;
-export type IconSize = 'sm' | 'md' | 'lg';
-export type IconProps = JSX.IntrinsicElements['svg'];
-export type IconBaseProps = { name?: IconName; size?: IconSize };
+export type IconSize = Size;
+export type IconBaseProps = JSX.IntrinsicElements['svg'];
+export type IconProps = { name?: IconName; size?: IconSize } & IconBaseProps;

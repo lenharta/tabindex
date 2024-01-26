@@ -1,0 +1,41 @@
+.Icon {
+  display: flex;
+  flex-shrink: 0;
+  height: var(--icon-height, 22px);
+  width: var(--icon-width, 22px);
+
+  &--xs {
+    --icon-width: 16px;
+    --icon-height: 16px;
+  }
+  &--sm {
+    --icon-width: 18px;
+    --icon-height: 18px;
+  }
+  &--md {
+    --icon-width: 22px;
+    --icon-height: 22px;
+  }
+  &--lg {
+    --icon-width: 28px;
+    --icon-height: 28px;
+  }
+  &--xl {
+    --icon-width: 34px;
+    --icon-height: 34px;
+  }
+}
+
+.IconGallery {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  justify-content: start;
+
+  &-card {
+    display: flex;
+    align-items: start;
+    flex-direction: row-reverse;
+    justify-content: start;
+  }
+}
