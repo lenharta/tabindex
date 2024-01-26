@@ -1,18 +1,18 @@
-import { type Factory, factory } from '@/components/factory';
+import { type Factory, createStatic } from '@/components/factory';
 
-type PageHeaderProps = {};
+export type PageHeaderProps = {};
 
-type PageHeaderFactory = Factory<{
-  props: PageHeaderProps;
+type PageHeaderFactory = Factory.Config<{
   component: 'header';
+  props: PageHeaderProps;
 }>;
 
-export const PageHeader = factory<PageHeaderFactory>((props, ref) => {
-  const { component: Component = 'header', children, ...otherProps } = props;
+export const PageHeader = createStatic<PageHeaderFactory>((props) => {
+  const { children, ...otherProps } = props;
   return (
-    <Component {...otherProps} className="PageHeader" ref={ref}>
+    <header {...otherProps} className="Page-header">
       {children}
-    </Component>
+    </header>
   );
 });
 

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { cssToString } from '@/utils';
-import { type Factory, factory } from '@/components/factory';
+// import { type Factory, factory } from '@/components/factory';
 
 export interface InlineMediaQuery {
   query: string;
@@ -17,11 +17,11 @@ export interface InlineStyleProps extends InlineStyleInput {
   nonce?: () => string;
 }
 
-export type InlineStyleFactory = Factory<{
-  props: InlineStyleProps;
-  component: 'InlineStyle';
-  components: {};
-}>;
+// export type InlineStyleFactory = Factory<{
+//   props: InlineStyleProps;
+//   component: 'InlineStyle';
+//   components: {};
+// }>;
 
 export const createInlineStyles = (input: InlineStyleInput) => {
   const { selector, media, styles } = input;
@@ -41,16 +41,15 @@ export const createInlineStyles = (input: InlineStyleInput) => {
   return result.join('').trim();
 };
 
-export const InlineStyle = factory<InlineStyleFactory>((props, ref) => {
+export const InlineStyle = (props: InlineStyleProps) => {
   const { selector, media, styles, nonce = () => '' } = props;
   return (
     <style
-      ref={ref}
       nonce={nonce?.()}
       dangerouslySetInnerHTML={{ __html: createInlineStyles({ selector, styles, media }) }}
     />
   );
-});
+};
 
 InlineStyle.displayName = '@TBDX/InlineStyle';
 

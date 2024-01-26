@@ -1,18 +1,18 @@
-import { type Factory, factory } from '@/components/factory';
+import { type Factory, createStatic } from '@/components/factory';
 
-type PageFooterProps = {};
+export type PageFooterProps = {};
 
-type PageFooterFactory = Factory<{
-  props: PageFooterProps;
+type PageFooterFactory = Factory.Config<{
   component: 'footer';
+  props: PageFooterProps;
 }>;
 
-export const PageFooter = factory<PageFooterFactory>((props, ref) => {
-  const { component: Component = 'main', children, ...otherProps } = props;
+export const PageFooter = createStatic<PageFooterFactory>((props) => {
+  const { children, ...otherProps } = props;
   return (
-    <Component {...otherProps} className="PageFooter" ref={ref}>
+    <footer {...otherProps} className="Page-footer">
       {children}
-    </Component>
+    </footer>
   );
 });
 

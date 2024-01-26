@@ -1,70 +1,81 @@
-export default function Toolbox() {
+import { Button, ButtonProps, Title } from '@/components/common';
+import { useThemeCTX } from '@/core/theme';
+
+export function ModeButton() {
+  const theme = useThemeCTX();
+  return (
+    <Button scheme="secondary" onClick={theme.toggle}>
+      Change Mode
+    </Button>
+  );
+}
+
+const groupProps: Record<number, Partial<ButtonProps>> = {
+  1: { size: 'sm', scheme: 'primary', label: 'Primary' },
+  2: { size: 'sm', scheme: 'action', label: 'Action' },
+  3: { size: 'sm', scheme: 'secondary', label: 'Secondary' },
+};
+
+const TitleDemo = () => {
   return (
     <div>
-      <span>Toolbox</span>
+      <div>
+        <Title h2>Title Demo</Title>
+      </div>
+      <div style={{ display: 'flex' }}>
+        <div style={{ display: 'grid', placeContent: 'start' }}>
+          <Title h1>Title Level 1</Title>
+          <Title h2>Title Level 2</Title>
+          <Title h3>Title Level 3</Title>
+          <Title h4>Title Level 4</Title>
+          <Title h5>Title Level 5</Title>
+          <Title h6>Title Level 6</Title>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export function ButtonDemo() {
+  return (
+    <div>
+      <div>
+        <Title h2>Buttons</Title>
+      </div>
+      <div style={{ display: 'flex' }}>
+        <div style={{ display: 'grid', placeContent: 'start' }}>
+          <Button {...groupProps[1]} />
+          <Button {...groupProps[1]} />
+          <Button {...groupProps[1]} />
+          <Button {...groupProps[1]} />
+          <Button {...groupProps[1]} />
+        </div>
+        <div style={{ display: 'grid', placeContent: 'start' }}>
+          <Button {...groupProps[2]} />
+          <Button {...groupProps[2]} />
+          <Button {...groupProps[2]} />
+          <Button {...groupProps[2]} />
+          <Button {...groupProps[2]} />
+        </div>
+        <div style={{ display: 'grid', placeContent: 'start' }}>
+          <Button {...groupProps[3]} />
+          <Button {...groupProps[3]} />
+          <Button {...groupProps[3]} />
+          <Button {...groupProps[3]} />
+          <Button {...groupProps[3]} />
+        </div>
+      </div>
     </div>
   );
 }
 
-// import * as React from 'react';
-// import { Page } from '@/components/layouts';
-
-// interface CardProps {
-//   disabled?: boolean;
-//   readonly?: boolean;
-// }
-
-// interface TextProps {
-//   span?: boolean;
-//   strong?: boolean;
-// }
-
-// const findTextComponent = (props: Partial<TextProps>) => {
-//   const { span, strong } = props;
-//   if (span) return 'span';
-//   if (strong) return 'strong';
-//   return 'p';
-// };
-
-// const Text: <T extends Factory.Tag = 'p'>(
-//   props: Factory.Properties<T, TextProps>,
-//   ref: Factory.Reference<T>
-// ) => React.ReactNode = React.forwardRef(
-//   <T extends Factory.Tag>(props: Factory.Properties<T, TextProps>, ref: Factory.Reference<T>) => {
-//     const { component, children, span, strong, ...otherProps } = props;
-//     const Component = findTextComponent({ span, strong });
-//     return (
-//       <Component {...otherProps} ref={ref}>
-//         {children}
-//       </Component>
-//     );
-//   }
-// );
-
-// const DemoComponent = () => {
-//   return (
-//     <div>
-//       <p>DEMO COMPONENT</p>
-//       <p>DEMO COMPONENT</p>
-//       <p>DEMO COMPONENT</p>
-//       <Card>Card</Card>
-//       <Button>Button</Button>
-//       <p>DEMO COMPONENT</p>
-//       <p>DEMO COMPONENT</p>
-//       <p>DEMO COMPONENT</p>
-//     </div>
-//   );
-// };
-
-// export default function Toolbox() {
-//   return (
-//     <Page>
-//       <Page.Header />
-//       <Page.Hero headline="Toolbox" />
-//       <Page.Content>
-//         {/* <IconGallery /> */}
-//         <DemoComponent />
-//       </Page.Content>
-//     </Page>
-//   );
-// }
+export default function Toolbox() {
+  return (
+    <div>
+      <Title h1>Toolbox</Title>
+      <ModeButton />
+      <ButtonDemo />
+      <TitleDemo />
+    </div>
+  );
+}

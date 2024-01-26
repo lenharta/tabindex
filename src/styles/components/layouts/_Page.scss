@@ -1,20 +1,26 @@
-.Page {
-  width: 100%;
-  display: block;
-  position: relative;
-  overflow-x: hidden;
-  isolation: isolate;
+.Page,
+.Page--default,
+.Page--sandbox {
+  margin: 0;
+  padding: 0;
   z-index: 0;
+  position: relative;
+  isolation: isolate;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .Page--default {
-  /* TEMPORARY */
   min-height: 300vh;
+  /* TEMPORARY */
 
-  .Page-Hero,
-  .Page-Content {
-    max-width: 100%;
+  width: 100%;
+  display: block;
+
+  &-hero,
+  &-content {
     display: flex;
+    max-width: 100%;
     flex-direction: column;
     align-items: flex-start;
     padding-inline: 1rem;
@@ -22,18 +28,18 @@
     max-width: 100em;
   }
 
-  .Page-Hero {
+  &-title {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  &-hero {
     min-height: 16rem;
     justify-content: flex-end;
     padding-top: 2rem;
   }
 
-  .Page-Title {
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-
-  .Page-Content {
+  &-content {
     justify-content: flex-start;
     padding-bottom: 2rem;
   }

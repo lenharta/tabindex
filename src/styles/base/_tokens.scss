@@ -1,40 +1,7 @@
-$scale: 1;
-
-$breakpoint-xs: 36em;
-$breakpoint-sm: 48em;
-$breakpoint-md: 62em;
-$breakpoint-lg: 75em;
-$breakpoint-xl: 88em;
-
-$border-xs: 1px;
-$border-sm: 2px;
-$border-md: 3px;
-$border-lg: 4px;
-$border-xl: 5px;
-
-$radius-xs: 2px;
-$radius-sm: 4px;
-$radius-md: 6px;
-$radius-lg: 8px;
-$radius-xl: 12px;
-$radius-rd: 1000px;
-
-$font-family-xlt: 'GeneralSans-Extralight';
-$font-family-lgt: 'GeneralSans-Light';
-$font-family-reg: 'GeneralSans-Regular';
-$font-family-med: 'GeneralSans-Medium';
-$font-family-bld: 'GeneralSans-Semibold';
-$font-family-xbd: 'GeneralSans-Bold';
-
-$font-family-xlt-ital: 'GeneralSans-ExtralightItalic';
-$font-family-lgt-ital: 'GeneralSans-LightItalic';
-$font-family-reg-ital: 'GeneralSans-Italic';
-$font-family-med-ital: 'GeneralSans-MediumItalic';
-$font-family-bld-ital: 'GeneralSans-BoldItalic';
-$font-family-xbd-ital: 'GeneralSans-SemiboldItalic';
-
 :root {
   --tbdx-scale: 1;
+  --tbdx-cursor: default;
+  --tbdx-scheme: 'light dark';
 
   --tbdx-breakpoint-xs: 36em;
   --tbdx-breakpoint-sm: 48em;
@@ -73,12 +40,14 @@ $font-family-xbd-ital: 'GeneralSans-SemiboldItalic';
   --tbdx-font-size-02: calc(12px * var(--tbdx-scale));
   --tbdx-font-size-03: calc(14px * var(--tbdx-scale));
   --tbdx-font-size-04: calc(16px * var(--tbdx-scale));
-  --tbdx-font-size-05: calc(20px * var(--tbdx-scale));
-  --tbdx-font-size-06: calc(24px * var(--tbdx-scale));
-  --tbdx-font-size-07: calc(28px * var(--tbdx-scale));
-  --tbdx-font-size-08: calc(32px * var(--tbdx-scale));
-  --tbdx-font-size-09: calc(40px * var(--tbdx-scale));
-  --tbdx-font-size-10: calc(68px * var(--tbdx-scale));
+  --tbdx-font-size-05: calc(18px * var(--tbdx-scale));
+  --tbdx-font-size-06: calc(20px * var(--tbdx-scale));
+  --tbdx-font-size-07: calc(24px * var(--tbdx-scale));
+  --tbdx-font-size-08: calc(28px * var(--tbdx-scale));
+  --tbdx-font-size-09: calc(32px * var(--tbdx-scale));
+  --tbdx-font-size-10: calc(40px * var(--tbdx-scale));
+  --tbdx-font-size-11: calc(50px * var(--tbdx-scale));
+  --tbdx-font-size-12: calc(68px * var(--tbdx-scale));
 
   --tbdx-spacing-x-01: calc(2px * var(--tbdx-scale));
   --tbdx-spacing-x-02: calc(4px * var(--tbdx-scale));
