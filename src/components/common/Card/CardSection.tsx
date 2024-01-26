@@ -1,9 +1,7 @@
 import clsx from 'clsx';
 import { type Factory, createPolymorphic } from '@/components/factory';
-import { CardSection } from './CardSection';
-import { CardGroup } from './CardGroup';
 
-export type CardProps = {
+export type CardSectionProps = {
   radius?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   border?: 'sm' | 'md' | 'lg';
@@ -11,16 +9,12 @@ export type CardProps = {
   className?: string;
 };
 
-type CardFactory = Factory.Config<{
-  props: CardProps;
-  component: 'section';
-  components: {
-    Section: typeof CardSection;
-    Group: typeof CardGroup;
-  };
+type CardSectionFactory = Factory.Config<{
+  props: CardSectionProps;
+  component: 'div';
 }>;
 
-export const Card = createPolymorphic<CardFactory>((props, ref) => {
+export const CardSection = createPolymorphic<CardSectionFactory>((props, ref) => {
   const {
     radius,
     border,
@@ -32,11 +26,11 @@ export const Card = createPolymorphic<CardFactory>((props, ref) => {
   } = props;
 
   const className = clsx(
-    'Card',
+    'CardSection',
     {
-      [`Card--radius-${radius}`]: radius !== undefined,
-      [`Card--border-${border}`]: border !== undefined,
-      [`Card--shadow-${shadow}`]: shadow !== undefined,
+      [`CardSection--radius-${radius}`]: radius !== undefined,
+      [`CardSection--border-${border}`]: border !== undefined,
+      [`CardSection--shadow-${shadow}`]: shadow !== undefined,
     },
     defaultClassName
   );
@@ -48,6 +42,4 @@ export const Card = createPolymorphic<CardFactory>((props, ref) => {
   );
 });
 
-Card.displayName = '@TBDX/Card';
-Card.Section = CardSection;
-Card.Group = CardGroup;
+CardSection.displayName = '@TBDX/Card.Section';

@@ -1,4 +1,6 @@
 import { type Factory, createPolymorphic } from '@/components/factory';
+import { Label } from '../Label';
+import { Text } from '../Text';
 
 export type InlineInputProps = {
   children?: React.ReactNode;
@@ -10,7 +12,7 @@ export type InlineInputProps = {
   note?: string;
 };
 
-export type OmittedInlineInputProps = Omit<InlineInputProps, 'className' | 'children'>;
+export type InlineInputConsumerProps = Omit<InlineInputProps, 'className' | 'children'>;
 
 type InlineInputFactory = Factory.Config<{
   component: 'button';
@@ -18,10 +20,34 @@ type InlineInputFactory = Factory.Config<{
 }>;
 
 export const InlineInput = createPolymorphic<InlineInputFactory>((props, ref) => {
-  const { component: Component = 'button', children, ...otherProps } = props;
+  const {
+    note,
+    label,
+    error,
+    disabled,
+    readonly,
+    children,
+    component: Component = 'button',
+    ...otherProps
+  } = props;
+
+  const dataProps = {
+    'data-readonly': readonly,
+    'data-disabled': disabled,
+  };
+  const ariaProps = {
+    'aria-disabled': disabled,
+    'aria-readonly': readonly,
+  };
+
   return (
-    <Component {...otherProps} ref={ref}>
+    <Component {...otherProps} {...dataProps} {...ariaProps} ref={ref}>
       {children}
+      <div>
+        {label && <Label>{label}</Label>}
+        {error && <Text>{error}</Text>}
+        {note && <Text>{note}</Text>}
+      </div>
     </Component>
   );
 });
