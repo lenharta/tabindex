@@ -34,6 +34,7 @@ export default defineConfig(({ mode, command }) => {
           '@/*': path.resolve(__dirname, './src/'),
           '@/app': path.resolve(__dirname, './src/app/'),
           '@/core': path.resolve(__dirname, './src/core/'),
+          '@/hooks': path.resolve(__dirname, './src/hooks/'),
           '@/tests': path.resolve(__dirname, './src/tests/'),
           '@/utils': path.resolve(__dirname, './src/utils/'),
           '@/assets': path.resolve(__dirname, './src/assets/'),
