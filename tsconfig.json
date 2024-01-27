@@ -26,19 +26,10 @@
 
     "baseUrl": ".",
     "paths": {
-      // "@/*": ["src"],
-      // "@/app/*": ["src/app/*"],
-      // "@/core/*": ["src/core/*"],
-      // "@/assets/*": ["src/assets/*"],
-      // "@/common/*": ["src/common/*"],
-      // "@/styles/*": ["src/styles/*"],
-      // "@/hooks/*": ["src/hooks/*"],
-      // "@/tests/*": ["src/tests/*"],
-      // "@/utils/*": ["src/utils/*"],
-
       "@/*": ["./src/*"],
       "@/app/*": ["./src/app/*"],
       "@/core/*": ["./src/core/*"],
+      "@/hooks/*": ["./src/hooks/*"],
       "@/tests/*": ["./src/tests/*"],
       "@/utils/*": ["./src/utils/*"],
       "@/assets/*": ["./src/assets/*"],

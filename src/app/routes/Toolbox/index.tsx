@@ -1,5 +1,6 @@
 import { Button, ButtonProps, Title } from '@/components/common';
 import { useThemeCTX } from '@/core/theme';
+import { useProps } from '@/hooks';
 
 export function ModeButton() {
   const theme = useThemeCTX();
@@ -69,9 +70,23 @@ export function ButtonDemo() {
   );
 }
 
+interface TestComponentProps {
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+  border?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+  shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+  children?: React.ReactNode;
+}
+
+const TestPropComponent = (props: TestComponentProps) => {
+  const { children, ...otherProps } = props;
+  const { className } = useProps('TestComponent', otherProps, { size: 'sm' }, 'other-class-name');
+  return <div className={className}>Test Component</div>;
+};
+
 export default function Toolbox() {
   return (
     <div>
+      <TestPropComponent />
       <Title h1>Toolbox</Title>
       <ModeButton />
       <ButtonDemo />

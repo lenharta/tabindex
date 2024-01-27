@@ -1,8 +1,10 @@
 import { type Factory, createPolymorphic } from '@/components/factory';
 import { Label } from '../Label';
 import { Text } from '../Text';
+import React from 'react';
 
 export type InlineInputProps = {
+  type?: React.AriaRole;
   children?: React.ReactNode;
   className?: string;
   disabled?: boolean;
@@ -21,6 +23,7 @@ type InlineInputFactory = Factory.Config<{
 
 export const InlineInput = createPolymorphic<InlineInputFactory>((props, ref) => {
   const {
+    type,
     note,
     label,
     error,
@@ -35,13 +38,14 @@ export const InlineInput = createPolymorphic<InlineInputFactory>((props, ref) =>
     'data-readonly': readonly,
     'data-disabled': disabled,
   };
+
   const ariaProps = {
     'aria-disabled': disabled,
     'aria-readonly': readonly,
   };
 
   return (
-    <Component {...otherProps} {...dataProps} {...ariaProps} ref={ref}>
+    <Component {...otherProps} {...dataProps} {...ariaProps} role={type} type="button" ref={ref}>
       {children}
       <div>
         {label && <Label>{label}</Label>}
