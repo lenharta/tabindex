@@ -7,6 +7,7 @@ import Home from '@/app/routes/Home';
 import Sandbox from '@/app/routes/Sandbox';
 import Toolbox from '@/app/routes/Toolbox';
 import NotFound from '@/app/routes/NotFound';
+import Wireframe from './app/routes/Wireframe';
 import './styles/index.scss';
 
 const router = createBrowserRouter([
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: '/sandbox', element: <Sandbox /> },
       { path: '/toolbox', element: <Toolbox /> },
+      { path: '/wireframe', element: <Wireframe /> },
     ],
   },
 ]);

@@ -1,10 +1,10 @@
-@use 'shared';
+@forward 'shared';
 
-@use 'Button';
-@use 'Checkbox';
-@use 'Icon';
-@use 'Label';
-@use 'Radio';
-@use 'Switch';
-@use 'Text';
-@use 'Title';
+@forward 'Button';
+@forward 'Checkbox';
+@forward 'Icon';
+@forward 'Label';
+@forward 'Radio';
+@forward 'Switch';
+@forward 'Text';
+@forward 'Title';

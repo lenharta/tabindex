@@ -10,7 +10,7 @@ type PageContentFactory = Factory.Config<{
 export const PageContent = createStatic<PageContentFactory>((props) => {
   const { children, ...otherProps } = props;
   return (
-    <main {...otherProps} className="PageContent" id="main_content">
+    <main {...otherProps} className="Page-content" id="main_content">
       {children}
     </main>
   );

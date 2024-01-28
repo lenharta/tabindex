@@ -8,6 +8,7 @@
   isolation: isolate;
   overflow-x: hidden;
   box-sizing: border-box;
+  font-size: var(--tbdx-font-size-04);
 }
 
 .Page--default {
@@ -17,8 +18,9 @@
   width: 100%;
   display: block;
 
-  &-hero,
-  &-content {
+  .Page-hero,
+  .Page-footer,
+  .Page-content {
     display: flex;
     max-width: 100%;
     flex-direction: column;
@@ -28,19 +30,60 @@
     max-width: 100em;
   }
 
-  &-title {
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-
-  &-hero {
+  .Page-hero {
     min-height: 16rem;
     justify-content: flex-end;
     padding-top: 2rem;
+
+    &-title {
+      display: block;
+      font-size: var(--tbdx-font-size-11);
+    }
   }
 
-  &-content {
+  .Page-content {
+    padding-block: 1rem;
     justify-content: flex-start;
-    padding-bottom: 2rem;
+  }
+
+  .Page-footer-menu {
+    // gap: 2px;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+
+    &-item {
+      width: 100%;
+      padding-block: 0.4rem;
+      padding-inline: 0.8rem;
+      color: var(--tbdx-surface-68);
+      background-color: var(--tbdx-surface-08);
+      position: relative;
+      margin: 1.5px;
+
+      transition:
+        background-color 170ms ease-out,
+        outline-color 170ms ease-out,
+        border-color 170ms ease-out,
+        color 170ms ease-out;
+
+      &:hover {
+        color: var(--tbdx-surface-100);
+        background-color: var(--tbdx-surface-10);
+
+        &::before {
+          content: '';
+          top: 0;
+          left: 0;
+          bottom: 0;
+          background: var(--tbdx-blue-60);
+          position: absolute;
+          height: 100%;
+          width: 2px;
+        }
+      }
+    }
   }
 }

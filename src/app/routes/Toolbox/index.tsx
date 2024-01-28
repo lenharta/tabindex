@@ -1,96 +1,92 @@
-import { Button, ButtonProps, Title } from '@/components/common';
-import { useThemeCTX } from '@/core/theme';
-import { useProps } from '@/hooks';
+import { Page } from '@/components/layouts';
 
-export function ModeButton() {
-  const theme = useThemeCTX();
-  return (
-    <Button scheme="secondary" onClick={theme.toggle}>
-      Change Mode
-    </Button>
-  );
+type ThemeProps = {
+  invert?: boolean;
+  scheme?: 'primary' | 'secondary' | 'action';
+};
+
+type ThemeScheme = 'action' | 'primary' | 'secondary';
+type ThemeSchemeLocale = 'base' | 'invert';
+type ThemeSchemeKey = `${ThemeScheme}-${ThemeSchemeLocale}`;
+type ThemeSchemeLookup = Record<ThemeSchemeKey, string>;
+
+const themeSchemeClasses: ThemeSchemeLookup = {
+  'action-base': 'tbdx-action--base',
+  'action-invert': 'tbdx-action--invert',
+  'primary-base': 'tbdx-primary--base',
+  'primary-invert': 'tbdx-primary--invert',
+  'secondary-base': 'tbdx-secondary--base',
+  'secondary-invert': 'tbdx-secondary--invert',
+};
+
+function findSchemeKey(props: ThemeProps): keyof ThemeSchemeLookup {
+  const { invert, scheme } = props;
+  if (scheme && !invert) {
+    return `${scheme}-base`;
+  }
+  if (scheme && invert) {
+    return `${scheme}-invert`;
+  }
+  return 'primary-base';
+  // if (scheme && !invert) return `${scheme}-base`
+  // if (scheme && invert) return `${scheme}-invert`
 }
 
-const groupProps: Record<number, Partial<ButtonProps>> = {
-  1: { size: 'sm', scheme: 'primary', label: 'Primary' },
-  2: { size: 'sm', scheme: 'action', label: 'Action' },
-  3: { size: 'sm', scheme: 'secondary', label: 'Secondary' },
+const findScheme = (props: ThemeProps) => {
+  const { invert, scheme } = props;
+  const key = findSchemeKey({ invert, scheme });
+  return themeSchemeClasses[key];
 };
 
-const TitleDemo = () => {
+export function SchemeSwatch(props: ThemeProps) {
+  const { invert, scheme } = props;
+  const className = findScheme({ invert, scheme });
   return (
-    <div>
-      <div>
-        <Title h2>Title Demo</Title>
-      </div>
-      <div style={{ display: 'flex' }}>
-        <div style={{ display: 'grid', placeContent: 'start' }}>
-          <Title h1>Title Level 1</Title>
-          <Title h2>Title Level 2</Title>
-          <Title h3>Title Level 3</Title>
-          <Title h4>Title Level 4</Title>
-          <Title h5>Title Level 5</Title>
-          <Title h6>Title Level 6</Title>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export function ButtonDemo() {
-  return (
-    <div>
-      <div>
-        <Title h2>Buttons</Title>
-      </div>
-      <div style={{ display: 'flex' }}>
-        <div style={{ display: 'grid', placeContent: 'start' }}>
-          <Button {...groupProps[1]} />
-          <Button {...groupProps[1]} />
-          <Button {...groupProps[1]} />
-          <Button {...groupProps[1]} />
-          <Button {...groupProps[1]} />
-        </div>
-        <div style={{ display: 'grid', placeContent: 'start' }}>
-          <Button {...groupProps[2]} />
-          <Button {...groupProps[2]} />
-          <Button {...groupProps[2]} />
-          <Button {...groupProps[2]} />
-          <Button {...groupProps[2]} />
-        </div>
-        <div style={{ display: 'grid', placeContent: 'start' }}>
-          <Button {...groupProps[3]} />
-          <Button {...groupProps[3]} />
-          <Button {...groupProps[3]} />
-          <Button {...groupProps[3]} />
-          <Button {...groupProps[3]} />
-        </div>
-      </div>
+    <div
+      className={className}
+      style={{
+        width: 400,
+        padding: 32,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'flex-start',
+      }}
+    >
+      <span>{className}</span>
     </div>
   );
 }
 
-interface TestComponentProps {
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-  border?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-  shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-  children?: React.ReactNode;
+export function SchemeGallery() {
+  return (
+    <div>
+      <SchemeSwatch scheme="action" />
+      <SchemeSwatch scheme="action" invert />
+      <SchemeSwatch scheme="primary" />
+      <SchemeSwatch scheme="secondary" />
+    </div>
+  );
 }
-
-const TestPropComponent = (props: TestComponentProps) => {
-  const { children, ...otherProps } = props;
-  const { className } = useProps('TestComponent', otherProps, { size: 'sm' }, 'other-class-name');
-  return <div className={className}>Test Component</div>;
-};
 
 export default function Toolbox() {
   return (
-    <div>
-      <TestPropComponent />
-      <Title h1>Toolbox</Title>
-      <ModeButton />
-      <ButtonDemo />
-      <TitleDemo />
-    </div>
+    <Page>
+      <Page.Hero headline="Toolbox" />
+      <Page.Content>{/* <SchemeGallery /> */}</Page.Content>
+      <Page.Footer />
+    </Page>
   );
 }
+
+// interface TestComponentProps {
+//   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+//   border?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+//   shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+//   children?: React.ReactNode;
+// }
+
+// const TestPropComponent = (props: TestComponentProps) => {
+//   const { children, ...otherProps } = props;
+//   const { className } = useProps('TestComponent', otherProps, { size: 'sm' }, 'other-class-name');
+//   return <div className={className}>Test Component</div>;
+// };
