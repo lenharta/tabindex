@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import { type Factory, createPolymorphic } from '@/components/factory';
 import { PageContent } from './PageContent';
 import { PageFooter } from './PageFooter';
@@ -22,9 +21,8 @@ type PageFactory = Factory.Config<{
 
 export const Page = createPolymorphic<PageFactory>((props, ref) => {
   const { component: Component = 'div', variant = 'default', children, ...otherProps } = props;
-  const className = clsx('Page', { [`Page--${variant}`]: variant !== undefined });
   return (
-    <Component {...otherProps} ref={ref} className={className}>
+    <Component {...otherProps} ref={ref} className={`Page Page--${variant}`}>
       {children}
     </Component>
   );

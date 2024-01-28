@@ -1,3 +1,11 @@
+import { Page } from '@/components/layouts';
+
 export default function Home() {
-  return <div>Home</div>;
+  return (
+    <Page>
+      <Page.Hero headline="Home" />
+      <Page.Content></Page.Content>
+      <Page.Footer />
+    </Page>
+  );
 }
