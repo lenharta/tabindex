@@ -1,81 +1,84 @@
+import { Title } from '@/components/common';
 import {
   DATA_TBDX_SHADE,
-  TBDXAccentVariantKey,
-  TBDXAlpha,
-  TBDXShade,
-  TBDXSurfaceVariantKey,
+  type TBDXAlpha,
+  type TBDXShade,
+  type TBDXAccentVariantKey,
+  type TBDXSurfaceVariantKey,
 } from '@/core/theme';
 
 export type ThemeSwatchProps = {
   type: TBDXSurfaceVariantKey | TBDXAccentVariantKey;
   shade: TBDXShade | TBDXAlpha;
+  bordered?: boolean;
 };
 
 export type ThemeSwatchGroupProps = {
   type: TBDXSurfaceVariantKey | TBDXAccentVariantKey;
   shades: (TBDXShade | TBDXAlpha)[];
+  bordered?: boolean;
 };
 
 export type ThemeSwatchGalleryProps = {
+  title?: string;
   types: (TBDXSurfaceVariantKey | TBDXAccentVariantKey)[];
   shades: (TBDXShade | TBDXAlpha)[];
+  bordered?: boolean;
 };
 
-// const formatSwatchLabel = (color: string) => {
-//   const filter = '-interactive';
-//   const { length } = color;
-//   const hasAlpha = color.includes('-A');
-//   const isInteractive = color.includes(filter);
-//   // const s = color.r
-
-//   let shade;
-
-//   if (isInteractive && hasAlpha) {
-//     shade = color.slice(length - 3, length);
-//   }
-
-//   if (isInteractive && !hasAlpha) {
-//     shade = color.slice(length - 2, length);
-//     console.log('NON-ALPHA', shade);
-//   }
-
-//   return color;
-// };
+const formatSwatchKey = (type: string, shade: string, bordered?: boolean) => {
+  const isBordered = bordered ? '--bordered' : '';
+  return [`${type}-${shade}`, isBordered].join('').trimEnd();
+};
 
 const formatSwatchLabel = (color: string) => {
-  const filter = '-interactive';
-  const isInteractive = color.includes(filter);
-  return isInteractive ? color.replace(filter, '') : color;
+  const filters = ['-interactive', '--bordered'];
+  let colorKey = color;
+
+  filters.forEach((v) => {
+    if (colorKey.includes(v)) {
+      colorKey = colorKey.replace(v, '');
+    }
+  });
+  return colorKey;
 };
 
 export const ThemeSwatch = (props: ThemeSwatchProps) => {
-  const { type = 'surface-base', shade = '1' } = props;
-  const color = `${type}-${shade}`;
+  const { type = 'surface-base', shade = '1', bordered } = props;
+  const colorKey = formatSwatchKey(type, shade, bordered);
   return (
-    <div className={`tbdx-swatch tbdx-${color}`}>
-      <span className="tbdx-swatch-label">{formatSwatchLabel(color)}</span>
+    <div className={`tbdx-swatch tbdx-${colorKey}`}>
+      <span className="tbdx-swatch-label">{formatSwatchLabel(colorKey)}</span>
     </div>
   );
 };
 
 export const ThemeSwatchGroup = (props: ThemeSwatchGroupProps) => {
-  const { type = 'surface-base', shades = DATA_TBDX_SHADE } = props;
+  const { type = 'surface-base', shades = DATA_TBDX_SHADE, bordered } = props;
   return (
     <div className="tbdx-swatch-group">
       {shades.map((value) => (
-        <ThemeSwatch key={type + value} type={type} shade={value} />
+        <ThemeSwatch key={type + value} type={type} shade={value} bordered={bordered} />
       ))}
     </div>
   );
 };
 
 export const ThemeSwatchGallery = (props: ThemeSwatchGalleryProps) => {
-  const { types = ['surface-base', 'surface-invert'], shades = DATA_TBDX_SHADE } = props;
+  const {
+    title,
+    types = ['surface-base', 'surface-invert'],
+    shades = DATA_TBDX_SHADE,
+    bordered,
+  } = props;
   return (
     <div className="tbdx-swatch-gallery">
-      {types.map((type) => (
-        <ThemeSwatchGroup key={type} type={type} shades={shades} />
-      ))}
+      <div className="tbdx-swatch-gallery-header">{title && <Title h2>{title}</Title>}</div>
+      <div className="tbdx-swatch-gallery-content">
+        {types.map((type) => (
+          <ThemeSwatchGroup key={type} type={type} shades={shades} bordered={bordered} />
+        ))}
+      </div>
     </div>
   );
 };

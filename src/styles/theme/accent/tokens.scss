@@ -1,3 +1,4 @@
+/** prettier-ignore: 0 */
 [data-prefers-color-scheme='dark'] {
   --tbdx-hsl-orange: 32, 61%;
   --tbdx-hsl-yellow: 57, 61%;
@@ -22,53 +23,71 @@
   --tbdx-8: 28%;
   --tbdx-9: 16%;
 
-  --tbdx-hover-0: 94%;
-  --tbdx-hover-1: 89%;
-  --tbdx-hover-2: 83%;
-  --tbdx-hover-3: 76%;
-  --tbdx-hover-4: 68%;
-  --tbdx-hover-5: 59%;
-  --tbdx-hover-6: 49%;
-  --tbdx-hover-7: 38%;
-  --tbdx-hover-8: 26%;
-  --tbdx-hover-9: 14%;
+  --tbdx-hover-0: 93%;
+  --tbdx-hover-1: 88%;
+  --tbdx-hover-2: 82%;
+  --tbdx-hover-3: 75%;
+  --tbdx-hover-4: 67%;
+  --tbdx-hover-5: 58%;
+  --tbdx-hover-6: 48%;
+  --tbdx-hover-7: 37%;
+  --tbdx-hover-8: 25%;
+  --tbdx-hover-9: 13%;
 
-  --tbdx-text-0: 62%;
-  --tbdx-text-1: 52%;
-  --tbdx-text-2: 41%;
-  --tbdx-text-3: 29%;
-  --tbdx-text-4: 29%;
-  --tbdx-text-5: 92%;
-  --tbdx-text-6: 92%;
-  --tbdx-text-7: 86%;
-  --tbdx-text-8: 79%;
-  --tbdx-text-9: 71%;
+  --tbdx-active-0: 91%;
+  --tbdx-active-1: 86%;
+  --tbdx-active-2: 80%;
+  --tbdx-active-3: 73%;
+  --tbdx-active-4: 65%;
+  --tbdx-active-5: 56%;
+  --tbdx-active-6: 46%;
+  --tbdx-active-7: 35%;
+  --tbdx-active-8: 23%;
+  --tbdx-active-9: 11%;
 
-  --tbdx-A0: 0.125;
-  --tbdx-A1: 0.225;
-  --tbdx-A2: 0.325;
-  --tbdx-A3: 0.425;
-  --tbdx-A4: 0.525;
-  --tbdx-A5: 0.625;
+  --tbdx-text-0: 43%;
+  --tbdx-text-1: 38%;
+  --tbdx-text-2: 33%;
+  --tbdx-text-3: 28%;
+  --tbdx-text-4: 23%;
+  --tbdx-text-5: 18%;
+  --tbdx-text-6: 95%;
+  --tbdx-text-7: 91%;
+  --tbdx-text-8: 87%;
+  --tbdx-text-9: 83%;
 
-  --tbdx-hover-A0: 0.195;
-  --tbdx-hover-A1: 0.295;
-  --tbdx-hover-A2: 0.395;
-  --tbdx-hover-A3: 0.495;
-  --tbdx-hover-A4: 0.595;
-  --tbdx-hover-A5: 0.695;
+  --tbdx-A0: 0.12;
+  --tbdx-A1: 0.22;
+  --tbdx-A2: 0.32;
+  --tbdx-A3: 0.42;
+  --tbdx-A4: 0.52;
+  --tbdx-A5: 0.62;
 
-  --tbdx-text-A0: 0.95;
-  --tbdx-text-A1: 0.95;
-  --tbdx-text-A2: 0.85;
-  --tbdx-text-A3: 0.85;
-  --tbdx-text-A4: 0.75;
-  --tbdx-text-A5: 0.75;
+  --tbdx-hover-A0: 0.16;
+  --tbdx-hover-A1: 0.26;
+  --tbdx-hover-A2: 0.36;
+  --tbdx-hover-A3: 0.46;
+  --tbdx-hover-A4: 0.56;
+  --tbdx-hover-A5: 0.66;
 
-  --tbdx-AA: 45%;
-  --tbdx-BB: 55%;
-  --tbdx-CC: 65%;
-  --tbdx-DD: 75%;
+  --tbdx-active-A0: 0.18;
+  --tbdx-active-A1: 0.28;
+  --tbdx-active-A2: 0.38;
+  --tbdx-active-A3: 0.48;
+  --tbdx-active-A4: 0.58;
+  --tbdx-active-A5: 0.68;
+
+  --tbdx-text-A0: 0.733;
+  --tbdx-text-A1: 0.799;
+  --tbdx-text-A2: 0.833;
+  --tbdx-text-A3: 0.899;
+  --tbdx-text-A4: 0.933;
+  --tbdx-text-A5: 0.999;
+
+  --tbdx-AA: 55%;
+  --tbdx-BB: 75%;
+  --tbdx-CC: 70%;
+  --tbdx-DD: 70%;
 }
 
 [data-prefers-color-scheme='light'] {
@@ -84,64 +103,82 @@
   --tbdx-hsl-magenta: 333, 56%;
   --tbdx-hsl-red: 356, 56%;
 
-  --tbdx-0: 93%;
-  --tbdx-1: 88%;
-  --tbdx-2: 82%;
-  --tbdx-3: 75%;
-  --tbdx-4: 67%;
-  --tbdx-5: 58%;
-  --tbdx-6: 48%;
-  --tbdx-7: 37%;
-  --tbdx-8: 25%;
-  --tbdx-9: 13%;
+  --tbdx-0: 98%;
+  --tbdx-1: 93%;
+  --tbdx-2: 87%;
+  --tbdx-3: 80%;
+  --tbdx-4: 72%;
+  --tbdx-5: 63%;
+  --tbdx-6: 53%;
+  --tbdx-7: 42%;
+  --tbdx-8: 30%;
+  --tbdx-9: 18%;
 
-  --tbdx-hover-0: 91%;
-  --tbdx-hover-1: 86%;
-  --tbdx-hover-2: 80%;
-  --tbdx-hover-3: 73%;
-  --tbdx-hover-4: 65%;
-  --tbdx-hover-5: 56%;
-  --tbdx-hover-6: 46%;
-  --tbdx-hover-7: 35%;
-  --tbdx-hover-8: 23%;
-  --tbdx-hover-9: 11%;
+  --tbdx-hover-0: 95%;
+  --tbdx-hover-1: 90%;
+  --tbdx-hover-2: 84%;
+  --tbdx-hover-3: 77%;
+  --tbdx-hover-4: 69%;
+  --tbdx-hover-5: 60%;
+  --tbdx-hover-6: 50%;
+  --tbdx-hover-7: 39%;
+  --tbdx-hover-8: 27%;
+  --tbdx-hover-9: 15%;
 
-  --tbdx-text-0: 59%;
-  --tbdx-text-1: 49%;
-  --tbdx-text-2: 38%;
-  --tbdx-text-3: 26%;
-  --tbdx-text-4: 26%;
-  --tbdx-text-5: 89%;
-  --tbdx-text-6: 89%;
-  --tbdx-text-7: 83%;
-  --tbdx-text-8: 76%;
-  --tbdx-text-9: 68%;
+  --tbdx-active-0: 93%;
+  --tbdx-active-1: 88%;
+  --tbdx-active-2: 82%;
+  --tbdx-active-3: 75%;
+  --tbdx-active-4: 67%;
+  --tbdx-active-5: 58%;
+  --tbdx-active-6: 48%;
+  --tbdx-active-7: 37%;
+  --tbdx-active-8: 25%;
+  --tbdx-active-9: 13%;
 
-  --tbdx-A0: 0.125;
-  --tbdx-A1: 0.225;
-  --tbdx-A2: 0.325;
-  --tbdx-A3: 0.425;
-  --tbdx-A4: 0.525;
-  --tbdx-A5: 0.625;
+  --tbdx-text-0: 45%;
+  --tbdx-text-1: 40%;
+  --tbdx-text-2: 35%;
+  --tbdx-text-3: 30%;
+  --tbdx-text-4: 25%;
+  --tbdx-text-5: 20%;
+  --tbdx-text-6: 97%;
+  --tbdx-text-7: 93%;
+  --tbdx-text-8: 89%;
+  --tbdx-text-9: 85%;
 
-  --tbdx-hover-A0: 0.185;
-  --tbdx-hover-A1: 0.285;
-  --tbdx-hover-A2: 0.385;
-  --tbdx-hover-A3: 0.485;
-  --tbdx-hover-A4: 0.585;
-  --tbdx-hover-A5: 0.685;
+  --tbdx-A0: 0.12;
+  --tbdx-A1: 0.22;
+  --tbdx-A2: 0.32;
+  --tbdx-A3: 0.42;
+  --tbdx-A4: 0.52;
+  --tbdx-A5: 0.62;
 
-  --tbdx-text-A0: 0.95;
-  --tbdx-text-A1: 0.95;
-  --tbdx-text-A2: 0.85;
-  --tbdx-text-A3: 0.85;
-  --tbdx-text-A4: 0.75;
-  --tbdx-text-A5: 0.75;
+  --tbdx-hover-A0: 0.16;
+  --tbdx-hover-A1: 0.26;
+  --tbdx-hover-A2: 0.36;
+  --tbdx-hover-A3: 0.46;
+  --tbdx-hover-A4: 0.56;
+  --tbdx-hover-A5: 0.66;
 
-  --tbdx-AA: 45%;
-  --tbdx-BB: 35%;
-  --tbdx-CC: 25%;
-  --tbdx-DD: 15%;
+  --tbdx-active-A0: 0.18;
+  --tbdx-active-A1: 0.28;
+  --tbdx-active-A2: 0.38;
+  --tbdx-active-A3: 0.48;
+  --tbdx-active-A4: 0.58;
+  --tbdx-active-A5: 0.68;
+
+  --tbdx-text-A0: 0.733;
+  --tbdx-text-A1: 0.799;
+  --tbdx-text-A2: 0.833;
+  --tbdx-text-A3: 0.899;
+  --tbdx-text-A4: 0.933;
+  --tbdx-text-A5: 0.999;
+
+  --tbdx-AA: 55%;
+  --tbdx-BB: 40%;
+  --tbdx-CC: 35%;
+  --tbdx-DD: 30%;
 }
 
 [data-prefers-color-scheme='dark'],
@@ -168,6 +205,17 @@
   --tbdx-orange-base-hover-8: hsl(var(--tbdx-hsl-orange), var(--tbdx-hover-8));
   --tbdx-orange-base-hover-9: hsl(var(--tbdx-hsl-orange), var(--tbdx-hover-9));
 
+  --tbdx-orange-base-active-0: hsl(var(--tbdx-hsl-orange), var(--tbdx-active-0));
+  --tbdx-orange-base-active-1: hsl(var(--tbdx-hsl-orange), var(--tbdx-active-1));
+  --tbdx-orange-base-active-2: hsl(var(--tbdx-hsl-orange), var(--tbdx-active-2));
+  --tbdx-orange-base-active-3: hsl(var(--tbdx-hsl-orange), var(--tbdx-active-3));
+  --tbdx-orange-base-active-4: hsl(var(--tbdx-hsl-orange), var(--tbdx-active-4));
+  --tbdx-orange-base-active-5: hsl(var(--tbdx-hsl-orange), var(--tbdx-active-5));
+  --tbdx-orange-base-active-6: hsl(var(--tbdx-hsl-orange), var(--tbdx-active-6));
+  --tbdx-orange-base-active-7: hsl(var(--tbdx-hsl-orange), var(--tbdx-active-7));
+  --tbdx-orange-base-active-8: hsl(var(--tbdx-hsl-orange), var(--tbdx-active-8));
+  --tbdx-orange-base-active-9: hsl(var(--tbdx-hsl-orange), var(--tbdx-active-9));
+
   --tbdx-orange-base-text-0: hsl(var(--tbdx-hsl-orange), var(--tbdx-text-0));
   --tbdx-orange-base-text-1: hsl(var(--tbdx-hsl-orange), var(--tbdx-text-1));
   --tbdx-orange-base-text-2: hsl(var(--tbdx-hsl-orange), var(--tbdx-text-2));
@@ -193,6 +241,13 @@
   --tbdx-orange-base-hover-A4: hsla(var(--tbdx-hsl-orange), var(--tbdx-AA), var(--tbdx-hover-A4));
   --tbdx-orange-base-hover-A5: hsla(var(--tbdx-hsl-orange), var(--tbdx-AA), var(--tbdx-hover-A5));
 
+  --tbdx-orange-base-active-A0: hsla(var(--tbdx-hsl-orange), var(--tbdx-AA), var(--tbdx-active-A0));
+  --tbdx-orange-base-active-A1: hsla(var(--tbdx-hsl-orange), var(--tbdx-AA), var(--tbdx-active-A1));
+  --tbdx-orange-base-active-A2: hsla(var(--tbdx-hsl-orange), var(--tbdx-AA), var(--tbdx-active-A2));
+  --tbdx-orange-base-active-A3: hsla(var(--tbdx-hsl-orange), var(--tbdx-AA), var(--tbdx-active-A3));
+  --tbdx-orange-base-active-A4: hsla(var(--tbdx-hsl-orange), var(--tbdx-AA), var(--tbdx-active-A4));
+  --tbdx-orange-base-active-A5: hsla(var(--tbdx-hsl-orange), var(--tbdx-AA), var(--tbdx-active-A5));
+
   --tbdx-yellow-base-0: hsl(var(--tbdx-hsl-yellow), var(--tbdx-0));
   --tbdx-yellow-base-1: hsl(var(--tbdx-hsl-yellow), var(--tbdx-1));
   --tbdx-yellow-base-2: hsl(var(--tbdx-hsl-yellow), var(--tbdx-2));
@@ -214,6 +269,17 @@
   --tbdx-yellow-base-hover-7: hsl(var(--tbdx-hsl-yellow), var(--tbdx-hover-7));
   --tbdx-yellow-base-hover-8: hsl(var(--tbdx-hsl-yellow), var(--tbdx-hover-8));
   --tbdx-yellow-base-hover-9: hsl(var(--tbdx-hsl-yellow), var(--tbdx-hover-9));
+
+  --tbdx-yellow-base-active-0: hsl(var(--tbdx-hsl-yellow), var(--tbdx-active-0));
+  --tbdx-yellow-base-active-1: hsl(var(--tbdx-hsl-yellow), var(--tbdx-active-1));
+  --tbdx-yellow-base-active-2: hsl(var(--tbdx-hsl-yellow), var(--tbdx-active-2));
+  --tbdx-yellow-base-active-3: hsl(var(--tbdx-hsl-yellow), var(--tbdx-active-3));
+  --tbdx-yellow-base-active-4: hsl(var(--tbdx-hsl-yellow), var(--tbdx-active-4));
+  --tbdx-yellow-base-active-5: hsl(var(--tbdx-hsl-yellow), var(--tbdx-active-5));
+  --tbdx-yellow-base-active-6: hsl(var(--tbdx-hsl-yellow), var(--tbdx-active-6));
+  --tbdx-yellow-base-active-7: hsl(var(--tbdx-hsl-yellow), var(--tbdx-active-7));
+  --tbdx-yellow-base-active-8: hsl(var(--tbdx-hsl-yellow), var(--tbdx-active-8));
+  --tbdx-yellow-base-active-9: hsl(var(--tbdx-hsl-yellow), var(--tbdx-active-9));
 
   --tbdx-yellow-base-text-0: hsl(var(--tbdx-hsl-yellow), var(--tbdx-text-0));
   --tbdx-yellow-base-text-1: hsl(var(--tbdx-hsl-yellow), var(--tbdx-text-1));
@@ -240,6 +306,13 @@
   --tbdx-yellow-base-hover-A4: hsla(var(--tbdx-hsl-yellow), var(--tbdx-AA), var(--tbdx-hover-A4));
   --tbdx-yellow-base-hover-A5: hsla(var(--tbdx-hsl-yellow), var(--tbdx-AA), var(--tbdx-hover-A5));
 
+  --tbdx-yellow-base-active-A0: hsla(var(--tbdx-hsl-yellow), var(--tbdx-AA), var(--tbdx-active-A0));
+  --tbdx-yellow-base-active-A1: hsla(var(--tbdx-hsl-yellow), var(--tbdx-AA), var(--tbdx-active-A1));
+  --tbdx-yellow-base-active-A2: hsla(var(--tbdx-hsl-yellow), var(--tbdx-AA), var(--tbdx-active-A2));
+  --tbdx-yellow-base-active-A3: hsla(var(--tbdx-hsl-yellow), var(--tbdx-AA), var(--tbdx-active-A3));
+  --tbdx-yellow-base-active-A4: hsla(var(--tbdx-hsl-yellow), var(--tbdx-AA), var(--tbdx-active-A4));
+  --tbdx-yellow-base-active-A5: hsla(var(--tbdx-hsl-yellow), var(--tbdx-AA), var(--tbdx-active-A5));
+
   --tbdx-green-base-0: hsl(var(--tbdx-hsl-green), var(--tbdx-0));
   --tbdx-green-base-1: hsl(var(--tbdx-hsl-green), var(--tbdx-1));
   --tbdx-green-base-2: hsl(var(--tbdx-hsl-green), var(--tbdx-2));
@@ -261,6 +334,17 @@
   --tbdx-green-base-hover-7: hsl(var(--tbdx-hsl-green), var(--tbdx-hover-7));
   --tbdx-green-base-hover-8: hsl(var(--tbdx-hsl-green), var(--tbdx-hover-8));
   --tbdx-green-base-hover-9: hsl(var(--tbdx-hsl-green), var(--tbdx-hover-9));
+
+  --tbdx-green-base-active-0: hsl(var(--tbdx-hsl-green), var(--tbdx-active-0));
+  --tbdx-green-base-active-1: hsl(var(--tbdx-hsl-green), var(--tbdx-active-1));
+  --tbdx-green-base-active-2: hsl(var(--tbdx-hsl-green), var(--tbdx-active-2));
+  --tbdx-green-base-active-3: hsl(var(--tbdx-hsl-green), var(--tbdx-active-3));
+  --tbdx-green-base-active-4: hsl(var(--tbdx-hsl-green), var(--tbdx-active-4));
+  --tbdx-green-base-active-5: hsl(var(--tbdx-hsl-green), var(--tbdx-active-5));
+  --tbdx-green-base-active-6: hsl(var(--tbdx-hsl-green), var(--tbdx-active-6));
+  --tbdx-green-base-active-7: hsl(var(--tbdx-hsl-green), var(--tbdx-active-7));
+  --tbdx-green-base-active-8: hsl(var(--tbdx-hsl-green), var(--tbdx-active-8));
+  --tbdx-green-base-active-9: hsl(var(--tbdx-hsl-green), var(--tbdx-active-9));
 
   --tbdx-green-base-text-0: hsl(var(--tbdx-hsl-green), var(--tbdx-text-0));
   --tbdx-green-base-text-1: hsl(var(--tbdx-hsl-green), var(--tbdx-text-1));
@@ -287,6 +371,13 @@
   --tbdx-green-base-hover-A4: hsla(var(--tbdx-hsl-green), var(--tbdx-AA), var(--tbdx-hover-A4));
   --tbdx-green-base-hover-A5: hsla(var(--tbdx-hsl-green), var(--tbdx-AA), var(--tbdx-hover-A5));
 
+  --tbdx-green-base-active-A0: hsla(var(--tbdx-hsl-green), var(--tbdx-AA), var(--tbdx-active-A0));
+  --tbdx-green-base-active-A1: hsla(var(--tbdx-hsl-green), var(--tbdx-AA), var(--tbdx-active-A1));
+  --tbdx-green-base-active-A2: hsla(var(--tbdx-hsl-green), var(--tbdx-AA), var(--tbdx-active-A2));
+  --tbdx-green-base-active-A3: hsla(var(--tbdx-hsl-green), var(--tbdx-AA), var(--tbdx-active-A3));
+  --tbdx-green-base-active-A4: hsla(var(--tbdx-hsl-green), var(--tbdx-AA), var(--tbdx-active-A4));
+  --tbdx-green-base-active-A5: hsla(var(--tbdx-hsl-green), var(--tbdx-AA), var(--tbdx-active-A5));
+
   --tbdx-cyan-base-0: hsl(var(--tbdx-hsl-cyan), var(--tbdx-0));
   --tbdx-cyan-base-1: hsl(var(--tbdx-hsl-cyan), var(--tbdx-1));
   --tbdx-cyan-base-2: hsl(var(--tbdx-hsl-cyan), var(--tbdx-2));
@@ -308,6 +399,17 @@
   --tbdx-cyan-base-hover-7: hsl(var(--tbdx-hsl-cyan), var(--tbdx-hover-7));
   --tbdx-cyan-base-hover-8: hsl(var(--tbdx-hsl-cyan), var(--tbdx-hover-8));
   --tbdx-cyan-base-hover-9: hsl(var(--tbdx-hsl-cyan), var(--tbdx-hover-9));
+
+  --tbdx-cyan-base-active-0: hsl(var(--tbdx-hsl-cyan), var(--tbdx-active-0));
+  --tbdx-cyan-base-active-1: hsl(var(--tbdx-hsl-cyan), var(--tbdx-active-1));
+  --tbdx-cyan-base-active-2: hsl(var(--tbdx-hsl-cyan), var(--tbdx-active-2));
+  --tbdx-cyan-base-active-3: hsl(var(--tbdx-hsl-cyan), var(--tbdx-active-3));
+  --tbdx-cyan-base-active-4: hsl(var(--tbdx-hsl-cyan), var(--tbdx-active-4));
+  --tbdx-cyan-base-active-5: hsl(var(--tbdx-hsl-cyan), var(--tbdx-active-5));
+  --tbdx-cyan-base-active-6: hsl(var(--tbdx-hsl-cyan), var(--tbdx-active-6));
+  --tbdx-cyan-base-active-7: hsl(var(--tbdx-hsl-cyan), var(--tbdx-active-7));
+  --tbdx-cyan-base-active-8: hsl(var(--tbdx-hsl-cyan), var(--tbdx-active-8));
+  --tbdx-cyan-base-active-9: hsl(var(--tbdx-hsl-cyan), var(--tbdx-active-9));
 
   --tbdx-cyan-base-text-0: hsl(var(--tbdx-hsl-cyan), var(--tbdx-text-0));
   --tbdx-cyan-base-text-1: hsl(var(--tbdx-hsl-cyan), var(--tbdx-text-1));
@@ -334,6 +436,13 @@
   --tbdx-cyan-base-hover-A4: hsla(var(--tbdx-hsl-cyan), var(--tbdx-AA), var(--tbdx-hover-A4));
   --tbdx-cyan-base-hover-A5: hsla(var(--tbdx-hsl-cyan), var(--tbdx-AA), var(--tbdx-hover-A5));
 
+  --tbdx-cyan-base-active-A0: hsla(var(--tbdx-hsl-cyan), var(--tbdx-AA), var(--tbdx-active-A0));
+  --tbdx-cyan-base-active-A1: hsla(var(--tbdx-hsl-cyan), var(--tbdx-AA), var(--tbdx-active-A1));
+  --tbdx-cyan-base-active-A2: hsla(var(--tbdx-hsl-cyan), var(--tbdx-AA), var(--tbdx-active-A2));
+  --tbdx-cyan-base-active-A3: hsla(var(--tbdx-hsl-cyan), var(--tbdx-AA), var(--tbdx-active-A3));
+  --tbdx-cyan-base-active-A4: hsla(var(--tbdx-hsl-cyan), var(--tbdx-AA), var(--tbdx-active-A4));
+  --tbdx-cyan-base-active-A5: hsla(var(--tbdx-hsl-cyan), var(--tbdx-AA), var(--tbdx-active-A5));
+
   --tbdx-blue-base-0: hsl(var(--tbdx-hsl-blue), var(--tbdx-0));
   --tbdx-blue-base-1: hsl(var(--tbdx-hsl-blue), var(--tbdx-1));
   --tbdx-blue-base-2: hsl(var(--tbdx-hsl-blue), var(--tbdx-2));
@@ -355,6 +464,17 @@
   --tbdx-blue-base-hover-7: hsl(var(--tbdx-hsl-blue), var(--tbdx-hover-7));
   --tbdx-blue-base-hover-8: hsl(var(--tbdx-hsl-blue), var(--tbdx-hover-8));
   --tbdx-blue-base-hover-9: hsl(var(--tbdx-hsl-blue), var(--tbdx-hover-9));
+
+  --tbdx-blue-base-active-0: hsl(var(--tbdx-hsl-blue), var(--tbdx-active-0));
+  --tbdx-blue-base-active-1: hsl(var(--tbdx-hsl-blue), var(--tbdx-active-1));
+  --tbdx-blue-base-active-2: hsl(var(--tbdx-hsl-blue), var(--tbdx-active-2));
+  --tbdx-blue-base-active-3: hsl(var(--tbdx-hsl-blue), var(--tbdx-active-3));
+  --tbdx-blue-base-active-4: hsl(var(--tbdx-hsl-blue), var(--tbdx-active-4));
+  --tbdx-blue-base-active-5: hsl(var(--tbdx-hsl-blue), var(--tbdx-active-5));
+  --tbdx-blue-base-active-6: hsl(var(--tbdx-hsl-blue), var(--tbdx-active-6));
+  --tbdx-blue-base-active-7: hsl(var(--tbdx-hsl-blue), var(--tbdx-active-7));
+  --tbdx-blue-base-active-8: hsl(var(--tbdx-hsl-blue), var(--tbdx-active-8));
+  --tbdx-blue-base-active-9: hsl(var(--tbdx-hsl-blue), var(--tbdx-active-9));
 
   --tbdx-blue-base-text-0: hsl(var(--tbdx-hsl-blue), var(--tbdx-text-0));
   --tbdx-blue-base-text-1: hsl(var(--tbdx-hsl-blue), var(--tbdx-text-1));
@@ -381,6 +501,13 @@
   --tbdx-blue-base-hover-A4: hsla(var(--tbdx-hsl-blue), var(--tbdx-AA), var(--tbdx-hover-A4));
   --tbdx-blue-base-hover-A5: hsla(var(--tbdx-hsl-blue), var(--tbdx-AA), var(--tbdx-hover-A5));
 
+  --tbdx-blue-base-active-A0: hsla(var(--tbdx-hsl-blue), var(--tbdx-AA), var(--tbdx-active-A0));
+  --tbdx-blue-base-active-A1: hsla(var(--tbdx-hsl-blue), var(--tbdx-AA), var(--tbdx-active-A1));
+  --tbdx-blue-base-active-A2: hsla(var(--tbdx-hsl-blue), var(--tbdx-AA), var(--tbdx-active-A2));
+  --tbdx-blue-base-active-A3: hsla(var(--tbdx-hsl-blue), var(--tbdx-AA), var(--tbdx-active-A3));
+  --tbdx-blue-base-active-A4: hsla(var(--tbdx-hsl-blue), var(--tbdx-AA), var(--tbdx-active-A4));
+  --tbdx-blue-base-active-A5: hsla(var(--tbdx-hsl-blue), var(--tbdx-AA), var(--tbdx-active-A5));
+
   --tbdx-indigo-base-0: hsl(var(--tbdx-hsl-indigo), var(--tbdx-0));
   --tbdx-indigo-base-1: hsl(var(--tbdx-hsl-indigo), var(--tbdx-1));
   --tbdx-indigo-base-2: hsl(var(--tbdx-hsl-indigo), var(--tbdx-2));
@@ -402,6 +529,17 @@
   --tbdx-indigo-base-hover-7: hsl(var(--tbdx-hsl-indigo), var(--tbdx-hover-7));
   --tbdx-indigo-base-hover-8: hsl(var(--tbdx-hsl-indigo), var(--tbdx-hover-8));
   --tbdx-indigo-base-hover-9: hsl(var(--tbdx-hsl-indigo), var(--tbdx-hover-9));
+
+  --tbdx-indigo-base-active-0: hsl(var(--tbdx-hsl-indigo), var(--tbdx-active-0));
+  --tbdx-indigo-base-active-1: hsl(var(--tbdx-hsl-indigo), var(--tbdx-active-1));
+  --tbdx-indigo-base-active-2: hsl(var(--tbdx-hsl-indigo), var(--tbdx-active-2));
+  --tbdx-indigo-base-active-3: hsl(var(--tbdx-hsl-indigo), var(--tbdx-active-3));
+  --tbdx-indigo-base-active-4: hsl(var(--tbdx-hsl-indigo), var(--tbdx-active-4));
+  --tbdx-indigo-base-active-5: hsl(var(--tbdx-hsl-indigo), var(--tbdx-active-5));
+  --tbdx-indigo-base-active-6: hsl(var(--tbdx-hsl-indigo), var(--tbdx-active-6));
+  --tbdx-indigo-base-active-7: hsl(var(--tbdx-hsl-indigo), var(--tbdx-active-7));
+  --tbdx-indigo-base-active-8: hsl(var(--tbdx-hsl-indigo), var(--tbdx-active-8));
+  --tbdx-indigo-base-active-9: hsl(var(--tbdx-hsl-indigo), var(--tbdx-active-9));
 
   --tbdx-indigo-base-text-0: hsl(var(--tbdx-hsl-indigo), var(--tbdx-text-0));
   --tbdx-indigo-base-text-1: hsl(var(--tbdx-hsl-indigo), var(--tbdx-text-1));
@@ -428,6 +566,13 @@
   --tbdx-indigo-base-hover-A4: hsla(var(--tbdx-hsl-indigo), var(--tbdx-AA), var(--tbdx-hover-A4));
   --tbdx-indigo-base-hover-A5: hsla(var(--tbdx-hsl-indigo), var(--tbdx-AA), var(--tbdx-hover-A5));
 
+  --tbdx-indigo-base-active-A0: hsla(var(--tbdx-hsl-indigo), var(--tbdx-AA), var(--tbdx-active-A0));
+  --tbdx-indigo-base-active-A1: hsla(var(--tbdx-hsl-indigo), var(--tbdx-AA), var(--tbdx-active-A1));
+  --tbdx-indigo-base-active-A2: hsla(var(--tbdx-hsl-indigo), var(--tbdx-AA), var(--tbdx-active-A2));
+  --tbdx-indigo-base-active-A3: hsla(var(--tbdx-hsl-indigo), var(--tbdx-AA), var(--tbdx-active-A3));
+  --tbdx-indigo-base-active-A4: hsla(var(--tbdx-hsl-indigo), var(--tbdx-AA), var(--tbdx-active-A4));
+  --tbdx-indigo-base-active-A5: hsla(var(--tbdx-hsl-indigo), var(--tbdx-AA), var(--tbdx-active-A5));
+
   --tbdx-purple-base-0: hsl(var(--tbdx-hsl-purple), var(--tbdx-0));
   --tbdx-purple-base-1: hsl(var(--tbdx-hsl-purple), var(--tbdx-1));
   --tbdx-purple-base-2: hsl(var(--tbdx-hsl-purple), var(--tbdx-2));
@@ -449,6 +594,17 @@
   --tbdx-purple-base-hover-7: hsl(var(--tbdx-hsl-purple), var(--tbdx-hover-7));
   --tbdx-purple-base-hover-8: hsl(var(--tbdx-hsl-purple), var(--tbdx-hover-8));
   --tbdx-purple-base-hover-9: hsl(var(--tbdx-hsl-purple), var(--tbdx-hover-9));
+
+  --tbdx-purple-base-active-0: hsl(var(--tbdx-hsl-purple), var(--tbdx-active-0));
+  --tbdx-purple-base-active-1: hsl(var(--tbdx-hsl-purple), var(--tbdx-active-1));
+  --tbdx-purple-base-active-2: hsl(var(--tbdx-hsl-purple), var(--tbdx-active-2));
+  --tbdx-purple-base-active-3: hsl(var(--tbdx-hsl-purple), var(--tbdx-active-3));
+  --tbdx-purple-base-active-4: hsl(var(--tbdx-hsl-purple), var(--tbdx-active-4));
+  --tbdx-purple-base-active-5: hsl(var(--tbdx-hsl-purple), var(--tbdx-active-5));
+  --tbdx-purple-base-active-6: hsl(var(--tbdx-hsl-purple), var(--tbdx-active-6));
+  --tbdx-purple-base-active-7: hsl(var(--tbdx-hsl-purple), var(--tbdx-active-7));
+  --tbdx-purple-base-active-8: hsl(var(--tbdx-hsl-purple), var(--tbdx-active-8));
+  --tbdx-purple-base-active-9: hsl(var(--tbdx-hsl-purple), var(--tbdx-active-9));
 
   --tbdx-purple-base-text-0: hsl(var(--tbdx-hsl-purple), var(--tbdx-text-0));
   --tbdx-purple-base-text-1: hsl(var(--tbdx-hsl-purple), var(--tbdx-text-1));
@@ -475,6 +631,13 @@
   --tbdx-purple-base-hover-A4: hsla(var(--tbdx-hsl-purple), var(--tbdx-AA), var(--tbdx-hover-A4));
   --tbdx-purple-base-hover-A5: hsla(var(--tbdx-hsl-purple), var(--tbdx-AA), var(--tbdx-hover-A5));
 
+  --tbdx-purple-base-active-A0: hsla(var(--tbdx-hsl-purple), var(--tbdx-AA), var(--tbdx-active-A0));
+  --tbdx-purple-base-active-A1: hsla(var(--tbdx-hsl-purple), var(--tbdx-AA), var(--tbdx-active-A1));
+  --tbdx-purple-base-active-A2: hsla(var(--tbdx-hsl-purple), var(--tbdx-AA), var(--tbdx-active-A2));
+  --tbdx-purple-base-active-A3: hsla(var(--tbdx-hsl-purple), var(--tbdx-AA), var(--tbdx-active-A3));
+  --tbdx-purple-base-active-A4: hsla(var(--tbdx-hsl-purple), var(--tbdx-AA), var(--tbdx-active-A4));
+  --tbdx-purple-base-active-A5: hsla(var(--tbdx-hsl-purple), var(--tbdx-AA), var(--tbdx-active-A5));
+
   --tbdx-violet-base-0: hsl(var(--tbdx-hsl-violet), var(--tbdx-0));
   --tbdx-violet-base-1: hsl(var(--tbdx-hsl-violet), var(--tbdx-1));
   --tbdx-violet-base-2: hsl(var(--tbdx-hsl-violet), var(--tbdx-2));
@@ -496,6 +659,17 @@
   --tbdx-violet-base-hover-7: hsl(var(--tbdx-hsl-violet), var(--tbdx-hover-7));
   --tbdx-violet-base-hover-8: hsl(var(--tbdx-hsl-violet), var(--tbdx-hover-8));
   --tbdx-violet-base-hover-9: hsl(var(--tbdx-hsl-violet), var(--tbdx-hover-9));
+
+  --tbdx-violet-base-active-0: hsl(var(--tbdx-hsl-violet), var(--tbdx-active-0));
+  --tbdx-violet-base-active-1: hsl(var(--tbdx-hsl-violet), var(--tbdx-active-1));
+  --tbdx-violet-base-active-2: hsl(var(--tbdx-hsl-violet), var(--tbdx-active-2));
+  --tbdx-violet-base-active-3: hsl(var(--tbdx-hsl-violet), var(--tbdx-active-3));
+  --tbdx-violet-base-active-4: hsl(var(--tbdx-hsl-violet), var(--tbdx-active-4));
+  --tbdx-violet-base-active-5: hsl(var(--tbdx-hsl-violet), var(--tbdx-active-5));
+  --tbdx-violet-base-active-6: hsl(var(--tbdx-hsl-violet), var(--tbdx-active-6));
+  --tbdx-violet-base-active-7: hsl(var(--tbdx-hsl-violet), var(--tbdx-active-7));
+  --tbdx-violet-base-active-8: hsl(var(--tbdx-hsl-violet), var(--tbdx-active-8));
+  --tbdx-violet-base-active-9: hsl(var(--tbdx-hsl-violet), var(--tbdx-active-9));
 
   --tbdx-violet-base-text-0: hsl(var(--tbdx-hsl-violet), var(--tbdx-text-0));
   --tbdx-violet-base-text-1: hsl(var(--tbdx-hsl-violet), var(--tbdx-text-1));
@@ -522,6 +696,13 @@
   --tbdx-violet-base-hover-A4: hsla(var(--tbdx-hsl-violet), var(--tbdx-AA), var(--tbdx-hover-A4));
   --tbdx-violet-base-hover-A5: hsla(var(--tbdx-hsl-violet), var(--tbdx-AA), var(--tbdx-hover-A5));
 
+  --tbdx-violet-base-active-A0: hsla(var(--tbdx-hsl-violet), var(--tbdx-AA), var(--tbdx-active-A0));
+  --tbdx-violet-base-active-A1: hsla(var(--tbdx-hsl-violet), var(--tbdx-AA), var(--tbdx-active-A1));
+  --tbdx-violet-base-active-A2: hsla(var(--tbdx-hsl-violet), var(--tbdx-AA), var(--tbdx-active-A2));
+  --tbdx-violet-base-active-A3: hsla(var(--tbdx-hsl-violet), var(--tbdx-AA), var(--tbdx-active-A3));
+  --tbdx-violet-base-active-A4: hsla(var(--tbdx-hsl-violet), var(--tbdx-AA), var(--tbdx-active-A4));
+  --tbdx-violet-base-active-A5: hsla(var(--tbdx-hsl-violet), var(--tbdx-AA), var(--tbdx-active-A5));
+
   --tbdx-pink-base-0: hsl(var(--tbdx-hsl-pink), var(--tbdx-0));
   --tbdx-pink-base-1: hsl(var(--tbdx-hsl-pink), var(--tbdx-1));
   --tbdx-pink-base-2: hsl(var(--tbdx-hsl-pink), var(--tbdx-2));
@@ -543,6 +724,17 @@
   --tbdx-pink-base-hover-7: hsl(var(--tbdx-hsl-pink), var(--tbdx-hover-7));
   --tbdx-pink-base-hover-8: hsl(var(--tbdx-hsl-pink), var(--tbdx-hover-8));
   --tbdx-pink-base-hover-9: hsl(var(--tbdx-hsl-pink), var(--tbdx-hover-9));
+
+  --tbdx-pink-base-active-0: hsl(var(--tbdx-hsl-pink), var(--tbdx-active-0));
+  --tbdx-pink-base-active-1: hsl(var(--tbdx-hsl-pink), var(--tbdx-active-1));
+  --tbdx-pink-base-active-2: hsl(var(--tbdx-hsl-pink), var(--tbdx-active-2));
+  --tbdx-pink-base-active-3: hsl(var(--tbdx-hsl-pink), var(--tbdx-active-3));
+  --tbdx-pink-base-active-4: hsl(var(--tbdx-hsl-pink), var(--tbdx-active-4));
+  --tbdx-pink-base-active-5: hsl(var(--tbdx-hsl-pink), var(--tbdx-active-5));
+  --tbdx-pink-base-active-6: hsl(var(--tbdx-hsl-pink), var(--tbdx-active-6));
+  --tbdx-pink-base-active-7: hsl(var(--tbdx-hsl-pink), var(--tbdx-active-7));
+  --tbdx-pink-base-active-8: hsl(var(--tbdx-hsl-pink), var(--tbdx-active-8));
+  --tbdx-pink-base-active-9: hsl(var(--tbdx-hsl-pink), var(--tbdx-active-9));
 
   --tbdx-pink-base-text-0: hsl(var(--tbdx-hsl-pink), var(--tbdx-text-0));
   --tbdx-pink-base-text-1: hsl(var(--tbdx-hsl-pink), var(--tbdx-text-1));
@@ -569,6 +761,13 @@
   --tbdx-pink-base-hover-A4: hsla(var(--tbdx-hsl-pink), var(--tbdx-AA), var(--tbdx-hover-A4));
   --tbdx-pink-base-hover-A5: hsla(var(--tbdx-hsl-pink), var(--tbdx-AA), var(--tbdx-hover-A5));
 
+  --tbdx-pink-base-active-A0: hsla(var(--tbdx-hsl-pink), var(--tbdx-AA), var(--tbdx-active-A0));
+  --tbdx-pink-base-active-A1: hsla(var(--tbdx-hsl-pink), var(--tbdx-AA), var(--tbdx-active-A1));
+  --tbdx-pink-base-active-A2: hsla(var(--tbdx-hsl-pink), var(--tbdx-AA), var(--tbdx-active-A2));
+  --tbdx-pink-base-active-A3: hsla(var(--tbdx-hsl-pink), var(--tbdx-AA), var(--tbdx-active-A3));
+  --tbdx-pink-base-active-A4: hsla(var(--tbdx-hsl-pink), var(--tbdx-AA), var(--tbdx-active-A4));
+  --tbdx-pink-base-active-A5: hsla(var(--tbdx-hsl-pink), var(--tbdx-AA), var(--tbdx-active-A5));
+
   --tbdx-magenta-base-0: hsl(var(--tbdx-hsl-magenta), var(--tbdx-0));
   --tbdx-magenta-base-1: hsl(var(--tbdx-hsl-magenta), var(--tbdx-1));
   --tbdx-magenta-base-2: hsl(var(--tbdx-hsl-magenta), var(--tbdx-2));
@@ -590,6 +789,17 @@
   --tbdx-magenta-base-hover-7: hsl(var(--tbdx-hsl-magenta), var(--tbdx-hover-7));
   --tbdx-magenta-base-hover-8: hsl(var(--tbdx-hsl-magenta), var(--tbdx-hover-8));
   --tbdx-magenta-base-hover-9: hsl(var(--tbdx-hsl-magenta), var(--tbdx-hover-9));
+
+  --tbdx-magenta-base-active-0: hsl(var(--tbdx-hsl-magenta), var(--tbdx-active-0));
+  --tbdx-magenta-base-active-1: hsl(var(--tbdx-hsl-magenta), var(--tbdx-active-1));
+  --tbdx-magenta-base-active-2: hsl(var(--tbdx-hsl-magenta), var(--tbdx-active-2));
+  --tbdx-magenta-base-active-3: hsl(var(--tbdx-hsl-magenta), var(--tbdx-active-3));
+  --tbdx-magenta-base-active-4: hsl(var(--tbdx-hsl-magenta), var(--tbdx-active-4));
+  --tbdx-magenta-base-active-5: hsl(var(--tbdx-hsl-magenta), var(--tbdx-active-5));
+  --tbdx-magenta-base-active-6: hsl(var(--tbdx-hsl-magenta), var(--tbdx-active-6));
+  --tbdx-magenta-base-active-7: hsl(var(--tbdx-hsl-magenta), var(--tbdx-active-7));
+  --tbdx-magenta-base-active-8: hsl(var(--tbdx-hsl-magenta), var(--tbdx-active-8));
+  --tbdx-magenta-base-active-9: hsl(var(--tbdx-hsl-magenta), var(--tbdx-active-9));
 
   --tbdx-magenta-base-text-0: hsl(var(--tbdx-hsl-magenta), var(--tbdx-text-0));
   --tbdx-magenta-base-text-1: hsl(var(--tbdx-hsl-magenta), var(--tbdx-text-1));
@@ -616,6 +826,37 @@
   --tbdx-magenta-base-hover-A4: hsla(var(--tbdx-hsl-magenta), var(--tbdx-AA), var(--tbdx-hover-A4));
   --tbdx-magenta-base-hover-A5: hsla(var(--tbdx-hsl-magenta), var(--tbdx-AA), var(--tbdx-hover-A5));
 
+  --tbdx-magenta-base-active-A0: hsla(
+    var(--tbdx-hsl-magenta),
+    var(--tbdx-AA),
+    var(--tbdx-active-A0)
+  );
+  --tbdx-magenta-base-active-A1: hsla(
+    var(--tbdx-hsl-magenta),
+    var(--tbdx-AA),
+    var(--tbdx-active-A1)
+  );
+  --tbdx-magenta-base-active-A2: hsla(
+    var(--tbdx-hsl-magenta),
+    var(--tbdx-AA),
+    var(--tbdx-active-A2)
+  );
+  --tbdx-magenta-base-active-A3: hsla(
+    var(--tbdx-hsl-magenta),
+    var(--tbdx-AA),
+    var(--tbdx-active-A3)
+  );
+  --tbdx-magenta-base-active-A4: hsla(
+    var(--tbdx-hsl-magenta),
+    var(--tbdx-AA),
+    var(--tbdx-active-A4)
+  );
+  --tbdx-magenta-base-active-A5: hsla(
+    var(--tbdx-hsl-magenta),
+    var(--tbdx-AA),
+    var(--tbdx-active-A5)
+  );
+
   --tbdx-red-base-0: hsl(var(--tbdx-hsl-red), var(--tbdx-0));
   --tbdx-red-base-1: hsl(var(--tbdx-hsl-red), var(--tbdx-1));
   --tbdx-red-base-2: hsl(var(--tbdx-hsl-red), var(--tbdx-2));
@@ -637,6 +878,17 @@
   --tbdx-red-base-hover-7: hsl(var(--tbdx-hsl-red), var(--tbdx-hover-7));
   --tbdx-red-base-hover-8: hsl(var(--tbdx-hsl-red), var(--tbdx-hover-8));
   --tbdx-red-base-hover-9: hsl(var(--tbdx-hsl-red), var(--tbdx-hover-9));
+
+  --tbdx-red-base-active-0: hsl(var(--tbdx-hsl-red), var(--tbdx-active-0));
+  --tbdx-red-base-active-1: hsl(var(--tbdx-hsl-red), var(--tbdx-active-1));
+  --tbdx-red-base-active-2: hsl(var(--tbdx-hsl-red), var(--tbdx-active-2));
+  --tbdx-red-base-active-3: hsl(var(--tbdx-hsl-red), var(--tbdx-active-3));
+  --tbdx-red-base-active-4: hsl(var(--tbdx-hsl-red), var(--tbdx-active-4));
+  --tbdx-red-base-active-5: hsl(var(--tbdx-hsl-red), var(--tbdx-active-5));
+  --tbdx-red-base-active-6: hsl(var(--tbdx-hsl-red), var(--tbdx-active-6));
+  --tbdx-red-base-active-7: hsl(var(--tbdx-hsl-red), var(--tbdx-active-7));
+  --tbdx-red-base-active-8: hsl(var(--tbdx-hsl-red), var(--tbdx-active-8));
+  --tbdx-red-base-active-9: hsl(var(--tbdx-hsl-red), var(--tbdx-active-9));
 
   --tbdx-red-base-text-0: hsl(var(--tbdx-hsl-red), var(--tbdx-text-0));
   --tbdx-red-base-text-1: hsl(var(--tbdx-hsl-red), var(--tbdx-text-1));
@@ -662,6 +914,13 @@
   --tbdx-red-base-hover-A3: hsla(var(--tbdx-hsl-red), var(--tbdx-AA), var(--tbdx-hover-A3));
   --tbdx-red-base-hover-A4: hsla(var(--tbdx-hsl-red), var(--tbdx-AA), var(--tbdx-hover-A4));
   --tbdx-red-base-hover-A5: hsla(var(--tbdx-hsl-red), var(--tbdx-AA), var(--tbdx-hover-A5));
+
+  --tbdx-red-base-active-A0: hsla(var(--tbdx-hsl-red), var(--tbdx-AA), var(--tbdx-active-A0));
+  --tbdx-red-base-active-A1: hsla(var(--tbdx-hsl-red), var(--tbdx-AA), var(--tbdx-active-A1));
+  --tbdx-red-base-active-A2: hsla(var(--tbdx-hsl-red), var(--tbdx-AA), var(--tbdx-active-A2));
+  --tbdx-red-base-active-A3: hsla(var(--tbdx-hsl-red), var(--tbdx-AA), var(--tbdx-active-A3));
+  --tbdx-red-base-active-A4: hsla(var(--tbdx-hsl-red), var(--tbdx-AA), var(--tbdx-active-A4));
+  --tbdx-red-base-active-A5: hsla(var(--tbdx-hsl-red), var(--tbdx-AA), var(--tbdx-active-A5));
 }
 
 [data-prefers-color-scheme='dark'] {

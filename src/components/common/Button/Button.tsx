@@ -1,14 +1,13 @@
 import clsx from 'clsx';
-import { ButtonGroup } from './ButtonGroup';
 import { type Factory, createPolymorphic } from '@/components/factory';
+import { type TBDXSize, type TBDXAlignment } from '@/core/theme';
 import { type ButtonUnstyledProps, ButtonUnstyled } from './ButtonUnstyled';
+import { ButtonGroup, useButtonContext } from './ButtonGroup';
 
 export type ButtonProps = ButtonUnstyledProps & {
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-  scheme?: 'primary' | 'secondary' | 'action';
-  variant?: 'solid' | 'outlined' | 'tonal' | 'ghost';
-  alignment?: 'start' | 'center' | 'end';
   label?: string;
+  align?: TBDXAlignment;
+  size?: TBDXSize;
 };
 
 type ButtonFactory = Factory.Config<{
@@ -23,23 +22,25 @@ export const Button = createPolymorphic<ButtonFactory>((props, ref) => {
   const {
     size = 'sm',
     label,
+    align = 'start',
     scheme = 'primary',
     variant = 'solid',
+    rightContent,
+    leftContent,
+    component = 'button',
+    children,
     disabled,
     readonly,
-    children,
-    alignment = 'start',
-    component = 'button',
-    leftContent,
-    rightContent,
     ...otherProps
   } = props;
+
+  const ctx = useButtonContext();
 
   const className = clsx('Button', {
     [`Button--${size}`]: size !== undefined,
     [`Button--${scheme}`]: scheme !== undefined,
     [`Button--${variant}`]: variant !== undefined,
-    [`Button--${alignment}`]: alignment !== undefined,
+    [`Button--${align}`]: align !== undefined,
   });
 
   return (
