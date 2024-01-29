@@ -1,13 +1,35 @@
 .tbdx-swatch {
-  padding: 1rem;
+  padding-block: 1rem;
+  padding-inline: 1rem;
+  transition:
+    background-color 170ms ease-out,
+    outline-color 170ms ease-out,
+    border-color 170ms ease-out,
+    color 170ms ease-out;
 }
 .tbdx-swatch-label {
   font-size: 0.8rem;
   line-height: 1;
 }
 .tbdx-swatch-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .tbdx-swatch-gallery {
   width: 100%;
   display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  gap: 1rem;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  &-content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
 }
