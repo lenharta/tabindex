@@ -1,9 +1,9 @@
 .Text {
-  --text-size-xs: calc(var(--tbdx-font-size-02) * var(--tbdx-scale, 1));
-  --text-size-sm: calc(var(--tbdx-font-size-03) * var(--tbdx-scale, 1));
-  --text-size-md: calc(var(--tbdx-font-size-04) * var(--tbdx-scale, 1));
-  --text-size-lg: calc(var(--tbdx-font-size-05) * var(--tbdx-scale, 1));
-  --text-size-xl: calc(var(--tbdx-font-size-06) * var(--tbdx-scale, 1));
+  --text-size-xs: calc(var(--tbdx-font-size-2) * var(--tbdx-scale, 1));
+  --text-size-sm: calc(var(--tbdx-font-size-3) * var(--tbdx-scale, 1));
+  --text-size-md: calc(var(--tbdx-font-size-4) * var(--tbdx-scale, 1));
+  --text-size-lg: calc(var(--tbdx-font-size-5) * var(--tbdx-scale, 1));
+  --text-size-xl: calc(var(--tbdx-font-size-6) * var(--tbdx-scale, 1));
 
   --text-lead-xs: calc(1 * var(--tbdx-scale, 1));
   --text-lead-sm: calc(1.2 * var(--tbdx-scale, 1));

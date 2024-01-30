@@ -10,7 +10,7 @@ export type ButtonProps = ButtonUnstyledProps & {
   size?: TBDXSize;
 };
 
-type ButtonFactory = Factory.Config<{
+export type ButtonFactory = Factory.Config<{
   component: 'button';
   props: ButtonProps;
   components: {

@@ -1,7 +1,7 @@
-import { type Factory, createStatic } from '@/components/factory';
-import { Button } from '@/components/common';
-import { useThemeCTX } from '@/core/theme';
 import { Link } from 'react-router-dom';
+import { type Factory, createStatic } from '@/components/factory';
+import { useThemeCTX } from '@/core/theme';
+import { Button } from '@/components/common';
 
 export type PageFooterProps = {};
 
@@ -10,16 +10,8 @@ type PageFooterFactory = Factory.Config<{
   props: PageFooterProps;
 }>;
 
-export function ModeButton() {
-  const theme = useThemeCTX();
-  return (
-    <Button scheme="secondary" onClick={theme.toggle}>
-      Change Mode
-    </Button>
-  );
-}
-
 type FooterLink = { id: string; url: string; label: string };
+
 type FooterLinkData = FooterLink[];
 
 const FooterMenu = ({ links }: { links: FooterLinkData }) => {
@@ -39,6 +31,8 @@ const FooterMenu = ({ links }: { links: FooterLinkData }) => {
 
 export const PageFooter = createStatic<PageFooterFactory>((props) => {
   const { children, ...otherProps } = props;
+  const theme = useThemeCTX();
+
   return (
     <footer {...otherProps} className="Page-footer">
       {children}
@@ -50,7 +44,7 @@ export const PageFooter = createStatic<PageFooterFactory>((props) => {
           { id: 'wireframe_link', url: '/wireframe', label: 'Wireframe' },
         ]}
       />
-      <ModeButton />
+      <Button onClick={theme.toggle}>Change Mode</Button>
     </footer>
   );
 });

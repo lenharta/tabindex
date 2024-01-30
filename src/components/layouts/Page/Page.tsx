@@ -1,4 +1,4 @@
-import { type Factory, createPolymorphic } from '@/components/factory';
+import { type Factory, createStatic } from '@/components/factory';
 import { PageContent } from './PageContent';
 import { PageFooter } from './PageFooter';
 import { PageHeader } from './PageHeader';
@@ -6,6 +6,7 @@ import { PageHero } from './PageHero';
 
 export type PageProps = {
   variant?: 'default' | 'sandbox';
+  title?: string;
 };
 
 type PageFactory = Factory.Config<{
@@ -19,12 +20,14 @@ type PageFactory = Factory.Config<{
   };
 }>;
 
-export const Page = createPolymorphic<PageFactory>((props, ref) => {
-  const { component: Component = 'div', variant = 'default', children, ...otherProps } = props;
+export const Page = createStatic<PageFactory>((props) => {
+  const { variant = 'default', title, children, ...otherProps } = props;
   return (
-    <Component {...otherProps} ref={ref} className={`Page Page--${variant}`}>
+    <div {...otherProps} className={`Page Page--${variant}`}>
+      <Page.Header>{}</Page.Header>
       {children}
-    </Component>
+      <Page.Footer>{}</Page.Footer>
+    </div>
   );
 });
 
