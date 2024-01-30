@@ -1,11 +1,14 @@
 export type TBDXSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-export type TBDXSizeCompact = 'sm' | 'md' | 'lg';
-export type TBDXSizeExpanded = 'xs' | TBDXSize | 'xxl';
+export type TBDXSizeCompact = Exclude<TBDXSize, 'xs' | 'xl'>;
+export type TBDXSizeExpanded = 'xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
 
-export type TBDXJustify = 'start' | 'center' | 'end';
-export type TBDXAlignment = 'start' | 'center' | 'end';
 export type TBDXPosition = 'top' | 'right' | 'bottom' | 'left';
+export type TBDXAlignment = 'start' | 'center' | 'end';
 export type TBDXPlacement = TBDXPosition | `${TBDXPosition}-${TBDXAlignment}`;
+
+export type TBDXSpacing = '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10';
+export type TBDXFontSize = '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10';
+export type TBDXFontWeight = 'xlt' | 'lgt' | 'reg' | 'med' | 'bld' | 'xbd';
 
 export type TBDXAlpha = 'A0' | 'A1' | 'A2' | 'A3' | 'A4' | 'A5';
 export type TBDXShade = '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9';

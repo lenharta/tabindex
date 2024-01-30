@@ -11,12 +11,10 @@ async function loadShiki() {
   return shiki;
 }
 
-export default function Root() {
-  return (
-    <ThemeContextProvider>
-      <ShikiContextProvider loadShiki={loadShiki}>
-        <Outlet />
-      </ShikiContextProvider>
-    </ThemeContextProvider>
-  );
-}
+export const Root = () => (
+  <ThemeContextProvider>
+    <ShikiContextProvider loadShiki={loadShiki}>
+      <Outlet />
+    </ShikiContextProvider>
+  </ThemeContextProvider>
+);

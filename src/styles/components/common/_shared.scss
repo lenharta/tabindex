@@ -1,21 +1,3 @@
-.Link,
-.Radio,
-.Button,
-.Switch,
-.Checkbox,
-.InlineInput {
-  --tbdx-cursor: pointer;
-
-  cursor: var(--tbdx-cursor);
-  user-select: none;
-
-  &:disabled,
-  &[data-disabled],
-  &[data-readonly] {
-    --tbdx-cursor: default;
-  }
-}
-
 .Text,
 .Title,
 .Link,

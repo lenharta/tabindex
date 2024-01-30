@@ -1,16 +1,16 @@
 .Title {
-  --title-size-h6: calc(var(--tbdx-font-size-04) * var(--tbdx-scale, 1));
-  --title-size-h5: calc(var(--tbdx-font-size-05) * var(--tbdx-scale, 1));
-  --title-size-h4: calc(var(--tbdx-font-size-06) * var(--tbdx-scale, 1));
-  --title-size-h3: calc(var(--tbdx-font-size-07) * var(--tbdx-scale, 1));
-  --title-size-h2: calc(var(--tbdx-font-size-08) * var(--tbdx-scale, 1));
-  --title-size-h1: calc(var(--tbdx-font-size-09) * var(--tbdx-scale, 1));
+  --title-size-h6: calc(var(--tbdx-font-size-4) * var(--tbdx-scale, 1));
+  --title-size-h5: calc(var(--tbdx-font-size-5) * var(--tbdx-scale, 1));
+  --title-size-h4: calc(var(--tbdx-font-size-6) * var(--tbdx-scale, 1));
+  --title-size-h3: calc(var(--tbdx-font-size-7) * var(--tbdx-scale, 1));
+  --title-size-h2: calc(var(--tbdx-font-size-8) * var(--tbdx-scale, 1));
+  --title-size-h1: calc(var(--tbdx-font-size-9) * var(--tbdx-scale, 1));
 
-  --title-size-xs: calc(var(--tbdx-font-size-05) * var(--tbdx-scale, 1));
-  --title-size-sm: calc(var(--tbdx-font-size-06) * var(--tbdx-scale, 1));
-  --title-size-md: calc(var(--tbdx-font-size-07) * var(--tbdx-scale, 1));
-  --title-size-lg: calc(var(--tbdx-font-size-08) * var(--tbdx-scale, 1));
-  --title-size-xl: calc(var(--tbdx-font-size-09) * var(--tbdx-scale, 1));
+  --title-size-xs: calc(var(--tbdx-font-size-5) * var(--tbdx-scale, 1));
+  --title-size-sm: calc(var(--tbdx-font-size-6) * var(--tbdx-scale, 1));
+  --title-size-md: calc(var(--tbdx-font-size-7) * var(--tbdx-scale, 1));
+  --title-size-lg: calc(var(--tbdx-font-size-8) * var(--tbdx-scale, 1));
+  --title-size-xl: calc(var(--tbdx-font-size-9) * var(--tbdx-scale, 1));
 
   --title-lead-xs: calc(1.2 * var(--tbdx-scale, 1));
   --title-lead-sm: calc(1.4 * var(--tbdx-scale, 1));

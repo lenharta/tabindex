@@ -1,3 +1,29 @@
+.Link,
+.Button,
+.Radio,
+.Switch,
+.Checkbox {
+  --tbdx-cursor: pointer;
+  --tbdx-border: transparent;
+  --tbdx-outline: transparent;
+
+  cursor: var(--tbdx-cursor);
+  border: solid 1.5px var(--tbdx-border);
+  outline: solid 1.5px var(--tbdx-outline);
+
+  &:disabled,
+  &[data-disabled],
+  &[data-readonly] {
+    --tbdx-cursor: default;
+  }
+  &:focus:not(:focus-visible) {
+    --tbdx-outline: transparent;
+  }
+  &:focus:focus-visible {
+    --tbdx-outline: var(--tbdx-indigo-base-6);
+  }
+}
+
 .tbdx-swatch {
   padding-block: 1rem;
   padding-inline: 1rem;
