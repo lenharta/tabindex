@@ -21,7 +21,6 @@ export const SurfaceGallery = () => (
   <>
     <Page.Hero title="Surface Gallery" />
     <Page.Content>
-      <Link to="/toolbox" label="Back to Overview" />
       <SurfaceGalleryBase />
       <SurfaceGalleryInteractive />
     </Page.Content>

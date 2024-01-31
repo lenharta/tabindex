@@ -1,97 +1,38 @@
-.Page,
-.Page--default,
-.Page--sandbox {
+.tbdx-page {
   margin: 0;
   padding: 0;
   z-index: 0;
   position: relative;
   isolation: isolate;
-  overflow-x: hidden;
   box-sizing: border-box;
   font-family: 'GeneralSans-Regular';
-  font-size: 16px;
+  font-size: var(--tbdx-font-size-4);
 }
 
-.Page--default {
+.tbdx-page--default {
   display: block;
   max-width: 100%;
-  min-height: 300vh;
+  min-height: 100vh;
 
-  .PageHero,
-  .PageHeader,
-  .PageFooter,
-  .PageContent {
-    padding-inline: 1rem;
+  .tbdx-page-hero,
+  .tbdx-page-header,
+  .tbdx-page-footer,
+  .tbdx-page-content {
+    padding-inline: var(--tbdx-spacing-6);
     margin-inline: auto;
     max-width: 100em;
   }
 
-  .PageHeader {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  }
-
-  .PageHero {
-    width: 100%;
+  .tbdx-page-hero {
     display: flex;
     align-items: flex-end;
     justify-content: flex-start;
-    min-height: 16rem;
-
-    &-title {
-      display: block;
-      font-size: var(--tbdx-font-size-12);
-    }
+    padding-block: var(--tbdx-spacing-6);
   }
 
-  .PageContent {
-    padding-block: 1rem;
-    justify-content: flex-start;
-  }
-
-  .PageFooter {
-    gap: 2px;
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    justify-content: center;
-
-    &-menu {
-      display: grid;
-    }
-
-    &-menu-item {
-      width: 100%;
-      padding-block: 0.4rem;
-      padding-inline: 0.8rem;
-      // color: var(--tbdx-surface-68);
-      // background-color: var(--tbdx-surface-08);
-      position: relative;
-      margin: 1.5px;
-      transition:
-        background-color 170ms ease-out,
-        outline-color 170ms ease-out,
-        border-color 170ms ease-out,
-        color 170ms ease-out;
-    }
-
-    &-menu-item:hover {
-      // color: var(--tbdx-surface-100);
-      // background-color: var(--tbdx-surface-base-10);
-
-      &::before {
-        content: '';
-        top: 0;
-        left: 0;
-        bottom: 0;
-        background: var(--tbdx-blue-60);
-        position: absolute;
-        height: 100%;
-        width: 2px;
-      }
-    }
+  .tbdx-page-title {
+    display: block;
+    margin-top: 10rem;
+    font-size: var(--tbdx-font-size-10);
   }
 }
