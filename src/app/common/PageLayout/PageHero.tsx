@@ -8,8 +8,12 @@ export type PageHeroProps = {
 export const PageHero = (props: PageHeroProps) => {
   const { children, title } = props;
   return (
-    <div className="PageHero">
-      {title && <Title h1>{title}</Title>}
+    <div className="tbdx-page-hero">
+      {title && (
+        <Title h1 className="tbdx-page-title">
+          {title}
+        </Title>
+      )}
       {children}
     </div>
   );

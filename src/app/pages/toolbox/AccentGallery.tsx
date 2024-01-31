@@ -87,7 +87,6 @@ export const AccentGallery = () => (
   <>
     <Page.Hero title="Accent Gallery" />
     <Page.Content>
-      <Link to="/toolbox" label="Back to Overview" />
       <AccentGalleryBase />
       <AccentGalleryBaseInteractive />
       <AccentGalleryBaseAlpha />

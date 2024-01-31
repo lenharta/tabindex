@@ -1,26 +1,11 @@
 import { Link, Title } from '@/components/common';
 
-const toolboxLinks = {
-  accent: { label: 'Accent Colors', url: '/toolbox/accent' },
-  surface: { label: 'Surface Colors', url: '/toolbox/surface' },
+type SiteMapGroupProps = {
+  children: React.ReactNode;
+  title: string;
 };
 
-const sandboxLinks = {
-  button: { label: 'Button', url: '/toolbox/button' },
-  checkbox: { label: 'Checkbox', url: '/toolbox/checkbox' },
-};
-
-const SiteMap = (props: { children: React.ReactNode }) => {
-  const { children } = props;
-  return (
-    <section className="tbdx-sitemap">
-      <Title h3>Site Map</Title>
-      <div className="tbdx-sitemap-container">{children}</div>
-    </section>
-  );
-};
-
-const SiteMapGroup = (props: { title: string; children: React.ReactNode }) => {
+const SiteMapGroup = (props: SiteMapGroupProps) => {
   const { title, children } = props;
   return (
     <div className="tbdx-sitemap-group">
@@ -33,22 +18,30 @@ const SiteMapGroup = (props: { title: string; children: React.ReactNode }) => {
   );
 };
 
-export type PageFooterProps = {};
-
-export const PageFooter = (props: PageFooterProps) => {
-  const {} = props;
+const SiteMap = () => {
   return (
-    <footer className="PageFooter">
-      <SiteMap>
+    <section className="tbdx-sitemap">
+      <Title className="tbdx-sitemap-title">Site Map</Title>
+      <div className="tbdx-sitemap-container">
         <SiteMapGroup title="Toolbox">
+          <Link to="/toolbox">Overview</Link>
           <Link to="/toolbox/accent">Accent Colors</Link>
           <Link to="/toolbox/surface">Surface Colors</Link>
         </SiteMapGroup>
         <SiteMapGroup title="Sandbox">
+          <Link to="/sandbox">Overview</Link>
           <Link to="/sandbox/button">Button</Link>
           <Link to="/sandbox/checkbox">Checkbox</Link>
         </SiteMapGroup>
-      </SiteMap>
+      </div>
+    </section>
+  );
+};
+
+export const PageFooter = () => {
+  return (
+    <footer className="tbdx-page-footer">
+      <SiteMap />
     </footer>
   );
 };

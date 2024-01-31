@@ -19,7 +19,7 @@ const PageLogo = () => (
 );
 
 export const PageHeader = ({}: PageHeaderProps) => (
-  <header className="PageHeader">
+  <header className="tbdx-page-header">
     <PageLogo />
   </header>
 );

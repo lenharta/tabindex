@@ -3,13 +3,20 @@
   display: grid;
   grid-template-rows: auto;
   grid-template-columns: repeat(1, 1fr);
-}
 
-.tbdx-sitemap-container {
-  width: 100%;
-  display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: repeat(4, 1fr);
+  &-title {
+    color: var(--tbdx-surface-invert-4);
+    font-size: var(--tbdx-font-size-6);
+    padding-block: var(--tbdx-spacing-4);
+  }
+
+  &-container {
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--tbdx-spacing-6);
+  }
 }
 
 .tbdx-sitemap-group {
@@ -32,5 +39,11 @@
 
   .Link {
     color: var(--tbdx-surface-invert-9);
+    font-size: var(--tbdx-font-size-6);
   }
+}
+
+.tbdx-quick-links-menu {
+  display: block;
+  padding-block: var(--tbdx-spacing-6);
 }

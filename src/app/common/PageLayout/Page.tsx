@@ -1,9 +1,9 @@
-import React from 'react';
+import { type Factory, createStatic } from '@/components/factory';
+
 import { PageHero } from './PageHero';
 import { PageHeader } from './PageHeader';
-import { PageFooter } from './PageFooter';
 import { PageContent } from './PageContent';
-import { type Factory, createStatic } from '@/components/factory';
+import { PageFooter } from './PageFooter';
 
 export type PageProps = {
   variant?: 'default' | 'sandbox';
@@ -22,11 +22,11 @@ export type PageFactory = Factory.Config<{
 
 export const Page = createStatic<PageFactory>((props) => {
   const { children, variant = 'default' } = props;
-  const clxssname = `Page Page--${variant}`;
+  const clxssname = `tbdx-page tbdx-page--${variant}`;
 
   return (
     <div className={clxssname}>
-      <PageHeader />
+      {/* <PageHeader /> */}
       {children}
       <PageFooter />
     </div>
