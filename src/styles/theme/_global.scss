@@ -33,192 +33,107 @@
   .tbdx-button--scheme-warning,
   .tbdx-button--scheme-primary,
   .tbdx-button--scheme-secondary {
-    color: var(--button-text-base, var(--tbdx-surface-base-text-3));
-    border-color: var(--button-border-base, transparent);
-    background-color: var(--button-background-base, var(--tbdx-surface-base-3));
+    --tbdx-text-base: unset;
+    --tbdx-text-hover: unset;
+    --tbdx-text-disabled: unset;
+    --tbdx-text-readOnly: unset;
+
+    --tbdx-background-base: unset;
+    --tbdx-background-hover: unset;
+    --tbdx-background-disabled: unset;
+    --tbdx-background-readOnly: unset;
+
+    color: var(--button-text-base);
+    background-color: var(--button-background-base);
 
     &:hover {
-      background-color: var(--button-background-hover, var(--tbdx-surface-base-hover-3));
+      color: var(--button-text-hover);
+      background-color: var(--button-background-hover);
     }
+
     &:disabled,
     &[data-disabled] {
-      color: var(--button-text-disabled, var(--tbdx-surface-base-text-9));
-      background-color: var(--button-background-disabled, var(--tbdx-surface-base-6));
+      color: var(--button-text-disabled);
+      background-color: var(--button-background-disabled);
     }
+
+    &:read-only,
     &[data-readOnly] {
-      color: var(--button-text-readOnly, var(--tbdx-surface-base-text-9));
-      background-color: var(--button-background-readOnly, var(--tbdx-surface-base-8));
+      color: var(--button-text-readOnly);
+      background-color: var(--button-background-readOnly);
     }
+  }
+
+  .tdbx-button,
+  .tbdx-button--scheme-action,
+  .tbdx-button--scheme-danger,
+  .tbdx-button--scheme-success,
+  .tbdx-button--scheme-warning,
+  .tbdx-button--scheme-primary,
+  .tbdx-button--scheme-secondary {
+    --tbdx-text-disabled: unset;
+    --tbdx-text-readOnly: unset;
+    --tbdx-background-disabled: unset;
+    --tbdx-background-readOnly: unset;
   }
 
   .tbdx-button--variant-solid {
-    &.tbdx-button--scheme-action {
-      --button-text-base: var(--tbdx-blue-base-text-6);
-      --button-background-base: var(--tbdx-blue-base-6);
-      --button-background-hover: var(--tbdx-blue-base-hover-6);
-    }
-    &.tbdx-button--scheme-danger {
-      --button-text-base: var(--tbdx-red-base-text-6);
-      --button-background-base: var(--tbdx-red-base-6);
-      --button-background-hover: var(--tbdx-red-base-hover-6);
-    }
-    &.tbdx-button--scheme-success {
-      --button-text-base: var(--tbdx-green-base-text-9);
-      --button-background-base: var(--tbdx-green-base-6);
-      --button-background-hover: var(--tbdx-green-base-hover-6);
-    }
-    &.tbdx-button--scheme-warning {
-      --button-text-base: var(--tbdx-warning-base-text-6);
-      --button-background-base: var(--tbdx-warning-base-6);
-      --button-background-hover: var(--tbdx-warning-base-hover-6);
-    }
     &.tbdx-button--scheme-primary {
-      --button-text-base: var(--tbdx-surface-invert-text-2);
-      --button-background-base: var(--tbdx-surface-invert-2);
-      --button-background-hover: var(--tbdx-surface-invert-hover-2);
+      --tbdx-text-base: unset;
+      --tbdx-text-hover: unset;
+      --tbdx-background-base: unset;
+      --tbdx-background-hover: unset;
     }
     &.tbdx-button--scheme-secondary {
-      --button-text-base: var(--tbdx-surface-base-text-3);
-      --button-background-base: var(--tbdx-surface-base-3);
-      --button-background-hover: var(--tbdx-surface-base-hover-3);
-    }
-  }
-
-  .tbdx-button--variant-tonal {
-    &.tbdx-button--scheme-action {
-      --button-text-base: var(--tbdx-blue-base-6);
-      --button-background-base: var(--tbdx-blue-base-A0);
-      --button-background-hover: var(--tbdx-blue-base-A1);
-    }
-    &.tbdx-button--scheme-danger {
-      --button-text-base: var(--tbdx-red-base-6);
-      --button-background-base: var(--tbdx-red-base-A0);
-      --button-background-hover: var(--tbdx-red-base-A1);
-    }
-    &.tbdx-button--scheme-success {
-      --button-text-base: var(--tbdx-green-base-6);
-      --button-background-base: var(--tbdx-green-base-A0);
-      --button-background-hover: var(--tbdx-green-base-A1);
-    }
-    &.tbdx-button--scheme-warning {
-      --button-text-base: var(--tbdx-yellow-base-6);
-      --button-background-base: var(--tbdx-yellow-base-A0);
-      --button-background-hover: var(--tbdx-yellow-base-A1);
-    }
-    &.tbdx-button--scheme-primary {
-      --button-text-base: var(--tbdx-surface-base-text-0);
-      --button-background-base: var(--tbdx-surface-invert-A4);
-      --button-background-hover: var(--tbdx-surface-invert-A5);
-    }
-    &.tbdx-button--scheme-secondary {
-      // --button-text-base: var(--tbdx-surface-base-text-3);
-      // --button-background-base: var(--tbdx-surface-base-A1);
-      // --button-background-hover: var(--tbdx-surface-base-hover-3);
+      --tbdx-text-base: unset;
+      --tbdx-text-hover: unset;
+      --tbdx-background-base: unset;
+      --tbdx-background-hover: unset;
     }
   }
 
   .tbdx-button--variant-outlined {
-    &.tbdx-button--scheme-action {
-      --button-text-base: var(--tbdx-blue-base-6);
-      --button-border-base: var(--tbdx-blue-base-6);
-      --button-background-base: var(--tbdx-blue-base-A0);
-      --button-background-hover: var(--tbdx-blue-base-A1);
-    }
-    &.tbdx-button--scheme-danger {
-      --button-text-base: var(--tbdx-red-base-6);
-      --button-border-base: var(--tbdx-red-base-6);
-      --button-background-base: var(--tbdx-red-base-A0);
-      --button-background-hover: var(--tbdx-red-base-A1);
-    }
-    &.tbdx-button--scheme-success {
-      --button-text-base: var(--tbdx-green-base-6);
-      --button-border-base: var(--tbdx-green-base-6);
-      --button-background-base: var(--tbdx-green-base-A0);
-      --button-background-hover: var(--tbdx-green-base-A1);
-    }
-    &.tbdx-button--scheme-warning {
-      --button-text-base: var(--tbdx-yellow-base-6);
-      --button-border-base: var(--tbdx-yellow-base-6);
-      --button-background-base: var(--tbdx-yellow-base-A0);
-      --button-background-hover: var(--tbdx-yellow-base-A1);
-    }
     &.tbdx-button--scheme-primary {
-      --button-text-base: var(--tbdx-surface-base-text-0);
-      --button-border-base: var(--tbdx-surface-base-text-0);
-      --button-background-base: var(--tbdx-surface-invert-A3);
-      --button-background-hover: var(--tbdx-surface-invert-A4);
+      --tbdx-text-base: unset;
+      --tbdx-text-hover: unset;
+      --tbdx-background-base: unset;
+      --tbdx-background-hover: unset;
     }
     &.tbdx-button--scheme-secondary {
-      --button-text-base: var(--tbdx-surface-base-text-3);
-      --button-border-base: var(--tbdx-surface-base-8);
-      --button-background-base: var(--tbdx-surface-base-3);
-      --button-background-hover: var(--tbdx-surface-base-hover-3);
+      --tbdx-text-base: unset;
+      --tbdx-text-hover: unset;
+      --tbdx-background-base: unset;
+      --tbdx-background-hover: unset;
+    }
+  }
+
+  .tbdx-button--variant-tonal {
+    &.tbdx-button--scheme-primary {
+      --tbdx-text-base: unset;
+      --tbdx-text-hover: unset;
+      --tbdx-background-base: unset;
+      --tbdx-background-hover: unset;
+    }
+    &.tbdx-button--scheme-secondary {
+      --tbdx-text-base: unset;
+      --tbdx-text-hover: unset;
+      --tbdx-background-base: unset;
+      --tbdx-background-hover: unset;
     }
   }
 
   .tbdx-button--variant-ghost {
-    &.tbdx-button--scheme-action {
-      --button-text-base: var(--tbdx-blue-base-6);
-      --button-background-base: var(--tbdx-surface-base-1);
-      --button-background-hover: var(--tbdx-blue-base-A0);
-    }
-    &.tbdx-button--scheme-danger {
-      --button-text-base: var(--tbdx-red-base-6);
-      --button-background-base: var(--tbdx-surface-base-1);
-      --button-background-hover: var(--tbdx-red-base-A0);
-    }
-    &.tbdx-button--scheme-success {
-      --button-text-base: var(--tbdx-green-base-6);
-      --button-background-base: var(--tbdx-surface-base-1);
-      --button-background-hover: var(--tbdx-green-base-A0);
-    }
-    &.tbdx-button--scheme-warning {
-      --button-text-base: var(--tbdx-yellow-base-6);
-      --button-background-base: var(--tbdx-surface-base-1);
-      --button-background-hover: var(--tbdx-yellow-base-A0);
-    }
     &.tbdx-button--scheme-primary {
-      --button-text-base: var(--tbdx-surface-base-text-0);
-      --button-background-base: var(--tbdx-surface-base-1);
-      --button-background-hover: var(--tbdx-surface-invert-A3);
+      --tbdx-text-base: unset;
+      --tbdx-text-hover: unset;
+      --tbdx-background-base: unset;
+      --tbdx-background-hover: unset;
     }
     &.tbdx-button--scheme-secondary {
-      --button-text-base: var(--tbdx-surface-base-text-3);
-      --button-background-base: var(--tbdx-surface-base-1);
-      --button-background-hover: var(--tbdx-surface-base-hover-3);
-    }
-  }
-
-  .tbdx-button--variant-text {
-    &.tbdx-button--scheme-action {
-      --button-text-base: var(--tbdx-blue-base-6);
-      --button-background-base: var(--tbdx-surface-base-1);
-      --button-background-hover: var(--tbdx-surface-base-3);
-    }
-    &.tbdx-button--scheme-danger {
-      --button-text-base: var(--tbdx-red-base-6);
-      --button-background-base: var(--tbdx-surface-base-1);
-      --button-background-hover: var(--tbdx-surface-base-3);
-    }
-    &.tbdx-button--scheme-success {
-      --button-text-base: var(--tbdx-green-base-6);
-      --button-background-base: var(--tbdx-surface-base-1);
-      --button-background-hover: var(--tbdx-surface-base-3);
-    }
-    &.tbdx-button--scheme-warning {
-      --button-text-base: var(--tbdx-yellow-base-6);
-      --button-background-base: var(--tbdx-surface-base-1);
-      --button-background-hover: var(--tbdx-surface-base-3);
-    }
-    &.tbdx-button--scheme-primary {
-      --button-text-base: var(--tbdx-surface-base-text-0);
-      --button-background-base: var(--tbdx-surface-base-1);
-      --button-background-hover: var(--tbdx-surface-base-3);
-    }
-    &.tbdx-button--scheme-secondary {
-      --button-text-base: var(--tbdx-surface-base-text-3);
-      --button-background-base: var(--tbdx-surface-base-1);
-      --button-background-hover: var(--tbdx-surface-base-3);
+      --tbdx-text-base: unset;
+      --tbdx-text-hover: unset;
+      --tbdx-background-base: unset;
+      --tbdx-background-hover: unset;
     }
   }
 }

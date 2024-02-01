@@ -28,7 +28,6 @@ const ButtonGalleryVariant = ({ scheme = 'primary' }: { scheme?: ButtonScheme })
     <Button {...commonProps} scheme={scheme} variant="outlined" />
     <Button {...commonProps} scheme={scheme} variant="tonal" />
     <Button {...commonProps} scheme={scheme} variant="ghost" />
-    <Button {...commonProps} scheme={scheme} variant="text" />
   </Button.Group>
 );
 

@@ -6,7 +6,7 @@ import { type ButtonBaseProps } from './ButtonUnstyled';
 import { ButtonGroup, useButtonContext } from './ButtonGroup';
 
 export type ButtonScheme = 'primary' | 'secondary' | 'action' | 'danger' | 'success' | 'warning';
-export type ButtonVariant = 'solid' | 'outlined' | 'tonal' | 'ghost' | 'text';
+export type ButtonVariant = 'solid' | 'outlined' | 'tonal' | 'ghost';
 
 export interface ButtonThemeProps {
   size?: TBDX.Size;
