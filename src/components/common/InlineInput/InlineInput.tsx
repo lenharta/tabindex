@@ -1,29 +1,26 @@
 import { type Factory, createPolymorphic } from '@/components/factory';
 import { Label } from '../Label';
 import { Text } from '../Text';
-import React from 'react';
 
 export type InlineInputProps = {
-  type?: React.AriaRole;
-  children?: React.ReactNode;
-  className?: string;
+  role?: React.AriaRole;
+  note?: string;
+  error?: string;
+  label?: string;
   disabled?: boolean;
   readonly?: boolean;
-  label?: string;
-  error?: string;
-  note?: string;
+  children?: React.ReactNode;
+  className?: string;
 };
 
-export type InlineInputConsumerProps = Omit<InlineInputProps, 'className' | 'children'>;
-
-type InlineInputFactory = Factory.Config<{
+export type InlineInputFactory = Factory.Config<{
   component: 'button';
   props: InlineInputProps;
 }>;
 
 export const InlineInput = createPolymorphic<InlineInputFactory>((props, ref) => {
   const {
-    type,
+    role,
     note,
     label,
     error,
@@ -34,18 +31,17 @@ export const InlineInput = createPolymorphic<InlineInputFactory>((props, ref) =>
     ...otherProps
   } = props;
 
-  const dataProps = {
-    'data-readonly': readonly,
-    'data-disabled': disabled,
-  };
-
-  const ariaProps = {
-    'aria-disabled': disabled,
-    'aria-readonly': readonly,
-  };
-
   return (
-    <Component {...otherProps} {...dataProps} {...ariaProps} role={type} type="button" ref={ref}>
+    <Component
+      {...otherProps}
+      ref={ref}
+      role={role}
+      type="button"
+      data-disabled={disabled}
+      aria-disabled={disabled}
+      data-readonly={readonly}
+      aria-readonly={readonly}
+    >
       {children}
       <div>
         {label && <Label>{label}</Label>}

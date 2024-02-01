@@ -1,0 +1,36 @@
+.tbdx-sandbox {
+  &-layout {
+  }
+  &-display {
+  }
+  &-controls {
+  }
+}
+
+.tbdx-sandbox-control {
+  &-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  &-textbox-input {
+    height: 48px;
+  }
+
+  &-textbox-label {
+  }
+
+  &-toggle {
+  }
+  &-toggle-label {
+  }
+
+  &-toggle-select {
+  }
+  &-toggle-select-option {
+  }
+}
+
+.tbdx-sandbox-control {
+}

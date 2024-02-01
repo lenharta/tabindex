@@ -1,14 +1,25 @@
-import clsx from 'clsx';
+import { type TBDX } from '@/core/theme';
 import { type Factory, createPolymorphic } from '@/components/factory';
-import { type TBDXSize, type TBDXAlignment } from '@/core/theme';
-import { type ButtonUnstyledProps, ButtonUnstyled } from './ButtonUnstyled';
 import { ButtonGroup, useButtonContext } from './ButtonGroup';
+import { type ButtonBaseProps } from './ButtonUnstyled';
+import { cx } from '../utils';
 
-export type ButtonProps = ButtonUnstyledProps & {
+export type ButtonScheme = 'primary' | 'secondary' | 'action';
+export type ButtonVariant = 'solid' | 'outlined' | 'tonal' | 'ghost';
+
+export interface ButtonThemeProps {
+  size?: TBDX.Size;
+  align?: TBDX.Alignment;
+  radius?: TBDX.Radius;
+  scheme?: ButtonScheme;
+  variant?: ButtonVariant;
+}
+
+export interface ButtonProps extends ButtonThemeProps, ButtonBaseProps {
   label?: string;
-  align?: TBDXAlignment;
-  size?: TBDXSize;
-};
+  isReadOnly?: boolean;
+  isDisabled?: boolean;
+}
 
 export type ButtonFactory = Factory.Config<{
   component: 'button';
@@ -18,44 +29,62 @@ export type ButtonFactory = Factory.Config<{
   };
 }>;
 
+export const defaultProps: Partial<ButtonProps> = {
+  variant: 'solid',
+  scheme: 'primary',
+  align: 'center',
+  size: 'sm',
+};
+
 export const Button = createPolymorphic<ButtonFactory>((props, ref) => {
   const {
-    size = 'sm',
-    label,
-    align = 'start',
-    scheme = 'primary',
-    variant = 'solid',
-    rightContent,
+    size,
+    align,
+    scheme,
+    radius,
+    variant,
+    isReadOnly,
+    isDisabled,
     leftContent,
-    component = 'button',
+    rightContent,
+    component: Component = 'button',
+    className,
     children,
-    disabled,
-    readonly,
+    label,
     ...otherProps
   } = props;
 
   const ctx = useButtonContext();
 
-  const className = clsx('Button', {
-    [`Button--${size}`]: size !== undefined,
-    [`Button--${scheme}`]: scheme !== undefined,
-    [`Button--${variant}`]: variant !== undefined,
-    [`Button--${align}`]: align !== undefined,
+  const clxssName = cx({
+    key: 'tbdx-button',
+    props: { size, align, scheme, variant, radius },
+    className,
+    defaultProps,
+    contextProps: {
+      size: ctx.size,
+      align: ctx.align,
+      variant: ctx.variant,
+    },
   });
 
   return (
-    <ButtonUnstyled
-      ref={ref}
-      readonly={readonly}
-      disabled={disabled}
-      className={className}
-      component={component}
-      leftContent={leftContent}
-      rightContent={rightContent}
+    <Component
       {...otherProps}
+      aria-label={label}
+      aria-disabled={isDisabled}
+      aria-readonly={isReadOnly}
+      data-disabled={isDisabled}
+      data-readonly={isReadOnly}
+      className={clxssName}
+      disabled={isDisabled}
+      readOnly={isReadOnly}
+      ref={ref}
     >
-      {label || children}
-    </ButtonUnstyled>
+      {leftContent && <div data-position="left">{leftContent}</div>}
+      {children && <div>{label || children}</div>}
+      {rightContent && <div data-position="right">{rightContent}</div>}
+    </Component>
   );
 });
 

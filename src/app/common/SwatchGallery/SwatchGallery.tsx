@@ -1,18 +1,11 @@
-import {
-  DATA_TBDX_SHADE,
-  type TBDXAlpha,
-  type TBDXShade,
-  type TBDXAccentVariantKey,
-  type TBDXSurfaceVariantKey,
-} from '@/core/theme';
-
-import { Title } from '@/components/common';
+import { type TBDX, DATA_TBDX_SHADE } from '@/core/theme';
 import { SwatchGroup } from './SwatchGroup';
+import { Title } from '@/components/common';
 
 export type SwatchGalleryProps = {
   title?: string;
-  types: (TBDXSurfaceVariantKey | TBDXAccentVariantKey)[];
-  shades: (TBDXShade | TBDXAlpha)[];
+  types: (TBDX.SurfaceVariantKey | TBDX.AccentVariantKey)[];
+  shades: (TBDX.Shade | TBDX.Alpha)[];
   bordered?: boolean;
 };
 

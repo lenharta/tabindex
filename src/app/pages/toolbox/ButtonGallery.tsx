@@ -1,63 +1,38 @@
-import { Button, ButtonProps, Title } from '@/components/common';
+import { Page } from '@/app/common';
+import { Button } from '@/components/common';
 
-type ButtonItemProps = ButtonProps & {
-  id: string;
-};
-
-type ButtonRowProps = { title?: string; config: ButtonItemProps[] };
-
-export const ButtonRow = (props: ButtonRowProps) => {
-  const { title, config } = props;
-  return (
-    <div>
-      {title && <Title h2>{title}</Title>}
-      <div>
-        {config.map((item) => {
-          if (!item.id) return null;
-          return <Button key={item.id} id={item.id} />;
-        })}
-      </div>
-    </div>
-  );
-};
-
-export const ButtonGalleryState = () => (
-  <ButtonRow
-    title="Button (state)"
-    config={[
-      { id: 'button_state_A', label: 'Button' },
-      { id: 'button_state_B', label: 'Button' },
-      { id: 'button_state_C', label: 'Button' },
-    ]}
-  />
+const ButtonGalleryState = () => (
+  <Button.Group orientation="vertical">
+    <Button children="Button (enabled)" />
+    <Button children="Button (disabled)" isDisabled />
+    <Button children="Button (readOnly)" isReadOnly />
+  </Button.Group>
 );
 
-export const ButtonGalleryScheme = () => (
-  <ButtonRow
-    title="Button (scheme)"
-    config={[
-      { id: 'button_scheme_A', label: 'Button' },
-      { id: 'button_scheme_B', label: 'Button' },
-      { id: 'button_scheme_C', label: 'Button' },
-    ]}
-  />
+const ButtonGalleryScheme = () => (
+  <Button.Group orientation="vertical">
+    <Button scheme="action" children="Button (action)" />
+    <Button scheme="primary" children="Button (primary)" />
+    <Button scheme="secondary" children="Button (secondary)" />
+  </Button.Group>
 );
 
-export const ButtonGalleryVariant = () => (
-  <ButtonRow
-    title="Button (variant)"
-    config={[
-      { id: 'button_variant_A', label: 'Button' },
-      { id: 'button_variant_B', label: 'Button' },
-      { id: 'button_variant_C', label: 'Button' },
-    ]}
-  />
+const ButtonGalleryVariant = () => (
+  <Button.Group orientation="vertical">
+    <Button variant="ghost" children="Button (primary)" />
+    <Button variant="outlined" children="Button (action)" />
+    <Button variant="solid" children="Button (secondary)" />
+    <Button variant="tonal" children="Button (secondary)" />
+  </Button.Group>
 );
 
 export const ButtonGallery = () => (
   <>
-    <ButtonGalleryState />
-    <ButtonGalleryScheme />
-    <ButtonGalleryVariant />
+    <Page.Hero title="Button Gallery" />
+    <Page.Content>
+      <ButtonGalleryState />
+      <ButtonGalleryScheme />
+      <ButtonGalleryVariant />
+    </Page.Content>
   </>
 );
