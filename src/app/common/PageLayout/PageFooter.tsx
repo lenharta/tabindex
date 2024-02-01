@@ -27,6 +27,7 @@ const SiteMap = () => {
           <Link to="/toolbox">Overview</Link>
           <Link to="/toolbox/accent">Accent Colors</Link>
           <Link to="/toolbox/surface">Surface Colors</Link>
+          <Link to="/toolbox/button">Button & Group</Link>
         </SiteMapGroup>
         <SiteMapGroup title="Sandbox">
           <Link to="/sandbox">Overview</Link>

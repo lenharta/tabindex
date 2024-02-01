@@ -1,9 +1,4 @@
-import {
-  type TBDXAlpha,
-  type TBDXShade,
-  type TBDXAccentVariantKey,
-  type TBDXSurfaceVariantKey,
-} from '@/core/theme';
+import { type TBDX } from '@/core/theme';
 
 const formatSwatchKey = (type: string, shade: string, bordered?: boolean) => {
   const isBordered = bordered ? '--bordered' : '';
@@ -23,8 +18,8 @@ const formatSwatchLabel = (color: string) => {
 };
 
 export type SwatchProps = {
-  type: TBDXSurfaceVariantKey | TBDXAccentVariantKey;
-  shade: TBDXShade | TBDXAlpha;
+  type: TBDX.SurfaceVariantKey | TBDX.AccentVariantKey;
+  shade: TBDX.Shade | TBDX.Alpha;
   bordered?: boolean;
 };
 

@@ -9,3 +9,5 @@ LICENSE
 .eslintignore
 .gitignore
 .git
+
+theme.tokens.ts

@@ -1,8 +1,8 @@
 import clsx from 'clsx';
 import { type Factory, createPolymorphic } from '@/components/factory';
-import { type InlineInputConsumerProps, InlineInput } from '../InlineInput';
+import { type InlineInputProps, InlineInput } from '../InlineInput';
 
-export type SwitchProps = InlineInputConsumerProps & {
+export type SwitchProps = InlineInputProps & {
   scheme?: 'primary' | 'secondary' | 'action';
   radius?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'rd';
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';

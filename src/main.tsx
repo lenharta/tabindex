@@ -5,7 +5,13 @@ import './styles/index.scss';
 
 import { Root, RootError } from '@/app';
 import { Home, Learn, Sandbox, Toolbox } from '@/app/routes';
-import { AccentGallery, SurfaceGallery, ToolboxOverview } from '@/app/pages';
+import {
+  AccentGallery,
+  SurfaceGallery,
+  ToolboxOverview,
+  SandboxOverview,
+  ButtonGallery,
+} from '@/app/pages';
 
 const router = createBrowserRouter([
   {
@@ -15,7 +21,11 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: '/learn', element: <Learn /> },
-      { path: '/sandbox', element: <Sandbox /> },
+      {
+        path: '/sandbox',
+        element: <Sandbox />,
+        children: [{ index: true, element: <SandboxOverview /> }],
+      },
       {
         path: '/toolbox',
         element: <Toolbox />,
@@ -23,6 +33,7 @@ const router = createBrowserRouter([
           { index: true, element: <ToolboxOverview /> },
           { path: '/toolbox/accent', element: <AccentGallery /> },
           { path: '/toolbox/surface', element: <SurfaceGallery /> },
+          { path: '/toolbox/button', element: <ButtonGallery /> },
         ],
       },
     ],

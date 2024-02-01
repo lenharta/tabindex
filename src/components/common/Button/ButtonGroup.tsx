@@ -1,74 +1,67 @@
-import clsx from 'clsx';
-import React from 'react';
+import * as React from 'react';
+import { type ButtonScheme, type ButtonVariant } from './Button';
 import { type Factory, createStatic } from '@/components/factory';
+import { type TBDX } from '@/core/theme';
+import { cx } from '../utils';
 
-// scheme?: 'primary' | 'secondary' | 'action';
-// variant?: 'solid' | 'outlined' | 'tonal' | 'ghost';
-
-type ButtonGroupProps = {
-  readonly?: boolean;
+export type ButtonGroupProps = {
   disabled?: boolean;
-  orientation?: 'vertical' | 'horizontal';
-  alignment?: 'start' | 'center' | 'end';
-  justify?: 'start' | 'center' | 'end';
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+  readonly?: boolean;
+  orientation?: TBDX.Orientation;
+  variant?: ButtonVariant;
+  scheme?: ButtonScheme;
+  align?: TBDX.Alignment;
+  size?: TBDX.Size;
 };
 
-type ButtonGroupFactory = Factory.Config<{
+export type ButtonGroupContextValue = {
+  disabled?: boolean;
+  readonly?: boolean;
+  variant?: ButtonVariant;
+  align?: TBDX.Alignment;
+  size?: TBDX.Size;
+};
+
+export type ButtonGroupFactory = Factory.Config<{
   component: 'div';
   props: ButtonGroupProps;
 }>;
-
-type ButtonGroupContextValue = {
-  readonly?: boolean;
-  disabled?: boolean;
-  orientation?: 'vertical' | 'horizontal';
-  alignment?: 'start' | 'center' | 'end';
-  justify?: 'start' | 'center' | 'end';
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-};
 
 export const ButtonGroupContext = React.createContext<ButtonGroupContextValue>({});
 export const ButtonGroupProvider = ButtonGroupContext.Provider;
 export const useButtonContext = () => React.useContext(ButtonGroupContext);
 
+const defaultProps: Partial<ButtonGroupProps> = {
+  orientation: 'horizontal',
+};
+
 export const ButtonGroup = createStatic<ButtonGroupFactory>((props) => {
   const {
+    orientation,
+    className,
     disabled,
     readonly,
     children,
-    orientation = 'horizontal',
-    alignment = 'start',
-    justify = 'start',
-    size = 'sm',
+    variant,
+    scheme,
+    align,
+    size,
     ...otherProps
   } = props;
 
-  const className = clsx('ButtonGroup', {
-    [`ButtonGroup--${size}`]: size !== undefined,
-    [`ButtonGroup--${alignment}`]: alignment !== undefined,
+  const clxssName = cx({
+    key: 'tbdx-button-group',
+    props: { scheme, orientation },
+    defaultProps,
   });
 
-  const dataProps = {
-    'data-orientation': orientation,
-  };
-
-  const ariaProps = {
-    'aria-orientation': orientation,
-  };
-
   return (
-    <div {...otherProps} {...dataProps} {...ariaProps} className={className}>
-      <ButtonGroupProvider
-        value={{
-          disabled,
-          readonly,
-          orientation,
-          alignment,
-          justify,
-          size,
-        }}
-      >
+    <div
+      {...otherProps}
+      className={clxssName}
+      aria-orientation={orientation || defaultProps.orientation}
+    >
+      <ButtonGroupProvider value={{ disabled, readonly, variant, align, size }}>
         {children}
       </ButtonGroupProvider>
     </div>

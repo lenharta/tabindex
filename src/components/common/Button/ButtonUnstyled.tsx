@@ -1,16 +1,26 @@
 import * as React from 'react';
 import { type Factory, createPolymorphic } from '@/components/factory';
 
-export type ButtonUnstyledProps = {
+export interface ButtonBaseProps {
+  /** Indicates the `disabled` state of the element */
   disabled?: boolean;
-  readonly?: boolean;
-  leftContent?: React.ReactNode;
-  rightContent?: React.ReactNode;
-};
 
-type ButtonUnstyledFactory = Factory.Config<{
+  /** Indicates the `readonly` state of the element */
+  readonly?: boolean;
+
+  /** Defines content to the `left` of the label element */
+  leftContent?: React.ReactNode;
+
+  /** Defines content to the `right` of the label element */
+  rightContent?: React.ReactNode;
+
+  /** Defines a HTML `class` for the label element */
+  className?: string;
+}
+
+export type ButtonUnstyledFactory = Factory.Config<{
   component: 'button';
-  props: ButtonUnstyledProps;
+  props: ButtonBaseProps;
 }>;
 
 export const ButtonUnstyled = createPolymorphic<ButtonUnstyledFactory>((props, ref) => {
@@ -20,21 +30,23 @@ export const ButtonUnstyled = createPolymorphic<ButtonUnstyledFactory>((props, r
     children,
     leftContent,
     rightContent,
-    component: Component = 'button',
+    component,
+    className,
     ...otherProps
   } = props;
 
-  const dataProps = {
-    'data-readonly': readonly,
-    'data-disabled': disabled,
-  };
-  const ariaProps = {
-    'aria-disabled': disabled,
-    'aria-readonly': readonly,
-  };
+  const Component = component || 'button';
 
   return (
-    <Component {...otherProps} {...dataProps} {...ariaProps} ref={ref}>
+    <Component
+      ref={ref}
+      data-disabled={disabled}
+      data-readonly={readonly}
+      aria-disabled={disabled}
+      aria-readonly={readonly}
+      disabled={disabled}
+      {...otherProps}
+    >
       {leftContent && <div data-position="left">{leftContent}</div>}
       {children && <div>{children}</div>}
       {rightContent && <div data-position="right">{rightContent}</div>}

@@ -1,4 +1,4 @@
-.Button {
+.tbdx-button {
   --button-height-xs: calc(30px * var(--tbdx-scale));
   --button-height-sm: calc(36px * var(--tbdx-scale));
   --button-height-md: calc(42px * var(--tbdx-scale));
@@ -12,20 +12,32 @@
   --button-label-xl: var(--tbdx-font-size-09);
 
   margin: 1.5px;
-  line-height: 1;
-  font-family: var(--tbdx-font-family-med);
   user-select: none;
+  padding-block: 1rem;
+  padding-inline: 1rem;
+  font-family: var(--tbdx-font-family-med);
+  line-height: 1;
 
   display: var(--button-display, inline-flex);
-  text-align: var(--button-align, flex-start);
-  align-items: var(--button-align, flex-start);
+  text-align: var(--button-align, center);
+  align-items: var(--button-align, center);
   border-radius: var(--button-radius, none);
-  justify-content: var(--button-justify, flex-start);
+  justify-content: var(--button-justify, center);
   font-size: var(--button-label, var(--button-label-xs));
   height: var(--button-height, var(--button-height-xs));
 
   &[data-block] {
     --button-display: block;
+  }
+
+  &--align-center {
+    --button-align: center;
+  }
+  &--align-start {
+    --button-align: start;
+  }
+  &--align-end {
+    --button-align: end;
   }
 
   &--radius-xs {
