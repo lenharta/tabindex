@@ -1,7 +1,7 @@
-.Radio,
-.Button,
-.Switch,
-.Checkbox {
+.tbdx-radio,
+.tbdx-button,
+.tbdx-switch,
+.tbdx-checkbox {
   transition:
     background-color 170ms ease-out,
     outline-color 170ms ease-out,
@@ -9,7 +9,7 @@
     color 170ms ease-out;
 }
 
-.Page {
+.tbdx-page {
   transition:
     background-color 680ms ease-out,
     color 680ms ease-out;

@@ -18,16 +18,18 @@
   font-family: var(--tbdx-font-family-med);
   line-height: 1;
 
+  height: var(--button-height, var(--button-height-xs));
   display: var(--button-display, inline-flex);
   text-align: var(--button-align, center);
   align-items: var(--button-align, center);
   border-radius: var(--button-radius, none);
   justify-content: var(--button-justify, center);
   font-size: var(--button-label, var(--button-label-xs));
-  height: var(--button-height, var(--button-height-xs));
 
   &[data-block] {
     --button-display: block;
+    height: 100%;
+    width: 100%;
   }
 
   &--align-center {

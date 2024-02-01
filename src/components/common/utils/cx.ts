@@ -10,8 +10,8 @@ export function cx<T extends Record<string, any>>(props: {
   const { key, props: baseProps, defaultProps, contextProps, className } = props;
 
   const mods = {
-    ...baseProps,
-    ...(defaultProps ? filterProps(defaultProps) : {}),
+    ...defaultProps,
+    ...(baseProps ? filterProps(baseProps) : {}),
     ...(contextProps ? filterProps(contextProps) : {}),
   };
 
@@ -21,13 +21,12 @@ export function cx<T extends Record<string, any>>(props: {
     return value ? `${key}--${mod}-${value}` : `${key}--${mod}`;
   };
 
+  result.push(key);
+
   for (const k in mods) {
     const hasKey = k !== undefined;
     const hasValue = mods[k] !== undefined;
 
-    if (!hasKey || !hasValue) {
-      result.push(key);
-    }
     if (hasKey && hasValue) {
       result.push(cssKey(k, mods[k]));
     }

@@ -1,3 +1,44 @@
+.tbdx-swatch {
+  padding-block: 1rem;
+  padding-inline: 1rem;
+  transition:
+    background-color 170ms ease-out,
+    outline-color 170ms ease-out,
+    border-color 170ms ease-out,
+    color 170ms ease-out;
+}
+
+.tbdx-swatch-group {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.tbdx-swatch-gallery-header {
+  display: block;
+  margin-block: 1rem;
+
+  .Title {
+    font-size: var(--tbdx-font-size-9);
+  }
+}
+
+.tbdx-swatch-gallery-content {
+  gap: 0.4rem;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(1, 1fr);
+
+  @media (min-width: 40rem) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 60rem) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (min-width: 80rem) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 .tbdx-sitemap {
   width: 100%;
   display: grid;

@@ -1,11 +1,12 @@
+import * as React from 'react';
+import { cx } from '../utils';
 import { type TBDX } from '@/core/theme';
 import { type Factory, createPolymorphic } from '@/components/factory';
-import { ButtonGroup, useButtonContext } from './ButtonGroup';
 import { type ButtonBaseProps } from './ButtonUnstyled';
-import { cx } from '../utils';
+import { ButtonGroup, useButtonContext } from './ButtonGroup';
 
-export type ButtonScheme = 'primary' | 'secondary' | 'action';
-export type ButtonVariant = 'solid' | 'outlined' | 'tonal' | 'ghost';
+export type ButtonScheme = 'primary' | 'secondary' | 'action' | 'danger' | 'success' | 'warning';
+export type ButtonVariant = 'solid' | 'outlined' | 'tonal' | 'ghost' | 'text';
 
 export interface ButtonThemeProps {
   size?: TBDX.Size;
@@ -56,17 +57,21 @@ export const Button = createPolymorphic<ButtonFactory>((props, ref) => {
 
   const ctx = useButtonContext();
 
-  const clxssName = cx({
-    key: 'tbdx-button',
-    props: { size, align, scheme, variant, radius },
-    className,
-    defaultProps,
-    contextProps: {
-      size: ctx.size,
-      align: ctx.align,
-      variant: ctx.variant,
-    },
-  });
+  const clxssName = React.useMemo(
+    () =>
+      cx({
+        key: 'tbdx-button',
+        props: { size, align, variant, scheme, radius },
+        className,
+        defaultProps,
+        contextProps: {
+          size: ctx.size,
+          align: ctx.align,
+          variant: ctx.variant,
+        },
+      }),
+    [size, align, variant, scheme, radius, ctx, className, defaultProps]
+  );
 
   return (
     <Component
@@ -82,7 +87,7 @@ export const Button = createPolymorphic<ButtonFactory>((props, ref) => {
       ref={ref}
     >
       {leftContent && <div data-position="left">{leftContent}</div>}
-      {children && <div>{label || children}</div>}
+      {label || children}
       {rightContent && <div data-position="right">{rightContent}</div>}
     </Component>
   );
