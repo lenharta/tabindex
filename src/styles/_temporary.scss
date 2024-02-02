@@ -88,3 +88,19 @@
   display: block;
   padding-block: var(--tbdx-spacing-6);
 }
+
+.tbdx-button-gallery {
+  &-title {
+    line-height: 1;
+    font-size: var(--tbdx-font-size-6);
+    padding-block: var(--tbdx-spacing-4);
+  }
+  &-divider {
+    width: 100%;
+    height: calc(var(--tbdx-spacing-1) / 2);
+    background-color: var(--tbdx-surface-base-6);
+  }
+  &-content {
+    padding-block: var(--tbdx-spacing-4);
+  }
+}
