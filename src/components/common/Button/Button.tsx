@@ -5,8 +5,22 @@ import { type Factory, createPolymorphic } from '@/components/factory';
 import { type ButtonBaseProps } from './ButtonUnstyled';
 import { ButtonGroup, useButtonContext } from './ButtonGroup';
 
-export type ButtonScheme = 'primary' | 'secondary' | 'action' | 'danger' | 'success' | 'warning';
-export type ButtonVariant = 'solid' | 'outlined' | 'tonal' | 'ghost';
+export type ButtonScheme =
+  | 'primary'
+  | 'secondary'
+  | 'action'
+  | 'danger'
+  | 'success'
+  | 'warning'
+  | `accent-${TBDX.Color}`;
+
+export type ButtonVariant =
+  | 'text'
+  | 'solid'
+  | 'tonal'
+  | 'ghost'
+  | 'tonal-outlined'
+  | 'ghost-outlined';
 
 export interface ButtonThemeProps {
   size?: TBDX.Size;
