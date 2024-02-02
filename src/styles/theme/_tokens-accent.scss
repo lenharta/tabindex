@@ -24,3 +24,1249 @@
   --tbdx-hsl-magenta: 333, 63%;
   --tbdx-hsl-red: 356, 63%;
 }
+
+[data-prefers-color-scheme='dark'] {
+  .tbdx-button--variant-solid {
+    &.tbdx-button--scheme-action {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-blue), 50%, 1);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-blue), 45%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-blue), 99%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-blue), 99%, 1);
+    }
+    &.tbdx-button--scheme-danger {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-red), 50%, 1);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-red), 45%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-red), 99%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-red), 99%, 1);
+    }
+    &.tbdx-button--scheme-success {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-green), 45%, 1);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-green), 40%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-green), 99%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-green), 99%, 1);
+    }
+    &.tbdx-button--scheme-warning {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-yellow), 45%, 1);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-yellow), 40%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-yellow), 99%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-yellow), 99%, 1);
+    }
+    &.tbdx-button--scheme-accent-orange {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-orange), 50%, 1);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-orange), 45%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-orange), 99%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-orange), 99%, 1);
+    }
+    &.tbdx-button--scheme-accent-yellow {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-yellow), 45%, 1);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-yellow), 40%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-yellow), 99%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-yellow), 99%, 1);
+    }
+    &.tbdx-button--scheme-accent-green {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-green), 45%, 1);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-green), 40%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-green), 99%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-green), 99%, 1);
+    }
+    &.tbdx-button--scheme-accent-cyan {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-cyan), 50%, 1);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-cyan), 45%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-cyan), 99%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-cyan), 99%, 1);
+    }
+    &.tbdx-button--scheme-accent-blue {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-blue), 50%, 1);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-blue), 45%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-blue), 99%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-blue), 99%, 1);
+    }
+    &.tbdx-button--scheme-accent-indigo {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-indigo), 50%, 1);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-indigo), 45%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-indigo), 99%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-indigo), 99%, 1);
+    }
+    &.tbdx-button--scheme-accent-purple {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-purple), 50%, 1);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-purple), 45%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-purple), 99%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-purple), 99%, 1);
+    }
+    &.tbdx-button--scheme-accent-violet {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-violet), 50%, 1);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-violet), 45%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-violet), 99%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-violet), 99%, 1);
+    }
+    &.tbdx-button--scheme-accent-pink {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-pink), 50%, 1);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-pink), 45%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-pink), 99%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-pink), 99%, 1);
+    }
+    &.tbdx-button--scheme-accent-magenta {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-magenta), 50%, 1);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-magenta), 45%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-magenta), 99%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-magenta), 99%, 1);
+    }
+    &.tbdx-button--scheme-accent-red {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-red), 50%, 1);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-red), 45%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-red), 99%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-red), 99%, 1);
+    }
+  }
+
+  .tbdx-button--variant-tonal {
+    &.tbdx-button--scheme-action {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-blue), 50%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-blue), 50%, 0.18);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-blue), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-blue), 80%, 1);
+    }
+    &.tbdx-button--scheme-danger {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-red), 50%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-red), 50%, 0.18);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-red), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-red), 80%, 1);
+    }
+    &.tbdx-button--scheme-success {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-green), 50%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-green), 50%, 0.18);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-green), 70%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-green), 70%, 1);
+    }
+    &.tbdx-button--scheme-warning {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-yellow), 50%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-yellow), 50%, 0.18);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-yellow), 70%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-yellow), 70%, 1);
+    }
+    &.tbdx-button--scheme-accent-orange {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-orange), 50%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-orange), 50%, 0.18);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-orange), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-orange), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-yellow {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-yellow), 50%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-yellow), 50%, 0.18);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-yellow), 70%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-yellow), 70%, 1);
+    }
+    &.tbdx-button--scheme-accent-green {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-green), 50%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-green), 50%, 0.18);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-green), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-green), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-cyan {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-cyan), 50%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-cyan), 50%, 0.18);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-cyan), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-cyan), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-blue {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-blue), 50%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-blue), 50%, 0.18);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-blue), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-blue), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-indigo {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-indigo), 50%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-indigo), 50%, 0.18);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-indigo), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-indigo), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-purple {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-purple), 50%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-purple), 50%, 0.18);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-purple), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-purple), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-violet {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-violet), 50%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-violet), 50%, 0.18);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-violet), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-violet), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-pink {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-pink), 50%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-pink), 50%, 0.18);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-pink), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-pink), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-magenta {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-magenta), 50%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-magenta), 50%, 0.18);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-magenta), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-magenta), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-red {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-red), 50%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-red), 50%, 0.18);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-red), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-red), 80%, 1);
+    }
+  }
+
+  .tbdx-button--variant-tonal-outlined {
+    &.tbdx-button--scheme-action {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-blue), 50%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-blue), 50%, 0.18);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-blue), 80%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-blue), 80%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-blue), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-blue), 80%, 1);
+    }
+    &.tbdx-button--scheme-danger {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-red), 50%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-red), 50%, 0.18);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-red), 80%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-red), 80%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-red), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-red), 80%, 1);
+    }
+    &.tbdx-button--scheme-success {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-green), 50%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-green), 50%, 0.18);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-green), 70%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-green), 70%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-green), 70%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-green), 70%, 1);
+    }
+    &.tbdx-button--scheme-warning {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-yellow), 50%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-yellow), 50%, 0.18);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-yellow), 70%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-yellow), 70%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-yellow), 70%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-yellow), 70%, 1);
+    }
+    &.tbdx-button--scheme-accent-orange {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-orange), 50%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-orange), 50%, 0.18);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-orange), 80%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-orange), 80%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-orange), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-orange), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-yellow {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-yellow), 50%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-yellow), 50%, 0.18);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-yellow), 70%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-yellow), 70%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-yellow), 70%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-yellow), 70%, 1);
+    }
+    &.tbdx-button--scheme-accent-green {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-green), 50%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-green), 50%, 0.18);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-green), 80%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-green), 80%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-green), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-green), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-cyan {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-cyan), 50%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-cyan), 50%, 0.18);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-cyan), 80%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-cyan), 80%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-cyan), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-cyan), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-blue {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-blue), 50%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-blue), 50%, 0.18);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-blue), 80%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-blue), 80%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-blue), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-blue), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-indigo {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-indigo), 50%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-indigo), 50%, 0.18);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-indigo), 80%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-indigo), 80%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-indigo), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-indigo), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-purple {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-purple), 50%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-purple), 50%, 0.18);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-purple), 80%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-purple), 80%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-purple), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-purple), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-violet {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-violet), 50%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-violet), 50%, 0.18);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-violet), 80%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-violet), 80%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-violet), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-violet), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-pink {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-pink), 50%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-pink), 50%, 0.18);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-pink), 80%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-pink), 80%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-pink), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-pink), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-magenta {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-magenta), 50%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-magenta), 50%, 0.18);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-magenta), 80%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-magenta), 80%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-magenta), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-magenta), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-red {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-red), 50%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-red), 50%, 0.18);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-red), 80%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-red), 80%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-red), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-red), 80%, 1);
+    }
+  }
+
+  .tbdx-button--variant-ghost-outlined {
+    &.tbdx-button--scheme-action {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-blue), 50%, 0.12);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-blue), 80%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-blue), 80%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-blue), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-blue), 80%, 1);
+    }
+    &.tbdx-button--scheme-danger {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-red), 50%, 0.12);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-red), 80%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-red), 80%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-red), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-red), 80%, 1);
+    }
+    &.tbdx-button--scheme-success {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-green), 50%, 0.12);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-green), 70%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-green), 70%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-green), 70%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-green), 70%, 1);
+    }
+    &.tbdx-button--scheme-warning {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-yellow), 50%, 0.12);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-yellow), 70%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-yellow), 70%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-yellow), 70%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-yellow), 70%, 1);
+    }
+    &.tbdx-button--scheme-accent-orange {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-orange), 50%, 0.12);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-orange), 80%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-orange), 80%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-orange), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-orange), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-yellow {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-yellow), 50%, 0.12);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-yellow), 70%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-yellow), 70%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-yellow), 70%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-yellow), 70%, 1);
+    }
+    &.tbdx-button--scheme-accent-green {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-green), 50%, 0.12);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-green), 80%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-green), 80%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-green), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-green), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-cyan {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-cyan), 50%, 0.12);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-cyan), 80%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-cyan), 80%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-cyan), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-cyan), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-blue {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-blue), 50%, 0.12);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-blue), 80%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-blue), 80%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-blue), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-blue), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-indigo {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-indigo), 50%, 0.12);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-indigo), 80%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-indigo), 80%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-indigo), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-indigo), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-purple {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-purple), 50%, 0.12);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-purple), 80%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-purple), 80%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-purple), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-purple), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-violet {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-violet), 50%, 0.12);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-violet), 80%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-violet), 80%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-violet), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-violet), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-pink {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-pink), 50%, 0.12);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-pink), 80%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-pink), 80%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-pink), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-pink), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-magenta {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-magenta), 50%, 0.12);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-magenta), 80%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-magenta), 80%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-magenta), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-magenta), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-red {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-red), 50%, 0.12);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-red), 80%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-red), 80%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-red), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-red), 80%, 1);
+    }
+  }
+
+  .tbdx-button--variant-ghost {
+    &.tbdx-button--scheme-action {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-blue), 50%, 0.12);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-blue), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-blue), 80%, 1);
+    }
+    &.tbdx-button--scheme-danger {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-red), 50%, 0.12);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-red), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-red), 80%, 1);
+    }
+    &.tbdx-button--scheme-success {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-green), 50%, 0.12);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-green), 70%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-green), 70%, 1);
+    }
+    &.tbdx-button--scheme-warning {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-yellow), 50%, 0.12);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-yellow), 70%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-yellow), 70%, 1);
+    }
+    &.tbdx-button--scheme-accent-orange {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-orange), 50%, 0.12);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-orange), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-orange), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-yellow {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-yellow), 50%, 0.12);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-yellow), 70%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-yellow), 70%, 1);
+    }
+    &.tbdx-button--scheme-accent-green {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-green), 50%, 0.12);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-green), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-green), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-cyan {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-cyan), 50%, 0.12);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-cyan), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-cyan), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-blue {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-blue), 50%, 0.12);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-blue), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-blue), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-indigo {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-indigo), 50%, 0.12);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-indigo), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-indigo), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-purple {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-purple), 50%, 0.12);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-purple), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-purple), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-violet {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-violet), 50%, 0.12);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-violet), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-violet), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-pink {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-pink), 50%, 0.12);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-pink), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-pink), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-magenta {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-magenta), 50%, 0.12);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-magenta), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-magenta), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-red {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-red), 50%, 0.12);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-red), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-red), 80%, 1);
+    }
+  }
+
+  .tbdx-button--variant-text {
+    &.tbdx-button--scheme-action {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: var(--tbdx-surface-base-2);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-blue), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-blue), 80%, 1);
+    }
+    &.tbdx-button--scheme-danger {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: var(--tbdx-surface-base-2);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-red), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-red), 80%, 1);
+    }
+    &.tbdx-button--scheme-success {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: var(--tbdx-surface-base-2);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-green), 70%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-green), 70%, 1);
+    }
+    &.tbdx-button--scheme-warning {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: var(--tbdx-surface-base-2);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-yellow), 70%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-yellow), 70%, 1);
+    }
+    &.tbdx-button--scheme-accent-orange {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: var(--tbdx-surface-base-2);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-orange), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-orange), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-yellow {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: var(--tbdx-surface-base-2);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-yellow), 70%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-yellow), 70%, 1);
+    }
+    &.tbdx-button--scheme-accent-green {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: var(--tbdx-surface-base-2);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-green), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-green), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-cyan {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: var(--tbdx-surface-base-2);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-cyan), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-cyan), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-blue {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: var(--tbdx-surface-base-2);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-blue), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-blue), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-indigo {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: var(--tbdx-surface-base-2);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-indigo), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-indigo), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-purple {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: var(--tbdx-surface-base-2);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-purple), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-purple), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-violet {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: var(--tbdx-surface-base-2);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-violet), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-violet), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-pink {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: var(--tbdx-surface-base-2);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-pink), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-pink), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-magenta {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: var(--tbdx-surface-base-2);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-magenta), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-magenta), 80%, 1);
+    }
+    &.tbdx-button--scheme-accent-red {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: var(--tbdx-surface-base-2);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-red), 80%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-red), 80%, 1);
+    }
+  }
+}
+
+[data-prefers-color-scheme='light'] {
+  .tbdx-button--variant-solid {
+    &.tbdx-button--scheme-action {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-blue), 45%, 1);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-blue), 40%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-blue), 99%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-blue), 99%, 1);
+    }
+    &.tbdx-button--scheme-danger {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-red), 45%, 1);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-red), 40%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-red), 99%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-red), 99%, 1);
+    }
+    &.tbdx-button--scheme-success {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-green), 40%, 1);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-green), 35%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-green), 99%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-green), 99%, 1);
+    }
+    &.tbdx-button--scheme-warning {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-yellow), 55%, 1);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-yellow), 50%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-yellow), 99%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-yellow), 99%, 1);
+    }
+    &.tbdx-button--scheme-accent-orange {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-orange), 50%, 1);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-orange), 45%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-orange), 99%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-orange), 99%, 1);
+    }
+    &.tbdx-button--scheme-accent-yellow {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-yellow), 50%, 1);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-yellow), 45%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-yellow), 99%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-yellow), 99%, 1);
+    }
+    &.tbdx-button--scheme-accent-green {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-green), 40%, 1);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-green), 35%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-green), 99%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-green), 99%, 1);
+    }
+    &.tbdx-button--scheme-accent-cyan {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-cyan), 45%, 1);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-cyan), 40%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-cyan), 99%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-cyan), 99%, 1);
+    }
+    &.tbdx-button--scheme-accent-blue {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-blue), 45%, 1);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-blue), 40%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-blue), 99%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-blue), 99%, 1);
+    }
+    &.tbdx-button--scheme-accent-indigo {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-indigo), 45%, 1);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-indigo), 40%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-indigo), 99%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-indigo), 99%, 1);
+    }
+    &.tbdx-button--scheme-accent-purple {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-purple), 45%, 1);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-purple), 40%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-purple), 99%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-purple), 99%, 1);
+    }
+    &.tbdx-button--scheme-accent-violet {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-violet), 45%, 1);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-violet), 40%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-violet), 99%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-violet), 99%, 1);
+    }
+    &.tbdx-button--scheme-accent-pink {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-pink), 45%, 1);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-pink), 40%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-pink), 99%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-pink), 99%, 1);
+    }
+    &.tbdx-button--scheme-accent-magenta {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-magenta), 45%, 1);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-magenta), 40%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-magenta), 99%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-magenta), 99%, 1);
+    }
+    &.tbdx-button--scheme-accent-red {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-red), 45%, 1);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-red), 40%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-red), 99%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-red), 99%, 1);
+    }
+  }
+
+  .tbdx-button--variant-tonal {
+    &.tbdx-button--scheme-action {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-blue), 60%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-blue), 60%, 0.18);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-blue), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-blue), 50%, 1);
+    }
+    &.tbdx-button--scheme-danger {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-red), 60%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-red), 60%, 0.18);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-red), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-red), 50%, 1);
+    }
+    &.tbdx-button--scheme-success {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-green), 60%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-green), 60%, 0.18);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-green), 40%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-green), 40%, 1);
+    }
+    &.tbdx-button--scheme-warning {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-yellow), 60%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-yellow), 60%, 0.18);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-yellow), 40%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-yellow), 40%, 1);
+    }
+    &.tbdx-button--scheme-accent-orange {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-orange), 60%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-orange), 60%, 0.18);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-orange), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-orange), 50%, 1);
+    }
+    &.tbdx-button--scheme-accent-yellow {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-yellow), 60%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-yellow), 60%, 0.18);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-yellow), 40%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-yellow), 40%, 1);
+    }
+    &.tbdx-button--scheme-accent-green {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-green), 60%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-green), 60%, 0.18);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-green), 40%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-green), 40%, 1);
+    }
+    &.tbdx-button--scheme-accent-cyan {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-cyan), 60%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-cyan), 60%, 0.18);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-cyan), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-cyan), 50%, 1);
+    }
+    &.tbdx-button--scheme-accent-blue {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-blue), 60%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-blue), 60%, 0.18);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-blue), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-blue), 50%, 1);
+    }
+    &.tbdx-button--scheme-accent-indigo {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-indigo), 60%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-indigo), 60%, 0.18);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-indigo), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-indigo), 50%, 1);
+    }
+    &.tbdx-button--scheme-accent-purple {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-purple), 60%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-purple), 60%, 0.18);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-purple), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-purple), 50%, 1);
+    }
+    &.tbdx-button--scheme-accent-violet {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-violet), 60%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-violet), 60%, 0.18);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-violet), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-violet), 50%, 1);
+    }
+    &.tbdx-button--scheme-accent-pink {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-pink), 60%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-pink), 60%, 0.18);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-pink), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-pink), 50%, 1);
+    }
+    &.tbdx-button--scheme-accent-magenta {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-magenta), 60%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-magenta), 60%, 0.18);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-magenta), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-magenta), 50%, 1);
+    }
+    &.tbdx-button--scheme-accent-red {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-red), 60%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-red), 60%, 0.18);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-red), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-red), 50%, 1);
+    }
+  }
+
+  .tbdx-button--variant-tonal-outlined {
+    &.tbdx-button--scheme-action {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-blue), 60%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-blue), 60%, 0.18);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-blue), 50%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-blue), 50%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-blue), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-blue), 50%, 1);
+    }
+    &.tbdx-button--scheme-danger {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-red), 60%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-red), 60%, 0.18);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-red), 50%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-red), 50%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-red), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-red), 50%, 1);
+    }
+    &.tbdx-button--scheme-success {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-green), 60%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-green), 60%, 0.18);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-green), 40%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-green), 40%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-green), 40%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-green), 40%, 1);
+    }
+    &.tbdx-button--scheme-warning {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-yellow), 60%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-yellow), 60%, 0.18);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-yellow), 40%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-yellow), 40%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-yellow), 40%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-yellow), 40%, 1);
+    }
+    &.tbdx-button--scheme-accent-orange {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-orange), 60%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-orange), 60%, 0.18);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-orange), 50%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-orange), 50%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-orange), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-orange), 50%, 1);
+    }
+    &.tbdx-button--scheme-accent-yellow {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-yellow), 60%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-yellow), 60%, 0.18);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-yellow), 40%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-yellow), 40%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-yellow), 40%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-yellow), 40%, 1);
+    }
+    &.tbdx-button--scheme-accent-green {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-green), 60%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-green), 60%, 0.18);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-green), 40%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-green), 40%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-green), 40%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-green), 40%, 1);
+    }
+    &.tbdx-button--scheme-accent-cyan {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-cyan), 60%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-cyan), 60%, 0.18);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-cyan), 50%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-cyan), 50%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-cyan), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-cyan), 50%, 1);
+    }
+    &.tbdx-button--scheme-accent-blue {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-blue), 60%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-blue), 60%, 0.18);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-blue), 50%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-blue), 50%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-blue), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-blue), 50%, 1);
+    }
+    &.tbdx-button--scheme-accent-indigo {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-indigo), 60%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-indigo), 60%, 0.18);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-indigo), 50%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-indigo), 50%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-indigo), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-indigo), 50%, 1);
+    }
+    &.tbdx-button--scheme-accent-purple {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-purple), 60%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-purple), 60%, 0.18);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-purple), 50%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-purple), 50%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-purple), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-purple), 50%, 1);
+    }
+    &.tbdx-button--scheme-accent-violet {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-violet), 60%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-violet), 60%, 0.18);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-violet), 50%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-violet), 50%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-violet), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-violet), 50%, 1);
+    }
+    &.tbdx-button--scheme-accent-pink {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-pink), 60%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-pink), 60%, 0.18);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-pink), 50%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-pink), 50%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-pink), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-pink), 50%, 1);
+    }
+    &.tbdx-button--scheme-accent-magenta {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-magenta), 60%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-magenta), 60%, 0.18);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-magenta), 50%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-magenta), 50%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-magenta), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-magenta), 50%, 1);
+    }
+    &.tbdx-button--scheme-accent-red {
+      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-red), 60%, 0.12);
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-red), 60%, 0.18);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-red), 50%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-red), 50%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-red), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-red), 50%, 1);
+    }
+  }
+
+  .tbdx-button--variant-ghost-outlined {
+    &.tbdx-button--scheme-action {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-blue), 60%, 0.12);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-blue), 50%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-blue), 50%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-blue), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-blue), 50%, 1);
+    }
+    &.tbdx-button--scheme-danger {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-red), 60%, 0.12);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-red), 50%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-red), 50%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-red), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-red), 50%, 1);
+    }
+    &.tbdx-button--scheme-success {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-green), 60%, 0.12);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-green), 40%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-green), 40%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-green), 40%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-green), 40%, 1);
+    }
+    &.tbdx-button--scheme-warning {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-yellow), 60%, 0.12);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-yellow), 40%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-yellow), 40%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-yellow), 40%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-yellow), 40%, 1);
+    }
+    &.tbdx-button--scheme-accent-orange {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-orange), 60%, 0.12);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-orange), 50%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-orange), 50%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-orange), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-orange), 50%, 1);
+    }
+    &.tbdx-button--scheme-accent-yellow {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-yellow), 60%, 0.12);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-yellow), 40%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-yellow), 40%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-yellow), 40%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-yellow), 40%, 1);
+    }
+    &.tbdx-button--scheme-accent-green {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-green), 60%, 0.12);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-green), 40%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-green), 40%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-green), 40%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-green), 40%, 1);
+    }
+    &.tbdx-button--scheme-accent-cyan {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-cyan), 60%, 0.12);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-cyan), 50%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-cyan), 50%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-cyan), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-cyan), 50%, 1);
+    }
+    &.tbdx-button--scheme-accent-blue {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-blue), 60%, 0.12);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-blue), 50%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-blue), 50%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-blue), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-blue), 50%, 1);
+    }
+    &.tbdx-button--scheme-accent-indigo {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-indigo), 60%, 0.12);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-indigo), 50%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-indigo), 50%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-indigo), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-indigo), 50%, 1);
+    }
+    &.tbdx-button--scheme-accent-purple {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-purple), 60%, 0.12);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-purple), 50%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-purple), 50%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-purple), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-purple), 50%, 1);
+    }
+    &.tbdx-button--scheme-accent-violet {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-violet), 60%, 0.12);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-violet), 50%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-violet), 50%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-violet), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-violet), 50%, 1);
+    }
+    &.tbdx-button--scheme-accent-pink {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-pink), 60%, 0.12);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-pink), 50%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-pink), 50%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-pink), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-pink), 50%, 1);
+    }
+    &.tbdx-button--scheme-accent-magenta {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-magenta), 60%, 0.12);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-magenta), 50%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-magenta), 50%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-magenta), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-magenta), 50%, 1);
+    }
+    &.tbdx-button--scheme-accent-red {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-red), 60%, 0.12);
+      --tbdx-button-bdr-base: hsla(var(--tbdx-hsl-red), 50%, 1);
+      --tbdx-button-bdr-hover: hsla(var(--tbdx-hsl-red), 50%, 1);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-red), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-red), 50%, 1);
+    }
+  }
+
+  .tbdx-button--variant-ghost {
+    &.tbdx-button--scheme-action {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-blue), 60%, 0.12);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-blue), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-blue), 50%, 1);
+    }
+    &.tbdx-button--scheme-danger {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-red), 60%, 0.12);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-red), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-red), 50%, 1);
+    }
+    &.tbdx-button--scheme-success {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-green), 60%, 0.12);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-green), 40%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-green), 40%, 1);
+    }
+    &.tbdx-button--scheme-warning {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-yellow), 60%, 0.12);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-yellow), 40%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-yellow), 40%, 1);
+    }
+    &.tbdx-button--scheme-warning {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-yellow), 60%, 0.12);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-yellow), 40%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-yellow), 40%, 1);
+    }
+    &.tbdx-button--scheme-accent-orange {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-orange), 60%, 0.12);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-orange), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-orange), 50%, 1);
+    }
+    &.tbdx-button--scheme-accent-yellow {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-yellow), 60%, 0.12);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-yellow), 40%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-yellow), 40%, 1);
+    }
+    &.tbdx-button--scheme-accent-green {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-green), 60%, 0.12);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-green), 40%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-green), 40%, 1);
+    }
+    &.tbdx-button--scheme-accent-cyan {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-cyan), 60%, 0.12);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-cyan), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-cyan), 50%, 1);
+    }
+    &.tbdx-button--scheme-accent-blue {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-blue), 60%, 0.12);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-blue), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-blue), 50%, 1);
+    }
+    &.tbdx-button--scheme-accent-indigo {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-indigo), 60%, 0.12);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-indigo), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-indigo), 50%, 1);
+    }
+    &.tbdx-button--scheme-accent-purple {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-purple), 60%, 0.12);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-purple), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-purple), 50%, 1);
+    }
+    &.tbdx-button--scheme-accent-violet {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-violet), 60%, 0.12);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-violet), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-violet), 50%, 1);
+    }
+    &.tbdx-button--scheme-accent-pink {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-pink), 60%, 0.12);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-pink), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-pink), 50%, 1);
+    }
+    &.tbdx-button--scheme-accent-magenta {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-magenta), 60%, 0.12);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-magenta), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-magenta), 50%, 1);
+    }
+    &.tbdx-button--scheme-accent-red {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-red), 60%, 0.12);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-red), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-red), 50%, 1);
+    }
+  }
+
+  .tbdx-button--variant-text {
+    &.tbdx-button--scheme-action {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: var(--tbdx-surface-base-2);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-blue), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-blue), 50%, 1);
+    }
+    &.tbdx-button--scheme-danger {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: var(--tbdx-surface-base-2);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-red), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-red), 50%, 1);
+    }
+    &.tbdx-button--scheme-success {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: var(--tbdx-surface-base-2);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-green), 40%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-green), 40%, 1);
+    }
+    &.tbdx-button--scheme-warning {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: var(--tbdx-surface-base-2);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-yellow), 40%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-yellow), 40%, 1);
+    }
+    &.tbdx-button--scheme-accent-orange {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: var(--tbdx-surface-base-2);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-orange), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-orange), 50%, 1);
+    }
+    &.tbdx-button--scheme-accent-yellow {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: var(--tbdx-surface-base-2);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-yellow), 40%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-yellow), 40%, 1);
+    }
+    &.tbdx-button--scheme-accent-green {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: var(--tbdx-surface-base-2);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-green), 40%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-green), 40%, 1);
+    }
+    &.tbdx-button--scheme-accent-cyan {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: var(--tbdx-surface-base-2);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-cyan), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-cyan), 50%, 1);
+    }
+    &.tbdx-button--scheme-accent-blue {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: var(--tbdx-surface-base-2);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-blue), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-blue), 50%, 1);
+    }
+    &.tbdx-button--scheme-accent-indigo {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: var(--tbdx-surface-base-2);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-indigo), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-indigo), 50%, 1);
+    }
+    &.tbdx-button--scheme-accent-purple {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: var(--tbdx-surface-base-2);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-purple), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-purple), 50%, 1);
+    }
+    &.tbdx-button--scheme-accent-violet {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: var(--tbdx-surface-base-2);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-violet), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-violet), 50%, 1);
+    }
+    &.tbdx-button--scheme-accent-pink {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: var(--tbdx-surface-base-2);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-pink), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-pink), 50%, 1);
+    }
+    &.tbdx-button--scheme-accent-magenta {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: var(--tbdx-surface-base-2);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-magenta), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-magenta), 50%, 1);
+    }
+    &.tbdx-button--scheme-accent-red {
+      --tbdx-button-bgd-base: transparent;
+      --tbdx-button-bgd-hover: var(--tbdx-surface-base-2);
+      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-red), 50%, 1);
+      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-red), 50%, 1);
+    }
+  }
+}

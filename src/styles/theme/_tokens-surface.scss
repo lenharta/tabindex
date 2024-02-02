@@ -69,6 +69,8 @@
 }
 
 [data-prefers-color-scheme='dark'] {
+  --tbdx-hsl-surface: 0, 0%;
+
   --tbdx-surface-base-0: hsl(0, 0%, 08%);
   --tbdx-surface-base-1: hsl(0, 0%, 10%);
   --tbdx-surface-base-2: hsl(0, 0%, 12%);

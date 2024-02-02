@@ -39,50 +39,50 @@
   }
 }
 
-.tbdx-sitemap {
-  width: 100%;
-  display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: repeat(1, 1fr);
+// .tbdx-sitemap {
+//   width: 100%;
+//   display: grid;
+//   grid-template-rows: auto;
+//   grid-template-columns: repeat(1, 1fr);
 
-  &-title {
-    color: var(--tbdx-surface-invert-4);
-    font-size: var(--tbdx-font-size-6);
-    padding-block: var(--tbdx-spacing-4);
-  }
+//   &-title {
+//     color: var(--tbdx-surface-invert-4);
+//     font-size: var(--tbdx-font-size-6);
+//     padding-block: var(--tbdx-spacing-4);
+//   }
 
-  &-container {
-    width: 100%;
-    display: grid;
-    grid-template-rows: auto;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--tbdx-spacing-6);
-  }
-}
+//   &-container {
+//     width: 100%;
+//     display: grid;
+//     grid-template-rows: auto;
+//     grid-template-columns: repeat(4, 1fr);
+//     gap: var(--tbdx-spacing-6);
+//   }
+// }
 
-.tbdx-sitemap-group {
-  display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: repeat(1, 1fr);
-  gap: var(--tbdx-spacing-3);
+// .tbdx-sitemap-group {
+//   display: grid;
+//   grid-template-rows: auto;
+//   grid-template-columns: repeat(1, 1fr);
+//   gap: var(--tbdx-spacing-3);
 
-  &-title {
-    color: var(--tbdx-surface-invert-4);
-    font-size: var(--tbdx-font-size-6);
-    padding-block: var(--tbdx-spacing-4);
-  }
+//   &-title {
+//     color: var(--tbdx-surface-invert-4);
+//     font-size: var(--tbdx-font-size-6);
+//     padding-block: var(--tbdx-spacing-4);
+//   }
 
-  &-divider {
-    width: 100%;
-    height: calc(var(--tbdx-spacing-1) / 2);
-    background-color: var(--tbdx-surface-base-6);
-  }
+//   &-divider {
+//     width: 100%;
+//     height: calc(var(--tbdx-spacing-1) / 2);
+//     background-color: var(--tbdx-surface-base-6);
+//   }
 
-  .Link {
-    color: var(--tbdx-surface-invert-9);
-    font-size: var(--tbdx-font-size-6);
-  }
-}
+//   .Link {
+//     color: var(--tbdx-surface-invert-9);
+//     font-size: var(--tbdx-font-size-6);
+//   }
+// }
 
 .tbdx-quick-links-menu {
   display: block;

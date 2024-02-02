@@ -1,4 +1,4 @@
-import { Link, Title } from '@/components/common';
+import { Link } from '@/components/common';
 
 type SiteMapGroupProps = {
   children: React.ReactNode;
@@ -9,11 +9,9 @@ const SiteMapGroup = (props: SiteMapGroupProps) => {
   const { title, children } = props;
   return (
     <div className="tbdx-sitemap-group">
-      <header>
-        <div className="tbdx-sitemap-group-title">{title}</div>
-        <div className="tbdx-sitemap-group-divider" />
-      </header>
-      {children}
+      <div className="tbdx-sitemap-group-title">{title}</div>
+      <div className="tbdx-sitemap-group-divider" />
+      <div className="tbdx-sitemap-group-content">{children}</div>
     </div>
   );
 };
@@ -21,20 +19,20 @@ const SiteMapGroup = (props: SiteMapGroupProps) => {
 const SiteMap = () => {
   return (
     <section className="tbdx-sitemap">
-      <Title className="tbdx-sitemap-title">Site Map</Title>
-      <div className="tbdx-sitemap-container">
-        <SiteMapGroup title="Toolbox">
-          <Link to="/toolbox">Overview</Link>
-          <Link to="/toolbox/accent">Accent Colors</Link>
-          <Link to="/toolbox/surface">Surface Colors</Link>
-          <Link to="/toolbox/button">Button & Group</Link>
-        </SiteMapGroup>
-        <SiteMapGroup title="Sandbox">
-          <Link to="/sandbox">Overview</Link>
-          <Link to="/sandbox/button">Button</Link>
-          <Link to="/sandbox/checkbox">Checkbox</Link>
-        </SiteMapGroup>
-      </div>
+      <SiteMapGroup title="Global">
+        <Link to="/">Landing Page</Link>
+        <Link to="/toolbox">Toolbox Page</Link>
+        <Link to="/sandbox">Surface Page</Link>
+      </SiteMapGroup>
+      <SiteMapGroup title="Theme">
+        <Link to="/toolbox/accent">Accent Colors</Link>
+        <Link to="/toolbox/surface">Surface Colors</Link>
+      </SiteMapGroup>
+      <SiteMapGroup title="Components">
+        <Link to="/toolbox/button">Button</Link>
+        <Link to="/toolbox/switch">Switch</Link>
+        <Link to="/toolbox/checkbox">Checkbox</Link>
+      </SiteMapGroup>
     </section>
   );
 };

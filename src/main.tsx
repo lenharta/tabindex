@@ -11,6 +11,8 @@ import {
   ToolboxOverview,
   SandboxOverview,
   ButtonGallery,
+  CheckboxGallery,
+  SwitchGallery,
 } from '@/app/pages';
 
 const router = createBrowserRouter([
@@ -34,6 +36,8 @@ const router = createBrowserRouter([
           { path: '/toolbox/accent', element: <AccentGallery /> },
           { path: '/toolbox/surface', element: <SurfaceGallery /> },
           { path: '/toolbox/button', element: <ButtonGallery /> },
+          { path: '/toolbox/switch', element: <SwitchGallery /> },
+          { path: '/toolbox/checkbox', element: <CheckboxGallery /> },
         ],
       },
     ],

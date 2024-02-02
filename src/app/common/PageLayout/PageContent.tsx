@@ -64,7 +64,6 @@ export const PageContent = (props: PageContentProps) => {
   return (
     <>
       <div className="tbdx-page-content" id="main_content">
-        <QuickLinkMenu />
         {children}
       </div>
     </>

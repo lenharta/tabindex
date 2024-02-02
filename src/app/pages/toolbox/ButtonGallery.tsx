@@ -12,7 +12,7 @@ const ModeSwitch = () => {
   return <Button onClick={toggle} scheme="secondary" children={content} />;
 };
 
-const ButtonGalleryWrapper = ({
+export const ButtonGalleryWrapper = ({
   children,
   title,
 }: {
@@ -22,19 +22,17 @@ const ButtonGalleryWrapper = ({
   const css = {
     root: 'tbdx-button-gallery',
     title: 'tbdx-button-gallery-title',
-    divider: 'tbdx-button-gallery-divider',
     content: 'tbdx-button-gallery-content',
   };
   return (
     <div className={css.root}>
       {title && <Title h2 className={css.title} children={title} />}
-      <div className={css.divider} />
       <div className={css.content}>{children}</div>
     </div>
   );
 };
 
-const ButtonGalleryState = () => (
+export const ButtonGalleryState = () => (
   <ButtonGalleryWrapper title="States">
     <Button.Group orientation="vertical">
       <Button {...commonProps} children="Enabled" />
@@ -44,7 +42,7 @@ const ButtonGalleryState = () => (
   </ButtonGalleryWrapper>
 );
 
-const ButtonGalleryScheme = () => (
+export const ButtonGalleryScheme = () => (
   <ButtonGalleryWrapper title="Schemes">
     <Button.Group orientation="vertical">
       <Button {...commonProps} scheme="action" />
@@ -85,8 +83,6 @@ export const ButtonGallery = () => (
     <Page.Content>
       <Title>Theme Mode</Title>
       <ModeSwitch />
-      {/* <ButtonGalleryState /> */}
-      {/* <ButtonGalleryScheme /> */}
       <ButtonGalleryVariant scheme="primary" />
       <ButtonGalleryVariant scheme="secondary" />
       <ButtonGalleryVariant scheme="action" />
