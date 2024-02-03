@@ -26,7 +26,6 @@ export const Page = createStatic<PageFactory>((props) => {
 
   return (
     <div className={clxssname}>
-      {/* <PageHeader /> */}
       {children}
       <PageFooter />
     </div>

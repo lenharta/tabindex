@@ -5,4 +5,6 @@ export * from './toolbox/ButtonGallery';
 export * from './toolbox/SwitchGallery';
 export * from './toolbox/CheckboxGallery';
 
+export * from './learn/Overview';
+
 export * from './sandbox/Overview';

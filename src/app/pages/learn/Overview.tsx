@@ -1,9 +1,9 @@
 import { Page } from '@/app/common';
 import { Title } from '@/components/common';
 
-export const ButtonGallery = () => (
+export const LearnOverview = () => (
   <>
-    <Page.Hero title="Button Gallery" />
+    <Page.Hero title="Learn Overview" />
     <Page.Content>
       <Title>Content</Title>
     </Page.Content>

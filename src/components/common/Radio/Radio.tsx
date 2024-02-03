@@ -1,53 +1,54 @@
-import clsx from 'clsx';
-import { type Factory, createPolymorphic } from '@/components/factory';
-import { type InlineInputConsumerProps, InlineInput } from '../InlineInput';
+import * as React from 'react';
+import { cx } from '../utils';
+import { type TBDX } from '@/core/theme';
+import { type InlineInputProps, InlineInput, Icon } from '@/components/common';
 
-export type RadioProps = InlineInputConsumerProps & {
-  scheme?: 'primary' | 'secondary' | 'action';
-  radius?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'rd';
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+export type RadioInputProps = Omit<InlineInputProps, 'children'> & {
+  radius?: TBDX.Radius;
+  accent?: TBDX.Color;
+  size?: TBDX.Size;
 };
 
-type RadioFactory = Factory.Config<{
-  component: 'button';
-  props: RadioProps;
-}>;
+const defaultProps: Partial<RadioInputProps> = {
+  size: 'sm',
+};
 
-export const RadioIcon = () => <div>Icon</div>;
-
-export const Radio = createPolymorphic<RadioFactory>((props, ref) => {
+export const Radio = React.forwardRef<HTMLButtonElement, RadioInputProps>((props, ref) => {
   const {
+    id,
     size,
-    note,
+    radius,
+    accent,
+    text,
     error,
     label,
-    radius,
-    scheme,
-    disabled,
-    readonly,
-    component = 'button',
+    className,
+    isDisabled,
+    isReadOnly,
     ...otherProps
   } = props;
 
-  const className = clsx('Radio', {
-    [`Radio--${size}`]: size !== undefined,
-    [`Radio--${radius}`]: radius !== undefined,
-    [`Radio--${scheme}`]: scheme !== undefined,
-  });
+  const clxssName = React.useMemo(
+    () =>
+      cx({
+        key: 'tbdx-radio',
+        props: { size, radius, accent },
+        defaultProps,
+        className,
+      }),
+    [size, radius, accent]
+  );
 
   return (
     <InlineInput
       {...otherProps}
-      note={note}
-      error={error}
-      label={label}
-      disabled={disabled}
-      readonly={readonly}
-      component={component}
-      className={className}
+      id={id}
       ref={ref}
+      className={clxssName}
+      isReadOnly={isReadOnly}
+      isDisabled={isDisabled}
     >
-      <RadioIcon />
+      <Icon name="radio_checked" />
     </InlineInput>
   );
 });

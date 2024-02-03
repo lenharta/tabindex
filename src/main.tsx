@@ -13,6 +13,7 @@ import {
   ButtonGallery,
   CheckboxGallery,
   SwitchGallery,
+  LearnOverview,
 } from '@/app/pages';
 
 const router = createBrowserRouter([
@@ -22,7 +23,11 @@ const router = createBrowserRouter([
     errorElement: <RootError />,
     children: [
       { index: true, element: <Home /> },
-      { path: '/learn', element: <Learn /> },
+      {
+        path: '/learn',
+        element: <Learn />,
+        children: [{ index: true, element: <LearnOverview /> }],
+      },
       {
         path: '/sandbox',
         element: <Sandbox />,

@@ -1,12 +1,116 @@
-.Text,
-.Title,
-.Link,
-.Radio,
-.Button,
-.Switch,
-.Checkbox,
-.InlineInput {
+.tbdx-button,
+.tbdx-radio,
+.tbdx-switch,
+.tbdx-checkbox {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.tbdx-radio label,
+.tbdx-switch label,
+.tbdx-checkbox label {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  [data-disabled] &,
+  [data-readOnly] & {
+    cursor: default;
+  }
+}
+
+.tbdx-radio,
+.tbdx-switch,
+.tbdx-button,
+.tbdx-checkbox {
+  border: solid 1.5px transparent;
+  outline: solid 1.5px transparent;
+
+  &:focus:not(:focus-visible) {
+    outline-color: transparent;
+  }
+  &:focus:focus-visible {
+    outline-color: hsl(var(--tbdx-hsl-indigo), 60%, 0.8);
+  }
+}
+
+.tbdx-radio,
+.tbdx-switch,
+.tbdx-checkbox {
+  --inline-input-size-xs: calc(18px * var(--scale));
+  --inline-input-size-sm: calc(20px * var(--scale));
+  --inline-input-size-md: calc(24px * var(--scale));
+  --inline-input-size-lg: calc(30px * var(--scale));
+  --inline-input-size-xl: calc(36px * var(--scale));
+
+  --inline-input-font-xs: calc(12px * var(--scale));
+  --inline-input-font-sm: calc(14px * var(--scale));
+  --inline-input-font-md: calc(16px * var(--scale));
+  --inline-input-font-lg: calc(18px * var(--scale));
+  --inline-input-font-xl: calc(20px * var(--scale));
+
+  --inline-input-gap: calc(16px * var(--scale));
+
+  height: var(--inline-input-size, var(--inline-input-size-xs));
+  display: var(--inline-input-display, inline-flex);
+  font-size: var(--inline-input-font, var(--inline-input-font-xs));
+  text-align: var(--inline-input-align, start);
+  justify-content: flex-start;
+  align-items: center;
+
+  &[data-block] {
+    --inline-input-display: block;
+  }
+
+  &--text,
+  &--label {
+    &--size-xs & {
+      padding-left: calc(16px * var(--scale));
+    }
+    &--size-sm & {
+      padding-left: calc(18px * var(--scale));
+    }
+    &--size-md & {
+      padding-left: calc(20px * var(--scale));
+    }
+    &--size-lg & {
+      padding-left: calc(22px * var(--scale));
+    }
+    &--size-xl & {
+      padding-left: calc(24px * var(--scale));
+    }
+  }
+
+  &--align-center {
+    --inline-input-align: center;
+  }
+  &--align-start {
+    --inline-input-align: start;
+  }
+  &--align-end {
+    --inline-input-align: end;
+  }
+
+  &--size-xs {
+    --inline-input-size: var(--inline-input-size-xs);
+    --inline-input-font: var(--inline-input-font-xs);
+  }
+  &--size-sm {
+    --inline-input-size: var(--inline-input-size-sm);
+    --inline-input-font: var(--inline-input-font-sm);
+  }
+  &--size-md {
+    --inline-input-size: var(--inline-input-size-md);
+    --inline-input-font: var(--inline-input-font-md);
+  }
+  &--size-lg {
+    --inline-input-size: var(--inline-input-size-lg);
+    --inline-input-font: var(--inline-input-font-lg);
+  }
+  &--size-xl {
+    --inline-input-size: var(--inline-input-size-xl);
+    --inline-input-font: var(--inline-input-font-xl);
+  }
 }

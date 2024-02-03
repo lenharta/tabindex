@@ -41,8 +41,7 @@
   }
 
   .tbdx-page-footer {
-    display: flex;
-    flex-direction: row;
+    display: grid;
   }
 
   // TEMPORARY COMPONENTS
@@ -75,7 +74,6 @@
 
       &-content {
         gap: 0.4rem;
-        color: lightgray;
         width: 100%;
         margin-top: 0.6rem;
         display: grid;

@@ -1,57 +1,56 @@
 import clsx from 'clsx';
-import { CheckboxGroup } from './CheckboxGroup';
-import { type Factory, createPolymorphic } from '@/components/factory';
-import { type InlineInputConsumerProps, InlineInput } from '../InlineInput';
+import * as React from 'react';
+import { type TBDX } from '@/core/theme';
+import { type InlineInputProps, Icon, InlineInput } from '@/components/common';
 
-export type CheckboxProps = InlineInputConsumerProps & {
-  scheme?: 'primary' | 'secondary' | 'action';
-  radius?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'rd';
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+export type CheckboxInputProps = Omit<InlineInputProps, 'children'> & {
+  radius?: TBDX.Radius;
+  accent?: TBDX.Color;
+  size?: TBDX.Size;
 };
 
-type CheckboxFactory = Factory.Config<{
-  props: CheckboxProps;
-  component: 'button';
-  components: {
-    Group: typeof CheckboxGroup;
-  };
-}>;
+const defaultProps: Partial<CheckboxInputProps> = {
+  size: 'sm',
+};
 
-export const CheckboxIcon = () => <div>Icon</div>;
-
-export const Checkbox = createPolymorphic<CheckboxFactory>((props, ref) => {
+export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxInputProps>((props, ref) => {
   const {
+    id,
     size,
-    note,
-    error,
-    label,
     radius,
-    scheme,
-    disabled,
-    readonly,
-    component = 'button',
+    text,
+    error,
+    accent,
+    label,
+    className,
+    isDisabled,
+    isReadOnly,
     ...otherProps
   } = props;
 
-  const className = clsx('Checkbox', {
-    [`Checkbox--${size}`]: size !== undefined,
-    [`Checkbox--${radius}`]: radius !== undefined,
-    [`Checkbox--${scheme}`]: scheme !== undefined,
-  });
+  const clxssName = clsx(
+    'tbdx-checkbox',
+    {
+      [`tbdx-checkbox--size-${size}`]: size || defaultProps.size,
+      [`tbdx-checkbox--align-${radius}`]: radius,
+      [`tbdx-checkbox--accent-${accent}`]: accent,
+    },
+    className
+  );
 
   return (
     <InlineInput
       {...otherProps}
-      note={note}
+      id={id}
+      ref={ref}
+      text={text}
       error={error}
       label={label}
-      disabled={disabled}
-      readonly={readonly}
-      component={component}
-      className={className}
-      ref={ref}
+      className={clxssName}
+      isReadOnly={isReadOnly}
+      isDisabled={isDisabled}
     >
-      <CheckboxIcon />
+      <Icon name="checkbox_checked" />
     </InlineInput>
   );
 });

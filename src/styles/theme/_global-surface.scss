@@ -1,60 +1,42 @@
-.tbdx-button,
-.tbdx-button--variant-ghost,
-.tbdx-button--variant-tonal,
-.tbdx-button--variant-solid {
-  cursor: pointer;
-  border: solid 1.5px transparent;
-  outline: solid 1.5px transparent;
+.tbdx-radio,
+.tbdx-switch,
+.tbdx-checkbox {
+  --tbdx-inline-input-txt-base: unset;
+  --tbdx-inline-input-bdr-base: unset;
+  --tbdx-inline-input-bgd-base: unset;
+  --tbdx-inline-input-icn-base: unset;
 
-  &[data-disabled],
-  &[data-readOnly] {
-    cursor: default;
-  }
-  &:focus:not(:focus-visible) {
-    outline-color: transparent;
-  }
-  &:focus:focus-visible {
-    outline-color: var(--tbdx-indigo-base-6);
-  }
-}
+  --tbdx-inline-input-txt-hover: unset;
+  --tbdx-inline-input-bdr-hover: unset;
+  --tbdx-inline-input-bgd-hover: unset;
+  --tbdx-inline-input-icn-hover: unset;
 
-.tbdx-button,
-.tbdx-button--variant-ghost,
-.tbdx-button--variant-tonal,
-.tbdx-button--variant-solid {
-  --tbdx-button-bdr-base: transparent;
-  --tbdx-button-bdr-hover: transparent;
-  --tbdx-button-bdr-disabled: transparent;
-  --tbdx-button-bdr-readOnly: transparent;
+  --tbdx-inline-input-txt-disabled: unset;
+  --tbdx-inline-input-bdr-disabled: unset;
+  --tbdx-inline-input-bgd-disabled: unset;
+  --tbdx-inline-input-icn-disabled: unset;
 
-  --tbdx-button-txt-base: transparent;
-  --tbdx-button-txt-hover: transparent;
-  --tbdx-button-txt-disabled: transparent;
-  --tbdx-button-txt-readOnly: transparent;
+  --tbdx-inline-input-txt-readOnly: unset;
+  --tbdx-inline-input-bdr-readOnly: unset;
+  --tbdx-inline-input-bgd-readOnly: unset;
+  --tbdx-inline-input-icn-readOnly: unset;
 
-  --tbdx-button-bgd-base: transparent;
-  --tbdx-button-bgd-hover: transparent;
-  --tbdx-button-bgd-disabled: transparent;
-  --tbdx-button-bgd-readOnly: transparent;
-
-  color: var(--tbdx-button-txt-base);
-  border-color: var(--tbdx-button-bdr-base);
-  background-color: var(--tbdx-button-bgd-base);
+  color: var(--tbdx-inline-input-txt-base);
+  background-color: var(--tbdx-inline-input-bgd-base);
 
   &:hover {
-    color: var(--tbdx-button-txt-hover);
-    border-color: var(--tbdx-button-bdr-hover);
-    background-color: var(--tbdx-button-bgd-hover);
+    color: var(--tbdx-inline-input-txt-hover);
+    background-color: var(--tbdx-inline-input-bgd-hover);
   }
+
   &[data-disabled] {
-    color: var(--tbdx-button-txt-disabled);
-    border-color: var(--tbdx-button-bdr-disabled);
-    background-color: var(--tbdx-button-bgd-disabled);
+    color: var(--tbdx-inline-input-txt-disabled);
+    background-color: var(--tbdx-inline-input-bgd-disabled);
   }
+
   &[data-readOnly] {
-    color: var(--tbdx-button-txt-readOnly);
-    border-color: var(--tbdx-button-bdr-readOnly);
-    background-color: var(--tbdx-button-bgd-readOnly);
+    color: var(--tbdx-inline-input-txt-readOnly);
+    background-color: var(--tbdx-inline-input-bgd-readOnly);
   }
 }
 
@@ -71,89 +53,17 @@
     background-color: hsla(var(--tbdx-hsl-surface), 10%, 1);
   }
 
-  .tbdx-button--variant-solid {
-    &.tbdx-button--scheme-primary {
-      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-surface), 96%, 1);
-      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-surface), 92%, 1);
-      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-surface), 01%, 1);
-      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-surface), 01%, 1);
-    }
-    &.tbdx-button--scheme-secondary {
-      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-surface), 16%, 1);
-      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-surface), 20%, 1);
-      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-surface), 96%, 1);
-      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-surface), 96%, 1);
-    }
-  }
-  .tbdx-button--variant-tonal {
-    &.tbdx-button--scheme-primary {
-      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-surface), 96%, 1);
-      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-surface), 92%, 1);
-      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-surface), 01%, 1);
-      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-surface), 01%, 1);
-    }
-    &.tbdx-button--scheme-secondary {
-      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-surface), 16%, 1);
-      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-surface), 20%, 1);
-      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-surface), 96%, 1);
-      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-surface), 96%, 1);
-    }
-  }
-  .tbdx-button--variant-tonal-outlined {
-    &.tbdx-button--scheme-primary {
-      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-surface), 96%, 1);
-      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-surface), 92%, 1);
-      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-surface), 01%, 1);
-      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-surface), 01%, 1);
-    }
-    &.tbdx-button--scheme-secondary {
-      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-surface), 16%, 1);
-      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-surface), 20%, 1);
-      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-surface), 96%, 1);
-      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-surface), 96%, 1);
-    }
-  }
-  .tbdx-button--variant-ghost {
-    &.tbdx-button--scheme-primary {
-      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-surface), 96%, 1);
-      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-surface), 92%, 1);
-      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-surface), 01%, 1);
-      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-surface), 01%, 1);
-    }
-    &.tbdx-button--scheme-secondary {
-      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-surface), 16%, 1);
-      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-surface), 20%, 1);
-      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-surface), 96%, 1);
-      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-surface), 96%, 1);
-    }
-  }
-  .tbdx-button--variant-ghost-outlined {
-    &.tbdx-button--scheme-primary {
-      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-surface), 96%, 1);
-      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-surface), 92%, 1);
-      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-surface), 01%, 1);
-      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-surface), 01%, 1);
-    }
-    &.tbdx-button--scheme-secondary {
-      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-surface), 16%, 1);
-      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-surface), 20%, 1);
-      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-surface), 96%, 1);
-      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-surface), 96%, 1);
-    }
-  }
-  .tbdx-button--variant-text {
-    &.tbdx-button--scheme-primary {
-      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-surface), 96%, 1);
-      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-surface), 92%, 1);
-      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-surface), 01%, 1);
-      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-surface), 01%, 1);
-    }
-    &.tbdx-button--scheme-secondary {
-      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-surface), 16%, 1);
-      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-surface), 20%, 1);
-      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-surface), 96%, 1);
-      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-surface), 96%, 1);
-    }
+  .tbdx-radio,
+  .tbdx-switch,
+  .tbdx-checkbox {
+    --tbdx-inline-input-bgd-base: hsla(var(--tbdx-hsl-surface), 10%, 1);
+    --tbdx-inline-input-txt-base: hsla(var(--tbdx-hsl-surface), 96%, 1);
+    --tbdx-inline-input-bgd-hover: hsla(var(--tbdx-hsl-surface), 14%, 1);
+    --tbdx-inline-input-txt-hover: hsla(var(--tbdx-hsl-surface), 96%, 1);
+    --tbdx-inline-input-bgd-disabled: hsla(var(--tbdx-hsl-surface), 48%, 1);
+    --tbdx-inline-input-txt-disabled: hsla(var(--tbdx-hsl-surface), 96%, 1);
+    --tbdx-inline-input-bgd-readOnly: hsla(var(--tbdx-hsl-surface), 56%, 1);
+    --tbdx-inline-input-txt-readOnly: hsla(var(--tbdx-hsl-surface), 96%, 1);
   }
 }
 
@@ -168,91 +78,5 @@
   .tbdx-page {
     color: hsla(var(--tbdx-hsl-surface), 04%, 1);
     background-color: hsla(var(--tbdx-hsl-surface), 96%, 1);
-  }
-
-  .tbdx-button--variant-solid {
-    &.tbdx-button--scheme-primary {
-      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-surface), 10%, 1);
-      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-surface), 10%, 1);
-      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-surface), 96%, 1);
-      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-surface), 96%, 1);
-    }
-    &.tbdx-button--scheme-secondary {
-      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-surface), 92%, 1);
-      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-surface), 88%, 1);
-      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-surface), 16%, 1);
-      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-surface), 16%, 1);
-    }
-  }
-  .tbdx-button--variant-tonal {
-    &.tbdx-button--scheme-primary {
-      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-surface), 10%, 1);
-      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-surface), 10%, 1);
-      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-surface), 96%, 1);
-      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-surface), 96%, 1);
-    }
-    &.tbdx-button--scheme-secondary {
-      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-surface), 92%, 1);
-      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-surface), 88%, 1);
-      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-surface), 16%, 1);
-      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-surface), 16%, 1);
-    }
-  }
-  .tbdx-button--variant-tonal-outlined {
-    &.tbdx-button--scheme-primary {
-      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-surface), 10%, 1);
-      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-surface), 10%, 1);
-      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-surface), 96%, 1);
-      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-surface), 96%, 1);
-    }
-    &.tbdx-button--scheme-secondary {
-      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-surface), 92%, 1);
-      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-surface), 88%, 1);
-      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-surface), 16%, 1);
-      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-surface), 16%, 1);
-    }
-  }
-  .tbdx-button--variant-ghost {
-    &.tbdx-button--scheme-primary {
-      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-surface), 10%, 1);
-      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-surface), 10%, 1);
-      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-surface), 96%, 1);
-      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-surface), 96%, 1);
-    }
-    &.tbdx-button--scheme-secondary {
-      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-surface), 92%, 1);
-      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-surface), 88%, 1);
-      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-surface), 16%, 1);
-      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-surface), 16%, 1);
-    }
-  }
-
-  .tbdx-button--variant-ghost-outlined {
-    &.tbdx-button--scheme-primary {
-      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-surface), 10%, 1);
-      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-surface), 10%, 1);
-      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-surface), 96%, 1);
-      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-surface), 96%, 1);
-    }
-    &.tbdx-button--scheme-secondary {
-      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-surface), 92%, 1);
-      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-surface), 88%, 1);
-      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-surface), 16%, 1);
-      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-surface), 16%, 1);
-    }
-  }
-  .tbdx-button--variant-text {
-    &.tbdx-button--scheme-primary {
-      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-surface), 10%, 1);
-      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-surface), 10%, 1);
-      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-surface), 96%, 1);
-      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-surface), 96%, 1);
-    }
-    &.tbdx-button--scheme-secondary {
-      --tbdx-button-bgd-base: hsla(var(--tbdx-hsl-surface), 92%, 1);
-      --tbdx-button-bgd-hover: hsla(var(--tbdx-hsl-surface), 88%, 1);
-      --tbdx-button-txt-base: hsla(var(--tbdx-hsl-surface), 16%, 1);
-      --tbdx-button-txt-hover: hsla(var(--tbdx-hsl-surface), 16%, 1);
-    }
   }
 }

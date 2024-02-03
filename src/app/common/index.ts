@@ -1,3 +1,2 @@
 export * from './PageLayout';
-export * from './SwatchGallery';
-export * from './SandboxLayout';
+export * from './QuickSearch/QuickSearch';

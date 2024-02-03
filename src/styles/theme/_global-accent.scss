@@ -1,0 +1,242 @@
+.tbdx-radio,
+.tbdx-switch,
+.tbdx-checkbox {
+  --tbdx-inline-input-icn-base: unset;
+  --tbdx-inline-input-icn-hover: unset;
+  --tbdx-inline-input-icn-disabled: unset;
+  --tbdx-inline-input-icn-readonly: unset;
+
+  svg {
+    color: var(--tbdx-inline-input-icn-base);
+  }
+  &:hover {
+    svg {
+      color: var(--tbdx-inline-input-icn-hover);
+    }
+  }
+  &[data-disabled] {
+    svg {
+      color: var(--tbdx-inline-input-icn-disabled);
+    }
+  }
+  &[data-readOnly] {
+    svg {
+      color: var(--tbdx-inline-input-icn-readOnly);
+    }
+  }
+}
+
+[data-prefers-color-scheme='dark'] {
+  --tbdx-interactive-text-accent-orange: hsla(var(--tbdx-hsl-orange), 90%, 0.9);
+  --tbdx-interactive-text-accent-yellow: hsla(var(--tbdx-hsl-yellow), 90%, 0.9);
+  --tbdx-interactive-text-accent-green: hsla(var(--tbdx-hsl-green), 90%, 0.9);
+  --tbdx-interactive-text-accent-cyan: hsla(var(--tbdx-hsl-cyan), 90%, 0.9);
+  --tbdx-interactive-text-accent-blue: hsla(var(--tbdx-hsl-blue), 90%, 0.9);
+  --tbdx-interactive-text-accent-indigo: hsla(var(--tbdx-hsl-indigo), 90%, 0.9);
+  --tbdx-interactive-text-accent-purple: hsla(var(--tbdx-hsl-purple), 90%, 0.9);
+  --tbdx-interactive-text-accent-violet: hsla(var(--tbdx-hsl-violet), 90%, 0.9);
+  --tbdx-interactive-text-accent-pink: hsla(var(--tbdx-hsl-pink), 90%, 0.9);
+  --tbdx-interactive-text-accent-magenta: hsla(var(--tbdx-hsl-magenta), 90%, 0.9);
+  --tbdx-interactive-text-accent-red: hsla(var(--tbdx-hsl-red), 90%, 0.9);
+
+  --tbdx-interactive-background-accent-orange: hsla(var(--tbdx-hsl-orange), 67%, 0.6);
+  --tbdx-interactive-background-accent-yellow: hsla(var(--tbdx-hsl-yellow), 67%, 0.6);
+  --tbdx-interactive-background-accent-green: hsla(var(--tbdx-hsl-green), 67%, 0.6);
+  --tbdx-interactive-background-accent-cyan: hsla(var(--tbdx-hsl-cyan), 67%, 0.6);
+  --tbdx-interactive-background-accent-blue: hsla(var(--tbdx-hsl-blue), 67%, 0.6);
+  --tbdx-interactive-background-accent-indigo: hsla(var(--tbdx-hsl-indigo), 67%, 0.6);
+  --tbdx-interactive-background-accent-purple: hsla(var(--tbdx-hsl-purple), 67%, 0.6);
+  --tbdx-interactive-background-accent-violet: hsla(var(--tbdx-hsl-violet), 67%, 0.6);
+  --tbdx-interactive-background-accent-pink: hsla(var(--tbdx-hsl-pink), 67%, 0.6);
+  --tbdx-interactive-background-accent-magenta: hsla(var(--tbdx-hsl-magenta), 67%, 0.6);
+  --tbdx-interactive-background-accent-red: hsla(var(--tbdx-hsl-red), 67%, 0.6);
+
+  --tbdx-interactive-background-hover-accent-orange: hsla(var(--tbdx-hsl-orange), 67%, 0.5);
+  --tbdx-interactive-background-hover-accent-yellow: hsla(var(--tbdx-hsl-yellow), 67%, 0.5);
+  --tbdx-interactive-background-hover-accent-green: hsla(var(--tbdx-hsl-green), 67%, 0.5);
+  --tbdx-interactive-background-hover-accent-cyan: hsla(var(--tbdx-hsl-cyan), 67%, 0.5);
+  --tbdx-interactive-background-hover-accent-blue: hsla(var(--tbdx-hsl-blue), 67%, 0.5);
+  --tbdx-interactive-background-hover-accent-indigo: hsla(var(--tbdx-hsl-indigo), 67%, 0.5);
+  --tbdx-interactive-background-hover-accent-purple: hsla(var(--tbdx-hsl-purple), 67%, 0.5);
+  --tbdx-interactive-background-hover-accent-violet: hsla(var(--tbdx-hsl-violet), 67%, 0.5);
+  --tbdx-interactive-background-hover-accent-pink: hsla(var(--tbdx-hsl-pink), 67%, 0.5);
+  --tbdx-interactive-background-hover-accent-magenta: hsla(var(--tbdx-hsl-magenta), 67%, 0.5);
+  --tbdx-interactive-background-hover-accent-red: hsla(var(--tbdx-hsl-red), 67%, 0.5);
+
+  --tbdx-icon-accent-orange: hsla(var(--tbdx-hsl-orange), 67%, 0.9);
+  --tbdx-icon-accent-yellow: hsla(var(--tbdx-hsl-yellow), 67%, 0.9);
+  --tbdx-icon-accent-green: hsla(var(--tbdx-hsl-green), 67%, 0.9);
+  --tbdx-icon-accent-cyan: hsla(var(--tbdx-hsl-cyan), 67%, 0.9);
+  --tbdx-icon-accent-blue: hsla(var(--tbdx-hsl-blue), 67%, 0.9);
+  --tbdx-icon-accent-indigo: hsla(var(--tbdx-hsl-indigo), 67%, 0.9);
+  --tbdx-icon-accent-purple: hsla(var(--tbdx-hsl-purple), 67%, 0.9);
+  --tbdx-icon-accent-violet: hsla(var(--tbdx-hsl-violet), 67%, 0.9);
+  --tbdx-icon-accent-pink: hsla(var(--tbdx-hsl-pink), 67%, 0.9);
+  --tbdx-icon-accent-magenta: hsla(var(--tbdx-hsl-magenta), 67%, 0.9);
+  --tbdx-icon-accent-red: hsla(var(--tbdx-hsl-red), 67%, 0.9);
+}
+
+[data-prefers-color-scheme='light'] {
+  --tbdx-interactive-text-accent-orange: hsla(var(--tbdx-hsl-orange), 30%, 0.9);
+  --tbdx-interactive-text-accent-yellow: hsla(var(--tbdx-hsl-yellow), 30%, 0.9);
+  --tbdx-interactive-text-accent-green: hsla(var(--tbdx-hsl-green), 30%, 0.9);
+  --tbdx-interactive-text-accent-cyan: hsla(var(--tbdx-hsl-cyan), 30%, 0.9);
+  --tbdx-interactive-text-accent-blue: hsla(var(--tbdx-hsl-blue), 30%, 0.9);
+  --tbdx-interactive-text-accent-indigo: hsla(var(--tbdx-hsl-indigo), 30%, 0.9);
+  --tbdx-interactive-text-accent-purple: hsla(var(--tbdx-hsl-purple), 30%, 0.9);
+  --tbdx-interactive-text-accent-violet: hsla(var(--tbdx-hsl-violet), 30%, 0.9);
+  --tbdx-interactive-text-accent-pink: hsla(var(--tbdx-hsl-pink), 30%, 0.9);
+  --tbdx-interactive-text-accent-magenta: hsla(var(--tbdx-hsl-magenta), 30%, 0.9);
+  --tbdx-interactive-text-accent-red: hsla(var(--tbdx-hsl-red), 30%, 0.9);
+
+  --tbdx-interactive-background-accent-orange: hsla(var(--tbdx-hsl-orange), 60%, 0.6);
+  --tbdx-interactive-background-accent-yellow: hsla(var(--tbdx-hsl-yellow), 60%, 0.6);
+  --tbdx-interactive-background-accent-green: hsla(var(--tbdx-hsl-green), 60%, 0.6);
+  --tbdx-interactive-background-accent-cyan: hsla(var(--tbdx-hsl-cyan), 60%, 0.6);
+  --tbdx-interactive-background-accent-blue: hsla(var(--tbdx-hsl-blue), 60%, 0.6);
+  --tbdx-interactive-background-accent-indigo: hsla(var(--tbdx-hsl-indigo), 60%, 0.6);
+  --tbdx-interactive-background-accent-purple: hsla(var(--tbdx-hsl-purple), 60%, 0.6);
+  --tbdx-interactive-background-accent-violet: hsla(var(--tbdx-hsl-violet), 60%, 0.6);
+  --tbdx-interactive-background-accent-pink: hsla(var(--tbdx-hsl-pink), 60%, 0.6);
+  --tbdx-interactive-background-accent-magenta: hsla(var(--tbdx-hsl-magenta), 60%, 0.6);
+  --tbdx-interactive-background-accent-red: hsla(var(--tbdx-hsl-red), 60%, 0.6);
+
+  --tbdx-interactive-background-hover-accent-orange: hsla(var(--tbdx-hsl-orange), 60%, 0.45);
+  --tbdx-interactive-background-hover-accent-yellow: hsla(var(--tbdx-hsl-yellow), 60%, 0.45);
+  --tbdx-interactive-background-hover-accent-green: hsla(var(--tbdx-hsl-green), 60%, 0.45);
+  --tbdx-interactive-background-hover-accent-cyan: hsla(var(--tbdx-hsl-cyan), 60%, 0.45);
+  --tbdx-interactive-background-hover-accent-blue: hsla(var(--tbdx-hsl-blue), 60%, 0.45);
+  --tbdx-interactive-background-hover-accent-indigo: hsla(var(--tbdx-hsl-indigo), 60%, 0.45);
+  --tbdx-interactive-background-hover-accent-purple: hsla(var(--tbdx-hsl-purple), 60%, 0.45);
+  --tbdx-interactive-background-hover-accent-violet: hsla(var(--tbdx-hsl-violet), 60%, 0.45);
+  --tbdx-interactive-background-hover-accent-pink: hsla(var(--tbdx-hsl-pink), 60%, 0.45);
+  --tbdx-interactive-background-hover-accent-magenta: hsla(var(--tbdx-hsl-magenta), 60%, 0.45);
+  --tbdx-interactive-background-hover-accent-red: hsla(var(--tbdx-hsl-red), 60%, 0.45);
+
+  --tbdx-icon-accent-orange: hsla(var(--tbdx-hsl-orange), 60%, 0.9);
+  --tbdx-icon-accent-yellow: hsla(var(--tbdx-hsl-yellow), 60%, 0.9);
+  --tbdx-icon-accent-green: hsla(var(--tbdx-hsl-green), 60%, 0.9);
+  --tbdx-icon-accent-cyan: hsla(var(--tbdx-hsl-cyan), 60%, 0.9);
+  --tbdx-icon-accent-blue: hsla(var(--tbdx-hsl-blue), 60%, 0.9);
+  --tbdx-icon-accent-indigo: hsla(var(--tbdx-hsl-indigo), 60%, 0.9);
+  --tbdx-icon-accent-purple: hsla(var(--tbdx-hsl-purple), 60%, 0.9);
+  --tbdx-icon-accent-violet: hsla(var(--tbdx-hsl-violet), 60%, 0.9);
+  --tbdx-icon-accent-pink: hsla(var(--tbdx-hsl-pink), 60%, 0.9);
+  --tbdx-icon-accent-magenta: hsla(var(--tbdx-hsl-magenta), 60%, 0.9);
+  --tbdx-icon-accent-red: hsla(var(--tbdx-hsl-red), 60%, 0.9);
+}
+
+[data-prefers-color-scheme='dark'],
+[data-prefers-color-scheme='light'] {
+  .tbdx-checkbox--accent-orange svg {
+    color: var(--tbdx-icon-accent-orange);
+  }
+  .tbdx-checkbox--accent-yellow svg {
+    color: var(--tbdx-icon-accent-yellow);
+  }
+  .tbdx-checkbox--accent-green svg {
+    color: var(--tbdx-icon-accent-green);
+  }
+  .tbdx-checkbox--accent-cyan svg {
+    color: var(--tbdx-icon-accent-cyan);
+  }
+  .tbdx-checkbox--accent-blue svg {
+    color: var(--tbdx-icon-accent-blue);
+  }
+  .tbdx-checkbox--accent-indigo svg {
+    color: var(--tbdx-icon-accent-indigo);
+  }
+  .tbdx-checkbox--accent-purple svg {
+    color: var(--tbdx-icon-accent-purple);
+  }
+  .tbdx-checkbox--accent-violet svg {
+    color: var(--tbdx-icon-accent-violet);
+  }
+  .tbdx-checkbox--accent-pink svg {
+    color: var(--tbdx-icon-accent-pink);
+  }
+  .tbdx-checkbox--accent-magenta svg {
+    color: var(--tbdx-icon-accent-magenta);
+  }
+  .tbdx-checkbox--accent-red svg {
+    color: var(--tbdx-icon-accent-red);
+  }
+
+  .tbdx-button--accent-orange {
+    color: var(--tbdx-interactive-text-accent-orange);
+    background-color: var(--tbdx-interactive-background-accent-orange);
+    &:hover {
+      background-color: var(--tbdx-interactive-background-hover-accent-orange);
+    }
+  }
+  .tbdx-button--accent-yellow {
+    color: var(--tbdx-interactive-text-accent-yellow);
+    background-color: var(--tbdx-interactive-background-accent-yellow);
+    &:hover {
+      background-color: var(--tbdx-interactive-background-hover-accent-yellow);
+    }
+  }
+  .tbdx-button--accent-green {
+    color: var(--tbdx-interactive-text-accent-green);
+    background-color: var(--tbdx-interactive-background-accent-green);
+    &:hover {
+      background-color: var(--tbdx-interactive-background-hover-accent-green);
+    }
+  }
+  .tbdx-button--accent-cyan {
+    color: var(--tbdx-interactive-text-accent-cyan);
+    background-color: var(--tbdx-interactive-background-accent-cyan);
+    &:hover {
+      background-color: var(--tbdx-interactive-background-hover-accent-cyan);
+    }
+  }
+  .tbdx-button--accent-blue {
+    color: var(--tbdx-interactive-text-accent-blue);
+    background-color: var(--tbdx-interactive-background-accent-blue);
+    &:hover {
+      background-color: var(--tbdx-interactive-background-hover-accent-blue);
+    }
+  }
+  .tbdx-button--accent-indigo {
+    color: var(--tbdx-interactive-text-accent-indigo);
+    background-color: var(--tbdx-interactive-background-accent-indigo);
+    &:hover {
+      background-color: var(--tbdx-interactive-background-hover-accent-indigo);
+    }
+  }
+  .tbdx-button--accent-purple {
+    color: var(--tbdx-interactive-text-accent-purple);
+    background-color: var(--tbdx-interactive-background-accent-purple);
+    &:hover {
+      background-color: var(--tbdx-interactive-background-hover-accent-purple);
+    }
+  }
+  .tbdx-button--accent-violet {
+    color: var(--tbdx-interactive-text-accent-violet);
+    background-color: var(--tbdx-interactive-background-accent-violet);
+    &:hover {
+      background-color: var(--tbdx-interactive-background-hover-accent-violet);
+    }
+  }
+  .tbdx-button--accent-pink {
+    color: var(--tbdx-interactive-text-accent-pink);
+    background-color: var(--tbdx-interactive-background-accent-pink);
+    &:hover {
+      background-color: var(--tbdx-interactive-background-hover-accent-pink);
+    }
+  }
+  .tbdx-button--accent-magenta {
+    color: var(--tbdx-interactive-text-accent-magenta);
+    background-color: var(--tbdx-interactive-background-accent-magenta);
+    &:hover {
+      background-color: var(--tbdx-interactive-background-hover-accent-magenta);
+    }
+  }
+  .tbdx-button--accent-red {
+    color: var(--tbdx-interactive-text-accent-red);
+    background-color: var(--tbdx-interactive-background-accent-red);
+    &:hover {
+      background-color: var(--tbdx-interactive-background-hover-accent-red);
+    }
+  }
+}

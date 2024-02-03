@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { type HighlighterGeneric } from 'shikiji';
 
 export type ShikiCodeLanguage = 'tsx' | 'scss' | 'html' | 'bash' | 'json';
@@ -18,3 +18,5 @@ export type ShikiProviderProps = {
   children?: React.ReactNode;
   loadShiki: ShikiLoader;
 };
+
+export const ShikiContext = React.createContext<ShikiHighlight | null>(null);

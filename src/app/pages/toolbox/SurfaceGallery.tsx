@@ -1,28 +1,11 @@
-import { Page, SwatchGallery } from '@/app/common';
-import { Link } from '@/components/common';
-
-const SurfaceGalleryBase = () => (
-  <SwatchGallery
-    title="Surface Tokens (base)"
-    types={['surface-base', 'surface-invert']}
-    shades={['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']}
-  />
-);
-
-const SurfaceGalleryInteractive = () => (
-  <SwatchGallery
-    title="Surface Tokens (interactive)"
-    types={['surface-base-interactive', 'surface-invert-interactive']}
-    shades={['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']}
-  />
-);
+import { Page } from '@/app/common';
+import { Title } from '@/components/common';
 
 export const SurfaceGallery = () => (
   <>
     <Page.Hero title="Surface Gallery" />
     <Page.Content>
-      <SurfaceGalleryBase />
-      <SurfaceGalleryInteractive />
+      <Title>Content</Title>
     </Page.Content>
   </>
 );

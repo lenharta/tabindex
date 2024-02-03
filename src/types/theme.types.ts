@@ -1,4 +1,3 @@
-
 export declare namespace TBDX {
   type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
@@ -72,6 +71,3 @@ export const DATA_TBDX_PLACEMENT_START: TBDX.Placement[] = ['bottom-start', 'lef
 export const DATA_TBDX_PLACEMENT_CENTER: TBDX.Placement[] = ['bottom-center', 'left-center', 'right-center', 'top-center'];
 
 export const DATA_TBDX_PLACEMENT: TBDX.Placement[] = [...DATA_TBDX_POSITION, ...DATA_TBDX_PLACEMENT_CENTER, ...DATA_TBDX_PLACEMENT_START, ...DATA_TBDX_PLACEMENT_END];
-
-
-

@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
-import { ThemeContextProvider } from '@/core/theme';
-import { ShikiContextProvider, codeThemeDark, codeThemeLight } from '@/core/shiki';
+import { ShikiProvider, ThemeProvider } from './store';
+import { codeThemeDark, codeThemeLight } from './store/shiki/theme';
 
 async function loadShiki() {
   const { getHighlighter } = await import('shikiji');
@@ -12,9 +12,9 @@ async function loadShiki() {
 }
 
 export const Root = () => (
-  <ThemeContextProvider>
-    <ShikiContextProvider loadShiki={loadShiki}>
+  <ThemeProvider>
+    <ShikiProvider loadShiki={loadShiki}>
       <Outlet />
-    </ShikiContextProvider>
-  </ThemeContextProvider>
+    </ShikiProvider>
+  </ThemeProvider>
 );
