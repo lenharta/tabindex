@@ -1,17 +1,20 @@
-import * as React from 'react';
 import clsx from 'clsx';
-
 import { type TBDX } from '@/types';
+import { createPolymorphicFactory, type CORE } from '@/components/factory';
 
-export type LabelBaseProps = JSX.IntrinsicElements['label'];
-
-export type LabelProps = LabelBaseProps & {
+export interface LabelProps {
   size?: TBDX.Alignment;
   align?: TBDX.Alignment;
   accent?: TBDX.Alignment;
-};
+}
 
-export const Label = React.forwardRef<HTMLLabelElement, LabelProps>((props, ref) => {
+export type LabelFactory = CORE.Factory<{
+  ref: HTMLLabelElement;
+  props: LabelProps;
+  component: 'label';
+}>;
+
+export const Label = createPolymorphicFactory<LabelFactory>((props, ref) => {
   const { size, align, accent, children, className, ...otherProps } = props;
 
   const clxssName = clsx(

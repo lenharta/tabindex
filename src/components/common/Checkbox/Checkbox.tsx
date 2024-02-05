@@ -1,22 +1,31 @@
-import * as React from 'react';
 import clsx from 'clsx';
-
 import { type TBDX } from '@/types';
 import { mergeProps } from '@/utils';
+import { Icon, InlineInput } from '@/components/common';
+import { type CORE, createStaticFactory } from '@/components/factory';
 import { useCheckboxGroupCTX } from './CheckboxGroup';
-import { type InlineInputProps, Icon, InlineInput } from '@/components/common';
 
-export type CheckboxInputProps = Omit<InlineInputProps, 'children'> & {
+export interface CheckboxProps {
+  readOnly?: boolean;
+  error?: string;
+  label?: string;
+  text?: string;
   radius?: TBDX.Radius;
   accent?: TBDX.Color;
   size?: TBDX.Size;
-};
+}
 
-const defaultProps: Partial<CheckboxInputProps> = {
+export type CheckboxFactory = CORE.Factory<{
+  component: 'button';
+  props: CheckboxProps;
+  ref: HTMLButtonElement;
+}>;
+
+const defaultProps: CheckboxProps = {
   size: 'sm',
 };
 
-export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxInputProps>((props, ref) => {
+export const Checkbox = createStaticFactory<CheckboxFactory>((props, ref) => {
   const context = useCheckboxGroupCTX();
 
   const {
@@ -28,8 +37,8 @@ export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxInputProps>(
     accent,
     radius,
     className,
-    isDisabled,
-    isReadOnly,
+    disabled,
+    readOnly,
     ...otherProps
   } = mergeProps({ props, context, defaultProps });
 
@@ -51,9 +60,9 @@ export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxInputProps>(
       text={text}
       label={label}
       error={error}
+      readOnly={readOnly}
+      disabled={disabled}
       className={clxssName}
-      isReadOnly={isReadOnly}
-      isDisabled={isDisabled}
     >
       <Icon name="checkbox_checked" />
     </InlineInput>

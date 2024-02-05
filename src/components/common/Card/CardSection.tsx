@@ -1,42 +1,31 @@
 import clsx from 'clsx';
-import { type Factory, createPolymorphic } from '@/components/factory';
+import { type TBDX } from '@/types';
+import { type CORE, createBasicFactory } from '@/components/factory';
 
-export type CardSectionProps = {
-  radius?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-  shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-  border?: 'sm' | 'md' | 'lg';
-  children?: React.ReactNode;
-  className?: string;
-};
+export interface CardSectionProps {
+  size: TBDX.Size;
+  radius: TBDX.Radius;
+}
 
-type CardSectionFactory = Factory.Config<{
-  props: CardSectionProps;
+export type CardSectionFactory = CORE.Factory<{
   component: 'div';
+  props: CardSectionProps;
 }>;
 
-export const CardSection = createPolymorphic<CardSectionFactory>((props, ref) => {
-  const {
-    radius,
-    border,
-    shadow,
-    className: defaultClassName,
-    component: Component = 'div',
-    children,
-    ...otherProps
-  } = props;
+export const CardSection = createBasicFactory<CardSectionFactory>((props) => {
+  const { radius, size, component: Component = 'div', children, className, ...otherProps } = props;
 
-  const className = clsx(
+  const clxssName = clsx(
     'tbdx-card-section',
     {
-      [`CardSection--radius-${radius}`]: radius !== undefined,
-      [`CardSection--border-${border}`]: border !== undefined,
-      [`CardSection--shadow-${shadow}`]: shadow !== undefined,
+      [`tbdx-card-section--size-${size}`]: size,
+      [`tbdx-card-section--radius-${radius}`]: radius,
     },
-    defaultClassName
+    className
   );
 
   return (
-    <Component {...otherProps} className={className} ref={ref}>
+    <Component {...otherProps} className={clxssName}>
       {children}
     </Component>
   );

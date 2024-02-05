@@ -1,31 +1,26 @@
 import * as React from 'react';
-import { type Factory, createPolymorphic } from '@/components/factory';
+import { type CORE, createPolymorphicFactory } from '@/components/factory';
 
 export interface ButtonBaseProps {
-  /** Indicates the `disabled` state of the element */
-  disabled?: boolean;
-
-  /** Indicates the `readonly` state of the element */
-  readonly?: boolean;
+  /** Defines the `read-only` state of the element */
+  readOnly?: boolean;
 
   /** Defines content to the `left` of the label element */
   leftContent?: React.ReactNode;
 
   /** Defines content to the `right` of the label element */
   rightContent?: React.ReactNode;
-
-  /** Defines a HTML `class` for the label element */
-  className?: string;
 }
 
-export type ButtonUnstyledFactory = Factory.Config<{
-  component: 'button';
+export type ButtonUnstyledFactory = CORE.Factory<{
+  ref: HTMLButtonElement;
   props: ButtonBaseProps;
+  component: 'button';
 }>;
 
-export const ButtonUnstyled = createPolymorphic<ButtonUnstyledFactory>((props, ref) => {
+export const ButtonUnstyled = createPolymorphicFactory<ButtonUnstyledFactory>((props, ref) => {
   const {
-    readonly,
+    readOnly,
     disabled,
     children,
     leftContent,
@@ -40,10 +35,10 @@ export const ButtonUnstyled = createPolymorphic<ButtonUnstyledFactory>((props, r
   return (
     <Component
       ref={ref}
-      data-disabled={disabled}
-      data-readonly={readonly}
       aria-disabled={disabled}
-      aria-readonly={readonly}
+      aria-readonly={readOnly}
+      data-disabled={disabled}
+      data-readonly={readOnly}
       disabled={disabled}
       {...otherProps}
     >

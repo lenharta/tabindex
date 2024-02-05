@@ -1,19 +1,22 @@
+import { CORE, createPolymorphicFactory } from '@/components/factory';
 import * as React from 'react';
 
-type InlineInputOverrides = 'disabled' | 'readOnly';
-type InlineInputBaseProps = Omit<JSX.IntrinsicElements['button'], InlineInputOverrides>;
-
-export type InlineInputProps = InlineInputBaseProps & {
-  isDisabled?: boolean;
-  isReadOnly?: boolean;
+export interface InlineInputProps {
+  disabled?: boolean;
+  readOnly?: boolean;
   error?: string;
   label?: string;
   text?: string;
-};
+}
 
-export const InlineInput = React.forwardRef<HTMLButtonElement, InlineInputProps>((props, ref) => {
-  const { id, text, label, error, className, children, isDisabled, isReadOnly, ...otherProps } =
-    props;
+export type InlineInputFactory = CORE.Factory<{
+  ref: HTMLButtonElement;
+  props: InlineInputProps;
+  component: 'button';
+}>;
+
+export const InlineInput = createPolymorphicFactory<InlineInputFactory>((props, ref) => {
+  const { id, text, label, error, className, children, disabled, readOnly, ...otherProps } = props;
 
   const uid = React.useId();
   const rootId = `input:${uid}:${id}`;
@@ -45,11 +48,11 @@ export const InlineInput = React.forwardRef<HTMLButtonElement, InlineInputProps>
       type="button"
       role="checkbox"
       className={className}
-      disabled={isDisabled}
-      aria-disabled={isDisabled}
-      aria-readonly={isReadOnly}
-      data-readonly={isReadOnly}
-      data-disabled={isDisabled}
+      disabled={disabled}
+      aria-disabled={disabled}
+      aria-readonly={readOnly}
+      data-readonly={readOnly}
+      data-disabled={disabled}
     >
       {children}
       <div>

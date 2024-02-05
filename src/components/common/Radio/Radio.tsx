@@ -1,22 +1,31 @@
-import * as React from 'react';
 import clsx from 'clsx';
-
 import { type TBDX } from '@/types';
-import { type InlineInputProps, Icon, InlineInput } from '@/components/common';
-import { useRadioGroupCTX } from './RadioGroup';
 import { mergeProps } from '@/utils';
+import { Icon, InlineInput } from '@/components/common';
+import { type CORE, createStaticFactory } from '@/components/factory';
+import { useRadioGroupCTX } from './RadioGroup';
 
-export type RadioInputProps = Omit<InlineInputProps, 'children'> & {
+export interface RadioProps {
+  readOnly?: boolean;
+  error?: string;
+  label?: string;
+  text?: string;
   radius?: TBDX.Radius;
   accent?: TBDX.Color;
   size?: TBDX.Size;
-};
+}
 
-const defaultProps: Partial<RadioInputProps> = {
+export type RadioFactory = CORE.Factory<{
+  component: 'button';
+  props: RadioProps;
+  ref: HTMLButtonElement;
+}>;
+
+const defaultProps: RadioProps = {
   size: 'sm',
 };
 
-export const Radio = React.forwardRef<HTMLButtonElement, RadioInputProps>((props, ref) => {
+export const Radio = createStaticFactory<RadioFactory>((props, ref) => {
   const context = useRadioGroupCTX();
 
   const {
@@ -28,8 +37,8 @@ export const Radio = React.forwardRef<HTMLButtonElement, RadioInputProps>((props
     accent,
     radius,
     className,
-    isDisabled,
-    isReadOnly,
+    disabled,
+    readOnly,
     ...otherProps
   } = mergeProps({ props, context, defaultProps });
 
@@ -51,9 +60,9 @@ export const Radio = React.forwardRef<HTMLButtonElement, RadioInputProps>((props
       text={text}
       label={label}
       error={error}
+      readOnly={readOnly}
+      disabled={disabled}
       className={clxssName}
-      isReadOnly={isReadOnly}
-      isDisabled={isDisabled}
     >
       <Icon name="radio_checked" />
     </InlineInput>

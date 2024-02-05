@@ -1,25 +1,31 @@
-import * as React from 'react';
 import clsx from 'clsx';
 import { type TBDX } from '@/types';
+import { CORE, createPolymorphic } from '@/components/factory';
 
-export type TextProps = {
+export interface TextProps {
   size?: TBDX.Size;
   accent?: TBDX.Color;
   variant?: 'filled' | 'outlined' | 'gradient';
   align?: 'start' | 'center' | 'end';
-  className?: string;
-  children?: React.ReactNode;
   strong?: boolean;
   span?: boolean;
-};
+}
 
-export const Text = React.forwardRef<HTMLParagraphElement, TextProps>((props, ref) => {
+export type TextFactory = CORE.Factory<{
+  ref: HTMLParagraphElement;
+  props: TextProps;
+  component: 'p';
+}>;
+
+export const Text = createPolymorphic<TextFactory>((props, ref) => {
   const {
     size = 'sm',
     align = 'start',
     accent,
     variant = 'filled',
+    children,
     className,
+    component: Component = 'p',
     ...otherProps
   } = props;
 
@@ -34,5 +40,9 @@ export const Text = React.forwardRef<HTMLParagraphElement, TextProps>((props, re
     className
   );
 
-  return <p {...otherProps} className={clxssName} ref={ref} />;
+  return (
+    <Component {...otherProps} ref={ref} className={clxssName}>
+      {children}
+    </Component>
+  );
 });

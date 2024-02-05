@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { type TBDX } from '@/types';
 import { type ButtonBaseProps } from './ButtonUnstyled';
-import { type Factory, createPolymorphic } from '@/components/factory';
+import { type CORE, createPolymorphicFactory } from '@/components/factory';
 import { ButtonGroup, useButtonContext } from './ButtonGroup';
 
 export type ButtonScheme = 'primary' | 'secondary' | 'action' | 'danger' | 'success' | 'warning';
@@ -25,19 +25,19 @@ export interface ButtonThemeProps {
 
 export interface ButtonProps extends ButtonThemeProps, ButtonBaseProps {
   label?: string;
-  isReadOnly?: boolean;
-  isDisabled?: boolean;
+  readOnly?: boolean;
 }
 
-export type ButtonFactory = Factory.Config<{
-  component: 'button';
+export type ButtonFactory = CORE.Factory<{
+  ref: HTMLButtonElement;
   props: ButtonProps;
+  component: 'button';
   components: {
     Group: typeof ButtonGroup;
   };
 }>;
 
-export const Button = createPolymorphic<ButtonFactory>((props, ref) => {
+export const Button = createPolymorphicFactory<ButtonFactory>((props, ref) => {
   const {
     size = 'sm',
     align = 'center',
@@ -47,8 +47,8 @@ export const Button = createPolymorphic<ButtonFactory>((props, ref) => {
     variant = 'solid',
     children,
     className,
-    isReadOnly,
-    isDisabled,
+    readOnly,
+    disabled,
     leftContent,
     rightContent,
     component: Component = 'button',
@@ -73,13 +73,12 @@ export const Button = createPolymorphic<ButtonFactory>((props, ref) => {
   return (
     <Component
       {...otherProps}
-      aria-disabled={isDisabled}
-      aria-readonly={isReadOnly}
-      data-disabled={isDisabled}
-      data-readonly={isReadOnly}
+      aria-disabled={disabled}
+      aria-readonly={readOnly}
+      data-disabled={disabled}
+      data-readonly={readOnly}
       className={clxssName}
-      disabled={isDisabled}
-      readOnly={isReadOnly}
+      disabled={disabled}
       ref={ref}
     >
       {leftContent && <div data-position="left">{leftContent}</div>}
