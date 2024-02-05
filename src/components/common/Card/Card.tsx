@@ -1,24 +1,50 @@
-import * as React from 'react';
+import clsx from 'clsx';
+import { type TBDX } from '@/types';
+import { type CORE, createPolymorphicFactory } from '@/components/factory';
+import { CardSection } from './CardSection';
 
-type Override<T = {}, U = {}> = U & Omit<U, keyof T>;
+export interface CardProps {
+  size?: TBDX.Size;
+  align?: TBDX.Alignment;
+  radius?: TBDX.Radius;
+}
 
-// type BaseProps<E> = E extends React.ElementType ? React.ComponentPropsWithoutRef<E>;
+export type CardFactory = CORE.Factory<{
+  ref: HTMLDivElement;
+  props: CardProps;
+  component: 'div';
+  components: {
+    Section: typeof CardSection;
+  };
+}>;
 
-// type CoreProps<E, P = {}> = E extends React.ElementType
-//   ? Override<P, BaseProps<E>> & { component?: E }
-//   : never;
+export const Card = createPolymorphicFactory<CardFactory>((props, ref) => {
+  const {
+    size,
+    align,
+    radius,
+    className,
+    component: Component = 'div',
+    children,
+    ...otherProps
+  } = props;
 
-// type CoreRef<E> = E extends React.ElementType
-//   ? { ref?: React.ComponentPropsWithRef<E>['ref'] }
-//   : never;
+  const clxssName = clsx(
+    'tbdx-card',
+    {
+      [`tbdx-card--size-${size}`]: size,
+      [`tbdx-card--align-${align}`]: align,
+      [`tbdx-card--radius-${radius}`]: radius,
+    },
+    className
+  );
 
-// type CorePropsWithRef<E> = CoreProps<E> & CoreRef<E>;
+  return (
+    <Component {...otherProps} ref={ref} className={clxssName}>
+      {children}
+    </Component>
+  );
+});
 
-// type CoreRenderFunction<E extends React.ElementType> = (
-//   props: CorePropsWithRef<E>,
-//   ref?: React.ForwardedRef<E>
-// ) => React.ReactNode;
-
-const Btn: CoreRenderFunction<'button'> = (props, ref) => {
-  const {} = props;
-};
+Card.displayName = '@TBDX/Card';
+Card.Section = CardSection;

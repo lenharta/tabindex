@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { type ButtonScheme, type ButtonVariant } from './Button';
-import { type Factory, createStatic } from '@/components/factory';
+import { type Factory, createStatic, createBasicFactory, CORE } from '@/components/factory';
 import { type TBDX } from '@/types';
-import { cx } from '../utils';
 import clsx from 'clsx';
 
 export type ButtonGroupProps = {
@@ -23,9 +22,9 @@ export type ButtonGroupContextValue = {
   size?: TBDX.Size;
 };
 
-export type ButtonGroupFactory = Factory.Config<{
-  component: 'div';
+export type ButtonGroupFactory = CORE.Factory<{
   props: ButtonGroupProps;
+  component: 'div';
 }>;
 
 export const ButtonGroupContext = React.createContext<ButtonGroupContextValue>({});
@@ -36,7 +35,7 @@ const defaultProps: Partial<ButtonGroupProps> = {
   orientation: 'horizontal',
 };
 
-export const ButtonGroup = createStatic<ButtonGroupFactory>((props) => {
+export const ButtonGroup = createBasicFactory<ButtonGroupFactory>((props) => {
   const {
     orientation,
     className,

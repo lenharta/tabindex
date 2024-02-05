@@ -2,15 +2,20 @@ import * as React from 'react';
 import clsx from 'clsx';
 
 import { type TBDX } from '@/types';
+import { type CORE, createStaticFactory } from '@/components/factory';
 
-export type RadioBaseProps = JSX.IntrinsicElements['fieldset'];
-
-export type RadioGroupProps = RadioBaseProps & {
-  label?: string;
+export interface RadioGroupProps {
   size?: TBDX.Size;
   accent?: TBDX.Color;
   radius?: TBDX.Radius;
-};
+  label?: string;
+}
+
+export type RadioGroupFactory = CORE.Factory<{
+  component: 'fieldset';
+  props: RadioGroupProps;
+  ref: HTMLFieldSetElement;
+}>;
 
 export type RadioGroupContextValue = {
   size?: TBDX.Size;
@@ -22,7 +27,7 @@ export const RadioGroupCTX = React.createContext({} as RadioGroupContextValue);
 export const RadioGroupProvider = RadioGroupCTX.Provider;
 export const useRadioGroupCTX = () => React.useContext(RadioGroupCTX);
 
-export const RadioGroup = React.forwardRef<HTMLFieldSetElement, RadioGroupProps>((props, ref) => {
+export const RadioGroup = createStaticFactory<RadioGroupFactory>((props, ref) => {
   const { size, radius, accent, label, className, children, ...otherProps } = props;
 
   const clxssName = clsx(

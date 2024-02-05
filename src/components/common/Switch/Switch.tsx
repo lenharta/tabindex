@@ -1,22 +1,31 @@
-import * as React from 'react';
 import clsx from 'clsx';
-
 import { type TBDX } from '@/types';
-import { type InlineInputProps, Icon, InlineInput } from '@/components/common';
-import { useSwitchGroupCTX } from './SwitchGroup';
 import { mergeProps } from '@/utils';
+import { Icon, InlineInput } from '@/components/common';
+import { type CORE, createStaticFactory } from '@/components/factory';
+import { useSwitchGroupCTX } from './SwitchGroup';
 
-export type SwitchInputProps = Omit<InlineInputProps, 'children'> & {
+export interface SwitchProps {
+  readOnly?: boolean;
+  error?: string;
+  label?: string;
+  text?: string;
   radius?: TBDX.Radius;
   accent?: TBDX.Color;
   size?: TBDX.Size;
-};
+}
 
-const defaultProps: Partial<SwitchInputProps> = {
+export type SwitchFactory = CORE.Factory<{
+  component: 'button';
+  props: SwitchProps;
+  ref: HTMLButtonElement;
+}>;
+
+const defaultProps: SwitchProps = {
   size: 'sm',
 };
 
-export const Switch = React.forwardRef<HTMLButtonElement, SwitchInputProps>((props, ref) => {
+export const Switch = createStaticFactory<SwitchFactory>((props, ref) => {
   const context = useSwitchGroupCTX();
 
   const {
@@ -28,8 +37,8 @@ export const Switch = React.forwardRef<HTMLButtonElement, SwitchInputProps>((pro
     accent,
     radius,
     className,
-    isDisabled,
-    isReadOnly,
+    disabled,
+    readOnly,
     ...otherProps
   } = mergeProps({ props, context, defaultProps });
 
@@ -51,9 +60,9 @@ export const Switch = React.forwardRef<HTMLButtonElement, SwitchInputProps>((pro
       text={text}
       label={label}
       error={error}
+      readOnly={readOnly}
+      disabled={disabled}
       className={clxssName}
-      isReadOnly={isReadOnly}
-      isDisabled={isDisabled}
     >
       <Icon name="dismiss_circle" />
     </InlineInput>

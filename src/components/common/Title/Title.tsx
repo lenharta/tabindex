@@ -2,8 +2,12 @@ import * as React from 'react';
 import clsx from 'clsx';
 
 import { type TBDX } from '@/types';
+import { type CORE, createPolymorphicFactory } from '@/components/factory';
 
-function findComponent(component: TitleElement, props: Partial<TitleProps>): TitleElement {
+function findComponent(
+  component: React.ElementType,
+  props: Partial<TitleProps>
+): React.ElementType {
   const { h1, h2, h3, h4, h5, h6 } = props;
   if (h1 !== undefined) return 'h1';
   if (h2 !== undefined) return 'h2';
@@ -14,11 +18,7 @@ function findComponent(component: TitleElement, props: Partial<TitleProps>): Tit
   return component;
 }
 
-export type TitleElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-
-export type TitleBaseProps = React.JSX.IntrinsicElements['h3'];
-
-export type TitleProps = TitleBaseProps & {
+export type TitleProps = {
   h1?: boolean;
   h2?: boolean;
   h3?: boolean;
@@ -29,10 +29,15 @@ export type TitleProps = TitleBaseProps & {
   align?: TBDX.Alignment;
   accent?: TBDX.Color;
   variant?: 'filled' | 'outlined' | 'gradient';
-  component?: TitleElement;
 };
 
-export const Title = React.forwardRef<HTMLHeadingElement, TitleProps>((props, ref) => {
+export type TitleFactory = CORE.Factory<{
+  ref: HTMLHeadingElement;
+  props: TitleProps;
+  component: 'h3';
+}>;
+
+export const Title = createPolymorphicFactory<TitleFactory>((props, ref) => {
   const {
     h1,
     h2,
@@ -46,12 +51,12 @@ export const Title = React.forwardRef<HTMLHeadingElement, TitleProps>((props, re
     variant = 'filled',
     children,
     className,
-    component = 'h3',
+    component,
     ...otherProps
   } = props;
 
   const Component = React.useMemo(
-    () => findComponent(component, { h1, h2, h3, h4, h5, h6 }),
+    () => findComponent(component as any, { h1, h2, h3, h4, h5, h6 }),
     [component, h1, h2, h3, h4, h5, h6]
   );
 
@@ -67,7 +72,7 @@ export const Title = React.forwardRef<HTMLHeadingElement, TitleProps>((props, re
   );
 
   return (
-    <Component ref={ref} className={clxssName} {...otherProps}>
+    <Component {...otherProps} ref={ref} className={clxssName}>
       {children}
     </Component>
   );
