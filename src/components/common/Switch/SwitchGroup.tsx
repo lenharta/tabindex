@@ -30,7 +30,7 @@ export const useSwitchGroupCTX = () => React.useContext(SwitchGroupCTX);
 export const SwitchGroup = createStaticFactory<SwitchGroupFactory>((props, ref) => {
   const { size, radius, accent, label, className, children, ...otherProps } = props;
 
-  const clxssName = clsx(
+  const clxss = clsx(
     'tbdx-switch-group',
     {
       [`tbdx-switch-group--size-${size}`]: size,
@@ -41,7 +41,7 @@ export const SwitchGroup = createStaticFactory<SwitchGroupFactory>((props, ref) 
   );
 
   return (
-    <fieldset {...otherProps} ref={ref} className={clxssName}>
+    <fieldset {...otherProps} ref={ref} className={clxss}>
       {label && <legend>{label}</legend>}
       <SwitchGroupProvider value={{ size, accent, radius }}>{children}</SwitchGroupProvider>
     </fieldset>

@@ -24,11 +24,8 @@ export interface ButtonProps {
   variant?: ButtonVariant;
   orientation?: TBDX.Orientation;
   label?: string;
-  /** Defines the `read-only` state of the element */
   readOnly?: boolean;
-  /** Defines content to the `left` of the label element */
   leftContent?: React.ReactNode;
-  /** Defines content to the `right` of the label element */
   rightContent?: React.ReactNode;
 }
 
@@ -77,7 +74,7 @@ export const Button = createPolymorphicFactory<ButtonFactory>((props, ref) => {
     defaultProps,
   });
 
-  const clxssName = clsx(
+  const clxss = clsx(
     'tbdx-button',
     {
       [`tbdx-button--size-${size}`]: size,
@@ -97,7 +94,7 @@ export const Button = createPolymorphicFactory<ButtonFactory>((props, ref) => {
       ref={ref}
       readOnly={readOnly}
       disabled={disabled}
-      className={clxssName}
+      className={clxss}
       component={component}
       leftContent={leftContent}
       rightContent={rightContent}

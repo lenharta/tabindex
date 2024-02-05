@@ -17,7 +17,7 @@ export type LabelFactory = CORE.Factory<{
 export const Label = createPolymorphicFactory<LabelFactory>((props, ref) => {
   const { size, align, accent, children, className, ...otherProps } = props;
 
-  const clxssName = clsx(
+  const clxss = clsx(
     'tbdx-label',
     {
       [`tbdx-label--size-${size}`]: size,
@@ -28,7 +28,7 @@ export const Label = createPolymorphicFactory<LabelFactory>((props, ref) => {
   );
 
   return (
-    <label {...otherProps} className={clxssName} ref={ref}>
+    <label {...otherProps} className={clxss} ref={ref}>
       {children}
     </label>
   );

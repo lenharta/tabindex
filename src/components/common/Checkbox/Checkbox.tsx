@@ -41,7 +41,7 @@ export const Checkbox = createStaticFactory<CheckboxFactory>((props, ref) => {
     defaultProps,
   });
 
-  const clxssName = clsx(
+  const clxss = clsx(
     'tbdx-checkbox',
     {
       [`tbdx-checkbox--size-${size}`]: size,
@@ -63,7 +63,7 @@ export const Checkbox = createStaticFactory<CheckboxFactory>((props, ref) => {
       error={error}
       readOnly={readOnly}
       disabled={disabled}
-      className={clxssName}
+      className={clxss}
     >
       <Icon name="checkbox_checked" />
     </InlineInput>

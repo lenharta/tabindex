@@ -29,7 +29,7 @@ export const Text = createPolymorphic<TextFactory>((props, ref) => {
     ...otherProps
   } = props;
 
-  const clxssName = clsx(
+  const clxss = clsx(
     `tbdx-text`,
     {
       [`tbdx-text--size-${size}`]: size,
@@ -41,7 +41,7 @@ export const Text = createPolymorphic<TextFactory>((props, ref) => {
   );
 
   return (
-    <Component {...otherProps} ref={ref} className={clxssName}>
+    <Component {...otherProps} ref={ref} className={clxss}>
       {children}
     </Component>
   );

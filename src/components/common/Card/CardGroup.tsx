@@ -1,7 +1,8 @@
 import * as React from 'react';
 import clsx from 'clsx';
-import { type Factory, createStatic } from '@/components/factory';
-import { TBDX } from '@/types';
+
+import { type TBDX } from '@/types';
+import { createStaticFactory, type CORE } from '@/components/factory';
 import { CardScheme } from './Card';
 
 export type CardGroupProps = {
@@ -12,7 +13,7 @@ export type CardGroupProps = {
   orientation?: TBDX.Orientation;
 };
 
-export type CardGroupFactory = Factory.Config<{
+export type CardGroupFactory = CORE.Factory<{
   ref: HTMLDivElement;
   props: CardGroupProps;
   component: 'div';
@@ -24,19 +25,29 @@ export const CardGroupContext = React.createContext<CardGroupContextValue>({});
 export const CardGroupProvider = CardGroupContext.Provider;
 export const useCardGroupContext = () => React.useContext(CardGroupContext);
 
-export const CardGroup = createStatic<CardGroupFactory>((props) => {
-  const { size, scheme, align, radius, orientation, children, ...otherProps } = props;
+export const CardGroup = createStaticFactory<CardGroupFactory>((props, ref) => {
+  const {
+    size,
+    align,
+    scheme,
+    radius,
+    orientation,
+    children,
+    className,
+    component: Component = 'div',
+    ...otherProps
+  } = props;
 
-  const className = clsx('tbdx-card-group', {
+  const clxssName = clsx('tbdx-card-group', {
     [`tbdx-card-group--${orientation}`]: orientation !== undefined,
   });
 
   return (
-    <div {...otherProps} className={className} aria-orientation={orientation}>
+    <Component {...otherProps} ref={ref} className={clxssName} aria-orientation={orientation}>
       <CardGroupProvider value={{ size, scheme, align, radius, orientation }}>
         {children}
       </CardGroupProvider>
-    </div>
+    </Component>
   );
 });
 

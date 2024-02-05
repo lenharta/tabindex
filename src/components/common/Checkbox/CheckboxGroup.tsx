@@ -29,10 +29,10 @@ export const useCheckboxGroupCTX = () => React.useContext(CheckboxGroupCTX);
 
 export const CheckboxGroup = createStaticFactory<CheckboxGroupFactory>((props, ref) => {
   const { size, radius, accent, label, className, children, ...otherProps } = props;
-  const clxssName = clsx('tbdx-checkbox-group', className);
+  const clxss = clsx('tbdx-checkbox-group', className);
 
   return (
-    <fieldset {...otherProps} ref={ref} className={clxssName}>
+    <fieldset {...otherProps} ref={ref} className={clxss}>
       {label && <legend>{label}</legend>}
       <CheckboxGroupProvider value={{ size, accent, radius }}>{children}</CheckboxGroupProvider>
     </fieldset>

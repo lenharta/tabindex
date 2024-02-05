@@ -60,7 +60,7 @@ export const ButtonGroup = createStaticFactory<ButtonGroupFactory>((props, ref) 
     ...otherProps
   } = props;
 
-  const clxssName = clsx('tbdx-button-group', className);
+  const clxss = clsx('tbdx-button-group', className);
   const _orientation = orientation || defaultProps.orientation;
 
   return (
@@ -72,7 +72,7 @@ export const ButtonGroup = createStaticFactory<ButtonGroupFactory>((props, ref) 
       aria-disabled={disabled}
       data-readonly={readOnly}
       aria-readonly={readOnly}
-      className={clxssName}
+      className={clxss}
       ref={ref}
     >
       <ButtonGroupProvider value={{ disabled, readOnly, variant, align, size }}>
