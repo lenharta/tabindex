@@ -9,8 +9,6 @@ export const Icon = (props: IconProps) => {
       xmlns="http://www.w3.org/2000/svg"
       className={`Icon Icon--${size}`}
       viewBox="0 0 24 24"
-      height={24}
-      width={24}
     >
       <path
         d={iconPaths[name]}

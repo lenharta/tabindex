@@ -23,14 +23,14 @@ export const useLinkGroupContext = () => React.useContext(LinkGroupContext);
 export const LinkGroup = createStatic<LinkGroupFactory>((props) => {
   const { label, children, orientation = 'horizontal', className, ...otherProps } = props;
 
-  const clxssName = clsx(`LinkGroup LinkGroup--${orientation}`, className);
+  const clxssName = clsx(`tbdx-link-group tbdx-link-group--${orientation}`, className);
   const ariaProps = { 'aria-orientation': orientation };
 
   return (
     <div className={clxssName} {...otherProps} {...ariaProps}>
       <LinkGroupProvider value={{ orientation }}>
-        {label && <span className="LinkGroup-label">{label}</span>}
-        <div className="LinkGroup-content">{children}</div>
+        {label && <span className="tbdx-link-group-label">{label}</span>}
+        <div className="tbdx-link-group-content">{children}</div>
       </LinkGroupProvider>
     </div>
   );

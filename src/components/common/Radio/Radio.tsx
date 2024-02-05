@@ -1,53 +1,61 @@
+import * as React from 'react';
 import clsx from 'clsx';
-import { type Factory, createPolymorphic } from '@/components/factory';
-import { type InlineInputConsumerProps, InlineInput } from '../InlineInput';
 
-export type RadioProps = InlineInputConsumerProps & {
-  scheme?: 'primary' | 'secondary' | 'action';
-  radius?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'rd';
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+import { type TBDX } from '@/types';
+import { type InlineInputProps, Icon, InlineInput } from '@/components/common';
+import { useRadioGroupCTX } from './RadioGroup';
+import { mergeProps } from '@/utils';
+
+export type RadioInputProps = Omit<InlineInputProps, 'children'> & {
+  radius?: TBDX.Radius;
+  accent?: TBDX.Color;
+  size?: TBDX.Size;
 };
 
-type RadioFactory = Factory.Config<{
-  component: 'button';
-  props: RadioProps;
-}>;
+const defaultProps: Partial<RadioInputProps> = {
+  size: 'sm',
+};
 
-export const RadioIcon = () => <div>Icon</div>;
+export const Radio = React.forwardRef<HTMLButtonElement, RadioInputProps>((props, ref) => {
+  const context = useRadioGroupCTX();
 
-export const Radio = createPolymorphic<RadioFactory>((props, ref) => {
   const {
+    id,
     size,
-    note,
-    error,
+    text,
     label,
+    error,
+    accent,
     radius,
-    scheme,
-    disabled,
-    readonly,
-    component = 'button',
+    className,
+    isDisabled,
+    isReadOnly,
     ...otherProps
-  } = props;
+  } = mergeProps({ props, context, defaultProps });
 
-  const className = clsx('Radio', {
-    [`Radio--${size}`]: size !== undefined,
-    [`Radio--${radius}`]: radius !== undefined,
-    [`Radio--${scheme}`]: scheme !== undefined,
-  });
+  const clxssName = clsx(
+    'tbdx-radio',
+    {
+      [`tbdx-radio--size-${size}`]: size,
+      [`tbdx-radio--radius-${radius}`]: radius,
+      [`tbdx-radio--accent-${accent}`]: accent,
+    },
+    className
+  );
 
   return (
     <InlineInput
       {...otherProps}
-      note={note}
-      error={error}
-      label={label}
-      disabled={disabled}
-      readonly={readonly}
-      component={component}
-      className={className}
+      id={id}
       ref={ref}
+      text={text}
+      label={label}
+      error={error}
+      className={clxssName}
+      isReadOnly={isReadOnly}
+      isDisabled={isDisabled}
     >
-      <RadioIcon />
+      <Icon name="radio_checked" />
     </InlineInput>
   );
 });

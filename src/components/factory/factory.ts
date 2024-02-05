@@ -1,7 +1,5 @@
 import * as React from 'react';
 
-// TODO: Replace `ElementType` with `ComponentType`
-
 export declare namespace Factory {
   export type Tag = React.ElementType;
 

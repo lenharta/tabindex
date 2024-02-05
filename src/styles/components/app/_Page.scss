@@ -39,4 +39,49 @@
     margin-top: 10rem;
     font-size: var(--tbdx-font-size-10);
   }
+
+  .tbdx-page-footer {
+    display: grid;
+  }
+
+  // TEMPORARY COMPONENTS
+
+  .tbdx-sitemap {
+    gap: 1rem;
+    width: 100%;
+    display: grid;
+    place-content: start;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    &-group {
+      width: 100%;
+      display: grid;
+      place-content: start;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      font-size: var(--tbdx-font-size-4);
+
+      &-title {
+        font-size: var(--tbdx-font-size-6);
+        margin-bottom: 0.4rem;
+      }
+
+      &-divider {
+        background-color: grey;
+        height: 1.5px;
+        width: 100%;
+      }
+
+      &-content {
+        gap: 0.4rem;
+        width: 100%;
+        margin-top: 0.6rem;
+        display: grid;
+        place-content: start;
+        grid-template-rows: repeat(1, minmax(0, 1fr));
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        font-size: var(--tbdx-font-size-4);
+      }
+    }
+  }
 }

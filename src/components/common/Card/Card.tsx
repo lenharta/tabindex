@@ -1,53 +1,24 @@
-import clsx from 'clsx';
-import { type Factory, createPolymorphic } from '@/components/factory';
-import { CardSection } from './CardSection';
-import { CardGroup } from './CardGroup';
+import * as React from 'react';
 
-export type CardProps = {
-  radius?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-  shadow?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-  border?: 'sm' | 'md' | 'lg';
-  children?: React.ReactNode;
-  className?: string;
+type Override<T = {}, U = {}> = U & Omit<U, keyof T>;
+
+// type BaseProps<E> = E extends React.ElementType ? React.ComponentPropsWithoutRef<E>;
+
+// type CoreProps<E, P = {}> = E extends React.ElementType
+//   ? Override<P, BaseProps<E>> & { component?: E }
+//   : never;
+
+// type CoreRef<E> = E extends React.ElementType
+//   ? { ref?: React.ComponentPropsWithRef<E>['ref'] }
+//   : never;
+
+// type CorePropsWithRef<E> = CoreProps<E> & CoreRef<E>;
+
+// type CoreRenderFunction<E extends React.ElementType> = (
+//   props: CorePropsWithRef<E>,
+//   ref?: React.ForwardedRef<E>
+// ) => React.ReactNode;
+
+const Btn: CoreRenderFunction<'button'> = (props, ref) => {
+  const {} = props;
 };
-
-type CardFactory = Factory.Config<{
-  props: CardProps;
-  component: 'section';
-  components: {
-    Section: typeof CardSection;
-    Group: typeof CardGroup;
-  };
-}>;
-
-export const Card = createPolymorphic<CardFactory>((props, ref) => {
-  const {
-    radius,
-    border,
-    shadow,
-    className: defaultClassName,
-    component: Component = 'div',
-    children,
-    ...otherProps
-  } = props;
-
-  const className = clsx(
-    'Card',
-    {
-      [`Card--radius-${radius}`]: radius !== undefined,
-      [`Card--border-${border}`]: border !== undefined,
-      [`Card--shadow-${shadow}`]: shadow !== undefined,
-    },
-    defaultClassName
-  );
-
-  return (
-    <Component {...otherProps} className={className} ref={ref}>
-      {children}
-    </Component>
-  );
-});
-
-Card.displayName = '@TBDX/Card';
-Card.Section = CardSection;
-Card.Group = CardGroup;

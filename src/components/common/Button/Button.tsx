@@ -1,18 +1,10 @@
-import * as React from 'react';
-import { cx } from '../utils';
-import { type TBDX } from '@/core/theme';
-import { type Factory, createPolymorphic } from '@/components/factory';
+import clsx from 'clsx';
+import { type TBDX } from '@/types';
 import { type ButtonBaseProps } from './ButtonUnstyled';
+import { type Factory, createPolymorphic } from '@/components/factory';
 import { ButtonGroup, useButtonContext } from './ButtonGroup';
 
-export type ButtonScheme =
-  | 'primary'
-  | 'secondary'
-  | 'action'
-  | 'danger'
-  | 'success'
-  | 'warning'
-  | `accent-${TBDX.Color}`;
+export type ButtonScheme = 'primary' | 'secondary' | 'action' | 'danger' | 'success' | 'warning';
 
 export type ButtonVariant =
   | 'text'
@@ -25,6 +17,7 @@ export type ButtonVariant =
 export interface ButtonThemeProps {
   size?: TBDX.Size;
   align?: TBDX.Alignment;
+  accent?: TBDX.Color;
   radius?: TBDX.Radius;
   scheme?: ButtonScheme;
   variant?: ButtonVariant;
@@ -44,53 +37,42 @@ export type ButtonFactory = Factory.Config<{
   };
 }>;
 
-export const defaultProps: Partial<ButtonProps> = {
-  variant: 'solid',
-  scheme: 'primary',
-  align: 'center',
-  size: 'sm',
-};
-
 export const Button = createPolymorphic<ButtonFactory>((props, ref) => {
   const {
-    size,
-    align,
-    scheme,
+    size = 'sm',
+    align = 'center',
+    accent,
     radius,
-    variant,
+    scheme = 'primary',
+    variant = 'solid',
+    children,
+    className,
     isReadOnly,
     isDisabled,
     leftContent,
     rightContent,
     component: Component = 'button',
-    className,
-    children,
-    label,
     ...otherProps
   } = props;
 
   const ctx = useButtonContext();
 
-  const clxssName = React.useMemo(
-    () =>
-      cx({
-        key: 'tbdx-button',
-        props: { size, align, variant, scheme, radius },
-        className,
-        defaultProps,
-        contextProps: {
-          size: ctx.size,
-          align: ctx.align,
-          variant: ctx.variant,
-        },
-      }),
-    [size, align, variant, scheme, radius, ctx, className, defaultProps]
+  const clxssName = clsx(
+    'tbdx-button',
+    {
+      [`tbdx-button--size-${size}`]: size,
+      [`tbdx-button--align-${align}`]: align,
+      [`tbdx-button--accent-${accent}`]: accent,
+      [`tbdx-button--radius-${radius}`]: radius,
+      [`tbdx-button--scheme-${scheme}`]: scheme,
+      [`tbdx-button--variant-${variant}`]: variant,
+    },
+    className
   );
 
   return (
     <Component
       {...otherProps}
-      aria-label={label}
       aria-disabled={isDisabled}
       aria-readonly={isReadOnly}
       data-disabled={isDisabled}
@@ -101,7 +83,7 @@ export const Button = createPolymorphic<ButtonFactory>((props, ref) => {
       ref={ref}
     >
       {leftContent && <div data-position="left">{leftContent}</div>}
-      {label || children}
+      {children}
       {rightContent && <div data-position="right">{rightContent}</div>}
     </Component>
   );

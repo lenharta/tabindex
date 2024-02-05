@@ -1,57 +1,61 @@
+import * as React from 'react';
 import clsx from 'clsx';
-import { CheckboxGroup } from './CheckboxGroup';
-import { type Factory, createPolymorphic } from '@/components/factory';
-import { type InlineInputConsumerProps, InlineInput } from '../InlineInput';
 
-export type CheckboxProps = InlineInputConsumerProps & {
-  scheme?: 'primary' | 'secondary' | 'action';
-  radius?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'rd';
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+import { type TBDX } from '@/types';
+import { mergeProps } from '@/utils';
+import { useCheckboxGroupCTX } from './CheckboxGroup';
+import { type InlineInputProps, Icon, InlineInput } from '@/components/common';
+
+export type CheckboxInputProps = Omit<InlineInputProps, 'children'> & {
+  radius?: TBDX.Radius;
+  accent?: TBDX.Color;
+  size?: TBDX.Size;
 };
 
-type CheckboxFactory = Factory.Config<{
-  props: CheckboxProps;
-  component: 'button';
-  components: {
-    Group: typeof CheckboxGroup;
-  };
-}>;
+const defaultProps: Partial<CheckboxInputProps> = {
+  size: 'sm',
+};
 
-export const CheckboxIcon = () => <div>Icon</div>;
+export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxInputProps>((props, ref) => {
+  const context = useCheckboxGroupCTX();
 
-export const Checkbox = createPolymorphic<CheckboxFactory>((props, ref) => {
   const {
+    id,
     size,
-    note,
-    error,
+    text,
     label,
+    error,
+    accent,
     radius,
-    scheme,
-    disabled,
-    readonly,
-    component = 'button',
+    className,
+    isDisabled,
+    isReadOnly,
     ...otherProps
-  } = props;
+  } = mergeProps({ props, context, defaultProps });
 
-  const className = clsx('Checkbox', {
-    [`Checkbox--${size}`]: size !== undefined,
-    [`Checkbox--${radius}`]: radius !== undefined,
-    [`Checkbox--${scheme}`]: scheme !== undefined,
-  });
+  const clxssName = clsx(
+    'tbdx-checkbox',
+    {
+      [`tbdx-checkbox--size-${size}`]: size,
+      [`tbdx-checkbox--radius-${radius}`]: radius,
+      [`tbdx-checkbox--accent-${accent}`]: accent,
+    },
+    className
+  );
 
   return (
     <InlineInput
       {...otherProps}
-      note={note}
-      error={error}
-      label={label}
-      disabled={disabled}
-      readonly={readonly}
-      component={component}
-      className={className}
+      id={id}
       ref={ref}
+      text={text}
+      label={label}
+      error={error}
+      className={clxssName}
+      isReadOnly={isReadOnly}
+      isDisabled={isDisabled}
     >
-      <CheckboxIcon />
+      <Icon name="checkbox_checked" />
     </InlineInput>
   );
 });

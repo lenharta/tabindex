@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { type ButtonScheme, type ButtonVariant } from './Button';
 import { type Factory, createStatic } from '@/components/factory';
-import { type TBDX } from '@/core/theme';
+import { type TBDX } from '@/types';
 import { cx } from '../utils';
+import clsx from 'clsx';
 
 export type ButtonGroupProps = {
   disabled?: boolean;
@@ -49,11 +50,14 @@ export const ButtonGroup = createStatic<ButtonGroupFactory>((props) => {
     ...otherProps
   } = props;
 
-  const clxssName = cx({
-    key: 'tbdx-button-group',
-    props: { scheme, orientation },
-    defaultProps,
-  });
+  const clxssName = clsx(
+    'tbdx-button-group',
+    {
+      [`tbdx-button-group-${size}`]: size,
+      [`tbdx-button-group-${orientation}`]: orientation,
+    },
+    className
+  );
 
   return (
     <div

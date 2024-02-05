@@ -1,9 +1,11 @@
-import { Sandbox } from '@/app/common';
+import { Page } from '@/app/common';
+import { Title } from '@/components/common';
 
-export const SandboxOverview = () => {
-  return (
-    <div>
-      <Sandbox />
-    </div>
-  );
-};
+export const SandboxOverview = () => (
+  <>
+    <Page.Hero title="Sandbox Overview" />
+    <Page.Content>
+      <Title>Content</Title>
+    </Page.Content>
+  </>
+);

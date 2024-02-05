@@ -1,48 +1,71 @@
-import { Link, Title } from '@/components/common';
+import { useThemeCTX } from '@/app/store';
+import { Button, Link } from '@/components/common';
 
-type SiteMapGroupProps = {
-  children: React.ReactNode;
+type SiteMapGroupType = (props: {
   title: string;
-};
+  items: { to: string; label: string }[];
+}) => JSX.Element;
 
-const SiteMapGroup = (props: SiteMapGroupProps) => {
-  const { title, children } = props;
+const SiteMapGroup: SiteMapGroupType = (props) => {
+  const { title, items } = props;
   return (
     <div className="tbdx-sitemap-group">
-      <header>
-        <div className="tbdx-sitemap-group-title">{title}</div>
-        <div className="tbdx-sitemap-group-divider" />
-      </header>
-      {children}
+      <div className="tbdx-sitemap-group-title">{title}</div>
+      <div className="tbdx-sitemap-group-divider" />
+      <div className="tbdx-sitemap-group-content">
+        {items.map(({ to, label }) => {
+          return (
+            <Link to={to} key={to}>
+              {label}
+            </Link>
+          );
+        })}
+      </div>
     </div>
   );
 };
 
-const SiteMap = () => {
+const ModeController = () => {
+  const ctx = useThemeCTX();
+  const { mode, setModeToggle } = ctx;
+  const modeLabel = mode === 'light' ? 'Set Dark Mode' : 'Set Light Mode';
   return (
-    <section className="tbdx-sitemap">
-      <Title className="tbdx-sitemap-title">Site Map</Title>
-      <div className="tbdx-sitemap-container">
-        <SiteMapGroup title="Toolbox">
-          <Link to="/toolbox">Overview</Link>
-          <Link to="/toolbox/accent">Accent Colors</Link>
-          <Link to="/toolbox/surface">Surface Colors</Link>
-          <Link to="/toolbox/button">Button & Group</Link>
-        </SiteMapGroup>
-        <SiteMapGroup title="Sandbox">
-          <Link to="/sandbox">Overview</Link>
-          <Link to="/sandbox/button">Button</Link>
-          <Link to="/sandbox/checkbox">Checkbox</Link>
-        </SiteMapGroup>
-      </div>
-    </section>
+    <Button
+      accent="blue"
+      id="mode-control-button"
+      className="tbdx-mode-control"
+      onClick={() => setModeToggle()}
+      children={modeLabel}
+    />
   );
 };
 
-export const PageFooter = () => {
-  return (
-    <footer className="tbdx-page-footer">
-      <SiteMap />
-    </footer>
-  );
-};
+export const PageFooter = () => (
+  <footer className="tbdx-page-footer">
+    <div className="tbdx-sitemap">
+      <SiteMapGroup
+        title="Overview"
+        items={[
+          { to: '/', label: 'Home' },
+          { to: '/learn', label: 'Learn' },
+          { to: '/toolbox', label: 'Toolbox' },
+          { to: '/sandbox', label: 'Sandbox' },
+        ]}
+      />
+      <SiteMapGroup
+        title="Toolbox"
+        items={[
+          { to: '/toolbox/radio', label: 'Radio Gallery' },
+          { to: '/toolbox/button', label: 'Button Gallery' },
+          { to: '/toolbox/switch', label: 'Switch Gallery' },
+          { to: '/toolbox/checkbox', label: 'Checkbox Gallery' },
+          { to: '/toolbox/surface', label: 'Surface Colors' },
+          { to: '/toolbox/accent', label: 'Accent Colors' },
+        ]}
+      />
+    </div>
+    <div className="tbdx-global-controls">
+      <ModeController />
+    </div>
+  </footer>
+);

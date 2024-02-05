@@ -1,66 +1,38 @@
-import clsx from 'clsx';
 import * as React from 'react';
-import { type Factory, createPolymorphic } from '@/components/factory';
+import clsx from 'clsx';
+import { type TBDX } from '@/types';
 
-type TextProps = {
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-  lead?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-  scheme?: 'primary' | 'secondary' | 'action';
+export type TextProps = {
+  size?: TBDX.Size;
+  accent?: TBDX.Color;
   variant?: 'filled' | 'outlined' | 'gradient';
-  alignment?: 'start' | 'center' | 'end';
+  align?: 'start' | 'center' | 'end';
   className?: string;
   children?: React.ReactNode;
   strong?: boolean;
   span?: boolean;
 };
 
-export type TextFactory = Factory.Config<{
-  component: 'p';
-  props: TextProps;
-}>;
-
-function findComponent<T>(component: T, props: Partial<TextProps>) {
-  const { span, strong } = props;
-  if (strong !== undefined) return 'strong';
-  if (span !== undefined) return 'span';
-  return component;
-}
-
-export const Text = createPolymorphic<TextFactory>((props, ref) => {
+export const Text = React.forwardRef<HTMLParagraphElement, TextProps>((props, ref) => {
   const {
-    size,
-    span,
-    strong,
-    lead = 'xs',
-    scheme = 'primary',
+    size = 'sm',
+    align = 'start',
+    accent,
     variant = 'filled',
-    alignment = 'start',
-    component = 'p',
-    className: defaultClassName,
-    children,
+    className,
     ...otherProps
   } = props;
 
-  const Component = React.useMemo(
-    () => findComponent(component, { span, strong }),
-    [component, span, strong]
-  );
-
-  const className = clsx(
-    `Text Text--${Component}`,
+  const clxssName = clsx(
+    `tbdx-text`,
     {
-      [`Text--${alignment}`]: alignment !== undefined,
-      [`Text--lead-${lead}`]: lead !== undefined,
-      [`Text--${variant}`]: variant !== undefined,
-      [`Text--${scheme}`]: scheme !== undefined,
-      [`Text--${size}`]: size !== undefined,
+      [`tbdx-text--size-${size}`]: size,
+      [`tbdx-text--align-${align}`]: align,
+      [`tbdx-text--accent-${accent}`]: accent,
+      [`tbdx-text--variant-${variant}`]: variant,
     },
-    defaultClassName
+    className
   );
 
-  return (
-    <Component {...otherProps} className={className} ref={ref}>
-      {children}
-    </Component>
-  );
+  return <p {...otherProps} className={clxssName} ref={ref} />;
 });
