@@ -1,20 +1,24 @@
 import { Title } from '@/components/common';
+import { type CORE, createBasicFactory } from '@/components/factory';
 
-export type PageHeroProps = {
+interface PageHeroProps {
   title?: string;
-  children?: React.ReactNode;
-};
+}
 
-export const PageHero = (props: PageHeroProps) => {
-  const { children, title } = props;
+type PageHeroFactory = CORE.Factory<{
+  ref: HTMLDivElement;
+  props: PageHeroProps;
+  component: 'div';
+}>;
+
+export const PageHero = createBasicFactory<PageHeroFactory>((props) => {
+  const { component: Component = 'div', title, children, ...otherProps } = props;
   return (
-    <div className="tbdx-page-hero">
-      {title && (
-        <Title h1 className="tbdx-page-title">
-          {title}
-        </Title>
-      )}
+    <Component {...otherProps} className="tbdx-page-hero">
+      <Title className="tbdx-page-title" component="h1">
+        {title}
+      </Title>
       {children}
-    </div>
+    </Component>
   );
-};
+});

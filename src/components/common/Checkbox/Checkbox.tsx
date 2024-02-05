@@ -6,13 +6,16 @@ import { type CORE, createStaticFactory } from '@/components/factory';
 import { useCheckboxGroupCTX } from './CheckboxGroup';
 
 export interface CheckboxProps {
+  size?: TBDX.Size;
+  align?: TBDX.Alignment;
+  radius?: TBDX.Radius;
+  accent?: TBDX.Color;
+  orientation?: TBDX.Orientation;
+  disabled?: boolean;
   readOnly?: boolean;
   error?: string;
   label?: string;
   text?: string;
-  radius?: TBDX.Radius;
-  accent?: TBDX.Color;
-  size?: TBDX.Size;
 }
 
 export type CheckboxFactory = CORE.Factory<{
@@ -23,38 +26,36 @@ export type CheckboxFactory = CORE.Factory<{
 
 const defaultProps: CheckboxProps = {
   size: 'sm',
+  align: 'start',
+  orientation: 'vertical',
 };
 
 export const Checkbox = createStaticFactory<CheckboxFactory>((props, ref) => {
   const context = useCheckboxGroupCTX();
 
-  const {
-    id,
-    size,
-    text,
-    label,
-    error,
-    accent,
-    radius,
-    className,
-    disabled,
-    readOnly,
-    ...otherProps
-  } = mergeProps({ props, context, defaultProps });
+  const { id, label, error, text, className, disabled, readOnly, ...otherProps } = props;
+
+  const { size, accent, radius, align, orientation, ...additionalProps } = mergeProps({
+    props: otherProps,
+    context,
+    defaultProps,
+  });
 
   const clxssName = clsx(
     'tbdx-checkbox',
     {
       [`tbdx-checkbox--size-${size}`]: size,
+      [`tbdx-checkbox--align-${align}`]: align,
       [`tbdx-checkbox--radius-${radius}`]: radius,
       [`tbdx-checkbox--accent-${accent}`]: accent,
+      [`tbdx-checkbox--orientation-${orientation}`]: orientation,
     },
     className
   );
 
   return (
     <InlineInput
-      {...otherProps}
+      {...additionalProps}
       id={id}
       ref={ref}
       text={text}

@@ -1,7 +1,6 @@
-import { Title } from '@/components/common';
-import { Page, QueryDataItem, QuickSearch } from '../common';
+import { Page, QueryDataItem } from '../common';
 
-const SAMPLE_QUERY_DATA: QueryDataItem[] = [
+export const SAMPLE_QUERY_DATA: QueryDataItem[] = [
   {
     id: 'learn',
     label: 'Learn',
@@ -50,7 +49,7 @@ export const Home = () => (
   <Page>
     <Page.Hero title="Landing" />
     <Page.Content>
-      <Title>Content</Title>
+      <span>Content</span>
     </Page.Content>
   </Page>
 );

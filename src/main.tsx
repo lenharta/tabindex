@@ -15,6 +15,7 @@ import {
   GallerySwitch,
   GalleryCheckbox,
   GalleryRadio,
+  GalleryCard,
 } from '@/app/pages';
 
 const router = createBrowserRouter([
@@ -39,6 +40,7 @@ const router = createBrowserRouter([
         element: <Toolbox />,
         children: [
           { index: true, element: <ToolboxOverview /> },
+          { path: '/toolbox/card', element: <GalleryCard /> },
           { path: '/toolbox/radio', element: <GalleryRadio /> },
           { path: '/toolbox/accent', element: <GalleryAccent /> },
           { path: '/toolbox/button', element: <GalleryButton /> },

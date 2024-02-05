@@ -1,25 +1,18 @@
-export type PageHeaderProps = {};
+import { type CORE, createBasicFactory } from '@/components/factory';
 
-type LogoSpanProps = {
-  accent?: boolean;
-  text: string;
-};
+interface PageHeaderProps {}
 
-const LogoSpan = (props: LogoSpanProps) => {
-  const { text, accent } = props;
-  const color = accent ? 'var(--tbdx-blue-base-5)' : 'var(--tbdx-surface-base-text-1)';
-  return <span style={{ color }}>{text}</span>;
-};
+type PageHeaderFactory = CORE.Factory<{
+  ref: HTMLDivElement;
+  props: PageHeaderProps;
+  component: 'header';
+}>;
 
-const PageLogo = () => (
-  <div>
-    <LogoSpan text="Tab" />
-    <LogoSpan text="index" accent />
-  </div>
-);
-
-export const PageHeader = ({}: PageHeaderProps) => (
-  <header className="tbdx-page-header">
-    <PageLogo />
-  </header>
-);
+export const PageHeader = createBasicFactory<PageHeaderFactory>((props) => {
+  const { component: Component = 'div', children, ...otherProps } = props;
+  return (
+    <Component {...otherProps} className="tbdx-page-header">
+      {children}
+    </Component>
+  );
+});

@@ -1,34 +1,38 @@
-import { type Factory, createStatic } from '@/components/factory';
+import clsx from 'clsx';
+import { type CORE, createBasicFactory } from '@/components/factory';
 
 import { PageHero } from './PageHero';
 import { PageHeader } from './PageHeader';
-import { PageContent } from './PageContent';
 import { PageFooter } from './PageFooter';
+import { PageContent } from './PageContent';
 
-export type PageProps = {
-  variant?: 'default' | 'sandbox';
-};
+interface PageProps {
+  variant?: 'default';
+}
 
-export type PageFactory = Factory.Config<{
-  component: 'div';
+type PageFactory = CORE.Factory<{
+  ref: HTMLDivElement;
   props: PageProps;
+  component: 'div';
   components: {
     Hero: typeof PageHero;
     Header: typeof PageHeader;
-    Footer: typeof PageFooter;
     Content: typeof PageContent;
   };
 }>;
 
-export const Page = createStatic<PageFactory>((props) => {
-  const { children, variant = 'default' } = props;
-  const clxssname = `tbdx-page tbdx-page--${variant}`;
+export const Page = createBasicFactory<PageFactory>((props) => {
+  const { component: Component = 'div', variant = 'default', children, ...otherProps } = props;
+
+  const clxssName = clsx('tbdx-page', {
+    [`tbdx-page--${variant}`]: variant,
+  });
 
   return (
-    <div className={clxssname}>
+    <Component {...otherProps} className={clxssName}>
       {children}
       <PageFooter />
-    </div>
+    </Component>
   );
 });
 
@@ -36,5 +40,4 @@ Page.displayName = '@TBDX/Page';
 
 Page.Hero = PageHero;
 Page.Header = PageHeader;
-Page.Footer = PageFooter;
 Page.Content = PageContent;
