@@ -1,7 +1,10 @@
 import * as React from 'react';
-import { cx } from '../utils';
-import { type TBDX } from '@/core/theme';
-import { type InlineInputProps, InlineInput, Icon } from '@/components/common';
+import clsx from 'clsx';
+
+import { type TBDX } from '@/types';
+import { type InlineInputProps, Icon, InlineInput } from '@/components/common';
+import { useRadioGroupCTX } from './RadioGroup';
+import { mergeProps } from '@/utils';
 
 export type RadioInputProps = Omit<InlineInputProps, 'children'> & {
   radius?: TBDX.Radius;
@@ -14,29 +17,30 @@ const defaultProps: Partial<RadioInputProps> = {
 };
 
 export const Radio = React.forwardRef<HTMLButtonElement, RadioInputProps>((props, ref) => {
+  const context = useRadioGroupCTX();
+
   const {
     id,
     size,
-    radius,
-    accent,
     text,
-    error,
     label,
+    error,
+    accent,
+    radius,
     className,
     isDisabled,
     isReadOnly,
     ...otherProps
-  } = props;
+  } = mergeProps({ props, context, defaultProps });
 
-  const clxssName = React.useMemo(
-    () =>
-      cx({
-        key: 'tbdx-radio',
-        props: { size, radius, accent },
-        defaultProps,
-        className,
-      }),
-    [size, radius, accent]
+  const clxssName = clsx(
+    'tbdx-radio',
+    {
+      [`tbdx-radio--size-${size}`]: size,
+      [`tbdx-radio--radius-${radius}`]: radius,
+      [`tbdx-radio--accent-${accent}`]: accent,
+    },
+    className
   );
 
   return (
@@ -44,6 +48,9 @@ export const Radio = React.forwardRef<HTMLButtonElement, RadioInputProps>((props
       {...otherProps}
       id={id}
       ref={ref}
+      text={text}
+      label={label}
+      error={error}
       className={clxssName}
       isReadOnly={isReadOnly}
       isDisabled={isDisabled}

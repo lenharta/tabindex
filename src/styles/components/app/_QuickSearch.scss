@@ -34,12 +34,12 @@
     border-radius: var(--tbdx-radius-lg);
     padding-inline: var(--tbdx-spacing-4);
 
-    &:focus:not(:focus-visible) {
-      background-color: hsla(var(--tbdx-hsl-surface), 10%, 1);
-    }
-    &:focus-visible {
-      background-color: hsla(var(--tbdx-hsl-surface), 14%, 1);
-    }
+    // &:focus:not(:focus-visible) {
+    // background-color: hsla(var(--tbdx-hsl-surface), 10%, 1);
+    // }
+    // &:focus-visible {
+    // background-color: hsla(var(--tbdx-hsl-surface), 14%, 1);
+    // }
   }
 
   &-close {

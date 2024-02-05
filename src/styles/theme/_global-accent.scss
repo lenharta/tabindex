@@ -128,36 +128,47 @@
 
 [data-prefers-color-scheme='dark'],
 [data-prefers-color-scheme='light'] {
+  .tbdx-radio--accent-orange svg,
   .tbdx-checkbox--accent-orange svg {
     color: var(--tbdx-icon-accent-orange);
   }
+  .tbdx-radio--accent-yellow svg,
   .tbdx-checkbox--accent-yellow svg {
     color: var(--tbdx-icon-accent-yellow);
   }
+  .tbdx-radio--accent-green svg,
   .tbdx-checkbox--accent-green svg {
     color: var(--tbdx-icon-accent-green);
   }
+  .tbdx-radio--accent-cyan svg,
   .tbdx-checkbox--accent-cyan svg {
     color: var(--tbdx-icon-accent-cyan);
   }
+  .tbdx-radio--accent-blue svg,
   .tbdx-checkbox--accent-blue svg {
     color: var(--tbdx-icon-accent-blue);
   }
+  .tbdx-radio--accent-indigo svg,
   .tbdx-checkbox--accent-indigo svg {
     color: var(--tbdx-icon-accent-indigo);
   }
+  .tbdx-radio--accent-purple svg,
   .tbdx-checkbox--accent-purple svg {
     color: var(--tbdx-icon-accent-purple);
   }
+  .tbdx-radio--accent-violet svg,
   .tbdx-checkbox--accent-violet svg {
     color: var(--tbdx-icon-accent-violet);
   }
+  .tbdx-radio--accent-pink svg,
   .tbdx-checkbox--accent-pink svg {
     color: var(--tbdx-icon-accent-pink);
   }
+  .tbdx-radio--accent-magenta svg,
   .tbdx-checkbox--accent-magenta svg {
     color: var(--tbdx-icon-accent-magenta);
   }
+  .tbdx-radio--accent-red svg,
   .tbdx-checkbox--accent-red svg {
     color: var(--tbdx-icon-accent-red);
   }

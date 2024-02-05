@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { type TBDX } from '@/core/theme';
+import { type TBDX } from '@/types';
 import { type ButtonBaseProps } from './ButtonUnstyled';
 import { type Factory, createPolymorphic } from '@/components/factory';
 import { ButtonGroup, useButtonContext } from './ButtonGroup';
@@ -37,58 +37,42 @@ export type ButtonFactory = Factory.Config<{
   };
 }>;
 
-export const defaultProps: Partial<ButtonProps> = {
-  variant: 'solid',
-  scheme: 'primary',
-  align: 'center',
-  size: 'sm',
-};
-
 export const Button = createPolymorphic<ButtonFactory>((props, ref) => {
   const {
-    size,
-    align,
+    size = 'sm',
+    align = 'center',
     accent,
-    scheme,
     radius,
-    variant,
+    scheme = 'primary',
+    variant = 'solid',
+    children,
+    className,
     isReadOnly,
     isDisabled,
     leftContent,
     rightContent,
     component: Component = 'button',
-    className,
-    children,
-    label,
     ...otherProps
   } = props;
 
   const ctx = useButtonContext();
 
-  const _size = size || defaultProps.size;
-  const _align = align || defaultProps.align;
-  const _variant = variant || defaultProps.variant;
-  const _accent = accent || defaultProps.accent;
-  const _scheme = scheme || defaultProps.scheme;
-  const _radius = radius || defaultProps.radius;
-
   const clxssName = clsx(
     'tbdx-button',
-    [
-      _size ? `tbdx-button--size-${_size}` : _size,
-      _align ? `tbdx-button--align-${_align}` : _align,
-      _accent ? `tbdx-button--accent-${_accent}` : _accent,
-      _scheme ? `tbdx-button--scheme-${_scheme}` : _scheme,
-      _radius ? `tbdx-button--radius-${_radius}` : _radius,
-      _variant ? `tbdx-button--variant-${_variant}` : _variant,
-    ],
+    {
+      [`tbdx-button--size-${size}`]: size,
+      [`tbdx-button--align-${align}`]: align,
+      [`tbdx-button--accent-${accent}`]: accent,
+      [`tbdx-button--radius-${radius}`]: radius,
+      [`tbdx-button--scheme-${scheme}`]: scheme,
+      [`tbdx-button--variant-${variant}`]: variant,
+    },
     className
   );
 
   return (
     <Component
       {...otherProps}
-      aria-label={label}
       aria-disabled={isDisabled}
       aria-readonly={isReadOnly}
       data-disabled={isDisabled}
@@ -99,7 +83,7 @@ export const Button = createPolymorphic<ButtonFactory>((props, ref) => {
       ref={ref}
     >
       {leftContent && <div data-position="left">{leftContent}</div>}
-      {label || children}
+      {children}
       {rightContent && <div data-position="right">{rightContent}</div>}
     </Component>
   );

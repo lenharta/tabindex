@@ -1,6 +1,9 @@
-import clsx from 'clsx';
 import * as React from 'react';
-import { type TBDX } from '@/core/theme';
+import clsx from 'clsx';
+
+import { type TBDX } from '@/types';
+import { mergeProps } from '@/utils';
+import { useCheckboxGroupCTX } from './CheckboxGroup';
 import { type InlineInputProps, Icon, InlineInput } from '@/components/common';
 
 export type CheckboxInputProps = Omit<InlineInputProps, 'children'> & {
@@ -14,25 +17,27 @@ const defaultProps: Partial<CheckboxInputProps> = {
 };
 
 export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxInputProps>((props, ref) => {
+  const context = useCheckboxGroupCTX();
+
   const {
     id,
     size,
-    radius,
     text,
+    label,
     error,
     accent,
-    label,
+    radius,
     className,
     isDisabled,
     isReadOnly,
     ...otherProps
-  } = props;
+  } = mergeProps({ props, context, defaultProps });
 
   const clxssName = clsx(
     'tbdx-checkbox',
     {
-      [`tbdx-checkbox--size-${size}`]: size || defaultProps.size,
-      [`tbdx-checkbox--align-${radius}`]: radius,
+      [`tbdx-checkbox--size-${size}`]: size,
+      [`tbdx-checkbox--radius-${radius}`]: radius,
       [`tbdx-checkbox--accent-${accent}`]: accent,
     },
     className
@@ -44,8 +49,8 @@ export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxInputProps>(
       id={id}
       ref={ref}
       text={text}
-      error={error}
       label={label}
+      error={error}
       className={clxssName}
       isReadOnly={isReadOnly}
       isDisabled={isDisabled}

@@ -1,28 +1,9 @@
-import clsx from 'clsx';
 import * as React from 'react';
-import { type Factory, createPolymorphic } from '@/components/factory';
+import clsx from 'clsx';
 
-export type TitleProps = {
-  h1?: boolean;
-  h2?: boolean;
-  h3?: boolean;
-  h4?: boolean;
-  h5?: boolean;
-  h6?: boolean;
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-  lead?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-  scheme?: 'primary' | 'secondary' | 'action';
-  variant?: 'filled' | 'outlined' | 'gradient';
-  alignment?: 'start' | 'center' | 'end';
-  className?: string;
-};
+import { type TBDX } from '@/types';
 
-export type TitleFactory = Factory.Config<{
-  props: TitleProps;
-  component: 'h3';
-}>;
-
-function findComponent<T>(component: T, props: Partial<TitleProps>) {
+function findComponent(component: TitleElement, props: Partial<TitleProps>): TitleElement {
   const { h1, h2, h3, h4, h5, h6 } = props;
   if (h1 !== undefined) return 'h1';
   if (h2 !== undefined) return 'h2';
@@ -33,7 +14,25 @@ function findComponent<T>(component: T, props: Partial<TitleProps>) {
   return component;
 }
 
-export const Title = createPolymorphic<TitleFactory>((props, ref) => {
+export type TitleElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+
+export type TitleBaseProps = React.JSX.IntrinsicElements['h3'];
+
+export type TitleProps = TitleBaseProps & {
+  h1?: boolean;
+  h2?: boolean;
+  h3?: boolean;
+  h4?: boolean;
+  h5?: boolean;
+  h6?: boolean;
+  size?: TBDX.Size;
+  align?: TBDX.Alignment;
+  accent?: TBDX.Color;
+  variant?: 'filled' | 'outlined' | 'gradient';
+  component?: TitleElement;
+};
+
+export const Title = React.forwardRef<HTMLHeadingElement, TitleProps>((props, ref) => {
   const {
     h1,
     h2,
@@ -42,13 +41,12 @@ export const Title = createPolymorphic<TitleFactory>((props, ref) => {
     h5,
     h6,
     size,
-    lead,
-    scheme,
-    variant,
-    alignment,
-    component = 'h3',
-    className: defaultClassName,
+    align = 'start',
+    accent,
+    variant = 'filled',
     children,
+    className,
+    component = 'h3',
     ...otherProps
   } = props;
 
@@ -57,20 +55,19 @@ export const Title = createPolymorphic<TitleFactory>((props, ref) => {
     [component, h1, h2, h3, h4, h5, h6]
   );
 
-  const className = clsx(
-    `Title Title--${Component}`,
+  const clxssName = clsx(
+    'tbdx-title',
     {
-      [`Title--${alignment}`]: alignment !== undefined,
-      [`Title--lead-${lead}`]: lead !== undefined,
-      [`Title--${variant}`]: variant !== undefined,
-      [`Title--${scheme}`]: scheme !== undefined,
-      [`Title--${size}`]: size !== undefined,
+      [`tbdx-title--size-${size}`]: size,
+      [`tbdx-title--align-${align}`]: align,
+      [`tbdx-title--accent-${accent}`]: accent,
+      [`tbdx-title--variant-${variant}`]: variant,
     },
-    defaultClassName
+    className
   );
 
   return (
-    <Component {...otherProps} className={className} ref={ref}>
+    <Component ref={ref} className={clxssName} {...otherProps}>
       {children}
     </Component>
   );

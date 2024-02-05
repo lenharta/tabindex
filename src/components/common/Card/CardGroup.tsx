@@ -1,6 +1,6 @@
-import { type Factory, createStatic } from '@/components/factory';
+import * as React from 'react';
 import clsx from 'clsx';
-import React from 'react';
+import { type Factory, createStatic } from '@/components/factory';
 
 export type CardGroupProps = {
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
@@ -39,9 +39,9 @@ export const CardGroup = createStatic<CardGroupFactory>((props) => {
     ...otherProps
   } = props;
 
-  const className = clsx('CardGroup', {
-    [`CardGroup--${spacing}`]: spacing !== undefined,
-    [`CardGroup--${orientation}`]: orientation !== undefined,
+  const className = clsx('tbdx-card-group', {
+    [`tbdx-card-group--${spacing}`]: spacing !== undefined,
+    [`tbdx-card-group--${orientation}`]: orientation !== undefined,
   });
 
   return (

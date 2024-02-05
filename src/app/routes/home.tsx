@@ -51,7 +51,6 @@ export const Home = () => (
     <Page.Hero title="Landing" />
     <Page.Content>
       <Title>Content</Title>
-      <QuickSearch data={SAMPLE_QUERY_DATA} />
     </Page.Content>
   </Page>
 );

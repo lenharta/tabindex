@@ -1,3 +1,4 @@
+.tbdx-link,
 .tbdx-button,
 .tbdx-radio,
 .tbdx-switch,
@@ -5,8 +6,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor: pointer;
+
+  [data-disabled] &,
+  [data-readOnly] & {
+    cursor: default;
+  }
 }
 
+.tbdx-link label,
 .tbdx-radio label,
 .tbdx-switch label,
 .tbdx-checkbox label {
@@ -21,6 +29,7 @@
   }
 }
 
+.tbdx-link,
 .tbdx-radio,
 .tbdx-switch,
 .tbdx-button,
@@ -32,7 +41,7 @@
     outline-color: transparent;
   }
   &:focus:focus-visible {
-    outline-color: hsl(var(--tbdx-hsl-indigo), 60%, 0.8);
+    outline-color: hsl(var(--tbdx-hsl-indigo), 70%, 0.9);
   }
 }
 

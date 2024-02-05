@@ -1,46 +1,32 @@
-import { Factory, createPolymorphic } from '@/components/factory';
+import * as React from 'react';
 import clsx from 'clsx';
 
-export type LabelProps = {
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-  scheme?: 'primary' | 'secondary' | 'action';
-  justify?: 'start' | 'center' | 'end';
-  alignment?: 'start' | 'center' | 'end';
-  className?: string;
-  children?: React.ReactNode;
+import { type TBDX } from '@/types';
+
+export type LabelBaseProps = JSX.IntrinsicElements['label'];
+
+export type LabelProps = LabelBaseProps & {
+  size?: TBDX.Alignment;
+  align?: TBDX.Alignment;
+  accent?: TBDX.Alignment;
 };
 
-export type LabelFactory = Factory.Config<{
-  component: 'label';
-  props: LabelProps;
-}>;
+export const Label = React.forwardRef<HTMLLabelElement, LabelProps>((props, ref) => {
+  const { size, align, accent, children, className, ...otherProps } = props;
 
-export const Label = createPolymorphic<LabelFactory>((props, ref) => {
-  const {
-    size,
-    scheme,
-    justify,
-    alignment,
-    className: defaultClassName,
-    component: Component = 'label',
-    children,
-    ...otherProps
-  } = props;
-
-  const className = clsx(
-    'Label',
+  const clxssName = clsx(
+    'tbdx-label',
     {
-      [`Label--${size}`]: size !== undefined,
-      [`Label--${scheme}`]: scheme !== undefined,
-      [`Label--${justify}`]: justify !== undefined,
-      [`Label--${alignment}`]: alignment !== undefined,
+      [`tbdx-label--size-${size}`]: size,
+      [`tbdx-label--align-${align}`]: align,
+      [`tbdx-label--accent-${accent}`]: accent,
     },
-    defaultClassName
+    className
   );
 
   return (
-    <Component {...otherProps} className={className} ref={ref}>
+    <label {...otherProps} className={clxssName} ref={ref}>
       {children}
-    </Component>
+    </label>
   );
 });

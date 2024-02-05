@@ -1,11 +1,10 @@
 import { Page } from '@/app/common';
-import { Title } from '@/components/common';
 
-export const SurfaceGallery = () => (
+export const GallerySurface = () => (
   <>
     <Page.Hero title="Surface Gallery" />
     <Page.Content>
-      <Title>Content</Title>
+      <span>Content</span>
     </Page.Content>
   </>
 );

@@ -1,11 +1,9 @@
 export * from './Button';
 export * from './Checkbox';
-// export * from './Control';
 export * from './Icon';
 export * from './InlineInput';
 export * from './InlineStyle';
 export * from './Link';
-// export * from './NavLink';
 export * from './Radio';
 export * from './Switch';
 export * from './Text';

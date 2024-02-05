@@ -26,7 +26,7 @@ export const CardSection = createPolymorphic<CardSectionFactory>((props, ref) =>
   } = props;
 
   const className = clsx(
-    'CardSection',
+    'tbdx-card-section',
     {
       [`CardSection--radius-${radius}`]: radius !== undefined,
       [`CardSection--border-${border}`]: border !== undefined,

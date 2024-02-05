@@ -1,8 +1,8 @@
 import { Page } from '@/app/common';
 
-export const ToolboxOverview = () => (
+export const GallerySwitch = () => (
   <>
-    <Page.Hero title="Toolbox Overview" />
+    <Page.Hero title="Switch Gallery" />
     <Page.Content>
       <span>Content</span>
     </Page.Content>

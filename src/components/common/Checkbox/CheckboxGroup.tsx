@@ -1,31 +1,46 @@
-import { type Factory, createStatic } from '@/components/factory';
+import * as React from 'react';
 import clsx from 'clsx';
-import React from 'react';
 
-export type CheckboxGroupProps = {
-  scheme?: 'primary' | 'secondary' | 'action';
-  radius?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'rd';
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+import { type TBDX } from '@/types';
+
+export type CheckboxBaseProps = JSX.IntrinsicElements['fieldset'];
+
+export type CheckboxGroupProps = CheckboxBaseProps & {
+  label?: string;
+  size?: TBDX.Size;
+  accent?: TBDX.Color;
+  radius?: TBDX.Radius;
 };
 
-export type CheckboxGroupFactory = Factory.Config<{
-  props: CheckboxGroupProps;
-  component: 'fieldset';
-}>;
+export type CheckboxGroupContextValue = {
+  size?: TBDX.Size;
+  accent?: TBDX.Color;
+  radius?: TBDX.Radius;
+};
 
-export type CheckboxGroupContextValue = CheckboxGroupProps & {};
+export const CheckboxGroupCTX = React.createContext({} as CheckboxGroupContextValue);
+export const CheckboxGroupProvider = CheckboxGroupCTX.Provider;
+export const useCheckboxGroupCTX = () => React.useContext(CheckboxGroupCTX);
 
-export const CheckboxGroupContext = React.createContext<CheckboxGroupContextValue>({});
-export const CheckboxGroupProvider = CheckboxGroupContext.Provider;
+export const CheckboxGroup = React.forwardRef<HTMLFieldSetElement, CheckboxGroupProps>(
+  (props, ref) => {
+    const { size, radius, accent, label, className, children, ...otherProps } = props;
 
-export const useCheckboxGroupContext = () => React.useContext(CheckboxGroupContext);
+    const clxssName = clsx(
+      'tbdx-checkbox-group',
+      {
+        [`tbdx-checkbox-group--size-${size}`]: size,
+        [`tbdx-checkbox-group--accent-${accent}`]: accent,
+        [`tbdx-checkbox-group--radius-${radius}`]: radius,
+      },
+      className
+    );
 
-export const CheckboxGroup = createStatic<CheckboxGroupFactory>((props) => {
-  const { children, scheme, radius, size, ...otherProps } = props;
-  const className = clsx('CheckboxGroup');
-  return (
-    <fieldset {...otherProps} className={className}>
-      <CheckboxGroupProvider value={{ scheme, radius, size }}>{children}</CheckboxGroupProvider>
-    </fieldset>
-  );
-});
+    return (
+      <fieldset {...otherProps} ref={ref} className={clxssName}>
+        {label && <legend>{label}</legend>}
+        <CheckboxGroupProvider value={{ size, accent, radius }}>{children}</CheckboxGroupProvider>
+      </fieldset>
+    );
+  }
+);

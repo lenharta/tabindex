@@ -6,14 +6,15 @@ import './styles/index.scss';
 import { Root, RootError } from '@/app';
 import { Home, Learn, Sandbox, Toolbox } from '@/app/routes';
 import {
-  AccentGallery,
-  SurfaceGallery,
-  ToolboxOverview,
-  SandboxOverview,
-  ButtonGallery,
-  CheckboxGallery,
-  SwitchGallery,
   LearnOverview,
+  SandboxOverview,
+  ToolboxOverview,
+  GalleryAccent,
+  GallerySurface,
+  GalleryButton,
+  GallerySwitch,
+  GalleryCheckbox,
+  GalleryRadio,
 } from '@/app/pages';
 
 const router = createBrowserRouter([
@@ -38,11 +39,12 @@ const router = createBrowserRouter([
         element: <Toolbox />,
         children: [
           { index: true, element: <ToolboxOverview /> },
-          { path: '/toolbox/accent', element: <AccentGallery /> },
-          { path: '/toolbox/surface', element: <SurfaceGallery /> },
-          { path: '/toolbox/button', element: <ButtonGallery /> },
-          { path: '/toolbox/switch', element: <SwitchGallery /> },
-          { path: '/toolbox/checkbox', element: <CheckboxGallery /> },
+          { path: '/toolbox/radio', element: <GalleryRadio /> },
+          { path: '/toolbox/accent', element: <GalleryAccent /> },
+          { path: '/toolbox/button', element: <GalleryButton /> },
+          { path: '/toolbox/switch', element: <GallerySwitch /> },
+          { path: '/toolbox/surface', element: <GallerySurface /> },
+          { path: '/toolbox/checkbox', element: <GalleryCheckbox /> },
         ],
       },
     ],

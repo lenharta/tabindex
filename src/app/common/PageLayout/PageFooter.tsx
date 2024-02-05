@@ -55,11 +55,12 @@ export const PageFooter = () => (
       <SiteMapGroup
         title="Toolbox"
         items={[
-          { to: '/toolbox/accent', label: 'Accent Colors' },
-          { to: '/toolbox/surface', label: 'Surface Colors' },
+          { to: '/toolbox/radio', label: 'Radio Gallery' },
           { to: '/toolbox/button', label: 'Button Gallery' },
           { to: '/toolbox/switch', label: 'Switch Gallery' },
           { to: '/toolbox/checkbox', label: 'Checkbox Gallery' },
+          { to: '/toolbox/surface', label: 'Surface Colors' },
+          { to: '/toolbox/accent', label: 'Accent Colors' },
         ]}
       />
     </div>

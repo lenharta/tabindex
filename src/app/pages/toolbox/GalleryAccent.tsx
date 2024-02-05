@@ -1,11 +1,10 @@
 import { Page } from '@/app/common';
-import { Title } from '@/components/common';
 
-export const AccentGallery = () => (
+export const GalleryAccent = () => (
   <>
     <Page.Hero title="Accent Gallery" />
     <Page.Content>
-      <Title>Content</Title>
+      <span>Content</span>
     </Page.Content>
   </>
 );

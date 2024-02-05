@@ -1,53 +1,61 @@
+import * as React from 'react';
 import clsx from 'clsx';
-import { type Factory, createPolymorphic } from '@/components/factory';
-import { type InlineInputProps, InlineInput } from '../InlineInput';
 
-export type SwitchProps = InlineInputProps & {
-  scheme?: 'primary' | 'secondary' | 'action';
-  radius?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'rd';
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+import { type TBDX } from '@/types';
+import { type InlineInputProps, Icon, InlineInput } from '@/components/common';
+import { useSwitchGroupCTX } from './SwitchGroup';
+import { mergeProps } from '@/utils';
+
+export type SwitchInputProps = Omit<InlineInputProps, 'children'> & {
+  radius?: TBDX.Radius;
+  accent?: TBDX.Color;
+  size?: TBDX.Size;
 };
 
-type SwitchFactory = Factory.Config<{
-  component: 'button';
-  props: SwitchProps;
-}>;
+const defaultProps: Partial<SwitchInputProps> = {
+  size: 'sm',
+};
 
-export const SwitchIcon = () => <div>Icon</div>;
+export const Switch = React.forwardRef<HTMLButtonElement, SwitchInputProps>((props, ref) => {
+  const context = useSwitchGroupCTX();
 
-export const Switch = createPolymorphic<SwitchFactory>((props, ref) => {
   const {
+    id,
     size,
-    note,
-    error,
+    text,
     label,
+    error,
+    accent,
     radius,
-    scheme,
-    disabled,
-    readonly,
-    component = 'button',
+    className,
+    isDisabled,
+    isReadOnly,
     ...otherProps
-  } = props;
+  } = mergeProps({ props, context, defaultProps });
 
-  const className = clsx('Switch', {
-    [`Switch--${size}`]: size !== undefined,
-    [`Switch--${radius}`]: radius !== undefined,
-    [`Switch--${scheme}`]: scheme !== undefined,
-  });
+  const clxssName = clsx(
+    'tbdx-switch',
+    {
+      [`tbdx-switch--size-${size}`]: size,
+      [`tbdx-switch--radius-${radius}`]: radius,
+      [`tbdx-switch--accent-${accent}`]: accent,
+    },
+    className
+  );
 
   return (
     <InlineInput
       {...otherProps}
-      note={note}
-      error={error}
-      label={label}
-      disabled={disabled}
-      readonly={readonly}
-      component={component}
-      className={className}
+      id={id}
       ref={ref}
+      text={text}
+      label={label}
+      error={error}
+      className={clxssName}
+      isReadOnly={isReadOnly}
+      isDisabled={isDisabled}
     >
-      <SwitchIcon />
+      <Icon name="dismiss_circle" />
     </InlineInput>
   );
 });
