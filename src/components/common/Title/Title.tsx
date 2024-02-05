@@ -1,22 +1,6 @@
-import * as React from 'react';
 import clsx from 'clsx';
-
 import { type TBDX } from '@/types';
 import { type CORE, createPolymorphicFactory } from '@/components/factory';
-
-function findComponent(
-  component: React.ElementType,
-  props: Partial<TitleProps>
-): React.ElementType {
-  const { h1, h2, h3, h4, h5, h6 } = props;
-  if (h1 !== undefined) return 'h1';
-  if (h2 !== undefined) return 'h2';
-  if (h3 !== undefined) return 'h3';
-  if (h4 !== undefined) return 'h4';
-  if (h5 !== undefined) return 'h5';
-  if (h6 !== undefined) return 'h6';
-  return component;
-}
 
 export type TitleProps = {
   h1?: boolean;
@@ -51,14 +35,9 @@ export const Title = createPolymorphicFactory<TitleFactory>((props, ref) => {
     variant = 'filled',
     children,
     className,
-    component,
+    component: Component = 'h3',
     ...otherProps
   } = props;
-
-  const Component = React.useMemo(
-    () => findComponent(component as any, { h1, h2, h3, h4, h5, h6 }),
-    [component, h1, h2, h3, h4, h5, h6]
-  );
 
   const clxssName = clsx(
     'tbdx-title',

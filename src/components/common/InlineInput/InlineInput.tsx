@@ -19,23 +19,23 @@ export const InlineInput = createPolymorphicFactory<InlineInputFactory>((props, 
   const { id, text, label, error, className, children, disabled, readOnly, ...otherProps } = props;
 
   const uid = React.useId();
-  const rootId = `input:${uid}:${id}`;
+  const rootId = id ? `input${uid}${id}` : `input${uid}`;
 
   const labelProps = {
-    id: `${rootId}:label`,
+    id: `${rootId}label`,
     className: `${className}--label`,
     children: label,
     htmlFor: rootId,
   };
 
   const errorProps = {
-    id: `${rootId}:error`,
+    id: `${rootId}error`,
     className: `${className}--error`,
     children: error,
   };
 
   const textProps = {
-    id: `${rootId}:text`,
+    id: `${rootId}text`,
     className: `${className}--text`,
     children: text,
   };
@@ -47,8 +47,8 @@ export const InlineInput = createPolymorphicFactory<InlineInputFactory>((props, 
       id={rootId}
       type="button"
       role="checkbox"
-      className={className}
       disabled={disabled}
+      className={className}
       aria-disabled={disabled}
       aria-readonly={readOnly}
       data-readonly={readOnly}

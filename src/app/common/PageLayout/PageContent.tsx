@@ -1,16 +1,18 @@
-import * as React from 'react';
+import { type CORE, createBasicFactory } from '@/components/factory';
 
-type PageContentProps = {
-  children?: React.ReactNode;
-};
+export interface PageContentProps {}
 
-export const PageContent = (props: PageContentProps) => {
-  const { children } = props;
-  const contentId = 'main_content';
-  const className = 'tbdx-page-content';
+export type PageContentFactory = CORE.Factory<{
+  ref: HTMLDivElement;
+  props: PageContentProps;
+  component: 'div';
+}>;
+
+export const PageContent = createBasicFactory<PageContentFactory>((props) => {
+  const { component: Component = 'div', children, ...otherProps } = props;
   return (
-    <div className={className} id={contentId}>
+    <Component {...otherProps} className="tbdx-page-content">
       {children}
-    </div>
+    </Component>
   );
-};
+});

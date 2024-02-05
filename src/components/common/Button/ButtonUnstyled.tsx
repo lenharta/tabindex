@@ -34,13 +34,14 @@ export const ButtonUnstyled = createPolymorphicFactory<ButtonUnstyledFactory>((p
 
   return (
     <Component
+      {...otherProps}
       ref={ref}
+      disabled={disabled}
+      className={className}
       aria-disabled={disabled}
       aria-readonly={readOnly}
       data-disabled={disabled}
       data-readonly={readOnly}
-      disabled={disabled}
-      {...otherProps}
     >
       {leftContent && <div data-position="left">{leftContent}</div>}
       {children && <div>{children}</div>}
@@ -48,3 +49,5 @@ export const ButtonUnstyled = createPolymorphicFactory<ButtonUnstyledFactory>((p
     </Component>
   );
 });
+
+ButtonUnstyled.displayName = '@TBDX/Button.Unstyled';
