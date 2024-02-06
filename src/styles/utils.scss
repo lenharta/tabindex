@@ -1,0 +1,18 @@
+@mixin theme-mode() {
+  [data-prefers-color-scheme='dark'],
+  [data-prefers-color-scheme='light'] {
+    @content;
+  }
+}
+
+@mixin theme-dark() {
+  [data-prefers-color-scheme='dark'] {
+    @content;
+  }
+}
+
+@mixin theme-light() {
+  [data-prefers-color-scheme='light'] {
+    @content;
+  }
+}

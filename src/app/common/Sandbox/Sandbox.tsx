@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { type CORE, createStaticFactory } from '@/components/factory';
 import { SandboxControls } from './SandboxControls';
 import { SandboxDisplay } from './SandboxDisplay';
@@ -15,11 +16,16 @@ export type SandboxFactory = CORE.Factory<{
 }>;
 
 export const Sandbox = createStaticFactory<SandboxFactory>((props, ref) => {
-  const { component: Component = 'div', children, ...otherProps } = props;
+  const { component: Component = 'div', children, className, ...otherProps } = props;
+  const clxss = clsx('tbdx-sandbox', className);
+
   return (
-    <Component {...otherProps} ref={ref}>
-      {children}
-    </Component>
+    <>
+      <Component {...otherProps} ref={ref} className={clxss}>
+        <SandboxDisplay />
+        <SandboxControls />
+      </Component>
+    </>
   );
 });
 

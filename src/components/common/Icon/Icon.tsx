@@ -1,21 +1,20 @@
+import clsx from 'clsx';
 import { iconPaths, iconNames, type IconProps } from './config';
 
 export const Icon = (props: IconProps) => {
-  const { size = 'sm', name = 'radio_checked' } = props;
+  const { size = 'md', name = 'radio_checked', className } = props;
+
+  const clxss = clsx('tbdx-icon', `tbdx-icon--size-${size}`, className);
+
   return (
     <svg
       id={name}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={`Icon Icon--${size}`}
       viewBox="0 0 24 24"
+      className={clxss}
     >
-      <path
-        d={iconPaths[name]}
-        id={[name, '_inner'].join('')}
-        className="Icon-path"
-        fill="currentColor"
-      />
+      <path d={iconPaths[name]} fill="currentColor" />
     </svg>
   );
 };

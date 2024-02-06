@@ -11,7 +11,7 @@
   --button-label-lg: var(--tbdx-font-size-08);
   --button-label-xl: var(--tbdx-font-size-09);
 
-  margin: 1.5px;
+  margin: 1px;
   user-select: none;
   padding-block: 1rem;
   padding-inline: 1rem;
@@ -33,7 +33,7 @@
     outline-color: transparent;
   }
   &:focus:focus-visible {
-    outline-color: hsl(var(--tbdx-hsl-indigo), 70%, 0.9);
+    outline-color: hsl(var(--tbdx-hsl-blue), 70%, 0.9);
   }
 
   &[data-block] {

@@ -6,7 +6,7 @@ export function mergeProps<T extends Record<string, any>>({
   defaultProps,
 }: {
   props: T;
-  context: Partial<T>;
+  context?: Partial<T>;
   defaultProps: Partial<T>;
 }) {
   return {

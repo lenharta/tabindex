@@ -1,40 +1,54 @@
 .tbdx-sandbox {
-  &-display {
-    display: flex;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 60em) {
     align-items: center;
+    flex-direction: row;
     justify-content: flex-start;
   }
+
+  &-display,
   &-controls {
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    padding: var(--tbdx-spacing-6);
+    min-height: calc(var(--tbdx-spacing-12) * 4);
   }
-}
 
-.tbdx-sandbox-control {
-  &-wrapper {
+  &-display {
+    flex: 0 0 60%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    position: relative;
+  }
+
+  &-display-tool {
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    border: solid 1.5px transparent;
+    outline: solid 1.5px transparent;
+    position: absolute;
     display: flex;
     align-items: center;
+    justify-content: center;
+    height: 32px;
+    width: 32px;
+
+    &:focus:not(:focus-visible) {
+      outline-color: transparent;
+    }
+    &:focus-visible {
+      outline-color: hsl(var(--tbdx-hsl-blue), 60%);
+    }
+  }
+
+  &-controls {
+    flex: 1 0 40%;
+    align-items: flex-start;
     justify-content: flex-start;
+    flex-direction: column;
   }
-
-  &-textbox-input {
-    height: 48px;
-  }
-
-  &-textbox-label {
-  }
-
-  &-toggle {
-  }
-  &-toggle-label {
-  }
-
-  &-toggle-select {
-  }
-  &-toggle-select-option {
-  }
-}
-
-.tbdx-sandbox-control {
 }

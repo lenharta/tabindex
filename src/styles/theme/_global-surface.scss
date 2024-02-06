@@ -12,6 +12,43 @@
     color: var(--tbdx-text-A1);
   }
 
+  .tbdx-sandbox {
+    color: var(--tbdx-text-A0);
+    background-color: var(--tbdx-background-1);
+
+    &-controls {
+      background-color: var(--tbdx-background-2);
+      border: solid 1.5px var(--tbdx-background-4);
+    }
+
+    &-display {
+      border-top: solid 1.5px var(--tbdx-background-4);
+      border-left: solid 1.5px var(--tbdx-background-4);
+      border-right: solid 1.5px var(--tbdx-background-4);
+      border-bottom: none;
+
+      transition:
+        background-color 680ms ease-out,
+        color 680ms ease-out;
+
+      &[data-prefers-color-scheme='light'] {
+        color: hsl(var(--tbdx-hsl-surface), 10%);
+        background-color: hsl(var(--tbdx-hsl-surface), 94%);
+      }
+      &[data-prefers-color-scheme='dark'] {
+        color: hsl(var(--tbdx-hsl-surface), 94%);
+        background-color: hsl(var(--tbdx-hsl-surface), 10%);
+      }
+
+      @media (min-width: 60em) {
+        border-top: solid 1.5px var(--tbdx-background-4);
+        border-left: solid 1.5px var(--tbdx-background-4);
+        border-right: none;
+        border-bottom: solid 1.5px var(--tbdx-background-4);
+      }
+    }
+  }
+
   .tbdx-radio,
   .tbdx-switch,
   .tbdx-checkbox {

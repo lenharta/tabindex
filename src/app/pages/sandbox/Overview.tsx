@@ -1,10 +1,10 @@
-import { Page } from '@/app/common';
+import { Page, Sandbox } from '@/app/common';
 
 export const SandboxOverview = () => (
   <>
     <Page.Hero title="Sandbox Overview" />
     <Page.Content>
-      <span>Content</span>
+      <Sandbox />
     </Page.Content>
   </>
 );

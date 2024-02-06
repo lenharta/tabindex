@@ -1,4 +1,6 @@
 export declare namespace TBDX {
+  type Mode = 'light' | 'dark';
+  
   type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
   type SizeCompact = Exclude<Size, 'xs' | 'xl'>;
