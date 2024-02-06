@@ -25,12 +25,10 @@ export const ButtonUnstyled = createPolymorphicFactory<ButtonUnstyledFactory>((p
     children,
     leftContent,
     rightContent,
-    component,
+    component: Component = 'button',
     className,
     ...otherProps
   } = props;
-
-  const Component = component || 'button';
 
   return (
     <Component

@@ -26,7 +26,7 @@ export const Link = createPolymorphicFactory<LinkFactory>((props, ref) => {
     ...otherProps
   } = props;
 
-  const clxssName = clsx(
+  const clxss = clsx(
     'tbdx-link',
     {
       [`tbdx-link--size-${size}`]: size,
@@ -37,7 +37,7 @@ export const Link = createPolymorphicFactory<LinkFactory>((props, ref) => {
   );
 
   return (
-    <Component {...otherProps} className={clxssName} ref={ref}>
+    <Component {...otherProps} className={clxss} ref={ref}>
       {children}
     </Component>
   );

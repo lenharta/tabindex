@@ -42,7 +42,7 @@ export const Switch = createStaticFactory<SwitchFactory>((props, ref) => {
     ...otherProps
   } = mergeProps({ props, context, defaultProps });
 
-  const clxssName = clsx(
+  const clxss = clsx(
     'tbdx-switch',
     {
       [`tbdx-switch--size-${size}`]: size,
@@ -62,7 +62,7 @@ export const Switch = createStaticFactory<SwitchFactory>((props, ref) => {
       error={error}
       readOnly={readOnly}
       disabled={disabled}
-      className={clxssName}
+      className={clxss}
     >
       <Icon name="dismiss_circle" />
     </InlineInput>

@@ -5,6 +5,8 @@ export * from './InlineInput';
 export * from './InlineStyle';
 export * from './Link';
 export * from './Radio';
+export * from './Space';
+export * from './Stack';
 export * from './Switch';
 export * from './Text';
 export * from './Title';

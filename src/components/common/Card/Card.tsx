@@ -40,7 +40,7 @@ export const Card = createPolymorphicFactory<CardFactory>((props, ref) => {
     defaultProps,
   });
 
-  const clxssName = clsx(
+  const clxss = clsx(
     'tbdx-card',
     {
       [`tbdx-card--size-${size}`]: size,
@@ -53,7 +53,7 @@ export const Card = createPolymorphicFactory<CardFactory>((props, ref) => {
   );
 
   return (
-    <Component {...otherProps} ref={ref} className={clxssName}>
+    <Component {...otherProps} ref={ref} className={clxss}>
       {children}
     </Component>
   );

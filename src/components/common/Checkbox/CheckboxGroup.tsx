@@ -8,6 +8,7 @@ export interface CheckboxGroupProps {
   size?: TBDX.Size;
   accent?: TBDX.Color;
   radius?: TBDX.Radius;
+  orientation?: TBDX.Orientation;
   label?: string;
 }
 
@@ -28,13 +29,23 @@ export const CheckboxGroupProvider = CheckboxGroupCTX.Provider;
 export const useCheckboxGroupCTX = () => React.useContext(CheckboxGroupCTX);
 
 export const CheckboxGroup = createStaticFactory<CheckboxGroupFactory>((props, ref) => {
-  const { size, radius, accent, label, className, children, ...otherProps } = props;
-  const clxssName = clsx('tbdx-checkbox-group', className);
+  const {
+    size,
+    accent,
+    radius,
+    orientation = 'vertical',
+    component: Component = 'fieldset',
+    className,
+    children,
+    label,
+    ...otherProps
+  } = props;
+  const clxss = clsx('tbdx-checkbox-group', className);
 
   return (
-    <fieldset {...otherProps} ref={ref} className={clxssName}>
+    <Component {...otherProps} ref={ref} className={clxss} data-orientation={orientation}>
       {label && <legend>{label}</legend>}
       <CheckboxGroupProvider value={{ size, accent, radius }}>{children}</CheckboxGroupProvider>
-    </fieldset>
+    </Component>
   );
 });

@@ -32,7 +32,7 @@ export const LinkGroup = createStaticFactory<LinkGroupFactory>((props, ref) => {
     ...otherProps
   } = props;
 
-  const clxssName = clsx(
+  const clxss = clsx(
     'tbdx-link-group',
     {
       [`tbdx-link-group--${orientation}`]: orientation,
@@ -41,7 +41,7 @@ export const LinkGroup = createStaticFactory<LinkGroupFactory>((props, ref) => {
   );
 
   return (
-    <div {...otherProps} ref={ref} aria-orientation={orientation} className={clxssName}>
+    <div {...otherProps} ref={ref} aria-orientation={orientation} className={clxss}>
       <LinkGroupProvider value={{ orientation }}>
         {label && <span className="tbdx-link-group-label">{label}</span>}
         <div className="tbdx-link-group-content">{children}</div>

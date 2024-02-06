@@ -42,7 +42,7 @@ export const Radio = createStaticFactory<RadioFactory>((props, ref) => {
     ...otherProps
   } = mergeProps({ props, context, defaultProps });
 
-  const clxssName = clsx(
+  const clxss = clsx(
     'tbdx-radio',
     {
       [`tbdx-radio--size-${size}`]: size,
@@ -62,7 +62,7 @@ export const Radio = createStaticFactory<RadioFactory>((props, ref) => {
       error={error}
       readOnly={readOnly}
       disabled={disabled}
-      className={clxssName}
+      className={clxss}
     >
       <Icon name="radio_checked" />
     </InlineInput>

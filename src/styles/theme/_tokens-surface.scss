@@ -1,17 +1,92 @@
+[data-prefers-color-scheme='dark'],
 [data-prefers-color-scheme='light'] {
   --tbdx-hsl-surface: 0, 0%;
-  --tbdx-background-0: hsl(var(--tbdx-hsl-surface), 10%);
-  --tbdx-background-1: hsl(var(--tbdx-hsl-surface), 16%);
-  --tbdx-background-2: hsl(var(--tbdx-hsl-surface), 24%);
-  --tbdx-background-3: hsl(var(--tbdx-hsl-surface), 30%);
-  --tbdx-background-4: hsl(var(--tbdx-hsl-surface), 36%);
+}
+
+[data-prefers-color-scheme='light'] {
+  --tbdx-background-0: hsl(var(--tbdx-hsl-surface), 99%);
+  --tbdx-background-1: hsl(var(--tbdx-hsl-surface), 94%);
+  --tbdx-background-2: hsl(var(--tbdx-hsl-surface), 90%);
+  --tbdx-background-3: hsl(var(--tbdx-hsl-surface), 86%);
+  --tbdx-background-4: hsl(var(--tbdx-hsl-surface), 82%);
+  --tbdx-background-5: hsl(var(--tbdx-hsl-surface), 78%);
+
+  --tbdx-background-0-hover: hsl(var(--tbdx-hsl-surface), 95%);
+  --tbdx-background-1-hover: hsl(var(--tbdx-hsl-surface), 90%);
+  --tbdx-background-2-hover: hsl(var(--tbdx-hsl-surface), 86%);
+  --tbdx-background-3-hover: hsl(var(--tbdx-hsl-surface), 82%);
+  --tbdx-background-4-hover: hsl(var(--tbdx-hsl-surface), 78%);
+  --tbdx-background-5-hover: hsl(var(--tbdx-hsl-surface), 74%);
+
+  --tbdx-text-A0: hsla(var(--tbdx-hsl-surface), 08%, 0.95);
+  --tbdx-text-A1: hsla(var(--tbdx-hsl-surface), 08%, 0.85);
+  --tbdx-text-A2: hsla(var(--tbdx-hsl-surface), 08%, 0.75);
+  --tbdx-text-A3: hsla(var(--tbdx-hsl-surface), 08%, 0.65);
+  --tbdx-text-A4: hsla(var(--tbdx-hsl-surface), 08%, 0.55);
+  --tbdx-text-A5: hsla(var(--tbdx-hsl-surface), 08%, 0.45);
+
+  --tbdx-background-invert-0: hsl(var(--tbdx-hsl-surface), 08%);
+  --tbdx-background-invert-1: hsl(var(--tbdx-hsl-surface), 10%);
+  --tbdx-background-invert-2: hsl(var(--tbdx-hsl-surface), 14%);
+  --tbdx-background-invert-3: hsl(var(--tbdx-hsl-surface), 18%);
+  --tbdx-background-invert-4: hsl(var(--tbdx-hsl-surface), 22%);
+  --tbdx-background-invert-5: hsl(var(--tbdx-hsl-surface), 26%);
+
+  --tbdx-background-invert-0-hover: hsl(var(--tbdx-hsl-surface), 16%);
+  --tbdx-background-invert-1-hover: hsl(var(--tbdx-hsl-surface), 18%);
+  --tbdx-background-invert-2-hover: hsl(var(--tbdx-hsl-surface), 22%);
+  --tbdx-background-invert-3-hover: hsl(var(--tbdx-hsl-surface), 26%);
+  --tbdx-background-invert-4-hover: hsl(var(--tbdx-hsl-surface), 30%);
+  --tbdx-background-invert-5-hover: hsl(var(--tbdx-hsl-surface), 34%);
+
+  --tbdx-text-invert-A0: hsla(var(--tbdx-hsl-surface), 99%, 0.95);
+  --tbdx-text-invert-A1: hsla(var(--tbdx-hsl-surface), 99%, 0.85);
+  --tbdx-text-invert-A2: hsla(var(--tbdx-hsl-surface), 99%, 0.75);
+  --tbdx-text-invert-A3: hsla(var(--tbdx-hsl-surface), 99%, 0.65);
+  --tbdx-text-invert-A4: hsla(var(--tbdx-hsl-surface), 99%, 0.55);
+  --tbdx-text-invert-A5: hsla(var(--tbdx-hsl-surface), 99%, 0.45);
 }
 
 [data-prefers-color-scheme='dark'] {
-  --tbdx-hsl-surface: 0, 0%;
-  --tbdx-background-0: hsl(var(--tbdx-hsl-surface), 90%);
-  --tbdx-background-1: hsl(var(--tbdx-hsl-surface), 84%);
-  --tbdx-background-2: hsl(var(--tbdx-hsl-surface), 78%);
-  --tbdx-background-3: hsl(var(--tbdx-hsl-surface), 72%);
-  --tbdx-background-4: hsl(var(--tbdx-hsl-surface), 68%);
+  --tbdx-background-0: hsl(var(--tbdx-hsl-surface), 08%);
+  --tbdx-background-1: hsl(var(--tbdx-hsl-surface), 10%);
+  --tbdx-background-2: hsl(var(--tbdx-hsl-surface), 14%);
+  --tbdx-background-3: hsl(var(--tbdx-hsl-surface), 18%);
+  --tbdx-background-4: hsl(var(--tbdx-hsl-surface), 22%);
+  --tbdx-background-5: hsl(var(--tbdx-hsl-surface), 26%);
+
+  --tbdx-background-0-hover: hsl(var(--tbdx-hsl-surface), 12%);
+  --tbdx-background-1-hover: hsl(var(--tbdx-hsl-surface), 14%);
+  --tbdx-background-2-hover: hsl(var(--tbdx-hsl-surface), 18%);
+  --tbdx-background-3-hover: hsl(var(--tbdx-hsl-surface), 22%);
+  --tbdx-background-4-hover: hsl(var(--tbdx-hsl-surface), 26%);
+  --tbdx-background-5-hover: hsl(var(--tbdx-hsl-surface), 30%);
+
+  --tbdx-text-A0: hsla(var(--tbdx-hsl-surface), 99%, 0.95);
+  --tbdx-text-A1: hsla(var(--tbdx-hsl-surface), 99%, 0.85);
+  --tbdx-text-A2: hsla(var(--tbdx-hsl-surface), 99%, 0.75);
+  --tbdx-text-A3: hsla(var(--tbdx-hsl-surface), 99%, 0.65);
+  --tbdx-text-A4: hsla(var(--tbdx-hsl-surface), 99%, 0.55);
+  --tbdx-text-A5: hsla(var(--tbdx-hsl-surface), 99%, 0.45);
+
+  --tbdx-background-invert-0: hsl(var(--tbdx-hsl-surface), 99%);
+  --tbdx-background-invert-1: hsl(var(--tbdx-hsl-surface), 94%);
+  --tbdx-background-invert-2: hsl(var(--tbdx-hsl-surface), 90%);
+  --tbdx-background-invert-3: hsl(var(--tbdx-hsl-surface), 86%);
+  --tbdx-background-invert-4: hsl(var(--tbdx-hsl-surface), 82%);
+  --tbdx-background-invert-5: hsl(var(--tbdx-hsl-surface), 78%);
+
+  --tbdx-background-invert-0-hover: hsl(var(--tbdx-hsl-surface), 90%);
+  --tbdx-background-invert-1-hover: hsl(var(--tbdx-hsl-surface), 85%);
+  --tbdx-background-invert-2-hover: hsl(var(--tbdx-hsl-surface), 81%);
+  --tbdx-background-invert-3-hover: hsl(var(--tbdx-hsl-surface), 77%);
+  --tbdx-background-invert-4-hover: hsl(var(--tbdx-hsl-surface), 73%);
+  --tbdx-background-invert-5-hover: hsl(var(--tbdx-hsl-surface), 69%);
+
+  --tbdx-text-invert-A0: hsla(var(--tbdx-hsl-surface), 08%, 0.95);
+  --tbdx-text-invert-A1: hsla(var(--tbdx-hsl-surface), 08%, 0.85);
+  --tbdx-text-invert-A2: hsla(var(--tbdx-hsl-surface), 08%, 0.75);
+  --tbdx-text-invert-A3: hsla(var(--tbdx-hsl-surface), 08%, 0.65);
+  --tbdx-text-invert-A4: hsla(var(--tbdx-hsl-surface), 08%, 0.55);
+  --tbdx-text-invert-A5: hsla(var(--tbdx-hsl-surface), 08%, 0.45);
 }

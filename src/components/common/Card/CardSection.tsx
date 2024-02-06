@@ -30,7 +30,7 @@ export const CardSection = createBasicFactory<CardSectionFactory>((props) => {
     ...otherProps
   } = props;
 
-  const clxssName = clsx(
+  const clxss = clsx(
     'tbdx-card-section',
     {
       [`tbdx-card-section--size-${size}`]: size,
@@ -43,7 +43,7 @@ export const CardSection = createBasicFactory<CardSectionFactory>((props) => {
   );
 
   return (
-    <Component {...otherProps} className={clxssName}>
+    <Component {...otherProps} className={clxss}>
       {children}
     </Component>
   );

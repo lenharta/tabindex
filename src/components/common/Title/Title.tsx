@@ -39,7 +39,7 @@ export const Title = createPolymorphicFactory<TitleFactory>((props, ref) => {
     ...otherProps
   } = props;
 
-  const clxssName = clsx(
+  const clxss = clsx(
     'tbdx-title',
     {
       [`tbdx-title--size-${size}`]: size,
@@ -51,7 +51,7 @@ export const Title = createPolymorphicFactory<TitleFactory>((props, ref) => {
   );
 
   return (
-    <Component {...otherProps} ref={ref} className={clxssName}>
+    <Component {...otherProps} ref={ref} className={clxss}>
       {children}
     </Component>
   );

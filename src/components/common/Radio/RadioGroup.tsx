@@ -30,7 +30,7 @@ export const useRadioGroupCTX = () => React.useContext(RadioGroupCTX);
 export const RadioGroup = createStaticFactory<RadioGroupFactory>((props, ref) => {
   const { size, radius, accent, label, className, children, ...otherProps } = props;
 
-  const clxssName = clsx(
+  const clxss = clsx(
     'tbdx-radio-group',
     {
       [`tbdx-radio-group--size-${size}`]: size,
@@ -41,7 +41,7 @@ export const RadioGroup = createStaticFactory<RadioGroupFactory>((props, ref) =>
   );
 
   return (
-    <fieldset {...otherProps} ref={ref} className={clxssName}>
+    <fieldset {...otherProps} ref={ref} className={clxss}>
       {label && <legend>{label}</legend>}
       <RadioGroupProvider value={{ size, accent, radius }}>{children}</RadioGroupProvider>
     </fieldset>
