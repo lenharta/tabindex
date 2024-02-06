@@ -1,9 +1,13 @@
 .tbdx-sandbox {
-  &-layout {
-  }
   &-display {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
   }
   &-controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
   }
 }
 
