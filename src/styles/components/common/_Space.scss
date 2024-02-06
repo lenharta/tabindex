@@ -5,7 +5,8 @@
   --tbdx-space-height-lg: var(--tbdx-spacing-11);
   --tbdx-space-height-xl: var(--tbdx-spacing-12);
 
-  height: var(--tbdx-space-height, var(--tbdx-space-height-xs));
+  display: block;
+  height: var(--tbdx-space-height, var(--tbdx-spacing-8));
 
   &--size-xs {
     --tbdx-space-height: var(--tbdx-space-height-xs);

@@ -1,5 +1,6 @@
 export * from './toolbox/Overview';
 export * from './toolbox/GalleryCard';
+export * from './toolbox/GalleryTool';
 export * from './toolbox/GalleryRadio';
 export * from './toolbox/GalleryAccent';
 export * from './toolbox/GalleryButton';

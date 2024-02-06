@@ -67,6 +67,7 @@ export const PageFooter = createBasicFactory<PageFooterFactory>((props) => {
           title="Toolbox"
           items={[
             { to: '/toolbox/card', label: 'Card Gallery' },
+            { to: '/toolbox/tool', label: 'Tool Gallery' },
             { to: '/toolbox/radio', label: 'Radio Gallery' },
             { to: '/toolbox/button', label: 'Button Gallery' },
             { to: '/toolbox/switch', label: 'Switch Gallery' },

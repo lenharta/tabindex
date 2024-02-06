@@ -1,5 +1,5 @@
+import { TBDX } from '@/types';
 import * as React from 'react';
-import { type TBDX } from '@/core/theme';
 
 export type ThemeState = {
   accent: TBDX.Color;
