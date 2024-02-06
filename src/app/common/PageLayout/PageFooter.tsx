@@ -19,7 +19,6 @@ export const ModeControl = () => {
       className="tbdx-mode-control"
       onClick={() => ctx.setModeToggle()}
       children={label}
-      accent="blue"
     />
   );
 };

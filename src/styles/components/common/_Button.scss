@@ -26,6 +26,16 @@
   justify-content: var(--button-justify, center);
   font-size: var(--button-label, var(--button-label-xs));
 
+  outline: solid 1.5px transparent;
+  border: solid 1.5px transparent;
+
+  &:focus:not(:focus-visible) {
+    outline-color: transparent;
+  }
+  &:focus:focus-visible {
+    outline-color: hsl(var(--tbdx-hsl-indigo), 70%, 0.9);
+  }
+
   &[data-block] {
     --button-display: block;
     height: 100%;

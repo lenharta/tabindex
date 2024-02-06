@@ -26,7 +26,7 @@ export type CheckboxFactory = CORE.Factory<{
 
 const defaultProps: CheckboxProps = {
   size: 'sm',
-  align: 'start',
+  align: 'center',
   orientation: 'vertical',
 };
 

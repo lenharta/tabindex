@@ -9,6 +9,8 @@ export declare namespace TBDX {
 
   type Alignment = 'start' | 'center' | 'end';
 
+  type Justify = 'start' | 'center' | 'end';
+
   type Placement = Position | `${Position}-${Alignment}`;
 
   type Orientation = 'vertical' | 'horizontal';

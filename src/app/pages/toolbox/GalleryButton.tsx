@@ -5,6 +5,10 @@ export const GalleryButton = () => (
   <>
     <Page.Hero title="Button Gallery" />
     <Page.Content>
+      <Button>Default Button</Button>
+      <Button scheme="primary">Primary Button</Button>
+      <Button scheme="secondary">Secondary Button</Button>
+
       <ButtonGroup>
         <Button accent="orange">Button</Button>
         <Button accent="yellow">Button</Button>
