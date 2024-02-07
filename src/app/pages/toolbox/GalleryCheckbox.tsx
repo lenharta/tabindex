@@ -1,5 +1,11 @@
 import { Page } from '@/app/common';
 import { Checkbox, CheckboxGroup } from '@/components/common';
+import React from 'react';
+
+const CheckboxSingleState = () => {
+  const [value, setValue] = React.useState('some-value');
+  return <Checkbox label="Single Checkbox" />;
+};
 
 export const GalleryCheckbox = () => (
   <>

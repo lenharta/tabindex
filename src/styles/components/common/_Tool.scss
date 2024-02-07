@@ -64,11 +64,4 @@
   &--size-xl .tbdx-tool-icon {
     --tbdx-tool-icon-size: var(--tbdx-tool-icon-size-xl);
   }
-
-  [data-prefers-color-scheme='dark'] &,
-  [data-prefers-color-scheme='light'] & {
-    color: var(--tbdx-text-A0);
-    border-color: transparent;
-    background-color: var(--tbdx-background-2);
-  }
 }

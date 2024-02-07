@@ -13,6 +13,8 @@ export interface CheckboxProps {
   orientation?: TBDX.Orientation;
   disabled?: boolean;
   readOnly?: boolean;
+  checked?: boolean;
+  value?: string;
   error?: string;
   label?: string;
   text?: string;
@@ -33,7 +35,7 @@ const defaultProps: CheckboxProps = {
 export const Checkbox = createStaticFactory<CheckboxFactory>((props, ref) => {
   const context = useCheckboxGroupCTX();
 
-  const { id, label, error, text, className, disabled, readOnly, ...otherProps } = props;
+  const { id, label, error, text, className, disabled, readOnly, checked, ...otherProps } = props;
 
   const { size, accent, radius, align, orientation, ...additionalProps } = mergeProps({
     props: otherProps,
@@ -65,7 +67,7 @@ export const Checkbox = createStaticFactory<CheckboxFactory>((props, ref) => {
       disabled={disabled}
       className={clxss}
     >
-      <Icon name="checkbox_checked" />
+      <Icon name={checked ? 'checkbox_checked' : 'checkbox_unchecked'} />
     </InlineInput>
   );
 });

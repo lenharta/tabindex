@@ -14,6 +14,5 @@ export * from './merge-props';
 export * from './object-css-to-string';
 export * from './object-keys';
 export * from './object-values';
-export * from './parse-option-data';
 export * from './value-clamp';
 export * from './value-to-percent';

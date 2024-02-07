@@ -1,4 +1,6 @@
+import React from 'react';
 import { Page, QueryDataItem } from '../common';
+import { Icon } from '@/components/common';
 
 export const SAMPLE_QUERY_DATA: QueryDataItem[] = [
   {

@@ -1,5 +1,67 @@
 [data-prefers-color-scheme='dark'],
 [data-prefers-color-scheme='light'] {
+  .tbdx-surface--0 {
+    background-color: var(--tbdx-background-0);
+    color: var(--tbdx-text-A0);
+  }
+  .tbdx-surface--1 {
+    background-color: var(--tbdx-background-1);
+    color: var(--tbdx-text-A0);
+  }
+  .tbdx-surface--2 {
+    background-color: var(--tbdx-background-2);
+    color: var(--tbdx-text-A0);
+  }
+  .tbdx-surface--3 {
+    background-color: var(--tbdx-background-3);
+    color: var(--tbdx-text-A0);
+  }
+  .tbdx-surface--4 {
+    background-color: var(--tbdx-background-4);
+    color: var(--tbdx-text-A0);
+  }
+  .tbdx-surface--5 {
+    background-color: var(--tbdx-background-5);
+    color: var(--tbdx-text-A0);
+  }
+
+  .tbdx-surface--0-interactive {
+    @extend .tbdx-surface--0;
+    &:hover {
+      background-color: var(--tbdx-background-0-hover);
+    }
+  }
+  .tbdx-surface--1-interactive {
+    @extend .tbdx-surface--1;
+    &:hover {
+      background-color: var(--tbdx-background-1-hover);
+    }
+  }
+  .tbdx-surface--2-interactive {
+    @extend .tbdx-surface--2;
+    &:hover {
+      background-color: var(--tbdx-background-2-hover);
+    }
+  }
+  .tbdx-surface--3-interactive {
+    @extend .tbdx-surface--3;
+    &:hover {
+      background-color: var(--tbdx-background-3-hover);
+    }
+  }
+  .tbdx-surface--4-interactive {
+    @extend .tbdx-surface--4;
+    &:hover {
+      background-color: var(--tbdx-background-4-hover);
+    }
+  }
+  .tbdx-surface--5-interactive {
+    @extend .tbdx-surface--5;
+    &:hover {
+      background-color: var(--tbdx-background-5-hover);
+    }
+  }
+
   html,
   body,
   #root {
