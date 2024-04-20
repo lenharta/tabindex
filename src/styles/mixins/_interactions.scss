@@ -1,0 +1,39 @@
+@use './states' as states;
+
+@mixin cursor {
+  cursor: default;
+
+  @include states.enabled-hover() {
+    cursor: pointer;
+  }
+  @include states.enabled-active() {
+    cursor: pointer;
+  }
+  @include states.disabled() {
+    cursor: not-allowed;
+  }
+}
+
+@mixin focus {
+  border: solid var(--unit) transparent;
+  outline: solid var(--unit) transparent;
+
+  &:not([aria-disabled]):focus:not(:focus-visible),
+  &:not([data-tbdx-disabled]):focus:not(:focus-visible) {
+    outline-color: transparent;
+  }
+  &:not([aria-disabled]):focus:focus-visible,
+  &:not([data-tbdx-disabled]):focus:focus-visible {
+    outline-color: var(--c-focus);
+  }
+
+  &[aria-disabled][data-tbdx-allow-disabled-focus],
+  &[data-tbdx-disabled][data-tbdx-allow-disabled-focus] {
+    &:focus:not(:focus-visible) {
+      outline-color: transparent;
+    }
+    &:focus:focus-visible {
+      outline-color: var(--c-focus);
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@use '../mixins/resets' as resets;
+@use '../mixins/interactions' as interactions;
+
+@layer reset {
+  .Title {
+    @include resets.static;
+  }
+}
+
+.Title {
+  display: block;
+}

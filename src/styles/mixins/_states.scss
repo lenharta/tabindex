@@ -1,0 +1,31 @@
+@mixin enabled {
+  &:not([aria-disabled]),
+  &:not([data-tbdx-disabled]) {
+    @content;
+  }
+}
+
+@mixin enabled-hover {
+  &:not([aria-disabled]):hover,
+  &:not([data-tbdx-disabled]):hover {
+    @content;
+  }
+}
+
+@mixin enabled-active {
+  &:not([aria-disabled]):active,
+  &:not([data-tbdx-disabled]):active {
+    @content;
+  }
+}
+
+@mixin disabled {
+  [aria-disabled],
+  [aria-disabled]:hover,
+  [aria-disabled]:active,
+  [data-tbdx-disabled],
+  [data-tbdx-disabled]:hover,
+  [data-tbdx-disabled]:active {
+    @content;
+  }
+}

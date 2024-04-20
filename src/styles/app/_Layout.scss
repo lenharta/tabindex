@@ -1,0 +1,18 @@
+@use '../mixins/resets' as resets;
+@use '../mixins/interactions' as interactions;
+
+@layer reset {
+  .Layout {
+    @include resets.static;
+  }
+}
+
+.Layout {
+  display: block;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: var(--c-bg-1);
+  color: var(--c-text-1);
+}

@@ -1,0 +1,24 @@
+@use './states' as states;
+
+@mixin default-button {
+  transition-duration: 250ms;
+  transition-timing-function: ease;
+  transition-property: background-color, color, stroke, fill, border-color, outline-color;
+
+  @include states.enabled {
+    color: color-mix(in srgb, var(--c-m) var(--c-s-1), var(--c-b));
+    background-color: color-mix(in srgb, var(--c-b) var(--c-s-2), var(--c-m));
+  }
+  @include states.enabled-hover {
+    color: color-mix(in srgb, var(--c-m) var(--c-s-1), var(--c-b));
+    background-color: color-mix(in srgb, var(--c-b) var(--c-s-3), var(--c-m));
+  }
+  @include states.enabled-active {
+    color: color-mix(in srgb, var(--c-m) var(--c-s-1), var(--c-b));
+    background-color: color-mix(in srgb, var(--c-b) var(--c-s-4), var(--c-m));
+  }
+  @include states.disabled {
+    color: color-mix(in srgb, var(--c-m) var(--c-s-1), var(--c-b));
+    background-color: color-mix(in srgb, var(--c-b) var(--c-s-7), var(--c-m));
+  }
+}

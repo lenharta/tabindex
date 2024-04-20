@@ -1,0 +1,18 @@
+@use '../mixins/resets' as resets;
+@use '../mixins/interactions' as interactions;
+
+@layer reset {
+  .Page {
+    @include resets.static;
+  }
+}
+
+.Page {
+  display: block;
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 100vh;
+  background-color: var(--c-bg-1);
+  color: var(--c-text-1);
+}
