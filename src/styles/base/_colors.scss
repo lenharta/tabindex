@@ -1,0 +1,216 @@
+:root {
+  --rgb-mode-light-red: rgb(255, 59, 48);
+  --rgba-mode-light-red: 255, 59, 48;
+
+  --rgb-mode-dark-red: rgb(255, 69, 58);
+  --rgba-mode-dark-red: 255, 69, 58;
+
+  --rgb-mode-light-red-a11y: rgb(215, 0, 21);
+  --rgba-mode-light-red-a11y: 215, 0, 21;
+
+  --rgb-mode-dark-red-a11y: rgb(255, 105, 97);
+  --rgba-mode-dark-red-a11y: 255, 105, 97;
+
+  --rgb-mode-light-orange: rgb(255, 149, 0);
+  --rgba-mode-light-orange: 255, 149, 0;
+
+  --rgb-mode-dark-orange: rgb(255, 159, 10);
+  --rgba-mode-dark-orange: 255, 159, 10;
+
+  --rgb-mode-light-orange-a11y: rgb(201, 52, 0);
+  --rgba-mode-light-orange-a11y: 201, 52, 0;
+
+  --rgb-mode-dark-orange-a11y: rgb(255, 179, 64);
+  --rgba-mode-dark-orange-a11y: 255, 179, 64;
+
+  --rgb-mode-light-yellow: rgb(255, 204, 0);
+  --rgba-mode-light-yellow: 255, 204, 0;
+
+  --rgb-mode-dark-yellow: rgb(255, 214, 10);
+  --rgba-mode-dark-yellow: 255, 214, 10;
+
+  --rgb-mode-light-yellow-a11y: rgb(160, 90, 0);
+  --rgba-mode-light-yellow-a11y: 160, 90, 0;
+
+  --rgb-mode-dark-yellow-a11y: rgb(255, 212, 38);
+  --rgba-mode-dark-yellow-a11y: 255, 212, 38;
+
+  --rgb-mode-light-green: rgb(40, 205, 65);
+  --rgba-mode-light-green: 40, 205, 65;
+
+  --rgb-mode-dark-green: rgb(50, 215, 75);
+  --rgba-mode-dark-green: 50, 215, 75;
+
+  --rgb-mode-light-green-a11y: rgb(0, 125, 27);
+  --rgba-mode-light-green-a11y: 0, 125, 27;
+
+  --rgb-mode-dark-green-a11y: rgb(49, 222, 75);
+  --rgba-mode-dark-green-a11y: 49, 222, 75;
+
+  --rgb-mode-light-mint: rgb(0, 199, 190);
+  --rgba-mode-light-mint: 0, 199, 190;
+
+  --rgb-mode-dark-mint: rgb(102, 212, 207);
+  --rgba-mode-dark-mint: 102, 212, 207;
+
+  --rgb-mode-light-mint-a11y: rgb(12, 129, 123);
+  --rgba-mode-light-mint-a11y: 12, 129, 123;
+
+  --rgb-mode-dark-mint-a11y: rgb(102, 212, 207);
+  --rgba-mode-dark-mint-a11y: 102, 212, 207;
+
+  --rgb-mode-light-teal: rgb(89, 173, 196);
+  --rgba-mode-light-teal: 89, 173, 196;
+
+  --rgb-mode-dark-teal: rgb(106, 196, 220);
+  --rgba-mode-dark-teal: 106, 196, 220;
+
+  --rgb-mode-light-teal-a11y: rgb(0, 130, 153);
+  --rgba-mode-light-teal-a11y: 0, 130, 153;
+
+  --rgb-mode-dark-teal-a11y: rgb(93, 230, 255);
+  --rgba-mode-dark-teal-a11y: 93, 230, 255;
+
+  --rgb-mode-light-cyan: rgb(85, 190, 240);
+  --rgba-mode-light-cyan: 85, 190, 240;
+
+  --rgb-mode-dark-cyan: rgb(90, 200, 245);
+  --rgba-mode-dark-cyan: 90, 200, 245;
+
+  --rgb-mode-light-cyan-a11y: rgb(0, 113, 164);
+  --rgba-mode-light-cyan-a11y: 0, 113, 164;
+
+  --rgb-mode-dark-cyan-a11y: rgb(112, 215, 255);
+  --rgba-mode-dark-cyan-a11y: 112, 215, 255;
+
+  --rgb-mode-light-blue: rgb(0, 122, 255);
+  --rgba-mode-light-blue: 0, 122, 255;
+
+  --rgb-mode-dark-blue: rgb(10, 132, 255);
+  --rgba-mode-dark-blue: 10, 132, 255;
+
+  --rgb-mode-light-blue-a11y: rgb(0, 64, 221);
+  --rgba-mode-light-blue-a11y: 0, 64, 221;
+
+  --rgb-mode-dark-blue-a11y: rgb(64, 156, 255);
+  --rgba-mode-dark-blue-a11y: 64, 156, 255;
+
+  --rgb-mode-light-indigo: rgb(88, 86, 214);
+  --rgba-mode-light-indigo: 88, 86, 214;
+
+  --rgb-mode-dark-indigo: rgb(94, 92, 230);
+  --rgba-mode-dark-indigo: 94, 92, 230;
+
+  --rgb-mode-light-indigo-a11y: rgb(54, 52, 163);
+  --rgba-mode-light-indigo-a11y: 54, 52, 163;
+
+  --rgb-mode-dark-indigo-a11y: rgb(125, 122, 255);
+  --rgba-mode-dark-indigo-a11y: 125, 122, 255;
+
+  --rgb-mode-light-purple: rgb(175, 82, 222);
+  --rgba-mode-light-purple: 175, 82, 222;
+
+  --rgb-mode-dark-purple: rgb(191, 90, 242);
+  --rgba-mode-dark-purple: 191, 90, 242;
+
+  --rgb-mode-light-purple-a11y: rgb(173, 68, 171);
+  --rgba-mode-light-purple-a11y: 173, 68, 171;
+
+  --rgb-mode-dark-purple-a11y: rgb(218, 143, 255);
+  --rgba-mode-dark-purple-a11y: 218, 143, 255;
+
+  --rgb-mode-light-pink: rgb(255, 45, 85);
+  --rgba-mode-light-pink: 255, 45, 85;
+
+  --rgb-mode-dark-pink: rgb(255, 55, 95);
+  --rgba-mode-dark-pink: 255, 55, 95;
+
+  --rgb-mode-light-pink-a11y: rgb(211, 15, 69);
+  --rgba-mode-light-pink-a11y: 211, 15, 69;
+
+  --rgb-mode-dark-pink-a11y: rgb(255, 100, 130);
+  --rgba-mode-dark-pink-a11y: 255, 100, 130;
+
+  --rgb-mode-light-brown: rgb(162, 132, 94);
+  --rgba-mode-light-brown: 162, 132, 94;
+
+  --rgb-mode-dark-brown: rgb(172, 142, 104);
+  --rgba-mode-dark-brown: 172, 142, 104;
+
+  --rgb-mode-light-brown-a11y: rgb(127, 101, 69);
+  --rgba-mode-light-brown-a11y: 127, 101, 69;
+
+  --rgb-mode-dark-brown-a11y: rgb(181, 148, 105);
+  --rgba-mode-dark-brown-a11y: 181, 148, 105;
+
+  --rgb-mode-light-gray: rgb(142, 142, 147);
+  --rgba-mode-light-gray: 142, 142, 147;
+
+  --rgb-mode-dark-gray: rgb(152, 152, 157);
+  --rgba-mode-dark-gray: 152, 152, 157;
+
+  --rgb-mode-light-gray-a11y: rgb(105, 105, 110);
+  --rgba-mode-light-gray-a11y: 105, 105, 110;
+
+  --rgb-mode-dark-gray-a11y: rgb(152, 152, 157);
+  --rgba-mode-dark-gray-a11y: 152, 152, 157;
+
+  --rgb-mode-dark-base: rgb(17, 17, 17);
+  --rgba-mode-dark-base: 17, 17, 17;
+
+  --rgb-mode-dark-base-a11y: rgb(08, 08, 09);
+  --rgba-mode-dark-base-a11y: 08, 08, 09;
+
+  --rgb-mode-light-base: rgb(235, 235, 236);
+  --rgba-mode-light-base: 235, 235, 236;
+
+  --rgb-mode-light-base-a11y: rgb(255, 255, 255);
+  --rgba-mode-light-base-a11y: 255, 255, 255;
+
+  --c-focus: #60a5fa;
+}
+
+[data-tbdx-prefers-color-scheme='dark'] {
+  --c-s: 3%;
+  --c-b: var(--rgb-mode-dark-base);
+  --c-m: var(--rgb-mode-light-base);
+  --c-b-a: rgba(var(--rgba-mode-dark-base));
+  --c-m-a: rgba(var(--rgba-mode-light-base));
+}
+
+[data-tbdx-prefers-color-scheme='light'] {
+  --c-s: 6%;
+  --c-b: var(--rgb-mode-light-base);
+  --c-m: var(--rgb-mode-dark-base);
+  --c-b-a: rgba(var(--rgba-mode-light-base), 0.1);
+  --c-m-a: rgba(var(--rgba-mode-dark-base), 0.1);
+}
+
+[data-tbdx-prefers-color-scheme='dark'],
+[data-tbdx-prefers-color-scheme='light'] {
+  --c-s-1: calc(100% - calc(var(--c-s) * 1));
+  --c-s-2: calc(100% - calc(var(--c-s) * 2));
+  --c-s-3: calc(100% - calc(var(--c-s) * 3));
+  --c-s-4: calc(100% - calc(var(--c-s) * 4));
+  --c-s-5: calc(100% - calc(var(--c-s) * 5));
+  --c-s-6: calc(100% - calc(var(--c-s) * 6));
+  --c-s-7: calc(100% - calc(var(--c-s) * 7));
+  --c-s-8: calc(100% - calc(var(--c-s) * 8));
+
+  --c-bg-1: color-mix(in srgb, var(--c-b) var(--c-s-1), var(--c-m));
+  --c-bg-2: color-mix(in srgb, var(--c-b) var(--c-s-2), var(--c-m));
+  --c-bg-3: color-mix(in srgb, var(--c-b) var(--c-s-3), var(--c-m));
+  --c-bg-4: color-mix(in srgb, var(--c-b) var(--c-s-4), var(--c-m));
+  --c-bg-5: color-mix(in srgb, var(--c-b) var(--c-s-5), var(--c-m));
+
+  --c-text-1: color-mix(in srgb, var(--c-m) var(--c-s-1), var(--c-b));
+  --c-text-2: color-mix(in srgb, var(--c-m) var(--c-s-2), var(--c-b));
+  --c-text-3: color-mix(in srgb, var(--c-m) var(--c-s-3), var(--c-b));
+  --c-text-4: color-mix(in srgb, var(--c-m) var(--c-s-4), var(--c-b));
+  --c-text-5: color-mix(in srgb, var(--c-m) var(--c-s-5), var(--c-b));
+
+  --c-button-default-bb: color-mix(in srgb, var(--c-b) var(--c-s-2), var(--c-m));
+  --c-button-default-hh: color-mix(in srgb, var(--c-b) var(--c-s-3), var(--c-m));
+  --c-button-default-aa: color-mix(in srgb, var(--c-b) var(--c-s-4), var(--c-m));
+  --c-button-default-ss: color-mix(in srgb, var(--c-b) var(--c-s-5), var(--c-m));
+}

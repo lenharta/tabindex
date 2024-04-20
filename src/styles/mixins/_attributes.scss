@@ -1,0 +1,17 @@
+@mixin prop($name, $key) {
+  &[data-tbdx-#{$name}='#{$key}'] {
+    @content;
+  }
+}
+
+@mixin vertical {
+  &[data-tbdx-orientation='vertical'] {
+    @content;
+  }
+}
+
+@mixin horizontal {
+  &[data-tbdx-orientation='horizontal'] {
+    @content;
+  }
+}

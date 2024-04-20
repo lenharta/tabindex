@@ -28,12 +28,12 @@
     "paths": {
       "@/*": ["./src/*"],
       "@/app/*": ["./src/app/*"],
-      "@/core/*": ["./src/core/*"],
-      "@/hooks/*": ["./src/hooks/*"],
-      "@/tests/*": ["./src/tests/*"],
       "@/utils/*": ["./src/utils/*"],
-      "@/assets/*": ["./src/assets/*"],
+      "@/types/*": ["./src/types/*"],
+      "@/tests/*": ["./src/tests/*"],
+      "@/store/*": ["./src/store/*"],
       "@/common/*": ["./src/common/*"],
+      "@/assets/*": ["./src/assets/*"],
       "@/styles/*": ["./src/styles/*"]
     }
   },
