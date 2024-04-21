@@ -21,7 +21,7 @@ export function Home() {
   return (
     <Page>
       <Page.Hero>
-        <Title h1 fz={16}>
+        <Title h1>
           Tab<span style={{ color: 'var(--rgb-mode-dark-indigo)' }}>index</span>
         </Title>
       </Page.Hero>

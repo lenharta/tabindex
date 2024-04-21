@@ -8,8 +8,16 @@
 }
 
 .Logo {
+  height: var(--header-height);
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
   font-size: var(--fz-8);
+  font-weight: var(--fw-reg);
+  padding-inline: var(--spacing-6);
+
+  color: var(--c-text-1);
+  transition-property: var(--transition-color);
+  transition-duration: var(--easing-duration-7);
+  transition-timing-function: var(--easing-productive);
 }

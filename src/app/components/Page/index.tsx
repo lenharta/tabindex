@@ -1,47 +1,36 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
+import { PageContent } from './Content';
+import { PageFooter } from './Footer';
+import { PageHero } from './Hero';
+import clsx from 'clsx';
 
 export interface PageProps {
   children?: React.ReactNode | undefined;
+  className?: string | undefined;
 }
 
 export type PageComponent = React.FC<PageProps> & {
-  Content: React.FC<Partial<PageProps>>;
-  Footer: React.FC<Partial<PageProps>>;
-  Hero: React.FC<Partial<PageProps>>;
+  Content: typeof PageContent;
+  Footer: typeof PageFooter;
+  Hero: typeof PageHero;
 };
 
-export const Page: PageComponent = ({ children }) => {
+export const Page: PageComponent = (props) => {
+  const { children, className } = props;
   return (
-    <div className="Page">
+    <div className={clsx('Page', className)}>
       {children}
       <Page.Footer />
     </div>
   );
 };
 
-Page.Hero = ({ children }) => {
-  return <div className="Page-hero">{children}</div>;
-};
+Page.Content = PageContent;
+Page.Footer = PageFooter;
+Page.Hero = PageHero;
 
-Page.Content = ({ children }) => {
-  return (
-    <main className="Page-content" id="mainContent">
-      {children}
-    </main>
-  );
-};
-
-Page.Footer = ({}) => {
-  return (
-    <footer className="Page-footer">
-      <Link to="/">Home</Link>
-      <Link to="/demo">Demo</Link>
-      <Link to="/checklist">Checklist</Link>
-    </footer>
-  );
-};
-
-Page.displayName = 'app/Page';
-Page.Footer.displayName = 'app/Page.Footer';
-Page.Content.displayName = 'app/Page.Content';
+Page.displayName = 'components/Page';
+Page.Content.displayName = 'component/Page.Content';
+Page.Footer.displayName = 'component/Page.Footer';
+Page.Hero.displayName = 'component/Page.Hero';

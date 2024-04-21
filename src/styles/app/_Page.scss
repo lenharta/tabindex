@@ -1,7 +1,13 @@
 @use '../mixins/breakpoints' as breakpoints;
 
 @layer reset {
-  .Page {
+  .Page,
+  .Page-hero,
+  .Page-footer,
+  .Page-content,
+  .Page-hero-container,
+  .Page-footer-container,
+  .Page-content-container {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,35 +16,61 @@
 }
 
 .Page {
-  top: 0;
-  bottom: 0;
-  z-index: 1;
-  display: grid;
-  position: relative;
-  max-width: 100%;
+  width: 100%;
+  display: flex;
+  z-index: var(--index-page);
   min-height: 100vh;
-  overflow-y: auto;
-  overflow-x: hidden;
-  color: var(--c-text-1);
-  background-color: var(--c-bg-1);
-  margin-top: var(--header-height);
-
-  @include breakpoints.desktop-sm {
-    left: var(--breakpoint-mobile-sm);
-  }
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
 
   &-hero {
+    width: 100%;
+    height: var(--hero-height);
+    z-index: var(--index-page);
+    padding: var(--spacing-6);
     display: flex;
-    height: var(--breakpoint-mobile-sm);
     align-items: flex-start;
-    justify-content: flex-end;
     flex-direction: column;
-    padding-bottom: var(--spacing-8);
-    margin-inline: var(--spacing-4);
+    justify-content: flex-end;
+    background-color: var(--c-bg-2);
+    transition-property: var(--transition-color);
+    transition-duration: var(--easing-duration-7);
+    transition-timing-function: var(--easing-expressive);
+  }
+
+  @include breakpoints.desktop-sm {
+    margin-top: var(--header-height);
+  }
+
+  @include breakpoints.desktop-sm {
+    &-hero,
+    &-footer,
+    &-content {
+      margin-left: var(--menu-width);
+    }
   }
 
   &-footer {
-    padding-inline: var(--spacing-4);
-    padding-block: var(--spacing-8);
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: var(--spacing-12);
+
+    &-nav,
+    &-branding {
+      padding: var(--spacing-6);
+    }
+
+    &-branding-logo {
+      width: var(--spacing-12);
+      height: var(--spacing-12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 1000px;
+      background-color: var(--c-bg-2);
+    }
   }
 }

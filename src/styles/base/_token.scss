@@ -1,7 +1,14 @@
+@use '../mixins/breakpoints' as breakpoints;
+
 @layer tokens {
   :root {
     --scale: 1;
     --unit: calc(0.125rem * var(--scale));
+
+    --index-layout: 0;
+    --index-page: 1;
+    --index-menu: 99;
+    --index-header: 100;
 
     --easing-duration-0: 0s;
     --easing-duration-1: 75ms;
@@ -114,13 +121,16 @@
     --search-height-mobile: calc(var(--unit) * 16);
     --search-height-desktop: calc(var(--unit) * 20);
 
-    --header-height-mobile: calc(var(--unit) * 24);
+    --header-height-mobile: calc(var(--unit) * 32);
     --header-height-desktop: calc(var(--unit) * 32);
 
+    --menu-width: calc(var(--unit) * 160);
+
+    --hero-height: calc(var(--unit) * 160);
     --header-height: var(--header-height-mobile);
     --search-height: var(--search-height-mobile);
 
-    @media (min-width: 1024px) {
+    @include breakpoints.desktop-sm {
       --header-height: var(--header-height-desktop);
       --search-height: var(--search-height-desktop);
     }

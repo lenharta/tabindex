@@ -13,19 +13,23 @@
   display: none;
 
   @include breakpoints.desktop-sm {
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: var(--breakpoint-mobile-sm);
-    margin-top: var(--header-height);
-    background-color: var(--c-bg-2);
-    max-height: 100vh;
+    top: var(--header-height);
+    width: var(--menu-width);
+    z-index: var(--index-menu);
     position: fixed;
-    z-index: 99;
+    bottom: 0;
+    left: 0;
+
     display: flex;
     align-items: flex-start;
-    justify-content: flex-start;
     flex-direction: column;
-    padding-block: var(--spacing-12);
+    justify-content: flex-start;
+    padding-block: var(--spacing-8);
+
+    color: var(--c-text-3);
+    background-color: var(--c-bg-3);
+    transition-property: var(--transition-color);
+    transition-duration: var(--easing-duration-7);
+    transition-timing-function: var(--easing-productive);
   }
 }

@@ -23,21 +23,20 @@ body,
   display: block;
   font-size: inherit;
   box-sizing: border-box;
-  position: relative;
-  isolation: isolate;
   overflow-y: auto;
   overflow-x: hidden;
   margin-left: auto;
   margin-right: auto;
-  flex-direction: column;
-  font-size: var(--root-font-size);
+
+  -webkit-font-smoothing: var(--root-webkit-font-smoothing);
+  -moz-osx-font-smoothing: var(--root-moz-font-smoothing);
+
+  text-rendering: optimizeLegibility;
+  letter-spacing: var(--root-letter-spacing);
   font-weight: var(--root-font-weight);
   font-family: var(--root-font-family);
   line-height: var(--root-font-height);
-  letter-spacing: var(--root-letter-spacing);
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: var(--root-webkit-font-smoothing);
-  -moz-osx-font-smoothing: var(--root-moz-font-smoothing);
+  font-size: var(--root-font-size);
 
   @media screen and (max-device-width: 500px) {
     -webkit-text-size-adjust: 100%;
@@ -186,7 +185,6 @@ select {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  background-color: var(--c-bg-2);
   margin-bottom: var(--spacing-4);
 
   .inner {

@@ -12,29 +12,32 @@
 
 .Search {
   width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
-
-  @include breakpoints.tablet-sm {
-    width: 50%;
-  }
-  @include breakpoints.desktop-sm {
-    width: 30%;
-  }
+  justify-content: flex-end;
+  padding-inline: var(--spacing-6);
+  transition-property: var(--transition-color);
+  transition-duration: var(--easing-duration-7);
+  transition-timing-function: var(--easing-expressive);
 
   &-input {
     @include interactions.focus;
     width: 100%;
-    display: flex;
-    color: var(--c-text-2);
-    height: var(--search-height);
-    padding-inline: var(--spacing-6);
-    background-color: var(--c-bg-4);
+    height: 60%;
+    color: var(--c-text-4);
     border-radius: 1000px;
+    padding-inline: var(--spacing-6);
+    background-color: var(--c-bg-3);
+    transition-property: var(--transition-color);
+    transition-duration: var(--easing-duration-7);
+    transition-timing-function: var(--easing-expressive);
 
-    &::placeholder {
-      color: var(--c-text-5);
+    @include breakpoints.tablet-sm {
+      width: 50%;
+    }
+    @include breakpoints.desktop-sm {
+      width: 30%;
     }
   }
 }
