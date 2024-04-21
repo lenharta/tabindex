@@ -1,9 +1,9 @@
-@use '../mixins/resets' as resets;
-@use '../mixins/interactions' as interactions;
-
 @layer reset {
   .Layout {
-    @include resets.static;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    vertical-align: baseline;
   }
 }
 

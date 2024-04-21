@@ -4,9 +4,10 @@ import { STORE } from '@/types';
 import { useStorage } from '@/store/local';
 
 export enum THEME_ATTRIBUTES {
-  dir = 'data-tbdx-prefers-writing-mode',
-  mode = 'data-tbdx-prefers-color-scheme',
-  accent = 'data-tbdx-prefers-color-accent',
+  dir = 'data-prefers-writing-mode',
+  mode = 'data-prefers-color-scheme',
+  accent = 'data-prefers-color-accent',
+  contrast = 'data-prefers-color-contrast',
 }
 
 export const ThemeStateCTX = React.createContext({} as STORE.ThemeState);
@@ -15,12 +16,16 @@ export const ThemeDispatchCTX = React.createContext({} as STORE.ThemeDispatch);
 export const ThemeStateProvider = ThemeStateCTX.Provider;
 export const ThemeDispatchProvider = ThemeDispatchCTX.Provider;
 
+export const useThemeStore = () => React.useContext(ThemeStateCTX);
+export const useThemeDispatch = () => React.useContext(ThemeDispatchCTX);
+
 export const ThemeStore = ({ children }: { children?: React.ReactNode }) => {
-  const state: STORE.ThemeState = { accent: 'blue', mode: 'dark', dir: 'ltr' };
+  const state: STORE.ThemeState = { accent: 'blue', mode: 'dark', dir: 'ltr', contrast: 'unset' };
   const storage = useStorage<STORE.ThemeState>({ key: 'local' });
 
   const initializer = (current: STORE.ThemeState) => {
-    if (!storage.fetch()) storage.write(current);
+    if (!storage.read() && current) storage.write(current);
+    if (storage.read()) return storage.fetch()!;
     return current;
   };
 
@@ -31,7 +36,7 @@ export const ThemeStore = ({ children }: { children?: React.ReactNode }) => {
     };
   };
 
-  const [theme, dispatch] = React.useReducer(reducer, state, initializer);
+  const [theme, setTheme] = React.useReducer(reducer, state, initializer);
 
   React.useEffect(() => {
     const root = document.getElementById('root')!;
@@ -40,6 +45,11 @@ export const ThemeStore = ({ children }: { children?: React.ReactNode }) => {
       root.setAttribute(THEME_ATTRIBUTES[key], theme[key]);
     });
   }, [theme]);
+
+  const dispatch = (value: Partial<STORE.ThemeState>) => {
+    storage.write({ ...theme, ...value });
+    setTheme(value);
+  };
 
   return (
     <ThemeDispatchProvider value={dispatch}>

@@ -1,35 +1,40 @@
-@use '../mixins/resets' as resets;
-@use '../mixins/themes' as themes;
 @use '../mixins/attributes' as attributes;
 @use '../mixins/interactions' as interactions;
 
 @layer reset {
   .Button {
-    @include resets.static;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    vertical-align: baseline;
+  }
+}
+
+@layer tokens {
+  :root {
+    --button-height-xs: var(--spacing-8);
+    --button-height-sm: var(--spacing-9);
+    --button-height-md: var(--spacing-10);
+    --button-height-lg: var(--spacing-11);
+    --button-height-xl: var(--spacing-12);
+
+    --button-padding-x-xs: var(--spacing-5);
+    --button-padding-x-sm: var(--spacing-6);
+    --button-padding-x-md: var(--spacing-7);
+    --button-padding-x-lg: var(--spacing-8);
+    --button-padding-x-xl: var(--spacing-9);
+
+    --button-label-size-xs: var(--fz-1);
+    --button-label-size-sm: var(--fz-2);
+    --button-label-size-md: var(--fz-3);
+    --button-label-size-lg: var(--fz-4);
+    --button-label-size-xl: var(--fz-5);
   }
 }
 
 .Button {
-  @include interactions.focus;
   @include interactions.cursor;
-
-  --button-height-xs: calc(var(--unit) * 16);
-  --button-height-sm: calc(var(--unit) * 20);
-  --button-height-md: calc(var(--unit) * 24);
-  --button-height-lg: calc(var(--unit) * 28);
-  --button-height-xl: calc(var(--unit) * 32);
-
-  --button-padding-x-xs: calc(var(--unit) * 4);
-  --button-padding-x-sm: calc(var(--unit) * 8);
-  --button-padding-x-md: calc(var(--unit) * 12);
-  --button-padding-x-lg: calc(var(--unit) * 16);
-  --button-padding-x-xl: calc(var(--unit) * 20);
-
-  --button-label-size-xs: calc(var(--unit) * 5);
-  --button-label-size-sm: calc(var(--unit) * 6);
-  --button-label-size-md: calc(var(--unit) * 7);
-  --button-label-size-lg: calc(var(--unit) * 8);
-  --button-label-size-xl: calc(var(--unit) * 9);
+  @include interactions.focus;
 
   cursor: default;
   width: max-content;
@@ -43,43 +48,74 @@
   padding-inline: var(--button-padding-x, var(--button-padding-x-sm));
   line-height: 1;
 
-  @include attributes.prop('size', 'xs') {
+  &:where([data-block]) {
+    display: block;
+    width: 100%;
+  }
+
+  &[data-size='xs'] {
     --button-height: var(--button-height-xs);
     --button-padding-x: var(--button-padding-x-xs);
     --button-label-size: var(--button-label-size-xs);
   }
 
-  @include attributes.prop('size', 'sm') {
+  &[data-size='sm'] {
     --button-height: var(--button-height-sm);
     --button-padding-x: var(--button-padding-x-sm);
     --button-label-size: var(--button-label-size-sm);
   }
 
-  @include attributes.prop('size', 'md') {
+  &[data-size='md'] {
     --button-height: var(--button-height-md);
     --button-padding-x: var(--button-padding-x-md);
     --button-label-size: var(--button-label-size-md);
   }
 
-  @include attributes.prop('size', 'lg') {
+  &[data-size='lg'] {
     --button-height: var(--button-height-lg);
     --button-padding-x: var(--button-padding-x-lg);
     --button-label-size: var(--button-label-size-lg);
   }
 
-  @include attributes.prop('size', 'xl') {
+  &[data-size='xl'] {
     --button-height: var(--button-height-xl);
     --button-padding-x: var(--button-padding-x-xl);
     --button-label-size: var(--button-label-size-xl);
   }
 
-  @include attributes.prop('theme', 'default') {
-    @include themes.default-button;
+  &[data-theme='default'] {
+    color: var(--c-btn-tt);
+
+    &:not([data-disabled]),
+    &:not([aria-disabled]) {
+      background-color: var(--c-btn-bb);
+    }
+    &:not([data-disabled]):hover,
+    &:not([aria-disabled]):hover {
+      background-color: var(--c-btn-hh);
+    }
+    &:not([data-disabled]):active,
+    &:not([aria-disabled]):active {
+      background-color: var(--c-btn-aa);
+    }
+    &[data-disabled],
+    &[aria-disabled] {
+      background-color: var(--c-btn-dd);
+    }
   }
 }
 
 .ButtonGroup {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+
+  @include attributes.orientation-v {
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+  @include attributes.orientation-h {
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
 }

@@ -1,4 +1,114 @@
-:root {
-  --scale: 1;
-  --unit: calc(0.125rem * var(--scale));
+@layer tokens {
+  :root {
+    --scale: 1;
+    --unit: calc(0.125rem * var(--scale));
+
+    --easing-duration-0: 0s;
+    --easing-duration-1: 75ms;
+    --easing-duration-2: 100ms;
+    --easing-duration-3: 150ms;
+    --easing-duration-4: 200ms;
+    --easing-duration-5: 300ms;
+    --easing-duration-6: 500ms;
+    --easing-duration-7: 700ms;
+    --easing-duration-8: 1000ms;
+
+    --easing-linear: linear;
+
+    --easing-productive: cubic-bezier(0.2, 0, 0.38, 0.9);
+    --easing-productive-exit: cubic-bezier(0.2, 0, 1, 0.9);
+    --easing-productive-entrance: cubic-bezier(0, 0, 0.38, 0.9);
+
+    --easing-expressive: cubic-bezier(0.4, 0.14, 0.3, 1);
+    --easing-expressive-exit: cubic-bezier(0.4, 0.14, 1, 1);
+    --easing-expressive-entrance: cubic-bezier(0, 0, 0.3, 1);
+
+    --transition-all: all;
+    --transition-none: none;
+    --transition-color: color, background-color, border-color, text-decoration-color, fill, stroke;
+    --transition-shadow: box-shadow;
+    --transition-opacity: opacity;
+    --transition-transform: transform;
+
+    --shadow-1: 0 1px 4px 0 rgba(var(--c-shadow), 0.1);
+    --shadow-2: 0 4px 8px 0 rgba(var(--c-shadow), 0.1);
+    --shadow-3: 0 8px 16px 0 rgba(var(--c-shadow), 0.1);
+    --shadow-4: 0 12px 24px 0 rgba(var(--c-shadow), 0.1);
+    --shadow-5: 0 16px 32px 0 rgba(var(--c-shadow), 0.1);
+
+    --ls-1: -0.03em;
+    --ls-2: -0.02em;
+    --ls-3: -0.01em;
+    --ls-4: 0.025em;
+    --ls-5: 0.1em;
+    --ls-6: 0.15em;
+
+    --lh-1: 1;
+    --lh-2: 1.15;
+    --lh-3: 1.35;
+    --lh-4: 1.5;
+    --lh-5: 1.62;
+    --lh-6: 1.75;
+
+    --ff-plex: 'ibm-plex-sans';
+    --ff-plex-c: 'ibm-plex-sans-condensed';
+
+    --fw-thn: 100;
+    --fw-xlt: 200;
+    --fw-lgt: 300;
+    --fw-reg: 400;
+    --fw-med: 500;
+    --fw-sbd: 600;
+    --fw-bld: 700;
+
+    --fz-m: calc(10px * var(--scale));
+    --fz-1: calc(12px * var(--scale));
+    --fz-2: calc(13px * var(--scale));
+    --fz-3: calc(14px * var(--scale));
+    --fz-4: calc(15px * var(--scale));
+    --fz-5: calc(16px * var(--scale));
+    --fz-6: calc(17px * var(--scale));
+    --fz-7: calc(18px * var(--scale));
+    --fz-8: calc(20px * var(--scale));
+    --fz-9: calc(22px * var(--scale));
+    --fz-10: calc(24px * var(--scale));
+    --fz-11: calc(28px * var(--scale));
+    --fz-12: calc(32px * var(--scale));
+    --fz-13: calc(36px * var(--scale));
+    --fz-14: calc(40px * var(--scale));
+    --fz-15: calc(48px * var(--scale));
+    --fz-16: calc(56px * var(--scale));
+    --fz-17: calc(64px * var(--scale));
+    --fz-18: calc(80px * var(--scale));
+    --fz-19: calc(120px * var(--scale));
+    --fz-20: calc(140px * var(--scale));
+
+    --spacing-1: calc(var(--unit) * 1);
+    --spacing-2: calc(var(--unit) * 2);
+    --spacing-3: calc(var(--unit) * 4);
+    --spacing-4: calc(var(--unit) * 6);
+    --spacing-5: calc(var(--unit) * 8);
+    --spacing-6: calc(var(--unit) * 10);
+    --spacing-7: calc(var(--unit) * 12);
+    --spacing-8: calc(var(--unit) * 16);
+    --spacing-9: calc(var(--unit) * 20);
+    --spacing-10: calc(var(--unit) * 24);
+    --spacing-11: calc(var(--unit) * 28);
+    --spacing-12: calc(var(--unit) * 32);
+    --spacing-13: calc(var(--unit) * 36);
+    --spacing-14: calc(var(--unit) * 40);
+    --spacing-15: calc(var(--unit) * 60);
+
+    --spacing-card-sm: calc(var(--unit) * 80);
+    --spacing-card-md: calc(var(--unit) * 100);
+    --spacing-card-lg: calc(var(--unit) * 240);
+
+    --breakpoint-mobile-sm: calc(var(--unit) * 160);
+    --breakpoint-mobile-lg: calc(var(--unit) * 240);
+    --breakpoint-tablet-sm: calc(var(--unit) * 320);
+    --breakpoint-tablet-lg: calc(var(--unit) * 440);
+    --breakpoint-desktop-sm: calc(var(--unit) * 512);
+    --breakpoint-desktop-lg: calc(var(--unit) * 600);
+    --breakpoint-widescreen: calc(var(--unit) * 700);
+  }
 }

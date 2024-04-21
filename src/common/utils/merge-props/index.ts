@@ -5,5 +5,9 @@ export function mergeProps<T extends Record<string, any>>(
   defaultProps: Partial<T>,
   contextProps?: any
 ): Required<T> {
-  return { ...defaultProps, ...contextProps, ...filterProps(props) };
+  return {
+    ...defaultProps,
+    ...filterProps(props),
+    ...(contextProps ? filterProps(contextProps) : {}),
+  } as Required<T>;
 }

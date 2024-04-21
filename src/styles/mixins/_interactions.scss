@@ -1,39 +1,80 @@
-@use './states' as states;
+@mixin where-motion-reduced {
+  [prefers-reduced-motion='reduce'] & {
+    animation-duration: 1ms !important;
+    transition-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
 
 @mixin cursor {
   cursor: default;
 
-  @include states.enabled-hover() {
+  &:not([aria-disabled]),
+  &:not([aria-disabled]):hover,
+  &:not([aria-disabled]):active {
     cursor: pointer;
   }
-  @include states.enabled-active() {
+
+  &:not([data-disabled]),
+  &:not([data-disabled]):hover,
+  &:not([data-disabled]):active {
     cursor: pointer;
   }
-  @include states.disabled() {
+
+  &[aria-disabled],
+  &[aria-disabled]:hover,
+  &[aria-disabled]:active {
+    cursor: not-allowed;
+  }
+
+  &[data-disabled],
+  &[data-disabled]:hover,
+  &[data-disabled]:active {
     cursor: not-allowed;
   }
 }
 
 @mixin focus {
-  border: solid var(--unit) transparent;
+  @include where-motion-reduced;
   outline: solid var(--unit) transparent;
+  border: solid var(--unit) transparent;
 
   &:not([aria-disabled]):focus:not(:focus-visible),
-  &:not([data-tbdx-disabled]):focus:not(:focus-visible) {
+  &:not([data-disabled]):focus:not(:focus-visible) {
     outline-color: transparent;
   }
   &:not([aria-disabled]):focus:focus-visible,
-  &:not([data-tbdx-disabled]):focus:focus-visible {
+  &:not([data-disabled]):focus:focus-visible {
     outline-color: var(--c-focus);
   }
 
-  &[aria-disabled][data-tbdx-allow-disabled-focus],
-  &[data-tbdx-disabled][data-tbdx-allow-disabled-focus] {
-    &:focus:not(:focus-visible) {
-      outline-color: transparent;
-    }
-    &:focus:focus-visible {
-      outline-color: var(--c-focus);
+  &[aria-disabled]:focus:not(:focus-visible),
+  &[data-disabled]:focus:not(:focus-visible) {
+    outline-color: transparent;
+  }
+
+  &[aria-disabled]:focus:focus-visible,
+  &[data-disabled]:focus:focus-visible {
+    outline-color: transparent;
+  }
+
+  &[aria-disabled][data-allow-disabled-focus]:focus:not(:focus-visible),
+  &[data-disabled][data-allow-disabled-focus]:focus:not(:focus-visible) {
+    outline-color: transparent;
+  }
+
+  &[aria-disabled][data-allow-disabled-focus]:focus:focus-visible,
+  &[data-disabled][data-allow-disabled-focus]:focus:focus-visible {
+    outline-color: var(--c-focus);
+  }
+}
+
+@mixin motion-reduced($clxss) {
+  @media print, (prefers-reduced-motion: reduce) {
+    .#{$clxss} {
+      animation-duration: 1ms !important;
+      transition-duration: 1ms !important;
+      animation-iteration-count: 1 !important;
     }
   }
 }

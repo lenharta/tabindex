@@ -1,12 +1,71 @@
-@use '../mixins/resets' as resets;
+@use '../mixins/attributes' as attributes;
 @use '../mixins/interactions' as interactions;
 
 @layer reset {
   .Text {
-    @include resets.static;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    vertical-align: baseline;
   }
 }
 
 .Text {
   display: block;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+
+  &:where([data-variant='gradient']) {
+    background-image: var(--text-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &:where([data-truncate]) {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &:where([data-truncate='start']) {
+    direction: rtl;
+    text-align: right;
+
+    @include attributes.where-rtl {
+      direction: ltr;
+      text-align: left;
+    }
+  }
+
+  &:where([data-line-clamp]) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--text-line-clamp);
+  }
+
+  &:where([data-inherit]) {
+    line-height: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+  }
+
+  &:where([data-inline]) {
+    line-height: 1;
+  }
+
+  &:where([data-emphasis='high']) {
+    color: var(--c-text-1);
+  }
+  &:where([data-emphasis='med']) {
+    color: var(--c-text-3);
+  }
+  &:where([data-emphasis='low']) {
+    color: var(--c-text-5);
+  }
+  &:where([data-accent]) {
+    color: var(--c-text-accent);
+  }
 }

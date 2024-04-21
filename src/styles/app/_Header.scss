@@ -1,0 +1,16 @@
+@layer reset {
+  .Header {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    vertical-align: baseline;
+  }
+}
+
+.Header {
+  display: block;
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+}

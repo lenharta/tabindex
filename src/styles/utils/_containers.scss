@@ -1,0 +1,16 @@
+.sec {
+  display: block;
+}
+
+.sec-col-2 {
+  display: grid;
+  grid-template: auto / repeat(2, 1fr);
+}
+
+.box {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}

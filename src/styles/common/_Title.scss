@@ -1,12 +1,24 @@
-@use '../mixins/resets' as resets;
+@use '../mixins/attributes' as attributes;
 @use '../mixins/interactions' as interactions;
 
 @layer reset {
   .Title {
-    @include resets.static;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    vertical-align: baseline;
   }
 }
 
 .Title {
   display: block;
+  text-wrap: var(--title-text-wrap, inherit);
+
+  &:where([data-line-clamp]) {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--title-line-clamp, inherit);
+  }
 }

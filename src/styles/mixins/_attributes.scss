@@ -1,17 +1,19 @@
-@mixin prop($name, $key) {
-  &[data-tbdx-#{$name}='#{$key}'] {
+@mixin where-rtl {
+  &:where([data-prefers-writing-mode='rtl']) & {
     @content;
   }
 }
 
-@mixin vertical {
-  &[data-tbdx-orientation='vertical'] {
+@mixin orientation-v {
+  &[data-orientation='vertical'],
+  &[aria-orientation='vertical'] {
     @content;
   }
 }
 
-@mixin horizontal {
-  &[data-tbdx-orientation='horizontal'] {
+@mixin orientation-h {
+  &[data-orientation='horizontal'],
+  &[aria-orientation='horizontal'] {
     @content;
   }
 }
