@@ -21,44 +21,13 @@ export function Home() {
   return (
     <Page>
       <Page.Hero>
-        <Title h1 fz={16}>
+        <Title h1>
           Tab<span style={{ color: 'var(--rgb-mode-dark-indigo)' }}>index</span>
         </Title>
       </Page.Hero>
       <Page.Content>
-        <section className="sec sec-col">
-          <Text>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus modi accusamus vel
-            nemo! Possimus modi provident magni, voluptas ea fuga sunt laboriosam praesentium qui,
-            voluptatibus accusantium aut, rem nam repellendus!
-          </Text>
+        <section className="sec">
           <ModeControls />
-        </section>
-        <section className="sec sec-col">
-          <Text>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus modi accusamus vel
-            nemo! Possimus modi provident magni, voluptas ea fuga sunt laboriosam praesentium qui,
-            voluptatibus accusantium aut, rem nam repellendus!
-          </Text>
-          <Button>Button</Button>
-        </section>
-        <section className="sec sec-col-2">
-          <div className="box">
-            <Text>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus modi accusamus vel
-              nemo! Possimus modi provident magni, voluptas ea fuga sunt laboriosam praesentium qui,
-              voluptatibus accusantium aut, rem nam repellendus!
-            </Text>
-            <Button>Button</Button>
-          </div>
-          <div className="box">
-            <Text>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus modi accusamus vel
-              nemo! Possimus modi provident magni, voluptas ea fuga sunt laboriosam praesentium qui,
-              voluptatibus accusantium aut, rem nam repellendus!
-            </Text>
-            <Button>Button</Button>
-          </div>
         </section>
       </Page.Content>
     </Page>

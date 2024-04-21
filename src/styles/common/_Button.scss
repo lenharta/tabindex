@@ -46,6 +46,9 @@
   height: var(--button-height, var(--button-height-sm));
   font-size: var(--button-label-size, var(--button-label-size-xs));
   padding-inline: var(--button-padding-x, var(--button-padding-x-sm));
+  transition-timing-function: var(--easing-productive);
+  transition-duration: var(--easing-duration-3);
+  transition-property: var(--transition-color);
   line-height: 1;
 
   &:where([data-block]) {

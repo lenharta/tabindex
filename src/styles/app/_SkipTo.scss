@@ -9,4 +9,12 @@
 
 .SkipTo {
   display: block;
+  position: absolute;
+  visibility: hidden;
+
+  color: var(--c-text-1);
+  background-color: var(--c-bg-1);
+  transition-property: var(--transition-color);
+  transition-duration: var(--easing-duration-2);
+  transition-timing-function: var(--easing-productive);
 }

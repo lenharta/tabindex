@@ -1,14 +1,23 @@
 import { Page } from '@/app/components';
 import { Button, Text, Title } from '@/common';
 import { ButtonGroup } from '@/common/Button/Group';
+import { Link } from '@/common/Link';
+
+export const DemoLinkGroup = () => {
+  return (
+    <div style={{ display: 'grid' }}>
+      <Link.Group>
+        <Link></Link>
+      </Link.Group>
+    </div>
+  );
+};
 
 export function Demo() {
   return (
     <Page>
       <Page.Hero>
-        <Title h1 fz={16} ff="plex" fw="lgt">
-          Demo
-        </Title>
+        <Title h1>Demo</Title>
       </Page.Hero>
       <Page.Content>
         <Text>Buttons</Text>

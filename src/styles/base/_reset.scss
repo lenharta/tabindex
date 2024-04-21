@@ -23,21 +23,20 @@ body,
   display: block;
   font-size: inherit;
   box-sizing: border-box;
-  position: relative;
-  isolation: isolate;
   overflow-y: auto;
   overflow-x: hidden;
   margin-left: auto;
   margin-right: auto;
-  flex-direction: column;
-  font-size: var(--root-font-size);
+
+  -webkit-font-smoothing: var(--root-webkit-font-smoothing);
+  -moz-osx-font-smoothing: var(--root-moz-font-smoothing);
+
+  text-rendering: optimizeLegibility;
+  letter-spacing: var(--root-letter-spacing);
   font-weight: var(--root-font-weight);
   font-family: var(--root-font-family);
   line-height: var(--root-font-height);
-  letter-spacing: var(--root-letter-spacing);
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: var(--root-webkit-font-smoothing);
-  -moz-osx-font-smoothing: var(--root-moz-font-smoothing);
+  font-size: var(--root-font-size);
 
   @media screen and (max-device-width: 500px) {
     -webkit-text-size-adjust: 100%;
@@ -154,5 +153,45 @@ select {
       transition: none;
       animation: none;
     }
+  }
+}
+
+.wf-menu-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 1000px;
+  margin-inline: var(--spacing-6);
+  margin-bottom: var(--spacing-8);
+  background-color: var(--c-bg-4);
+}
+
+.wf-menu-icon {
+  min-width: 32px;
+  min-height: 32px;
+  border-radius: 1000px;
+  background-color: var(--c-bg-4);
+}
+
+.wf-menu-label {
+  width: 100%;
+  height: 24px;
+  border-radius: 1000px;
+  background-color: var(--c-bg-4);
+}
+
+.wf-menu-link {
+  width: 100%;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: var(--spacing-4);
+
+  .inner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-4);
+    margin-inline: var(--spacing-6);
   }
 }

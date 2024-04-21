@@ -14,8 +14,6 @@ export interface TitleProps extends TBDX.TitleProps, TBDX.BaseProps<'h2'> {
 }
 
 const defaultProps: Partial<TitleProps> = {
-  fz: 8,
-  fw: 'reg',
   ff: 'plex',
   theme: 'default',
   variant: 'default',
