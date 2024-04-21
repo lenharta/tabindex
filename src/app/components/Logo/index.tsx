@@ -1,3 +1,5 @@
+import { Text } from '@/common';
+
 export interface LogoProps {}
 
 export type LogoComponent = React.FC<LogoProps>;
@@ -5,7 +7,9 @@ export type LogoComponent = React.FC<LogoProps>;
 export const Logo: LogoComponent = () => {
   return (
     <div className="Logo">
-      <span>Logo</span>
+      <Text>
+        Tab<span style={{ color: 'var(--rgb-mode-dark-indigo)' }}>index</span>
+      </Text>
     </div>
   );
 };

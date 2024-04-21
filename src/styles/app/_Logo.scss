@@ -8,5 +8,8 @@
 }
 
 .Logo {
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: var(--fz-8);
 }

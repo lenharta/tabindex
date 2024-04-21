@@ -195,6 +195,13 @@
   --c-step-7: calc(100% - calc(var(--c-step) * 7));
   --c-step-8: calc(100% - calc(var(--c-step) * 8));
   --c-step-9: calc(100% - calc(var(--c-step) * 9));
+  --c-step-10: calc(100% - calc(var(--c-step) * 10));
+  --c-step-11: calc(100% - calc(var(--c-step) * 11));
+  --c-step-12: calc(100% - calc(var(--c-step) * 12));
+  --c-step-13: calc(100% - calc(var(--c-step) * 13));
+  --c-step-14: calc(100% - calc(var(--c-step) * 14));
+  --c-step-15: calc(100% - calc(var(--c-step) * 15));
+  --c-step-16: calc(100% - calc(var(--c-step) * 16));
 
   --c-shadow: color-mix(in srgb, var(--c-tint) var(--c-step-1), var(--c-base));
 
@@ -205,10 +212,10 @@
   --c-bg-5: color-mix(in srgb, var(--c-base) var(--c-step-5), var(--c-tint));
 
   --c-text-1: color-mix(in srgb, var(--c-tint) var(--c-step-1), var(--c-base));
-  --c-text-2: color-mix(in srgb, var(--c-tint) var(--c-step-2), var(--c-base));
-  --c-text-3: color-mix(in srgb, var(--c-tint) var(--c-step-3), var(--c-base));
-  --c-text-4: color-mix(in srgb, var(--c-tint) var(--c-step-4), var(--c-base));
-  --c-text-5: color-mix(in srgb, var(--c-tint) var(--c-step-5), var(--c-base));
+  --c-text-2: color-mix(in srgb, var(--c-tint) var(--c-step-3), var(--c-base));
+  --c-text-3: color-mix(in srgb, var(--c-tint) var(--c-step-5), var(--c-base));
+  --c-text-4: color-mix(in srgb, var(--c-tint) var(--c-step-7), var(--c-base));
+  --c-text-5: color-mix(in srgb, var(--c-tint) var(--c-step-9), var(--c-base));
 
   --c-btn-tt: var(--c-text-1);
   --c-btn-bb: color-mix(in srgb, var(--c-base) var(--c-step-2), var(--c-tint));

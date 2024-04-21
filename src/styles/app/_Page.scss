@@ -1,3 +1,5 @@
+@use '../mixins/breakpoints' as breakpoints;
+
 @layer reset {
   .Page {
     margin: 0;
@@ -8,21 +10,35 @@
 }
 
 .Page {
-  display: block;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  display: grid;
   position: relative;
+  max-width: 100%;
+  min-height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
-  min-height: 100vh;
   color: var(--c-text-1);
   background-color: var(--c-bg-1);
+  margin-top: var(--header-height);
+
+  @include breakpoints.desktop-sm {
+    left: var(--breakpoint-mobile-sm);
+  }
 
   &-hero {
     display: flex;
+    height: var(--breakpoint-mobile-sm);
     align-items: flex-start;
     justify-content: flex-end;
     flex-direction: column;
-    height: var(--breakpoint-mobile-sm);
-    margin-inline: var(--spacing-4);
     padding-bottom: var(--spacing-8);
+    margin-inline: var(--spacing-4);
+  }
+
+  &-footer {
+    padding-inline: var(--spacing-4);
+    padding-block: var(--spacing-8);
   }
 }

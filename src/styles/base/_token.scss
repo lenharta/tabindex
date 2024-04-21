@@ -110,5 +110,19 @@
     --breakpoint-desktop-sm: calc(var(--unit) * 512);
     --breakpoint-desktop-lg: calc(var(--unit) * 600);
     --breakpoint-widescreen: calc(var(--unit) * 700);
+
+    --search-height-mobile: calc(var(--unit) * 16);
+    --search-height-desktop: calc(var(--unit) * 20);
+
+    --header-height-mobile: calc(var(--unit) * 24);
+    --header-height-desktop: calc(var(--unit) * 32);
+
+    --header-height: var(--header-height-mobile);
+    --search-height: var(--search-height-mobile);
+
+    @media (min-width: 1024px) {
+      --header-height: var(--header-height-desktop);
+      --search-height: var(--search-height-desktop);
+    }
   }
 }

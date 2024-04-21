@@ -1,3 +1,5 @@
+@use '../mixins/breakpoints' as breakpoints;
+
 @layer reset {
   .Menu {
     margin: 0;
@@ -8,5 +10,22 @@
 }
 
 .Menu {
-  display: block;
+  display: none;
+
+  @include breakpoints.desktop-sm {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: var(--breakpoint-mobile-sm);
+    margin-top: var(--header-height);
+    background-color: var(--c-bg-2);
+    max-height: 100vh;
+    position: fixed;
+    z-index: 99;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding-block: var(--spacing-12);
+  }
 }

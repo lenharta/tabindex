@@ -8,7 +8,9 @@
 }
 
 .Layout {
+  z-index: 0;
   display: block;
+  isolation: isolate;
   position: relative;
   min-height: 100vh;
   overflow-x: hidden;

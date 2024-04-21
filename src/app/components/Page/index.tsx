@@ -34,7 +34,7 @@ Page.Content = ({ children }) => {
 
 Page.Footer = ({}) => {
   return (
-    <footer>
+    <footer className="Page-footer">
       <Link to="/">Home</Link>
       <Link to="/demo">Demo</Link>
       <Link to="/checklist">Checklist</Link>

@@ -5,7 +5,7 @@ export type SearchComponent = React.FC<SearchProps>;
 export const Search: SearchComponent = () => {
   return (
     <div className="Search">
-      <span>Search</span>
+      <input className="Search-input" type="text" placeholder="Search" />
     </div>
   );
 };

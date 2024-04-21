@@ -1,3 +1,6 @@
+@use '../mixins/breakpoints' as breakpoints;
+@use '../mixins/interactions' as interactions;
+
 @layer reset {
   .Search {
     margin: 0;
@@ -8,5 +11,30 @@
 }
 
 .Search {
-  display: block;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include breakpoints.tablet-sm {
+    width: 50%;
+  }
+  @include breakpoints.desktop-sm {
+    width: 30%;
+  }
+
+  &-input {
+    @include interactions.focus;
+    width: 100%;
+    display: flex;
+    color: var(--c-text-2);
+    height: var(--search-height);
+    padding-inline: var(--spacing-6);
+    background-color: var(--c-bg-4);
+    border-radius: 1000px;
+
+    &::placeholder {
+      color: var(--c-text-5);
+    }
+  }
 }

@@ -11,7 +11,6 @@ import {
 export interface TextProps extends TBDX.TextProps, TBDX.BaseProps<'p'> {}
 
 const defaultProps: Partial<TextProps> = {
-  fz: 4,
   fw: 'reg',
   ff: 'plex',
   theme: 'default',
