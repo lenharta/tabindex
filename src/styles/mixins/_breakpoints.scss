@@ -1,23 +1,41 @@
-@mixin sm {
+@mixin mobile-sm {
   @media screen and (min-width: 40em) {
     @content;
   }
 }
 
-@mixin md {
-  @media screen and (min-width: 60em) {
+@mixin mobile-lg {
+  @media screen and (min-width: 40em) {
     @content;
   }
 }
 
-@mixin lg {
-  @media screen and (min-width: 80em) {
+@mixin tablet-sm {
+  @media screen and (min-width: 40em) {
     @content;
   }
 }
 
-@mixin xl {
-  @media screen and (min-width: 100em) {
+@mixin tablet-lg {
+  @media screen and (min-width: 40em) {
+    @content;
+  }
+}
+
+@mixin desktop-sm {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin desktop-lg {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin widescreen {
+  @media screen and (min-width: 1400px) {
     @content;
   }
 }

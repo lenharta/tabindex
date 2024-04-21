@@ -167,50 +167,272 @@
   --rgb-mode-light-base-a11y: rgb(255, 255, 255);
   --rgba-mode-light-base-a11y: 255, 255, 255;
 
-  --c-focus: #60a5fa;
+  --c-focus: #0073ff;
 }
 
-[data-tbdx-prefers-color-scheme='dark'] {
-  --c-s: 3%;
-  --c-b: var(--rgb-mode-dark-base);
-  --c-m: var(--rgb-mode-light-base);
-  --c-b-a: rgba(var(--rgba-mode-dark-base));
-  --c-m-a: rgba(var(--rgba-mode-light-base));
+[data-prefers-color-scheme='dark'] {
+  --c-step: 3%;
+  --c-base: var(--rgb-mode-dark-base);
+  --c-tint: var(--rgb-mode-light-base);
+  --c-shadow: transparent;
 }
 
-[data-tbdx-prefers-color-scheme='light'] {
-  --c-s: 6%;
-  --c-b: var(--rgb-mode-light-base);
-  --c-m: var(--rgb-mode-dark-base);
-  --c-b-a: rgba(var(--rgba-mode-light-base), 0.1);
-  --c-m-a: rgba(var(--rgba-mode-dark-base), 0.1);
+[data-prefers-color-scheme='light'] {
+  --c-step: 6%;
+  --c-base: var(--rgb-mode-light-base);
+  --c-tint: var(--rgb-mode-dark-base);
+  --c-shadow: var(--rgba-mode-dark-base);
 }
 
-[data-tbdx-prefers-color-scheme='dark'],
-[data-tbdx-prefers-color-scheme='light'] {
-  --c-s-1: calc(100% - calc(var(--c-s) * 1));
-  --c-s-2: calc(100% - calc(var(--c-s) * 2));
-  --c-s-3: calc(100% - calc(var(--c-s) * 3));
-  --c-s-4: calc(100% - calc(var(--c-s) * 4));
-  --c-s-5: calc(100% - calc(var(--c-s) * 5));
-  --c-s-6: calc(100% - calc(var(--c-s) * 6));
-  --c-s-7: calc(100% - calc(var(--c-s) * 7));
-  --c-s-8: calc(100% - calc(var(--c-s) * 8));
+[data-prefers-color-scheme='dark'],
+[data-prefers-color-scheme='light'] {
+  --c-step-1: calc(100% - calc(var(--c-step) * 1));
+  --c-step-2: calc(100% - calc(var(--c-step) * 2));
+  --c-step-3: calc(100% - calc(var(--c-step) * 3));
+  --c-step-4: calc(100% - calc(var(--c-step) * 4));
+  --c-step-5: calc(100% - calc(var(--c-step) * 5));
+  --c-step-6: calc(100% - calc(var(--c-step) * 6));
+  --c-step-7: calc(100% - calc(var(--c-step) * 7));
+  --c-step-8: calc(100% - calc(var(--c-step) * 8));
+  --c-step-9: calc(100% - calc(var(--c-step) * 9));
 
-  --c-bg-1: color-mix(in srgb, var(--c-b) var(--c-s-1), var(--c-m));
-  --c-bg-2: color-mix(in srgb, var(--c-b) var(--c-s-2), var(--c-m));
-  --c-bg-3: color-mix(in srgb, var(--c-b) var(--c-s-3), var(--c-m));
-  --c-bg-4: color-mix(in srgb, var(--c-b) var(--c-s-4), var(--c-m));
-  --c-bg-5: color-mix(in srgb, var(--c-b) var(--c-s-5), var(--c-m));
+  --c-shadow: color-mix(in srgb, var(--c-tint) var(--c-step-1), var(--c-base));
 
-  --c-text-1: color-mix(in srgb, var(--c-m) var(--c-s-1), var(--c-b));
-  --c-text-2: color-mix(in srgb, var(--c-m) var(--c-s-2), var(--c-b));
-  --c-text-3: color-mix(in srgb, var(--c-m) var(--c-s-3), var(--c-b));
-  --c-text-4: color-mix(in srgb, var(--c-m) var(--c-s-4), var(--c-b));
-  --c-text-5: color-mix(in srgb, var(--c-m) var(--c-s-5), var(--c-b));
+  --c-bg-1: color-mix(in srgb, var(--c-base) var(--c-step-1), var(--c-tint));
+  --c-bg-2: color-mix(in srgb, var(--c-base) var(--c-step-2), var(--c-tint));
+  --c-bg-3: color-mix(in srgb, var(--c-base) var(--c-step-3), var(--c-tint));
+  --c-bg-4: color-mix(in srgb, var(--c-base) var(--c-step-4), var(--c-tint));
+  --c-bg-5: color-mix(in srgb, var(--c-base) var(--c-step-5), var(--c-tint));
 
-  --c-button-default-bb: color-mix(in srgb, var(--c-b) var(--c-s-2), var(--c-m));
-  --c-button-default-hh: color-mix(in srgb, var(--c-b) var(--c-s-3), var(--c-m));
-  --c-button-default-aa: color-mix(in srgb, var(--c-b) var(--c-s-4), var(--c-m));
-  --c-button-default-ss: color-mix(in srgb, var(--c-b) var(--c-s-5), var(--c-m));
+  --c-text-1: color-mix(in srgb, var(--c-tint) var(--c-step-1), var(--c-base));
+  --c-text-2: color-mix(in srgb, var(--c-tint) var(--c-step-2), var(--c-base));
+  --c-text-3: color-mix(in srgb, var(--c-tint) var(--c-step-3), var(--c-base));
+  --c-text-4: color-mix(in srgb, var(--c-tint) var(--c-step-4), var(--c-base));
+  --c-text-5: color-mix(in srgb, var(--c-tint) var(--c-step-5), var(--c-base));
+
+  --c-btn-tt: var(--c-text-1);
+  --c-btn-bb: color-mix(in srgb, var(--c-base) var(--c-step-2), var(--c-tint));
+  --c-btn-hh: color-mix(in srgb, var(--c-base) var(--c-step-3), var(--c-tint));
+  --c-btn-aa: color-mix(in srgb, var(--c-base) var(--c-step-4), var(--c-tint));
+  --c-btn-ss: color-mix(in srgb, var(--c-base) var(--c-step-5), var(--c-tint));
+  --c-btn-dd: color-mix(in srgb, var(--c-base) var(--c-step-8), var(--c-tint));
+}
+
+[data-prefers-color-scheme='light'] {
+  &[data-prefers-color-accent='red'] {
+    --rgb-accent: var(--rgb-mode-light-red);
+    --rgba-accent: var(--rgba-mode-light-red);
+  }
+  &[data-prefers-color-accent='orange'] {
+    --rgb-accent: var(--rgb-mode-light-orange);
+    --rgba-accent: var(--rgba-mode-light-orange);
+  }
+  &[data-prefers-color-accent='yellow'] {
+    --rgb-accent: var(--rgb-mode-light-yellow);
+    --rgba-accent: var(--rgba-mode-light-yellow);
+  }
+  &[data-prefers-color-accent='green'] {
+    --rgb-accent: var(--rgb-mode-light-green);
+    --rgba-accent: var(--rgba-mode-light-green);
+  }
+  &[data-prefers-color-accent='mint'] {
+    --rgb-accent: var(--rgb-mode-light-mint);
+    --rgba-accent: var(--rgba-mode-light-mint);
+  }
+  &[data-prefers-color-accent='teal'] {
+    --rgb-accent: var(--rgb-mode-light-teal);
+    --rgba-accent: var(--rgba-mode-light-teal);
+  }
+  &[data-prefers-color-accent='cyan'] {
+    --rgb-accent: var(--rgb-mode-light-cyan);
+    --rgba-accent: var(--rgba-mode-light-cyan);
+  }
+  &[data-prefers-color-accent='blue'] {
+    --rgb-accent: var(--rgb-mode-light-blue);
+    --rgba-accent: var(--rgba-mode-light-blue);
+  }
+  &[data-prefers-color-accent='indigo'] {
+    --rgb-accent: var(--rgb-mode-light-indigo);
+    --rgba-accent: var(--rgba-mode-light-indigo);
+  }
+  &[data-prefers-color-accent='purple'] {
+    --rgb-accent: var(--rgb-mode-light-purple);
+    --rgba-accent: var(--rgba-mode-light-purple);
+  }
+  &[data-prefers-color-accent='pink'] {
+    --rgb-accent: var(--rgb-mode-light-pink);
+    --rgba-accent: var(--rgba-mode-light-pink);
+  }
+  &[data-prefers-color-accent='brown'] {
+    --rgb-accent: var(--rgb-mode-light-brown);
+    --rgba-accent: var(--rgba-mode-light-brown);
+  }
+  &[data-prefers-color-accent='gray'] {
+    --rgb-accent: var(--rgb-mode-light-gray);
+    --rgba-accent: var(--rgba-mode-light-gray);
+  }
+
+  &[data-prefers-color-contrast='optimized'] {
+    &[data-prefers-color-accent='red'] {
+      --rgb-accent: var(--rgb-mode-light-red-a11y);
+      --rgba-accent: var(--rgba-mode-light-red-a11y);
+    }
+    &[data-prefers-color-accent='orange'] {
+      --rgb-accent: var(--rgb-mode-light-orange-a11y);
+      --rgba-accent: var(--rgba-mode-light-orange-a11y);
+    }
+    &[data-prefers-color-accent='yellow'] {
+      --rgb-accent: var(--rgb-mode-light-yellow-a11y);
+      --rgba-accent: var(--rgba-mode-light-yellow-a11y);
+    }
+    &[data-prefers-color-accent='green'] {
+      --rgb-accent: var(--rgb-mode-light-green-a11y);
+      --rgba-accent: var(--rgba-mode-light-green-a11y);
+    }
+    &[data-prefers-color-accent='mint'] {
+      --rgb-accent: var(--rgb-mode-light-mint-a11y);
+      --rgba-accent: var(--rgba-mode-light-mint-a11y);
+    }
+    &[data-prefers-color-accent='teal'] {
+      --rgb-accent: var(--rgb-mode-light-teal-a11y);
+      --rgba-accent: var(--rgba-mode-light-teal-a11y);
+    }
+    &[data-prefers-color-accent='cyan'] {
+      --rgb-accent: var(--rgb-mode-light-cyan-a11y);
+      --rgba-accent: var(--rgba-mode-light-cyan-a11y);
+    }
+    &[data-prefers-color-accent='blue'] {
+      --rgb-accent: var(--rgb-mode-light-blue-a11y);
+      --rgba-accent: var(--rgba-mode-light-blue-a11y);
+    }
+    &[data-prefers-color-accent='indigo'] {
+      --rgb-accent: var(--rgb-mode-light-indigo-a11y);
+      --rgba-accent: var(--rgba-mode-light-indigo-a11y);
+    }
+    &[data-prefers-color-accent='purple'] {
+      --rgb-accent: var(--rgb-mode-light-purple-a11y);
+      --rgba-accent: var(--rgba-mode-light-purple-a11y);
+    }
+    &[data-prefers-color-accent='pink'] {
+      --rgb-accent: var(--rgb-mode-light-pink-a11y);
+      --rgba-accent: var(--rgba-mode-light-pink-a11y);
+    }
+    &[data-prefers-color-accent='brown'] {
+      --rgb-accent: var(--rgb-mode-light-brown-a11y);
+      --rgba-accent: var(--rgba-mode-light-brown-a11y);
+    }
+    &[data-prefers-color-accent='gray'] {
+      --rgb-accent: var(--rgb-mode-light-gray-a11y);
+      --rgba-accent: var(--rgba-mode-light-gray-a11y);
+    }
+  }
+}
+[data-prefers-color-scheme='dark'] {
+  &[data-prefers-color-accent='red'] {
+    --rgb-accent: var(--rgb-mode-dark-red);
+    --rgba-accent: var(--rgba-mode-dark-red);
+  }
+  &[data-prefers-color-accent='orange'] {
+    --rgb-accent: var(--rgb-mode-dark-orange);
+    --rgba-accent: var(--rgba-mode-dark-orange);
+  }
+  &[data-prefers-color-accent='yellow'] {
+    --rgb-accent: var(--rgb-mode-dark-yellow);
+    --rgba-accent: var(--rgba-mode-dark-yellow);
+  }
+  &[data-prefers-color-accent='green'] {
+    --rgb-accent: var(--rgb-mode-dark-green);
+    --rgba-accent: var(--rgba-mode-dark-green);
+  }
+  &[data-prefers-color-accent='mint'] {
+    --rgb-accent: var(--rgb-mode-dark-mint);
+    --rgba-accent: var(--rgba-mode-dark-mint);
+  }
+  &[data-prefers-color-accent='teal'] {
+    --rgb-accent: var(--rgb-mode-dark-teal);
+    --rgba-accent: var(--rgba-mode-dark-teal);
+  }
+  &[data-prefers-color-accent='cyan'] {
+    --rgb-accent: var(--rgb-mode-dark-cyan);
+    --rgba-accent: var(--rgba-mode-dark-cyan);
+  }
+  &[data-prefers-color-accent='blue'] {
+    --rgb-accent: var(--rgb-mode-dark-blue);
+    --rgba-accent: var(--rgba-mode-dark-blue);
+  }
+  &[data-prefers-color-accent='indigo'] {
+    --rgb-accent: var(--rgb-mode-dark-indigo);
+    --rgba-accent: var(--rgba-mode-dark-indigo);
+  }
+  &[data-prefers-color-accent='purple'] {
+    --rgb-accent: var(--rgb-mode-dark-purple);
+    --rgba-accent: var(--rgba-mode-dark-purple);
+  }
+  &[data-prefers-color-accent='pink'] {
+    --rgb-accent: var(--rgb-mode-dark-pink);
+    --rgba-accent: var(--rgba-mode-dark-pink);
+  }
+  &[data-prefers-color-accent='brown'] {
+    --rgb-accent: var(--rgb-mode-dark-brown);
+    --rgba-accent: var(--rgba-mode-dark-brown);
+  }
+  &[data-prefers-color-accent='gray'] {
+    --rgb-accent: var(--rgb-mode-dark-gray);
+    --rgba-accent: var(--rgba-mode-dark-gray);
+  }
+
+  &[data-prefers-color-contrast='optimized'] {
+    &[data-prefers-color-accent='red'] {
+      --rgb-accent: var(--rgb-mode-dark-red-a11y);
+      --rgba-accent: var(--rgba-mode-dark-red-a11y);
+    }
+    &[data-prefers-color-accent='orange'] {
+      --rgb-accent: var(--rgb-mode-dark-orange-a11y);
+      --rgba-accent: var(--rgba-mode-dark-orange-a11y);
+    }
+    &[data-prefers-color-accent='yellow'] {
+      --rgb-accent: var(--rgb-mode-dark-yellow-a11y);
+      --rgba-accent: var(--rgba-mode-dark-yellow-a11y);
+    }
+    &[data-prefers-color-accent='green'] {
+      --rgb-accent: var(--rgb-mode-dark-green-a11y);
+      --rgba-accent: var(--rgba-mode-dark-green-a11y);
+    }
+    &[data-prefers-color-accent='mint'] {
+      --rgb-accent: var(--rgb-mode-dark-mint-a11y);
+      --rgba-accent: var(--rgba-mode-dark-mint-a11y);
+    }
+    &[data-prefers-color-accent='teal'] {
+      --rgb-accent: var(--rgb-mode-dark-teal-a11y);
+      --rgba-accent: var(--rgba-mode-dark-teal-a11y);
+    }
+    &[data-prefers-color-accent='cyan'] {
+      --rgb-accent: var(--rgb-mode-dark-cyan-a11y);
+      --rgba-accent: var(--rgba-mode-dark-cyan-a11y);
+    }
+    &[data-prefers-color-accent='blue'] {
+      --rgb-accent: var(--rgb-mode-dark-blue-a11y);
+      --rgba-accent: var(--rgba-mode-dark-blue-a11y);
+    }
+    &[data-prefers-color-accent='indigo'] {
+      --rgb-accent: var(--rgb-mode-dark-indigo-a11y);
+      --rgba-accent: var(--rgba-mode-dark-indigo-a11y);
+    }
+    &[data-prefers-color-accent='purple'] {
+      --rgb-accent: var(--rgb-mode-dark-purple-a11y);
+      --rgba-accent: var(--rgba-mode-dark-purple-a11y);
+    }
+    &[data-prefers-color-accent='pink'] {
+      --rgb-accent: var(--rgb-mode-dark-pink-a11y);
+      --rgba-accent: var(--rgba-mode-dark-pink-a11y);
+    }
+    &[data-prefers-color-accent='brown'] {
+      --rgb-accent: var(--rgb-mode-dark-brown-a11y);
+      --rgba-accent: var(--rgba-mode-dark-brown-a11y);
+    }
+    &[data-prefers-color-accent='gray'] {
+      --rgb-accent: var(--rgb-mode-dark-gray-a11y);
+      --rgba-accent: var(--rgba-mode-dark-gray-a11y);
+    }
+  }
 }

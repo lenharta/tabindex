@@ -1,7 +1,13 @@
 import { TBDX } from '@/types';
 
-export const getFontSizeToken = (value: TBDX.FontSize): TBDX.FontSizeToken => `fz-${value}`;
+export function formatFontSizeClxss(value: TBDX.FontSize): TBDX.FontSizeToken {
+  return `fz-${value}`;
+}
 
-export const getFontFamilyToken = (value: TBDX.FontFamily): TBDX.FontFamilyToken => `ff-${value}`;
+export function formatFontFamilyClxss(value: TBDX.FontFamily): TBDX.FontFamilyToken {
+  return `ff-${value}`;
+}
 
-export const getFontWeightToken = (value: TBDX.FontWeight): TBDX.FontWeightToken => `fw-${value}`;
+export function formatFontWeightClxss(value: TBDX.FontWeight): TBDX.FontWeightToken {
+  return `fw-${value}`;
+}

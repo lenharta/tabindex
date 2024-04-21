@@ -15,8 +15,10 @@ export type HeaderComponent = React.FC<HeaderProps> & {
 export const Header: HeaderComponent = ({}) => {
   return (
     <header className="Header">
+      <Header.Menu />
       <Header.Logo />
       <Header.SkipTo />
+      <Header.Search />
     </header>
   );
 };

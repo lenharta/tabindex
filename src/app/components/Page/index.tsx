@@ -8,6 +8,7 @@ export interface PageProps {
 export type PageComponent = React.FC<PageProps> & {
   Content: React.FC<Partial<PageProps>>;
   Footer: React.FC<Partial<PageProps>>;
+  Hero: React.FC<Partial<PageProps>>;
 };
 
 export const Page: PageComponent = ({ children }) => {
@@ -17,6 +18,10 @@ export const Page: PageComponent = ({ children }) => {
       <Page.Footer />
     </div>
   );
+};
+
+Page.Hero = ({ children }) => {
+  return <div className="Page-hero">{children}</div>;
 };
 
 Page.Content = ({ children }) => {
@@ -31,6 +36,7 @@ Page.Footer = ({}) => {
   return (
     <footer>
       <Link to="/">Home</Link>
+      <Link to="/demo">Demo</Link>
       <Link to="/checklist">Checklist</Link>
     </footer>
   );

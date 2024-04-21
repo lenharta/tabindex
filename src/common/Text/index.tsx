@@ -1,34 +1,61 @@
 import clsx from 'clsx';
 import React from 'react';
 import { TBDX } from '@/types';
-import { getFontFamilyToken, getFontSizeToken, getFontWeightToken } from '../utils';
+import {
+  mergeProps,
+  formatFontSizeClxss,
+  formatFontWeightClxss,
+  formatFontFamilyClxss,
+} from '../utils';
 
-export interface TextProps extends TBDX.TextProps, React.ComponentPropsWithoutRef<'p'> {}
+export interface TextProps extends TBDX.TextProps, TBDX.BaseProps<'p'> {}
+
+const defaultProps: Partial<TextProps> = {
+  fz: 4,
+  fw: 'reg',
+  ff: 'plex',
+  theme: 'default',
+  variant: 'default',
+};
 
 export const Text = React.forwardRef<HTMLParagraphElement, TextProps>((props, ref) => {
+  const { children, ...otherProps } = props;
+
   const {
-    fz = 'sm',
-    fw = 'reg',
-    ff = 'plex',
-    theme = 'default',
-    variant = 'default',
+    fz,
+    fw,
+    ff,
+    block,
+    theme,
+    clamp,
+    inline,
+    inherit,
+    variant,
+    truncate,
     className,
-    ...otherProps
-  } = props;
+    ...forwardedProps
+  } = mergeProps(otherProps, defaultProps);
 
   return (
     <p
-      {...otherProps}
+      {...forwardedProps}
       ref={ref}
+      data-block={block}
       data-theme={theme}
+      data-inline={inline}
+      data-inherit={inherit}
       data-variant={variant}
+      data-truncate={truncate}
+      data-line-clamp={clamp}
       className={clsx(
         'Text',
-        getFontFamilyToken(ff),
-        getFontWeightToken(fw),
-        getFontSizeToken(fz),
+        formatFontSizeClxss(fz),
+        formatFontFamilyClxss(ff),
+        formatFontWeightClxss(fw),
         className
       )}
-    />
+    >
+      {children}
+    </p>
   );
 });

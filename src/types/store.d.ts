@@ -10,6 +10,11 @@ export enum DIR {
   rtl = 'right-to-left',
 }
 
+export enum CONTRAST {
+  unset = 'unset',
+  optimized = 'optimized',
+}
+
 export enum COLOR {
   red = 'c-red',
   orange = 'c-orange',
@@ -43,12 +48,14 @@ export declare namespace STORE {
     dir: keyof typeof DIR;
     mode: keyof typeof MODE;
     accent: keyof typeof COLOR;
+    contrast: 'unset' | 'optimized';
   };
 
   export type ThemeState = {
     dir: keyof typeof DIR;
     mode: keyof typeof MODE;
     accent: keyof typeof COLOR;
+    contrast: 'unset' | 'optimized';
   };
 
   export type AppDispatch = (value: Partial<AppState>) => void;
