@@ -27,9 +27,9 @@
   &-hero {
     width: 100%;
     height: var(--hero-height);
-    z-index: var(--index-page);
-    padding: var(--spacing-6);
     display: flex;
+    padding: var(--spacing-10);
+    z-index: var(--index-page);
     align-items: flex-start;
     flex-direction: column;
     justify-content: flex-end;
@@ -53,14 +53,26 @@
 
   &-footer {
     width: 100%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: var(--spacing-12);
+    display: block;
+
+    @include breakpoints.desktop-sm {
+      width: calc(100% - var(--menu-width));
+    }
+
+    &-content {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      justify-content: flex-start;
+
+      @include breakpoints.tablet-sm {
+        flex-direction: row;
+      }
+    }
 
     &-nav,
     &-branding {
-      padding: var(--spacing-6);
+      padding: var(--spacing-10);
     }
 
     &-branding-logo {
@@ -71,6 +83,35 @@
       justify-content: center;
       border-radius: 1000px;
       background-color: var(--c-bg-2);
+    }
+
+    &-nav {
+      width: 100%;
+      display: grid;
+      place-content: start;
+      grid-template-rows: auto;
+      grid-template-columns: repeat(1, 1fr);
+      gap: var(--spacing-8);
+
+      @include breakpoints.tablet-sm {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @include breakpoints.desktop-sm {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      &-group {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: var(--spacing-4);
+
+        .Link {
+          color: var(--c-text-5);
+        }
+      }
     }
   }
 }

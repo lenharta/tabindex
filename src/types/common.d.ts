@@ -116,4 +116,13 @@ export declare namespace TBDX {
     theme?: AnchorTheme | undefined;
     variant?: AnchorVariant | undefined;
   }
+
+  export type DividerTheme = 'default' | 'accent';
+
+  export interface DividerProps extends BaseProps<'div'> {
+    size?: Size5 | undefined;
+    theme?: DividerTheme | undefined;
+    position?: 'left' | 'center' | 'right' | undefined;
+    orientation?: Orientation | undefined;
+  }
 }

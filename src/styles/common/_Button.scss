@@ -87,23 +87,23 @@
   }
 
   &[data-theme='default'] {
-    color: var(--c-btn-tt);
+    color: var(--c-button-tt);
 
     &:not([data-disabled]),
     &:not([aria-disabled]) {
-      background-color: var(--c-btn-bb);
+      background-color: var(--c-button-bb);
     }
     &:not([data-disabled]):hover,
     &:not([aria-disabled]):hover {
-      background-color: var(--c-btn-hh);
+      background-color: var(--c-button-hh);
     }
     &:not([data-disabled]):active,
     &:not([aria-disabled]):active {
-      background-color: var(--c-btn-aa);
+      background-color: var(--c-button-aa);
     }
     &[data-disabled],
     &[aria-disabled] {
-      background-color: var(--c-btn-dd);
+      background-color: var(--c-button-dd);
     }
   }
 }

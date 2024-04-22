@@ -8,7 +8,7 @@
 }
 
 .Header {
-  display: flex;
+  display: block;
   z-index: var(--index-header);
   height: var(--header-height);
   position: fixed;
@@ -16,7 +16,16 @@
   left: 0;
   top: 0;
 
-  border-bottom: solid 2px transparent;
+  border: solid var(--unit) transparent;
+  outline: solid var(--unit) transparent;
+
+  &-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% - var(--unit));
+    height: calc(100% - var(--unit));
+  }
 
   color: var(--c-text-1);
   border-color: var(--c-border-1);

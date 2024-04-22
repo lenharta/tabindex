@@ -1,7 +1,7 @@
 import { Page } from '@/app/components';
 import { ButtonGroup } from '@/common/Button/Group';
 import { useThemeDispatch } from '@/store';
-import { Button, Text, Title } from '@/common';
+import { Button, Title } from '@/common';
 
 export const ModeControls = () => {
   const modes = ['light', 'dark'] as const;
@@ -21,8 +21,11 @@ export function Home() {
   return (
     <Page>
       <Page.Hero>
-        <Title h1>
-          Tab<span style={{ color: 'var(--rgb-mode-dark-indigo)' }}>index</span>
+        <Title h1 className="ff-plex">
+          <span className="fw-reg">Anatomy</span>
+          <span style={{ color: 'var(--c-accent)' }} className="fw-lgt">
+            Ui
+          </span>
         </Title>
       </Page.Hero>
       <Page.Content>

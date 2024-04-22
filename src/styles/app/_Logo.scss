@@ -1,3 +1,5 @@
+@use '../mixins/interactions' as interactions;
+
 @layer reset {
   .Logo {
     margin: 0;
@@ -8,7 +10,10 @@
 }
 
 .Logo {
-  height: var(--header-height);
+  @include interactions.focus;
+  @include interactions.cursor;
+
+  height: 100%;
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
