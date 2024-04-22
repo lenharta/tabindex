@@ -15,4 +15,4 @@ export const PageHero: React.FC<PageHeroProps> = (props) => {
   );
 };
 
-PageHero.displayName = 'component/Page.Hero';
+PageHero.displayName = 'app/Page.Hero';

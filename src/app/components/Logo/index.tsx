@@ -12,9 +12,9 @@ export const Logo: LogoComponent = () => {
       className="Logo ff-plex"
       aria-label="anatomy user interface logo"
     >
-      <span className="fw-reg">Anatomy</span>
+      <span className="fw-lgt">Tab</span>
       <span style={{ color: 'var(--c-accent)' }} className="fw-lgt">
-        Ui
+        index
       </span>
     </Link>
   );

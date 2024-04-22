@@ -22,16 +22,16 @@ export function Home() {
     <Page>
       <Page.Hero>
         <Title h1 className="ff-plex">
-          <span className="fw-reg">Anatomy</span>
+          <span className="fw-lgt">Tab</span>
           <span style={{ color: 'var(--c-accent)' }} className="fw-lgt">
-            Ui
+            index
           </span>
         </Title>
       </Page.Hero>
       <Page.Content>
-        <section className="sec">
+        <Page.Section>
           <ModeControls />
-        </section>
+        </Page.Section>
       </Page.Content>
     </Page>
   );
