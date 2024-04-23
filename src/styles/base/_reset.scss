@@ -16,17 +16,22 @@
 }
 
 html,
-body,
-#root {
+body {
   margin: 0;
   padding: 0;
   display: block;
-  font-size: inherit;
   box-sizing: border-box;
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-size: inherit;
   overflow-y: auto;
   overflow-x: hidden;
-  margin-left: auto;
-  margin-right: auto;
+  box-sizing: border-box;
+  font-family: var(--ff-plex);
 
   -webkit-font-smoothing: var(--root-webkit-font-smoothing);
   -moz-osx-font-smoothing: var(--root-moz-font-smoothing);

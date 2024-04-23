@@ -27,7 +27,7 @@
     align-items: center;
     justify-content: space-between;
     width: calc(100% - calc(var(--unit) * 2));
-    height: calc(100% - calc(var(--unit) * 2));
+    height: calc(var(--header-height) - calc(var(--unit) * 2));
     border-bottom: solid var(--unit) transparent;
     border-bottom-color: var(--c-border-1);
     margin: var(--unit);

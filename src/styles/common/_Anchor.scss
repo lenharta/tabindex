@@ -31,7 +31,8 @@
   @include interactions.focus;
 
   cursor: default;
-  width: max-content;
+  width: 100%;
+  display: flex;
   border: solid var(--unit) transparent;
   outline: solid var(--unit) transparent;
   height: var(--anchor-height, var(--anchor-height-sm));
@@ -40,6 +41,13 @@
   transition-duration: var(--easing-duration-3);
   transition-property: var(--transition-color);
   line-height: 1;
+  direction: ltr;
+  text-align: left;
+
+  @include attributes.where-rtl {
+    direction: rtl;
+    text-align: right;
+  }
 
   [data-orientaton='vertical'] &,
   [aria-orientaton='vertical'] & {
@@ -50,7 +58,7 @@
 
   [data-orientaton='horizontal'] &,
   [aria-orientaton='horizontal'] & {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
   }
@@ -61,6 +69,8 @@
   }
 
   &-inner {
+    width: max-content;
+    display: flex;
     position: relative;
     margin-inline: var(--unit);
     padding-block: var(--unit);

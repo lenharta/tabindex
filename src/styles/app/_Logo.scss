@@ -30,6 +30,11 @@
   font-size: var(--logo-font-size, var(--logo-font-size-sm));
   font-weight: var(--fw-reg);
   line-height: 1;
+  color: var(--c-text-1);
+  background-color: transparent;
+  transition-property: var(--transition-color);
+  transition-duration: var(--easing-duration-7);
+  transition-timing-function: var(--easing-expressive);
 
   &-span--left,
   &-span--right {
@@ -44,27 +49,5 @@
   }
   &-span--right {
     color: var(--c-accent);
-  }
-
-  color: var(--c-text-1);
-  background-color: transparent;
-  transition-property: var(--transition-color);
-  transition-duration: var(--easing-duration-7);
-  transition-timing-function: var(--easing-expressive);
-
-  &[data-size='xs'] {
-    --logo-font-size: var(--logo-font-size-xs);
-  }
-  &[data-size='sm'] {
-    --logo-font-size: var(--logo-font-size-sm);
-  }
-  &[data-size='md'] {
-    --logo-font-size: var(--logo-font-size-md);
-  }
-  &[data-size='lg'] {
-    --logo-font-size: var(--logo-font-size-lg);
-  }
-  &[data-size='xl'] {
-    --logo-font-size: var(--logo-font-size-xl);
   }
 }

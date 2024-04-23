@@ -8,7 +8,15 @@ export function GuideRoute() {
         <Title h1>Guide</Title>
       </Page.Hero>
       <Page.Content>
-        <Text>Content</Text>
+        <Page.Section>
+          <Text>Section</Text>
+        </Page.Section>
+        <Page.Section>
+          <Text>Section</Text>
+        </Page.Section>
+        <Page.Section>
+          <Text>Section</Text>
+        </Page.Section>
       </Page.Content>
     </Page>
   );
