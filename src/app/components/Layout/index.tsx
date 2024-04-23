@@ -7,7 +7,7 @@ export interface LayoutProps {
 export const Layout: React.FC<LayoutProps> = (props) => {
   const { children } = props;
   return (
-    <div className="Layout">
+    <div className="layout">
       <React.Fragment>{children}</React.Fragment>
     </div>
   );

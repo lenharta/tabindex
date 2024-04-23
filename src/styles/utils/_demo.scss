@@ -1,0 +1,21 @@
+.demo {
+  display: block;
+  min-width: calc(var(--unit) * 100);
+  padding: calc(var(--unit) * 24);
+}
+
+.demo-list {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  padding-block: var(--spacing-4);
+}
+
+.demo-list-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}

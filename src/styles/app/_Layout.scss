@@ -1,7 +1,7 @@
 @use '../mixins/breakpoints' as breakpoints;
 
 @layer reset {
-  .Layout {
+  .layout {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,7 +9,7 @@
   }
 }
 
-.Layout {
+.layout {
   z-index: var(--index-layout);
   display: block;
   position: relative;

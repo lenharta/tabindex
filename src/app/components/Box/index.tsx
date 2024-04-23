@@ -1,6 +1,6 @@
-import { TBDX } from '@/types';
 import clsx from 'clsx';
 import React from 'react';
+import { TBDX } from '@/types';
 
 export interface BoxProps extends TBDX.BaseProps<'div'> {
   className?: string | undefined;
@@ -10,7 +10,7 @@ export interface BoxProps extends TBDX.BaseProps<'div'> {
 export const Box = React.forwardRef<HTMLDivElement, BoxProps>((props, ref) => {
   const { children, className } = props;
   return (
-    <div className={clsx('Box', className)} ref={ref}>
+    <div className={clsx('box', className)} ref={ref}>
       <React.Fragment>{children}</React.Fragment>
     </div>
   );

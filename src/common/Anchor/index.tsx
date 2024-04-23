@@ -4,16 +4,21 @@ import { TBDX } from '@/types';
 import { mergeProps } from '../utils';
 
 export interface AnchorProps extends TBDX.AnchorProps {
-  children?: React.ReactNode | undefined;
   className?: string | undefined;
+  children?: React.ReactNode | undefined;
+  leftContent?: React.ReactNode | undefined;
+  rightContent?: React.ReactNode | undefined;
 }
 
-const defaultProps: Partial<AnchorProps> = {};
+const defaultProps: Partial<AnchorProps> = {
+  variant: 'default',
+  theme: 'default',
+};
 
-export const Anchor = React.forwardRef<HTMLAnchorElement, AnchorProps>((props, ref) => {
-  const { children, ...otherProps } = props;
+export const AnchorRender = (props: AnchorProps, ref: React.ForwardedRef<HTMLAnchorElement>) => {
+  const { children, leftContent, rightContent, ...otherProps } = props;
 
-  const { size, className, block, theme, variant, ...forwardedProps } = mergeProps(
+  const { className, block, theme, variant, ...forwardedProps } = mergeProps(
     otherProps,
     defaultProps
   );
@@ -22,13 +27,20 @@ export const Anchor = React.forwardRef<HTMLAnchorElement, AnchorProps>((props, r
     <a
       {...forwardedProps}
       ref={ref}
-      className={clsx('Anchor', className)}
+      className={clsx('anchor', className)}
       data-variant={variant}
       data-theme={theme}
       data-block={block}
-      data-size={size}
-    />
+    >
+      {leftContent && <div data-position="left">{leftContent}</div>}
+      {children && <div>{children}</div>}
+      {rightContent && <div data-position="right">{rightContent}</div>}
+    </a>
   );
-});
+};
+
+export const Anchor = React.forwardRef(
+  AnchorRender
+) as React.ForwardRefExoticComponent<AnchorProps>;
 
 Anchor.displayName = 'common/Anchor';

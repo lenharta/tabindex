@@ -1,5 +1,5 @@
 @mixin where-rtl {
-  &:where([data-prefers-writing-mode='rtl']) & {
+  [data-prefers-writing-mode='rtl'] & {
     @content;
   }
 }

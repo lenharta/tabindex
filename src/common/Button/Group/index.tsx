@@ -7,10 +7,14 @@ export interface ButtonGroupProps extends TBDX.ButtonGroupProps {
   className?: string | undefined;
 }
 
+export type ButtonGroupExoticComponent = React.ForwardRefExoticComponent<ButtonGroupProps>;
 export const ButtonGroupCTX = React.createContext({} as TBDX.ButtonGroupContext);
 export const useButtonGroup = () => React.useContext(ButtonGroupCTX);
 
-export const ButtonGroup = React.forwardRef<HTMLDivElement, ButtonGroupProps>((props, ref) => {
+export const ButtonGroupRender = (
+  props: ButtonGroupProps,
+  ref: React.ForwardedRef<HTMLDivElement>
+) => {
   const {
     size,
     block,
@@ -27,7 +31,7 @@ export const ButtonGroup = React.forwardRef<HTMLDivElement, ButtonGroupProps>((p
       {...forwardedProps}
       data-orientation={orientation}
       aria-orientation={orientation}
-      className={clsx('ButtonGroup', className)}
+      className={clsx('button-group', className)}
       ref={ref}
     >
       <ButtonGroupCTX.Provider value={{ size, block, theme, variant }}>
@@ -35,6 +39,8 @@ export const ButtonGroup = React.forwardRef<HTMLDivElement, ButtonGroupProps>((p
       </ButtonGroupCTX.Provider>
     </div>
   );
-});
+};
+
+export const ButtonGroup = React.forwardRef(ButtonGroupRender) as ButtonGroupExoticComponent;
 
 ButtonGroup.displayName = 'app/ButtonGroup';

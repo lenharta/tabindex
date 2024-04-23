@@ -189,33 +189,67 @@
   --c-shade: var(--rgb-mode-dark-shade);
   --c-shadow: transparent;
 
-  [data-prefers-color-contrast='optimized'] {
+  [data-scheme='secondary'] {
+    --c-step: 5%;
+    --c-base: var(--rgb-mode-light-base);
+    --c-tint: var(--rgb-mode-dark-base);
+    --c-shade: var(--rgb-mode-light-shade);
+    --c-shadow: var(--rgba-mode-dark-base);
+  }
+
+  &[data-prefers-color-contrast='optimized'] {
     --c-step: 3%;
     --c-base: var(--rgb-mode-dark-base-a11y);
     --c-tint: var(--rgb-mode-light-base-a11y);
     --c-shade: var(--rgb-mode-dark-shade-a11y);
     --c-shadow: transparent;
+
+    [data-scheme='secondary'] {
+      --c-step: 5%;
+      --c-base: var(--rgb-mode-light-base-a11y);
+      --c-tint: var(--rgb-mode-dark-base-a11y);
+      --c-shade: var(--rgb-mode-light-shade-a11y);
+      --c-shadow: var(--rgba-mode-dark-base-a11y);
+    }
   }
 }
 
 [data-prefers-color-scheme='light'] {
-  --c-step: 6%;
+  --c-step: 5%;
   --c-base: var(--rgb-mode-light-base);
   --c-tint: var(--rgb-mode-dark-base);
   --c-shade: var(--rgb-mode-light-shade);
   --c-shadow: var(--rgba-mode-dark-base);
 
-  [data-prefers-color-contrast='optimized'] {
-    --c-step: 6%;
+  [data-scheme='secondary'] {
+    --c-step: 3%;
+    --c-base: var(--rgb-mode-dark-base);
+    --c-tint: var(--rgb-mode-light-base);
+    --c-shade: var(--rgb-mode-dark-shade);
+    --c-shadow: transparent;
+  }
+
+  &[data-prefers-color-contrast='optimized'] {
+    --c-step: 5%;
     --c-base: var(--rgb-mode-light-base-a11y);
     --c-tint: var(--rgb-mode-dark-base-a11y);
     --c-shade: var(--rgb-mode-light-shade-a11y);
     --c-shadow: var(--rgba-mode-dark-base-a11y);
+
+    [data-scheme='secondary'] {
+      --c-step: 3%;
+      --c-base: var(--rgb-mode-dark-base-a11y);
+      --c-tint: var(--rgb-mode-light-base-a11y);
+      --c-shade: var(--rgb-mode-dark-shade-a11y);
+      --c-shadow: transparent;
+    }
   }
 }
 
 [data-prefers-color-scheme='dark'],
-[data-prefers-color-scheme='light'] {
+[data-prefers-color-scheme='light'],
+[data-prefers-color-scheme='dark'] [data-scheme='secondary'],
+[data-prefers-color-scheme='light'] [data-scheme='secondary'] {
   --c-s-1: calc(100% - calc(var(--c-step) * 1));
   --c-s-2: calc(100% - calc(var(--c-step) * 2));
   --c-s-3: calc(100% - calc(var(--c-step) * 3));
@@ -253,12 +287,26 @@
   --c-border-4: color-mix(in srgb, var(--c-shade) var(--c-s-7), var(--c-tint));
   --c-border-5: color-mix(in srgb, var(--c-shade) var(--c-s-8), var(--c-tint));
 
-  --c-btn-tt: var(--c-text-1);
-  --c-btn-bb: color-mix(in srgb, var(--c-base) var(--c-s-2), var(--c-tint));
-  --c-btn-hh: color-mix(in srgb, var(--c-base) var(--c-s-3), var(--c-tint));
-  --c-btn-aa: color-mix(in srgb, var(--c-base) var(--c-s-4), var(--c-tint));
-  --c-btn-ss: color-mix(in srgb, var(--c-base) var(--c-s-5), var(--c-tint));
-  --c-btn-dd: color-mix(in srgb, var(--c-base) var(--c-s-8), var(--c-tint));
+  --c-button-tt: var(--c-text-1);
+  --c-button-bb: color-mix(in srgb, var(--c-base) var(--c-s-2), var(--c-tint));
+  --c-button-hh: color-mix(in srgb, var(--c-base) var(--c-s-3), var(--c-tint));
+  --c-button-aa: color-mix(in srgb, var(--c-base) var(--c-s-4), var(--c-tint));
+  --c-button-ss: color-mix(in srgb, var(--c-base) var(--c-s-5), var(--c-tint));
+  --c-button-dd: color-mix(in srgb, var(--c-base) var(--c-s-8), var(--c-tint));
+
+  --c-anchor-tt: var(--c-text-1);
+  --c-anchor-bb: color-mix(in srgb, var(--c-base) var(--c-s-1), var(--c-tint));
+  --c-anchor-hh: color-mix(in srgb, var(--c-base) var(--c-s-2), var(--c-tint));
+  --c-anchor-aa: color-mix(in srgb, var(--c-base) var(--c-s-3), var(--c-tint));
+  --c-anchor-ss: color-mix(in srgb, var(--c-base) var(--c-s-4), var(--c-tint));
+  --c-anchor-dd: color-mix(in srgb, var(--c-base) var(--c-s-5), var(--c-tint));
+
+  --c-link-tt: var(--c-text-1);
+  --c-link-bb: color-mix(in srgb, var(--c-base) var(--c-s-1), var(--c-tint));
+  --c-link-hh: color-mix(in srgb, var(--c-base) var(--c-s-2), var(--c-tint));
+  --c-link-aa: color-mix(in srgb, var(--c-base) var(--c-s-3), var(--c-tint));
+  --c-link-ss: color-mix(in srgb, var(--c-base) var(--c-s-4), var(--c-tint));
+  --c-link-dd: color-mix(in srgb, var(--c-base) var(--c-s-5), var(--c-tint));
 }
 
 [data-prefers-color-scheme='light'] {

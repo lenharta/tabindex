@@ -7,7 +7,7 @@
 
     --index-layout: 0;
     --index-page: 1;
-    --index-menu: 99;
+    --index-side: 99;
     --index-header: 100;
 
     --easing-duration-0: 0s;
@@ -124,8 +124,7 @@
     --header-height-mobile: calc(var(--unit) * 32);
     --header-height-desktop: calc(var(--unit) * 32);
 
-    --menu-width: calc(var(--unit) * 160);
-
+    --side-width: calc(var(--unit) * 160);
     --hero-height: calc(var(--unit) * 160);
     --header-height: var(--header-height-mobile);
     --search-height: var(--search-height-mobile);

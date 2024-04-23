@@ -1,7 +1,7 @@
 import { Page } from '@/app/components';
 import { Text, Title } from '@/common';
 
-export function Checklist() {
+export function ChecklistRoute() {
   return (
     <Page>
       <Page.Hero>

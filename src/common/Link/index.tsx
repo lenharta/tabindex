@@ -1,9 +1,9 @@
 import clsx from 'clsx';
 import React from 'react';
 import { TBDX } from '@/types';
+import { LinkGroup } from './Group';
 import { mergeProps } from '../utils';
 import { Link as RouterLink } from 'react-router-dom';
-import { LinkGroup } from './Group';
 
 export interface LinkProps extends TBDX.LinkProps {
   to?: string | undefined;
@@ -15,6 +15,8 @@ export interface LinkProps extends TBDX.LinkProps {
 
 const defaultProps: Partial<LinkProps> = {
   to: '/',
+  theme: 'default',
+  variant: 'default',
 };
 
 export type LinkExoticComponent = React.ForwardRefExoticComponent<
@@ -25,27 +27,25 @@ export type LinkComponent = LinkExoticComponent & {
   Group: typeof LinkGroup;
 };
 
-export type LinkExoticRender = (
-  props: LinkProps,
-  ref: React.ForwardedRef<HTMLAnchorElement>
-) => React.ReactNode;
-
-export const LinkRender: LinkExoticRender = (props, ref) => {
+export const LinkRender = (props: LinkProps, ref: React.ForwardedRef<HTMLAnchorElement>) => {
   const { children, leftContent, rightContent, ...otherProps } = props;
-  const { to, size, block, theme, variant, className } = mergeProps(otherProps, defaultProps);
+
+  const { to, block, theme, variant, className } = mergeProps(otherProps, defaultProps);
+
   return (
     <RouterLink
       to={to}
       ref={ref}
-      className={clsx('Link', className)}
+      className={clsx('link', className)}
       data-variant={variant}
       data-block={block}
       data-theme={theme}
-      data-size={size}
     >
-      {leftContent && <div data-position="left">{leftContent}</div>}
-      {children && <div>{children}</div>}
-      {rightContent && <div data-position="right">{rightContent}</div>}
+      <span className="link-inner">
+        {leftContent && <div data-position="left">{leftContent}</div>}
+        {children && <div>{children}</div>}
+        {rightContent && <div data-position="right">{rightContent}</div>}
+      </span>
     </RouterLink>
   );
 };

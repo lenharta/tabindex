@@ -2,7 +2,7 @@
 @use '../mixins/interactions' as interactions;
 
 @layer reset {
-  .Search {
+  .search {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,7 +10,7 @@
   }
 }
 
-.Search {
+.search {
   width: 100%;
   height: 100%;
   display: flex;

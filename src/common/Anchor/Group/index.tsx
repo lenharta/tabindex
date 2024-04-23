@@ -8,16 +8,23 @@ export interface AnchorGroupProps extends TBDX.AnchorGroupProps {
   className?: string | undefined;
 }
 
-const defaultProps: Partial<AnchorGroupProps> = {};
-
 export const AnchorGroupCTX = React.createContext({} as TBDX.AnchorGroupContext);
 export const AnchorGroupProvider = AnchorGroupCTX.Provider;
 export const useAnchorGroup = () => React.useContext(AnchorGroupCTX);
 
-export const AnchorGroup = React.forwardRef<HTMLDivElement, AnchorGroupProps>((props, ref) => {
+const defaultProps: Partial<AnchorGroupProps> = {
+  orientation: 'vertical',
+};
+
+export type AnchorGroupExoticComponent = React.ForwardRefExoticComponent<AnchorGroupProps>;
+
+export const AnchorGroupRender = (
+  props: AnchorGroupProps,
+  ref: React.ForwardedRef<HTMLDivElement>
+) => {
   const { children, ...otherProps } = props;
 
-  const { orientation, className, size, block, theme, variant, ...forwardedProps } = mergeProps(
+  const { block, theme, variant, className, orientation, ...forwardedProps } = mergeProps(
     otherProps,
     defaultProps
   );
@@ -25,15 +32,17 @@ export const AnchorGroup = React.forwardRef<HTMLDivElement, AnchorGroupProps>((p
   return (
     <div
       {...forwardedProps}
-      className={clsx('AnchorGroup', className)}
+      ref={ref}
+      className={clsx('anchor-group', className)}
       data-orientation={orientation}
       aria-orientation={orientation}
     >
-      <AnchorGroupProvider value={{ block, size, theme, variant }}>
+      <AnchorGroupProvider value={{ block, theme, variant }}>
         <React.Fragment>{children}</React.Fragment>
       </AnchorGroupProvider>
     </div>
   );
-});
+};
 
+export const AnchorGroup = React.forwardRef(AnchorGroupRender) as AnchorGroupExoticComponent;
 AnchorGroup.displayName = 'common/Anchor.Group';

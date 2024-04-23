@@ -2,19 +2,13 @@ import clsx from 'clsx';
 import React from 'react';
 import { keys } from '@/utils';
 import { TBDX } from '@/types';
-import {
-  mergeProps,
-  formatFontSizeClxss,
-  formatFontFamilyClxss,
-  formatFontWeightClxss,
-} from '../utils';
+import { mergeProps } from '../utils';
 
 export interface TitleProps extends TBDX.TitleProps, TBDX.BaseProps<'h2'> {
   children?: React.ReactNode | undefined;
 }
 
 const defaultProps: Partial<TitleProps> = {
-  ff: 'plex',
   theme: 'default',
   variant: 'default',
   component: 'h2',
@@ -28,23 +22,8 @@ function findTitleComponent(component: TBDX.TitleElement, props: TBDX.TitleEleme
 
 export const Title = React.forwardRef<HTMLHeadingElement, TitleProps>((props, ref) => {
   const { children, ...otherProps } = props;
-  const {
-    fz,
-    fw,
-    ff,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    theme,
-    clamp,
-    variant,
-    component,
-    className,
-    ...forwardedProps
-  } = mergeProps(otherProps, defaultProps);
+  const { h1, h2, h3, h4, h5, h6, theme, clamp, variant, component, className, ...forwardedProps } =
+    mergeProps(otherProps, defaultProps);
 
   const Component = findTitleComponent(component, { h1, h2, h3, h4, h5, h6 });
 
@@ -55,13 +34,7 @@ export const Title = React.forwardRef<HTMLHeadingElement, TitleProps>((props, re
       data-theme={theme}
       data-variant={variant}
       data-line-clamp={clamp}
-      className={clsx(
-        'Title',
-        formatFontSizeClxss(fz),
-        formatFontFamilyClxss(ff),
-        formatFontWeightClxss(fw),
-        className
-      )}
+      className={clsx('title', className)}
     >
       {children}
     </Component>
