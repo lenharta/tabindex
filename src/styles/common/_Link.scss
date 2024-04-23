@@ -31,7 +31,8 @@
   @include interactions.focus;
 
   cursor: default;
-  width: max-content;
+  width: 100%;
+  display: flex;
   border: solid var(--unit) transparent;
   outline: solid var(--unit) transparent;
   height: var(--link-height, var(--link-height-sm));
@@ -57,7 +58,7 @@
 
   [data-orientaton='horizontal'] &,
   [aria-orientaton='horizontal'] & {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
   }
@@ -68,6 +69,8 @@
   }
 
   &-inner {
+    width: max-content;
+    display: flex;
     position: relative;
     margin-inline: var(--unit);
     padding-block: var(--unit);

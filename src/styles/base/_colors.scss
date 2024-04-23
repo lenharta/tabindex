@@ -1,3 +1,130 @@
+[data-prefers-color-scheme='dark'] {
+  --c-step: 3%;
+  --c-base: var(--rgb-mode-dark-base);
+  --c-tint: var(--rgb-mode-light-base);
+  --c-shade: var(--rgb-mode-dark-shade);
+  --c-shadow: transparent;
+
+  [data-scheme='secondary'] {
+    --c-step: 5%;
+    --c-base: var(--rgb-mode-light-base);
+    --c-tint: var(--rgb-mode-dark-base);
+    --c-shade: var(--rgb-mode-light-shade);
+    --c-shadow: var(--rgba-mode-dark-base);
+  }
+
+  &[data-prefers-color-contrast='optimized'] {
+    --c-step: 3%;
+    --c-base: var(--rgb-mode-dark-base-a11y);
+    --c-tint: var(--rgb-mode-light-base-a11y);
+    --c-shade: var(--rgb-mode-dark-shade-a11y);
+    --c-shadow: transparent;
+
+    [data-scheme='secondary'] {
+      --c-step: 5%;
+      --c-base: var(--rgb-mode-light-base-a11y);
+      --c-tint: var(--rgb-mode-dark-base-a11y);
+      --c-shade: var(--rgb-mode-light-shade-a11y);
+      --c-shadow: var(--rgba-mode-dark-base-a11y);
+    }
+  }
+}
+
+[data-prefers-color-scheme='light'] {
+  --c-step: 5%;
+  --c-base: var(--rgb-mode-light-base);
+  --c-tint: var(--rgb-mode-dark-base);
+  --c-shade: var(--rgb-mode-light-shade);
+  --c-shadow: var(--rgba-mode-dark-base);
+
+  [data-scheme='secondary'] {
+    --c-step: 3%;
+    --c-base: var(--rgb-mode-dark-base);
+    --c-tint: var(--rgb-mode-light-base);
+    --c-shade: var(--rgb-mode-dark-shade);
+    --c-shadow: transparent;
+  }
+
+  &[data-prefers-color-contrast='optimized'] {
+    --c-step: 5%;
+    --c-base: var(--rgb-mode-light-base-a11y);
+    --c-tint: var(--rgb-mode-dark-base-a11y);
+    --c-shade: var(--rgb-mode-light-shade-a11y);
+    --c-shadow: var(--rgba-mode-dark-base-a11y);
+
+    [data-scheme='secondary'] {
+      --c-step: 3%;
+      --c-base: var(--rgb-mode-dark-base-a11y);
+      --c-tint: var(--rgb-mode-light-base-a11y);
+      --c-shade: var(--rgb-mode-dark-shade-a11y);
+      --c-shadow: transparent;
+    }
+  }
+}
+
+[data-prefers-color-scheme='dark'],
+[data-prefers-color-scheme='light'],
+[data-prefers-color-scheme='dark'] [data-scheme='secondary'],
+[data-prefers-color-scheme='light'] [data-scheme='secondary'] {
+  --c-s-1: calc(100% - calc(var(--c-step) * 1));
+  --c-s-2: calc(100% - calc(var(--c-step) * 2));
+  --c-s-3: calc(100% - calc(var(--c-step) * 3));
+  --c-s-4: calc(100% - calc(var(--c-step) * 4));
+  --c-s-5: calc(100% - calc(var(--c-step) * 5));
+  --c-s-6: calc(100% - calc(var(--c-step) * 6));
+  --c-s-7: calc(100% - calc(var(--c-step) * 7));
+  --c-s-8: calc(100% - calc(var(--c-step) * 8));
+  --c-s-9: calc(100% - calc(var(--c-step) * 9));
+  --c-s-10: calc(100% - calc(var(--c-step) * 10));
+  --c-s-11: calc(100% - calc(var(--c-step) * 11));
+  --c-s-12: calc(100% - calc(var(--c-step) * 12));
+  --c-s-13: calc(100% - calc(var(--c-step) * 13));
+  --c-s-14: calc(100% - calc(var(--c-step) * 14));
+  --c-s-15: calc(100% - calc(var(--c-step) * 15));
+  --c-s-16: calc(100% - calc(var(--c-step) * 16));
+
+  --c-shadow: color-mix(in srgb, var(--c-tint) var(--c-s-1), var(--c-base));
+
+  --c-bg-1: color-mix(in srgb, var(--c-base) var(--c-s-1), var(--c-tint));
+  --c-bg-2: color-mix(in srgb, var(--c-base) var(--c-s-2), var(--c-tint));
+  --c-bg-3: color-mix(in srgb, var(--c-base) var(--c-s-3), var(--c-tint));
+  --c-bg-4: color-mix(in srgb, var(--c-base) var(--c-s-4), var(--c-tint));
+  --c-bg-5: color-mix(in srgb, var(--c-base) var(--c-s-5), var(--c-tint));
+
+  --c-text-1: color-mix(in srgb, var(--c-tint) var(--c-s-1), var(--c-base));
+  --c-text-2: color-mix(in srgb, var(--c-tint) var(--c-s-3), var(--c-base));
+  --c-text-3: color-mix(in srgb, var(--c-tint) var(--c-s-5), var(--c-base));
+  --c-text-4: color-mix(in srgb, var(--c-tint) var(--c-s-7), var(--c-base));
+  --c-text-5: color-mix(in srgb, var(--c-tint) var(--c-s-9), var(--c-base));
+
+  --c-border-1: color-mix(in srgb, var(--c-shade) var(--c-s-2), var(--c-tint));
+  --c-border-2: color-mix(in srgb, var(--c-shade) var(--c-s-5), var(--c-tint));
+  --c-border-3: color-mix(in srgb, var(--c-shade) var(--c-s-6), var(--c-tint));
+  --c-border-4: color-mix(in srgb, var(--c-shade) var(--c-s-7), var(--c-tint));
+  --c-border-5: color-mix(in srgb, var(--c-shade) var(--c-s-8), var(--c-tint));
+
+  --c-button-tt: var(--c-text-1);
+  --c-button-bb: color-mix(in srgb, var(--c-base) var(--c-s-2), var(--c-tint));
+  --c-button-hh: color-mix(in srgb, var(--c-base) var(--c-s-3), var(--c-tint));
+  --c-button-aa: color-mix(in srgb, var(--c-base) var(--c-s-4), var(--c-tint));
+  --c-button-ss: color-mix(in srgb, var(--c-base) var(--c-s-5), var(--c-tint));
+  --c-button-dd: color-mix(in srgb, var(--c-base) var(--c-s-8), var(--c-tint));
+
+  --c-anchor-tt: var(--c-text-1);
+  --c-anchor-bb: color-mix(in srgb, var(--c-base) var(--c-s-1), var(--c-tint));
+  --c-anchor-hh: color-mix(in srgb, var(--c-base) var(--c-s-2), var(--c-tint));
+  --c-anchor-aa: color-mix(in srgb, var(--c-base) var(--c-s-3), var(--c-tint));
+  --c-anchor-ss: color-mix(in srgb, var(--c-base) var(--c-s-4), var(--c-tint));
+  --c-anchor-dd: color-mix(in srgb, var(--c-base) var(--c-s-5), var(--c-tint));
+
+  --c-link-tt: var(--c-text-1);
+  --c-link-bb: color-mix(in srgb, var(--c-base) var(--c-s-1), var(--c-tint));
+  --c-link-hh: color-mix(in srgb, var(--c-base) var(--c-s-2), var(--c-tint));
+  --c-link-aa: color-mix(in srgb, var(--c-base) var(--c-s-3), var(--c-tint));
+  --c-link-ss: color-mix(in srgb, var(--c-base) var(--c-s-4), var(--c-tint));
+  --c-link-dd: color-mix(in srgb, var(--c-base) var(--c-s-5), var(--c-tint));
+}
+
 :root {
   --rgb-mode-light-red: rgb(255, 59, 48);
   --rgba-mode-light-red: 255, 59, 48;
@@ -183,130 +310,123 @@
 }
 
 [data-prefers-color-scheme='dark'] {
-  --c-step: 3%;
-  --c-base: var(--rgb-mode-dark-base);
-  --c-tint: var(--rgb-mode-light-base);
-  --c-shade: var(--rgb-mode-dark-shade);
-  --c-shadow: transparent;
+  --c-red: var(--rgb-mode-dark-red);
+  --c-orange: var(--rgb-mode-dark-orange);
+  --c-yellow: var(--rgb-mode-dark-yellow);
+  --c-green: var(--rgb-mode-dark-green);
+  --c-mint: var(--rgb-mode-dark-mint);
+  --c-teal: var(--rgb-mode-dark-teal);
+  --c-cyan: var(--rgb-mode-dark-cyan);
+  --c-blue: var(--rgb-mode-dark-blue);
+  --c-indigo: var(--rgb-mode-dark-indigo);
+  --c-purple: var(--rgb-mode-dark-purple);
+  --c-pink: var(--rgb-mode-dark-pink);
+  --c-brown: var(--rgb-mode-dark-brown);
+  --c-gray: var(--rgb-mode-dark-gray);
 
-  [data-scheme='secondary'] {
-    --c-step: 5%;
-    --c-base: var(--rgb-mode-light-base);
-    --c-tint: var(--rgb-mode-dark-base);
-    --c-shade: var(--rgb-mode-light-shade);
-    --c-shadow: var(--rgba-mode-dark-base);
-  }
+  --c-a-red: var(--rgba-mode-dark-red);
+  --c-a-orange: var(--rgba-mode-dark-orange);
+  --c-a-yellow: var(--rgba-mode-dark-yellow);
+  --c-a-green: var(--rgba-mode-dark-green);
+  --c-a-mint: var(--rgba-mode-dark-mint);
+  --c-a-teal: var(--rgba-mode-dark-teal);
+  --c-a-cyan: var(--rgba-mode-dark-cyan);
+  --c-a-blue: var(--rgba-mode-dark-blue);
+  --c-a-indigo: var(--rgba-mode-dark-indigo);
+  --c-a-purple: var(--rgba-mode-dark-purple);
+  --c-a-pink: var(--rgba-mode-dark-pink);
+  --c-a-brown: var(--rgba-mode-dark-brown);
+  --c-a-gray: var(--rgba-mode-dark-gray);
 
   &[data-prefers-color-contrast='optimized'] {
-    --c-step: 3%;
-    --c-base: var(--rgb-mode-dark-base-a11y);
-    --c-tint: var(--rgb-mode-light-base-a11y);
-    --c-shade: var(--rgb-mode-dark-shade-a11y);
-    --c-shadow: transparent;
+    --c-red: var(--rgb-mode-dark-red-a11y);
+    --c-orange: var(--rgb-mode-dark-orange-a11y);
+    --c-yellow: var(--rgb-mode-dark-yellow-a11y);
+    --c-green: var(--rgb-mode-dark-green-a11y);
+    --c-mint: var(--rgb-mode-dark-mint-a11y);
+    --c-teal: var(--rgb-mode-dark-teal-a11y);
+    --c-cyan: var(--rgb-mode-dark-cyan-a11y);
+    --c-blue: var(--rgb-mode-dark-blue-a11y);
+    --c-indigo: var(--rgb-mode-dark-indigo-a11y);
+    --c-purple: var(--rgb-mode-dark-purple-a11y);
+    --c-pink: var(--rgb-mode-dark-pink-a11y);
+    --c-brown: var(--rgb-mode-dark-brown-a11y);
+    --c-gray: var(--rgb-mode-dark-gray-a11y);
 
-    [data-scheme='secondary'] {
-      --c-step: 5%;
-      --c-base: var(--rgb-mode-light-base-a11y);
-      --c-tint: var(--rgb-mode-dark-base-a11y);
-      --c-shade: var(--rgb-mode-light-shade-a11y);
-      --c-shadow: var(--rgba-mode-dark-base-a11y);
-    }
+    --c-a-red: var(--rgba-mode-dark-red-a11y);
+    --c-a-orange: var(--rgba-mode-dark-orange-a11y);
+    --c-a-yellow: var(--rgba-mode-dark-yellow-a11y);
+    --c-a-green: var(--rgba-mode-dark-green-a11y);
+    --c-a-mint: var(--rgba-mode-dark-mint-a11y);
+    --c-a-teal: var(--rgba-mode-dark-teal-a11y);
+    --c-a-cyan: var(--rgba-mode-dark-cyan-a11y);
+    --c-a-blue: var(--rgba-mode-dark-blue-a11y);
+    --c-a-indigo: var(--rgba-mode-dark-indigo-a11y);
+    --c-a-purple: var(--rgba-mode-dark-purple-a11y);
+    --c-a-pink: var(--rgba-mode-dark-pink-a11y);
+    --c-a-brown: var(--rgba-mode-dark-brown-a11y);
+    --c-a-gray: var(--rgba-mode-dark-gray-a11y);
   }
 }
 
 [data-prefers-color-scheme='light'] {
-  --c-step: 5%;
-  --c-base: var(--rgb-mode-light-base);
-  --c-tint: var(--rgb-mode-dark-base);
-  --c-shade: var(--rgb-mode-light-shade);
-  --c-shadow: var(--rgba-mode-dark-base);
+  --c-red: var(--rgb-mode-light-red);
+  --c-orange: var(--rgb-mode-light-orange);
+  --c-yellow: var(--rgb-mode-light-yellow);
+  --c-green: var(--rgb-mode-light-green);
+  --c-mint: var(--rgb-mode-light-mint);
+  --c-teal: var(--rgb-mode-light-teal);
+  --c-cyan: var(--rgb-mode-light-cyan);
+  --c-blue: var(--rgb-mode-light-blue);
+  --c-indigo: var(--rgb-mode-light-indigo);
+  --c-purple: var(--rgb-mode-light-purple);
+  --c-pink: var(--rgb-mode-light-pink);
+  --c-brown: var(--rgb-mode-light-brown);
+  --c-gray: var(--rgb-mode-light-gray);
 
-  [data-scheme='secondary'] {
-    --c-step: 3%;
-    --c-base: var(--rgb-mode-dark-base);
-    --c-tint: var(--rgb-mode-light-base);
-    --c-shade: var(--rgb-mode-dark-shade);
-    --c-shadow: transparent;
-  }
+  --c-a-red: var(--rgba-mode-light-red);
+  --c-a-orange: var(--rgba-mode-light-orange);
+  --c-a-yellow: var(--rgba-mode-light-yellow);
+  --c-a-green: var(--rgba-mode-light-green);
+  --c-a-mint: var(--rgba-mode-light-mint);
+  --c-a-teal: var(--rgba-mode-light-teal);
+  --c-a-cyan: var(--rgba-mode-light-cyan);
+  --c-a-blue: var(--rgba-mode-light-blue);
+  --c-a-indigo: var(--rgba-mode-light-indigo);
+  --c-a-purple: var(--rgba-mode-light-purple);
+  --c-a-pink: var(--rgba-mode-light-pink);
+  --c-a-brown: var(--rgba-mode-light-brown);
+  --c-a-gray: var(--rgba-mode-light-gray);
 
   &[data-prefers-color-contrast='optimized'] {
-    --c-step: 5%;
-    --c-base: var(--rgb-mode-light-base-a11y);
-    --c-tint: var(--rgb-mode-dark-base-a11y);
-    --c-shade: var(--rgb-mode-light-shade-a11y);
-    --c-shadow: var(--rgba-mode-dark-base-a11y);
+    --c-red: var(--rgb-mode-light-red-a11y);
+    --c-orange: var(--rgb-mode-light-orange-a11y);
+    --c-yellow: var(--rgb-mode-light-yellow-a11y);
+    --c-green: var(--rgb-mode-light-green-a11y);
+    --c-mint: var(--rgb-mode-light-mint-a11y);
+    --c-teal: var(--rgb-mode-light-teal-a11y);
+    --c-cyan: var(--rgb-mode-light-cyan-a11y);
+    --c-blue: var(--rgb-mode-light-blue-a11y);
+    --c-indigo: var(--rgb-mode-light-indigo-a11y);
+    --c-purple: var(--rgb-mode-light-purple-a11y);
+    --c-pink: var(--rgb-mode-light-pink-a11y);
+    --c-brown: var(--rgb-mode-light-brown-a11y);
+    --c-gray: var(--rgb-mode-light-gray-a11y);
 
-    [data-scheme='secondary'] {
-      --c-step: 3%;
-      --c-base: var(--rgb-mode-dark-base-a11y);
-      --c-tint: var(--rgb-mode-light-base-a11y);
-      --c-shade: var(--rgb-mode-dark-shade-a11y);
-      --c-shadow: transparent;
-    }
+    --c-a-red: var(--rgba-mode-light-red-a11y);
+    --c-a-orange: var(--rgba-mode-light-orange-a11y);
+    --c-a-yellow: var(--rgba-mode-light-yellow-a11y);
+    --c-a-green: var(--rgba-mode-light-green-a11y);
+    --c-a-mint: var(--rgba-mode-light-mint-a11y);
+    --c-a-teal: var(--rgba-mode-light-teal-a11y);
+    --c-a-cyan: var(--rgba-mode-light-cyan-a11y);
+    --c-a-blue: var(--rgba-mode-light-blue-a11y);
+    --c-a-indigo: var(--rgba-mode-light-indigo-a11y);
+    --c-a-purple: var(--rgba-mode-light-purple-a11y);
+    --c-a-pink: var(--rgba-mode-light-pink-a11y);
+    --c-a-brown: var(--rgba-mode-light-brown-a11y);
+    --c-a-gray: var(--rgba-mode-light-gray-a11y);
   }
-}
-
-[data-prefers-color-scheme='dark'],
-[data-prefers-color-scheme='light'],
-[data-prefers-color-scheme='dark'] [data-scheme='secondary'],
-[data-prefers-color-scheme='light'] [data-scheme='secondary'] {
-  --c-s-1: calc(100% - calc(var(--c-step) * 1));
-  --c-s-2: calc(100% - calc(var(--c-step) * 2));
-  --c-s-3: calc(100% - calc(var(--c-step) * 3));
-  --c-s-4: calc(100% - calc(var(--c-step) * 4));
-  --c-s-5: calc(100% - calc(var(--c-step) * 5));
-  --c-s-6: calc(100% - calc(var(--c-step) * 6));
-  --c-s-7: calc(100% - calc(var(--c-step) * 7));
-  --c-s-8: calc(100% - calc(var(--c-step) * 8));
-  --c-s-9: calc(100% - calc(var(--c-step) * 9));
-  --c-s-10: calc(100% - calc(var(--c-step) * 10));
-  --c-s-11: calc(100% - calc(var(--c-step) * 11));
-  --c-s-12: calc(100% - calc(var(--c-step) * 12));
-  --c-s-13: calc(100% - calc(var(--c-step) * 13));
-  --c-s-14: calc(100% - calc(var(--c-step) * 14));
-  --c-s-15: calc(100% - calc(var(--c-step) * 15));
-  --c-s-16: calc(100% - calc(var(--c-step) * 16));
-
-  --c-shadow: color-mix(in srgb, var(--c-tint) var(--c-s-1), var(--c-base));
-
-  --c-bg-1: color-mix(in srgb, var(--c-base) var(--c-s-1), var(--c-tint));
-  --c-bg-2: color-mix(in srgb, var(--c-base) var(--c-s-2), var(--c-tint));
-  --c-bg-3: color-mix(in srgb, var(--c-base) var(--c-s-3), var(--c-tint));
-  --c-bg-4: color-mix(in srgb, var(--c-base) var(--c-s-4), var(--c-tint));
-  --c-bg-5: color-mix(in srgb, var(--c-base) var(--c-s-5), var(--c-tint));
-
-  --c-text-1: color-mix(in srgb, var(--c-tint) var(--c-s-1), var(--c-base));
-  --c-text-2: color-mix(in srgb, var(--c-tint) var(--c-s-3), var(--c-base));
-  --c-text-3: color-mix(in srgb, var(--c-tint) var(--c-s-5), var(--c-base));
-  --c-text-4: color-mix(in srgb, var(--c-tint) var(--c-s-7), var(--c-base));
-  --c-text-5: color-mix(in srgb, var(--c-tint) var(--c-s-9), var(--c-base));
-
-  --c-border-1: color-mix(in srgb, var(--c-shade) var(--c-s-2), var(--c-tint));
-  --c-border-2: color-mix(in srgb, var(--c-shade) var(--c-s-5), var(--c-tint));
-  --c-border-3: color-mix(in srgb, var(--c-shade) var(--c-s-6), var(--c-tint));
-  --c-border-4: color-mix(in srgb, var(--c-shade) var(--c-s-7), var(--c-tint));
-  --c-border-5: color-mix(in srgb, var(--c-shade) var(--c-s-8), var(--c-tint));
-
-  --c-button-tt: var(--c-text-1);
-  --c-button-bb: color-mix(in srgb, var(--c-base) var(--c-s-2), var(--c-tint));
-  --c-button-hh: color-mix(in srgb, var(--c-base) var(--c-s-3), var(--c-tint));
-  --c-button-aa: color-mix(in srgb, var(--c-base) var(--c-s-4), var(--c-tint));
-  --c-button-ss: color-mix(in srgb, var(--c-base) var(--c-s-5), var(--c-tint));
-  --c-button-dd: color-mix(in srgb, var(--c-base) var(--c-s-8), var(--c-tint));
-
-  --c-anchor-tt: var(--c-text-1);
-  --c-anchor-bb: color-mix(in srgb, var(--c-base) var(--c-s-1), var(--c-tint));
-  --c-anchor-hh: color-mix(in srgb, var(--c-base) var(--c-s-2), var(--c-tint));
-  --c-anchor-aa: color-mix(in srgb, var(--c-base) var(--c-s-3), var(--c-tint));
-  --c-anchor-ss: color-mix(in srgb, var(--c-base) var(--c-s-4), var(--c-tint));
-  --c-anchor-dd: color-mix(in srgb, var(--c-base) var(--c-s-5), var(--c-tint));
-
-  --c-link-tt: var(--c-text-1);
-  --c-link-bb: color-mix(in srgb, var(--c-base) var(--c-s-1), var(--c-tint));
-  --c-link-hh: color-mix(in srgb, var(--c-base) var(--c-s-2), var(--c-tint));
-  --c-link-aa: color-mix(in srgb, var(--c-base) var(--c-s-3), var(--c-tint));
-  --c-link-ss: color-mix(in srgb, var(--c-base) var(--c-s-4), var(--c-tint));
-  --c-link-dd: color-mix(in srgb, var(--c-base) var(--c-s-5), var(--c-tint));
 }
 
 [data-prefers-color-scheme='light'] {
