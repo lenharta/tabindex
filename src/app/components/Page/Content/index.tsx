@@ -9,7 +9,7 @@ export interface PageContentProps {
 export const PageContent: React.FC<PageContentProps> = (props) => {
   const { children, className } = props;
   return (
-    <main id="mainContent" className={clsx('Page-content', className)}>
+    <main id="mainContent" className={clsx('page-content', className)}>
       <React.Fragment>{children}</React.Fragment>
     </main>
   );

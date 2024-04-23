@@ -12,8 +12,8 @@ export type HeaderComponent = React.FC<HeaderProps> & {
 
 export const Header: HeaderComponent = ({}) => {
   return (
-    <header className="Header">
-      <div className="Header-content">
+    <header className="header">
+      <div className="header-content">
         <Header.Logo />
         <Header.SkipTo />
         <Header.Search />

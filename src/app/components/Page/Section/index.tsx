@@ -10,7 +10,7 @@ export const PageSection: PageSectionComponent = (props) => {
   const { children } = props;
 
   return (
-    <section className="Page-section">
+    <section className="page-section">
       <React.Fragment>{children}</React.Fragment>
     </section>
   );

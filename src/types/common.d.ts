@@ -71,14 +71,12 @@ export declare namespace TBDX {
   export type LinkVariant = 'default' | 'underlined';
 
   export interface LinkProps extends BaseProps<'a'> {
-    size?: Size5 | undefined;
     block?: boolean | undefined;
     theme?: LinkTheme | undefined;
     variant?: LinkVariant | undefined;
   }
 
   export interface LinkGroupProps extends BaseProps<'div'> {
-    size?: Size5 | undefined;
     block?: boolean | undefined;
     theme?: LinkTheme | undefined;
     variant?: LinkVariant | undefined;
@@ -86,7 +84,6 @@ export declare namespace TBDX {
   }
 
   export interface LinkGroupContext {
-    size?: Size5 | undefined;
     block?: boolean | undefined;
     theme?: LinkTheme | undefined;
     variant?: LinkVariant | undefined;
@@ -96,14 +93,12 @@ export declare namespace TBDX {
   export type AnchorVariant = 'default' | 'accent';
 
   export interface AnchorProps extends BaseProps<'a'> {
-    size?: Size5 | undefined;
     block?: boolean | undefined;
     theme?: AnchorTheme | undefined;
     variant?: AnchorVariant | undefined;
   }
 
   export interface AnchorGroupProps extends BaseProps<'div'> {
-    size?: Size5 | undefined;
     block?: boolean | undefined;
     theme?: AnchorTheme | undefined;
     variant?: AnchorVariant | undefined;
@@ -111,7 +106,6 @@ export declare namespace TBDX {
   }
 
   export interface AnchorGroupContext {
-    size?: Size5 | undefined;
     block?: boolean | undefined;
     theme?: AnchorTheme | undefined;
     variant?: AnchorVariant | undefined;

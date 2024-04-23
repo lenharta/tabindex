@@ -2,7 +2,7 @@
 @use '../mixins/interactions' as interactions;
 
 @layer reset {
-  .Anchor {
+  .anchor {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -12,17 +12,11 @@
 
 @layer tokens {
   :root {
-    --anchor-height-xs: var(--spacing-8);
-    --anchor-height-sm: var(--spacing-9);
-    --anchor-height-md: var(--spacing-10);
-    --anchor-height-lg: var(--spacing-11);
-    --anchor-height-xl: var(--spacing-12);
-
-    --anchor-padding-x-xs: var(--spacing-5);
-    --anchor-padding-x-sm: var(--spacing-6);
-    --anchor-padding-x-md: var(--spacing-7);
-    --anchor-padding-x-lg: var(--spacing-8);
-    --anchor-padding-x-xl: var(--spacing-9);
+    --anchor-height-xs: var(--spacing-6);
+    --anchor-height-sm: var(--spacing-7);
+    --anchor-height-md: var(--spacing-8);
+    --anchor-height-lg: var(--spacing-9);
+    --anchor-height-xl: var(--spacing-10);
 
     --anchor-label-size-xs: var(--fz-1);
     --anchor-label-size-sm: var(--fz-2);
@@ -32,15 +26,12 @@
   }
 }
 
-.Anchor {
+.anchor {
   @include interactions.cursor;
   @include interactions.focus;
 
   cursor: default;
   width: max-content;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   border: solid var(--unit) transparent;
   outline: solid var(--unit) transparent;
   height: var(--anchor-height, var(--anchor-height-sm));
@@ -50,8 +41,18 @@
   transition-property: var(--transition-color);
   line-height: 1;
 
-  &:not([data-inline]) {
-    padding-inline: var(--anchor-padding-x, var(--anchor-padding-x-sm));
+  [data-orientaton='vertical'] &,
+  [aria-orientaton='vertical'] & {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  [data-orientaton='horizontal'] &,
+  [aria-orientaton='horizontal'] & {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
   &:where([data-block]) {
@@ -59,33 +60,34 @@
     width: 100%;
   }
 
+  &-inner {
+    position: relative;
+    margin-inline: var(--unit);
+    padding-block: var(--unit);
+  }
+
   &[data-size='xs'] {
     --anchor-height: var(--anchor-height-xs);
-    --anchor-padding-x: var(--anchor-padding-x-xs);
     --anchor-label-size: var(--anchor-label-size-xs);
   }
 
   &[data-size='sm'] {
     --anchor-height: var(--anchor-height-sm);
-    --anchor-padding-x: var(--anchor-padding-x-sm);
     --anchor-label-size: var(--anchor-label-size-sm);
   }
 
   &[data-size='md'] {
     --anchor-height: var(--anchor-height-md);
-    --anchor-padding-x: var(--anchor-padding-x-md);
     --anchor-label-size: var(--anchor-label-size-md);
   }
 
   &[data-size='lg'] {
     --anchor-height: var(--anchor-height-lg);
-    --anchor-padding-x: var(--anchor-padding-x-lg);
     --anchor-label-size: var(--anchor-label-size-lg);
   }
 
   &[data-size='xl'] {
     --anchor-height: var(--anchor-height-xl);
-    --anchor-padding-x: var(--anchor-padding-x-xl);
     --anchor-label-size: var(--anchor-label-size-xl);
   }
 
@@ -94,12 +96,47 @@
 
     &:not([data-disabled]),
     &:not([aria-disabled]) {
-      background-color: var(--c-anchor-bb);
+      background-color: transparent;
+
+      &::before {
+        transform-origin: left;
+        transform: scale(0, 1);
+      }
     }
+
     &:not([data-disabled]):hover,
     &:not([aria-disabled]):hover {
-      text-decoration: underline;
-      text-decoration-color: var(--c-anchor-tt);
+      .anchor-inner {
+        &::before {
+          content: '';
+          left: 0;
+          right: 0;
+          width: 100%;
+          height: 1px;
+          bottom: 0;
+          position: absolute;
+          background-color: var(--c-anchor-tt);
+          transform-origin: left;
+          transform: scale(1, 1);
+          transition-property: transform;
+          transition-timing-function: var(--easing-productive);
+          transition-duration: var(--easing-duration-2);
+        }
+      }
     }
+  }
+}
+
+.anchorGroup {
+  display: flex;
+  gap: var(--spacing-2);
+
+  &[aria-orientation='vertical'],
+  &[data-orientation='vertical'] {
+    flex-direction: column;
+  }
+  &[aria-orientation='horizontal'],
+  &[data-orientation='horizontal'] {
+    flex-direction: row;
   }
 }

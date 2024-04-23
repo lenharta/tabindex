@@ -4,6 +4,7 @@ import { PageHero } from './Hero';
 import { PageFooter } from './Footer';
 import { PageContent } from './Content';
 import { PageSection } from './Section';
+import { Controls } from '../Controls';
 
 export interface PageProps {
   children?: React.ReactNode | undefined;
@@ -15,6 +16,9 @@ export type PageComponent = React.FC<PageProps> & {
   Footer: typeof PageFooter;
   Content: typeof PageContent;
   Section: typeof PageSection;
+
+  // TEMPORARY
+  Controls: typeof Controls;
 };
 
 export const Page: PageComponent = (props) => {
@@ -23,6 +27,7 @@ export const Page: PageComponent = (props) => {
     <div className={clsx('Page', className)}>
       {children}
       <Page.Footer />
+      <Page.Controls />
     </div>
   );
 };
@@ -31,6 +36,9 @@ Page.Hero = PageHero;
 Page.Footer = PageFooter;
 Page.Section = PageSection;
 Page.Content = PageContent;
+
+// TEMPORARY
+Page.Controls = Controls;
 
 Page.displayName = 'app/Page';
 Page.Hero.displayName = 'app/Page.Hero';

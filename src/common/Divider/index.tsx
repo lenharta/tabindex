@@ -25,15 +25,15 @@ export const Divider = React.forwardRef<HTMLDivElement, DividerProps>((props, re
       {...forwardedProps}
       ref={ref}
       role="separator"
-      className={clsx('Divider', className)}
+      className={clsx('divider', className)}
       data-orientation={orientation}
       data-with-label={label !== undefined ? true : undefined}
       data-position={position}
       data-theme={theme}
       data-size={size}
     >
-      {label && <span className="Divider-label">{label}</span>}
-      <div className="Divider-seperator" />
+      {label && <span className="divider-label">{label}</span>}
+      <div className="divider-seperator" />
     </div>
   );
 });

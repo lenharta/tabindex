@@ -21,19 +21,16 @@ export const useLinkGroup = () => React.useContext(LinkGroupCTX);
 export const LinkGroupRender = (props: LinkGroupProps, ref: React.ForwardedRef<HTMLDivElement>) => {
   const { children, ...otherProps } = props;
 
-  const { block, className, size, theme, variant, orientation } = mergeProps(
-    otherProps,
-    defaultProps
-  );
+  const { block, className, theme, variant, orientation } = mergeProps(otherProps, defaultProps);
 
   return (
     <div
       ref={ref}
-      className={clsx('LinkGroup', className)}
+      className={clsx('link-group', className)}
       data-orientation={orientation}
       aria-orientation={orientation}
     >
-      <LinkGroupProvider value={{ size, block, theme, variant }}>
+      <LinkGroupProvider value={{ block, theme, variant }}>
         <React.Fragment>{children}</React.Fragment>
       </LinkGroupProvider>
     </div>

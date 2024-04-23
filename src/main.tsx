@@ -4,18 +4,19 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import '@/styles/main.scss';
 import { Root } from './app';
-import { Home, Checklist, Demo, Anatomy, Guide } from './app/routes';
+import { ChecklistRoute, DemoRoute, AnatomyRoute, GuideRoute } from './app/routes';
+import { OverviewRoute } from './app/routes/Overview';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Root />,
     children: [
-      { index: true, element: <Home /> },
-      { path: '/demo', element: <Demo /> },
-      { path: '/guide', element: <Guide /> },
-      { path: '/anatomy', element: <Anatomy /> },
-      { path: '/checklist', element: <Checklist /> },
+      { index: true, element: <OverviewRoute /> },
+      { path: '/demo', element: <DemoRoute /> },
+      { path: '/guide', element: <GuideRoute /> },
+      { path: '/anatomy', element: <AnatomyRoute /> },
+      { path: '/checklist', element: <ChecklistRoute /> },
     ],
   },
 ]);

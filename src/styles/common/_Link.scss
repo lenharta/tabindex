@@ -2,7 +2,7 @@
 @use '../mixins/interactions' as interactions;
 
 @layer reset {
-  .Link {
+  .link {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -26,7 +26,7 @@
   }
 }
 
-.Link {
+.link {
   @include interactions.cursor;
   @include interactions.focus;
 
@@ -40,6 +40,13 @@
   transition-duration: var(--easing-duration-3);
   transition-property: var(--transition-color);
   line-height: 1;
+  direction: ltr;
+  text-align: left;
+
+  @include attributes.where-rtl {
+    direction: rtl;
+    text-align: right;
+  }
 
   [data-orientaton='vertical'] &,
   [aria-orientaton='vertical'] & {
@@ -106,7 +113,7 @@
 
     &:not([data-disabled]):hover,
     &:not([aria-disabled]):hover {
-      .Link-inner {
+      .link-inner {
         &::before {
           content: '';
           left: 0;

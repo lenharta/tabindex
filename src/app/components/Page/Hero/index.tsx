@@ -9,7 +9,7 @@ export interface PageHeroProps {
 export const PageHero: React.FC<PageHeroProps> = (props) => {
   const { children, className } = props;
   return (
-    <section className={clsx('Page-hero', className)}>
+    <section className={clsx('page-hero', className)}>
       <React.Fragment>{children}</React.Fragment>
     </section>
   );

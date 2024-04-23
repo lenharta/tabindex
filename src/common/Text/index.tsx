@@ -46,7 +46,7 @@ export const Text = React.forwardRef<HTMLParagraphElement, TextProps>((props, re
       data-truncate={truncate}
       data-line-clamp={clamp}
       className={clsx(
-        'Text',
+        'text',
         formatFontSizeClxss(fz),
         formatFontFamilyClxss(ff),
         formatFontWeightClxss(fw),

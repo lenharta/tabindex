@@ -34,7 +34,7 @@ export const Title = React.forwardRef<HTMLHeadingElement, TitleProps>((props, re
       data-theme={theme}
       data-variant={variant}
       data-line-clamp={clamp}
-      className={clsx('Title', className)}
+      className={clsx('title', className)}
     >
       {children}
     </Component>

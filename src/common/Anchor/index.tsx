@@ -18,7 +18,7 @@ const defaultProps: Partial<AnchorProps> = {
 export const AnchorRender = (props: AnchorProps, ref: React.ForwardedRef<HTMLAnchorElement>) => {
   const { children, leftContent, rightContent, ...otherProps } = props;
 
-  const { size, className, block, theme, variant, ...forwardedProps } = mergeProps(
+  const { className, block, theme, variant, ...forwardedProps } = mergeProps(
     otherProps,
     defaultProps
   );
@@ -27,11 +27,10 @@ export const AnchorRender = (props: AnchorProps, ref: React.ForwardedRef<HTMLAnc
     <a
       {...forwardedProps}
       ref={ref}
-      className={clsx('Anchor', className)}
+      className={clsx('anchor', className)}
       data-variant={variant}
       data-theme={theme}
       data-block={block}
-      data-size={size}
     >
       {leftContent && <div data-position="left">{leftContent}</div>}
       {children && <div>{children}</div>}

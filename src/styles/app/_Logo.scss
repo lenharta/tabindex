@@ -9,7 +9,17 @@
   }
 }
 
-.Logo {
+@layer tokens {
+  :root {
+    --logo-font-size-xs: var(--fz-6);
+    --logo-font-size-sm: var(--fz-8);
+    --logo-font-size-md: var(--fz-10);
+    --logo-font-size-lg: var(--fz-12);
+    --logo-font-size-xl: var(--fz-14);
+  }
+}
+
+.logo {
   @include interactions.focus;
   @include interactions.cursor;
 
@@ -17,12 +27,44 @@
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
-  font-size: var(--fz-8);
+  font-size: var(--logo-font-size, var(--logo-font-size-sm));
   font-weight: var(--fw-reg);
-  padding-inline: var(--spacing-6);
+  line-height: 1;
+
+  &-span--left,
+  &-span--right {
+    flex-wrap: nowrap;
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  &-span--left {
+    color: var(--c-text-2);
+  }
+  &-span--right {
+    color: var(--c-accent);
+  }
 
   color: var(--c-text-1);
+  background-color: transparent;
   transition-property: var(--transition-color);
   transition-duration: var(--easing-duration-7);
-  transition-timing-function: var(--easing-productive);
+  transition-timing-function: var(--easing-expressive);
+
+  &[data-size='xs'] {
+    --logo-font-size: var(--logo-font-size-xs);
+  }
+  &[data-size='sm'] {
+    --logo-font-size: var(--logo-font-size-sm);
+  }
+  &[data-size='md'] {
+    --logo-font-size: var(--logo-font-size-md);
+  }
+  &[data-size='lg'] {
+    --logo-font-size: var(--logo-font-size-lg);
+  }
+  &[data-size='xl'] {
+    --logo-font-size: var(--logo-font-size-xl);
+  }
 }

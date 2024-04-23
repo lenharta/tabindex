@@ -1,5 +1,7 @@
+@use '../mixins/attributes' as attributes;
+
 @layer reset {
-  .Divider {
+  .divider {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -17,12 +19,18 @@
   }
 }
 
-.Divider {
+.divider {
   width: 100%;
+  height: calc(var(--divider-height) + calc(var(--unit) * 4));
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: var(--spacing-2);
+  flex-direction: row;
+  gap: var(--spacing-3);
+
+  @include attributes.where-rtl {
+    flex-direction: row-reverse;
+  }
 
   &-label {
     display: flex;
@@ -31,6 +39,7 @@
     font-weight: var(--fw-med);
     font-size: var(--fz-m);
     color: var(--c-border-3);
+    margin-bottom: calc(var(--unit) * 2);
     white-space: nowrap;
     isolation: isolate;
     position: relative;

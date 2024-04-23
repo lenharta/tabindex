@@ -30,19 +30,18 @@ export type LinkComponent = LinkExoticComponent & {
 export const LinkRender = (props: LinkProps, ref: React.ForwardedRef<HTMLAnchorElement>) => {
   const { children, leftContent, rightContent, ...otherProps } = props;
 
-  const { to, size, block, theme, variant, className } = mergeProps(otherProps, defaultProps);
+  const { to, block, theme, variant, className } = mergeProps(otherProps, defaultProps);
 
   return (
     <RouterLink
       to={to}
       ref={ref}
-      className={clsx('Link', className)}
+      className={clsx('link', className)}
       data-variant={variant}
       data-block={block}
       data-theme={theme}
-      data-size={size}
     >
-      <span className="Link-inner">
+      <span className="link-inner">
         {leftContent && <div data-position="left">{leftContent}</div>}
         {children && <div>{children}</div>}
         {rightContent && <div data-position="right">{rightContent}</div>}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { keys } from '@/utils';
 import { Divider, Link } from '@/common';
+import { Logo } from '../../Logo';
 
 interface FooterItem {
   value: string;
@@ -15,7 +16,7 @@ interface FooterGroupProps {
 
 const footerGroupData: Record<string, FooterItem[]> = {
   Routes: [
-    { id: 'nav-link-home', value: '/', label: 'Home' },
+    { id: 'nav-link-home', value: '/', label: 'Overview' },
     { id: 'nav-link-demo', value: '/demo', label: 'Demo' },
     { id: 'nav-link-guide', value: '/guide', label: 'Guide' },
     { id: 'nav-link-anatomy', value: '/anatomy', label: 'Anatomy' },
@@ -44,18 +45,21 @@ const footerGroupData: Record<string, FooterItem[]> = {
 };
 
 const FooterBrand: React.FC<{}> = ({}) => (
-  <div className="Page-footer-Brand">
-    <Link
-      to="/"
-      className="Page-footer-Brand-logo"
-      aria-label="tabindex footer logo"
-      children={<span>Icon</span>}
+  <div className="page-footer-brand">
+    <Logo
+      title="Tabindex Logo"
+      label="tabindex brand footer logo"
+      className="page-footer-brand-logo"
     />
+    <span className="page-footer-brand-year">
+      {'\u0040'}
+      {new Date().getFullYear()}
+    </span>
   </div>
 );
 
 export const FooterGroup = ({ group, items }: FooterGroupProps) => (
-  <div key={group} className="Page-footer-nav-group">
+  <div key={group} className="page-footer-nav-group">
     <Divider label={group} />
     <Link.Group role="list" orientation="vertical">
       {items.map((item) => (
@@ -73,9 +77,9 @@ export const FooterGroup = ({ group, items }: FooterGroupProps) => (
 );
 
 const FooterNav: React.FC<{}> = ({}) => (
-  <nav className="Page-footer-nav">
+  <nav className="page-footer-nav">
     {keys(footerGroupData).map((group) => (
-      <FooterGroup group={group} items={footerGroupData[group]} />
+      <FooterGroup key={group} group={group} items={footerGroupData[group]} />
     ))}
   </nav>
 );
@@ -86,9 +90,9 @@ type PageFooterComponent = React.FC<{}> & {
 };
 
 export const PageFooter: PageFooterComponent = ({}) => (
-  <footer className="Page-footer">
-    <PageFooter.Brand />
+  <footer className="page-footer">
     <PageFooter.Nav />
+    <PageFooter.Brand />
   </footer>
 );
 

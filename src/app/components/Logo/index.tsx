@@ -1,22 +1,37 @@
+import clsx from 'clsx';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-export interface LogoProps {}
+export interface LogoProps {
+  label?: string | undefined;
+  title?: string | undefined;
+  children?: React.ReactNode | undefined;
+  className?: string | undefined;
+}
 
 export type LogoComponent = React.FC<LogoProps>;
 
-export const Logo: LogoComponent = () => {
+const LogoElement = (
+  <React.Fragment>
+    <span className="logo-span--left">Tab</span>
+    <span className="logo-span--right">index</span>
+  </React.Fragment>
+);
+
+export const Logo: LogoComponent = ({
+  label = 'tabindex logo',
+  title = 'Tabindex Logo',
+  children,
+  className,
+}: LogoProps) => {
   return (
     <Link
       to="/"
-      title="AnatomyUI"
-      className="Logo ff-plex"
-      aria-label="anatomy user interface logo"
-    >
-      <span className="fw-lgt">Tab</span>
-      <span style={{ color: 'var(--c-accent)' }} className="fw-lgt">
-        index
-      </span>
-    </Link>
+      title={title}
+      children={children || LogoElement}
+      className={clsx('logo', className)}
+      aria-label={label}
+    />
   );
 };
 

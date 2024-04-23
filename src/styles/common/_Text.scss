@@ -2,18 +2,25 @@
 @use '../mixins/interactions' as interactions;
 
 @layer reset {
-  .Text {
+  .text {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     vertical-align: baseline;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
   }
 }
 
-.Text {
+.text {
   display: block;
-  text-decoration: none;
-  -webkit-tap-highlight-color: transparent;
+  direction: ltr;
+  text-align: left;
+
+  @include attributes.where-rtl {
+    direction: rtl;
+    text-align: right;
+  }
 
   &:where([data-variant='gradient']) {
     background-image: var(--text-gradient);

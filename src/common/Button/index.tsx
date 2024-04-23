@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React from 'react';
 import { TBDX } from '@/types';
 import { mergeProps } from '../utils';
-import { useButtonGroup } from './Group';
+import { ButtonGroup, useButtonGroup } from './Group';
 
 export interface ButtonProps extends TBDX.ButtonProps {
   label?: string | undefined;
@@ -12,13 +12,17 @@ export interface ButtonProps extends TBDX.ButtonProps {
   rightContent?: React.ReactNode | undefined;
 }
 
+export type ButtonExoticComponent = React.ForwardRefExoticComponent<ButtonProps> & {
+  Group: typeof ButtonGroup;
+};
+
 const defaultProps: Partial<ButtonProps> = {
   size: 'md',
   theme: 'default',
   variant: 'default',
 };
 
-export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
+const ButtonRender = (props: ButtonProps, ref: React.ForwardedRef<HTMLButtonElement>) => {
   const { children, leftContent, rightContent, ...otherProps } = props;
 
   const contextProps = useButtonGroup();
@@ -31,22 +35,24 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
 
   return (
     <button
-      {...forwardedProps}
       ref={ref}
-      className={clsx('Button', className)}
-      aria-label={otherProps['aria-label'] || label}
-      data-variant={variant}
-      data-block={block}
-      data-theme={theme}
+      className={clsx('button', className)}
       data-size={size}
+      data-theme={theme}
+      data-block={block}
+      data-variant={variant}
+      {...forwardedProps}
     >
-      <span className="Button-inner">
+      <span className="button-inner">
         {leftContent && <div data-position="left">{leftContent}</div>}
         {children && <div>{children || label}</div>}
         {rightContent && <div data-position="right">{rightContent}</div>}
       </span>
     </button>
   );
-});
+};
 
+export const Button = React.forwardRef(ButtonRender) as ButtonExoticComponent;
+
+Button.Group = ButtonGroup;
 Button.displayName = 'common/Button';

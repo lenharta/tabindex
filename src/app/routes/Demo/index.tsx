@@ -4,7 +4,219 @@ import { ButtonGroup } from '@/common/Button/Group';
 import { Divider } from '@/common/Divider';
 import { Link } from '@/common/Link';
 
-const SearchData = [
+interface ComponentData {
+  id: string;
+  name: string;
+  summary: string;
+}
+
+export const componentDataInput: ComponentData[] = [
+  { id: 'element-tag', name: 'Tag', summary: `` },
+  { id: 'element-pill', name: 'Pill', summary: `` },
+  { id: 'element-file', name: 'File', summary: `` },
+  { id: 'element-text', name: 'Text', summary: `` },
+  { id: 'element-chip', name: 'Chip', summary: `` },
+  { id: 'element-radio', name: 'Radio', summary: `` },
+  { id: 'element-select', name: 'Select', summary: `` },
+  { id: 'element-textarea', name: 'Textarea', summary: `` },
+  { id: 'element-password', name: 'Password', summary: `` },
+  { id: 'element-checkbox', name: 'Checkbox', summary: `` },
+  { id: 'element-combobox', name: 'Combobox', summary: `` },
+  { id: 'element-fieldset', name: 'Fieldset', summary: `` },
+  { id: 'element-control', name: 'Control', summary: `` },
+  { id: 'element-number', name: 'Number', summary: `` },
+  { id: 'element-rating', name: 'Rating', summary: `` },
+  { id: 'element-switch', name: 'Switch', summary: `` },
+  { id: 'element-slider', name: 'Slider', summary: `` },
+  { id: 'element-pin', name: 'Pin', summary: `` },
+];
+
+export const componentDataButton: ComponentData[] = [
+  { id: 'element-action', name: 'Action', summary: `` },
+  { id: 'element-button', name: 'Button', summary: `` },
+  { id: 'element-toggle', name: 'Toggle', summary: `` },
+  { id: 'element-close', name: 'Close', summary: `` },
+  { id: 'element-copy', name: 'Copy', summary: `` },
+  { id: 'element-file', name: 'File', summary: `` },
+];
+
+export const componentDataCombobox: ComponentData[] = [
+  { id: 'element-autocomplete', name: 'Autocomplete', summary: `` },
+  { id: 'element-multiselect', name: 'MultiSelect', summary: `` },
+  { id: 'element-combobox', name: 'Combobox', summary: `` },
+  { id: 'element-select', name: 'Select', summary: `` },
+  { id: 'element-pill', name: 'Pill', summary: `` },
+  { id: 'element-tag', name: 'Tag', summary: `` },
+];
+
+export const componentDataNavigation: ComponentData[] = [
+  { id: 'element-pagination', name: 'Pagination', summary: `` },
+  { id: 'element-breadcrumb', name: 'Breadcrumb', summary: `` },
+  { id: 'element-stepper', name: 'Stepper', summary: `` },
+  { id: 'element-anchor', name: 'Anchor', summary: `` },
+  { id: 'element-burger', name: 'Burger', summary: `` },
+  { id: 'element-link', name: 'Link', summary: `` },
+  { id: 'element-tabs', name: 'Tabs', summary: `` },
+];
+
+export const componentDataTypography: ComponentData[] = [
+  { id: 'element-blockquote', name: 'Blockquote', summary: `` },
+  { id: 'element-highlight', name: 'Highlight', summary: `` },
+  { id: 'element-heading', name: 'Heading', summary: `` },
+  { id: 'element-text', name: 'Text', summary: `` },
+  { id: 'element-mark', name: 'Mark', summary: `` },
+];
+
+export const componentDataFeedback: ComponentData[] = [
+  { id: 'element-notification', name: 'Notification', summary: `` },
+  { id: 'element-progress', name: 'Progress', summary: `` },
+  { id: 'element-skeleton', name: 'Skeleton', summary: `` },
+  { id: 'element-loader', name: 'Loader', summary: `` },
+  { id: 'element-alert', name: 'Alert', summary: `` },
+];
+
+export const componentDataData: ComponentData[] = [
+  { id: 'element-timeline', name: 'Timeline', summary: `` },
+  { id: 'element-swatch', name: 'Swatch', summary: `` },
+  { id: 'element-table', name: 'Table', summary: `` },
+  { id: 'element-badge', name: 'Badge', summary: `` },
+  { id: 'element-list', name: 'List', summary: `` },
+  { id: 'element-code', name: 'Code', summary: `` },
+  { id: 'element-kbd', name: 'Kbd', summary: `` },
+];
+
+export const componentDataOverlay: ComponentData[] = [
+  { id: 'element-modal', name: 'Modal', summary: `` },
+  { id: 'element-dialog', name: 'Dialog', summary: `` },
+  { id: 'element-drawer', name: 'Drawer', summary: `` },
+  { id: 'element-loading', name: 'Loading', summary: `` },
+  { id: 'element-tooltip', name: 'Tooltip', summary: `` },
+];
+
+export const componentDataLayout: ComponentData[] = [
+  { id: 'element-accordion', name: 'Accordion', summary: `` },
+  { id: 'element-overlay', name: 'Overlay', summary: `` },
+  { id: 'element-divider', name: 'Divider', summary: `` },
+  { id: 'element-group', name: 'Group', summary: `` },
+  { id: 'element-stack', name: 'Stack', summary: `` },
+  { id: 'element-card', name: 'Card', summary: `` },
+  { id: 'element-menu', name: 'Menu', summary: `` },
+];
+
+export const componentDataMedia: ComponentData[] = [
+  { id: 'element-backgroundimage', name: 'BackgroundImage', summary: `` },
+  { id: 'element-indicator', name: 'Indicator', summary: `` },
+  { id: 'element-spoiler', name: 'Spoiler', summary: `` },
+  { id: 'element-avatar', name: 'Avatar', summary: `` },
+  { id: 'element-image', name: 'Image', summary: `` },
+  { id: 'element-icon', name: 'Icon', summary: `` },
+];
+
+export const componentData = {
+  input: componentDataInput,
+  button: componentDataButton,
+  combobox: componentDataCombobox,
+  navigation: componentDataNavigation,
+  typography: componentDataTypography,
+  feedback: componentDataFeedback,
+  overlay: componentDataOverlay,
+  layout: componentDataLayout,
+  media: componentDataMedia,
+};
+
+// ========== Input
+// Tag
+// Pill
+// File
+// Text
+// Chip
+// Radio
+// Select
+// Textarea
+// Password
+// Checkbox
+// Combobox
+// Fieldset
+// Control
+// Number
+// Rating
+// Switch
+// Slider
+// Pin
+
+// ========== Combobox
+// Autocomplete
+// Combobox
+// Select
+// MultiSelect
+// Pill
+// Tag
+
+// ========== Buttons
+// Action
+// Button
+// Toggle
+// Close
+// Copy
+// File
+
+// ========== Navigation
+// Anchor
+// Breadcrumb
+// Burger
+// Link
+// Pagination
+// Stepper
+// Tabs
+
+// ========== Feedback
+// Alert
+// Loader
+// Notification
+// Progress
+// Skeleton
+
+// ========== Overlays
+// Modal
+// Dialog
+// Drawer
+// Loading
+// Tooltip
+
+// ========== Layout
+// Accordion
+// Overlay
+// Divider
+// Group
+// Stack
+// Card
+// Menu
+
+// ========== Media
+// BackgroundImage
+// Indicator
+// Spoiler
+// Avatar
+// Image
+// Icon
+
+// ========== Data
+// Timeline
+// Swatch
+// Table
+// Badge
+// List
+// Code
+// Kbd
+
+// ========== Typography
+// Highlight
+// Blockquote
+// Heading
+// Text
+// Mark
+
+export const SearchData = [
   {
     title: 'Accordion',
     description: `An accordion is a list of headers that hide or reveal additional content when selected.`,
@@ -25,7 +237,10 @@ const SearchData = [
     title: 'Button',
     description: `A button draws attention to important actions with a large selectable surface.`,
   },
-  { title: 'Card', description: `Cards contain content and actions about a single subject.` },
+  {
+    title: 'Card',
+    description: `Cards contain content and actions about a single subject.`,
+  },
   {
     title: 'Checkbox',
     description: `Checkboxes allow users to select one or more options from a list.`,
@@ -38,39 +253,56 @@ const SearchData = [
     title: 'Combobox',
     description: `A combo box helps users select an item from a large list of options.`,
   },
-  { title: 'Date', description: `A date picker helps users select a single date.` },
   {
-    title: 'Date Range',
-    description: `A date range picker helps users select a range between two dates.`,
+    title: 'Date',
+    description: `A date picker helps users select a single date.`,
   },
-  { title: 'File Drop', description: `File input allows users to attach one or multiple files.` },
+  {
+    title: 'File',
+    description: `File input allows users to attach one or multiple files.`,
+  },
   {
     title: 'Footer',
     description: `A footer serves site visitors who arrive at the bottom of a page without finding what they want.`,
   },
-  { title: 'Form', description: `A form allows users to enter information into a page.` },
+  {
+    title: 'Form',
+    description: `A form allows users to enter information into a page.`,
+  },
   {
     title: 'Header',
     description: `A header helps users identify where they are and provides a quick, organized way to reach the main sections of a website.`,
   },
-  { title: 'Icon', description: `Icons help communicate meaning, actions, status, or feedback.` },
+  {
+    title: 'Icon',
+    description: `Icons help communicate meaning, actions, status, or feedback.`,
+  },
   {
     title: 'Link',
     description: `A link connects users to a different page or further information.`,
   },
-  { title: 'List', description: `A list organizes information into discrete sequential sections.` },
+  {
+    title: 'List',
+    description: `A list organizes information into discrete sequential sections.`,
+  },
   {
     title: 'Modal',
     description: `A modal disables page content and focuses the user\u2019s attention on a single task or message.`,
   },
-  { title: 'Pagination', description: `Pagination is navigation for paginated content.` },
+  {
+    title: 'Pagination',
+    description: `Pagination is navigation for paginated content.`,
+  },
   {
     title: 'Timeline',
     description: `A process list displays the steps or stages of important instructions or processes.`,
   },
-  { title: 'Prose', description: `Format a block of running text.` },
   {
-    title: 'Radio Button',
+    title: 'Prose',
+    description: `Format a block of running text.`,
+  },
+  {
+    title: 'Radio',
     description: `Radio buttons allow users to select exactly one choice from a group.`,
   },
   {
@@ -86,25 +318,33 @@ const SearchData = [
     description: `A select component allows users to choose one option from a temporary modal menu.`,
   },
   {
-    title: 'Side Navigation',
+    title: 'Navigation',
     description: `Hierarchical, vertical navigation to place at the side of a page.`,
   },
-  { title: 'Site Alert', description: `A site alert communicates urgent sitewide information.` },
   {
-    title: 'Step Indicator',
+    title: 'Steps',
     description: `A step indicator updates users on their progress through a multi-step process.`,
   },
   {
     title: 'Summary',
     description: `A summary box highlights key information from a longer page or displays next steps.`,
   },
-  { title: 'Table', description: `A table shows information in columns and rows.` },
-  { title: 'Tag', description: `A tag draws attention to new or categorized content elements.` },
+  {
+    title: 'Table',
+    description: `A table shows information in columns and rows.`,
+  },
+  {
+    title: 'Tag',
+    description: `A tag draws attention to new or categorized content elements.`,
+  },
   {
     title: 'Textbox',
     description: `A text input allows users to enter any combination of letters, numbers, or symbols. Text input boxes can span single or multiple lines.`,
   },
-  { title: 'Time', description: `A time picker helps users select a specific time.` },
+  {
+    title: 'Time',
+    description: `A time picker helps users select a specific time.`,
+  },
   {
     title: 'Tooltip',
     description: `A tooltip is a short descriptive message that appears when a user hovers or focuses on an element.`,
@@ -162,36 +402,22 @@ const a11yCardRequirements = [
   },
 ];
 
-const BasicCardRequirements = () => (
-  <section className="sec">
-    <Title>Basic Card</Title>
-    <ul>
-      <li>Focus indicators for all elements that need to be highlighted.</li>
-      <li>
-        Every <code>{`<img>`}</code> you add to your site needs to have an alt attribute. If the
-        image is informational, set the alt equal to a descriptive alternative for that image.
-      </li>
-      <li>
-        If the image is decorative or redundant to adjacent text, set <code>alt=""</code>, which
-        conveys to assistive technology users that the image isn{'\u2019'}t necessary for
-        understanding the page.
-      </li>
-      <li>
-        Avoid using generic strings like photo, image, or icon as alt values, as they don{'\u2019'}t
-        communicate valuable content to the user. Be as descriptive as possible.
-      </li>
-      <li>
-        You can add <code>class="visuallyhidden"</code> with descriptive text to give more context
-        to a button or link's purpose.
-      </li>
-    </ul>
-    <Text></Text>
-  </section>
+const GroupingListItems = () => (
+  <div role="list">
+    <div role="presentation">
+      <div role="listitem">...</div>
+      <div role="listitem">...</div>
+    </div>
+    <div role="presentation">
+      <div role="listitem">...</div>
+      <div role="listitem">...</div>
+    </div>
+  </div>
 );
 
-const BasicCardRequirements2 = () => {
+const CardRequirements = () => {
   return (
-    <section className="sec">
+    <Page.Section>
       <ul className="guide-list">
         {a11yCardRequirements.map((item) => (
           <li key={item.id} className="guide-list-item">
@@ -203,7 +429,7 @@ const BasicCardRequirements2 = () => {
           </li>
         ))}
       </ul>
-    </section>
+    </Page.Section>
   );
 };
 
@@ -274,18 +500,14 @@ export const DemoDivider = () => {
   );
 };
 
-export function Demo() {
+export function DemoRoute() {
   return (
     <Page>
       <Page.Hero>
         <Title h1>Demo</Title>
       </Page.Hero>
       <Page.Content>
-        <BasicCardRequirements2 />
-        {/* <BasicCardRequirements /> */}
-        {/* <DemoDivider /> */}
-        {/* <DemoLinkGroupHorizontal /> */}
-        {/* <DemoLinkGroupVertical /> */}
+        <CardRequirements />
       </Page.Content>
     </Page>
   );

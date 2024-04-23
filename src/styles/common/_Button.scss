@@ -2,7 +2,7 @@
 @use '../mixins/interactions' as interactions;
 
 @layer reset {
-  .Button {
+  .button {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -32,7 +32,7 @@
   }
 }
 
-.Button {
+.button {
   @include interactions.cursor;
   @include interactions.focus;
 
@@ -56,37 +56,37 @@
     width: 100%;
   }
 
-  &[data-size='xs'] {
+  &:where([data-size='xs']) {
     --button-height: var(--button-height-xs);
     --button-padding-x: var(--button-padding-x-xs);
     --button-label-size: var(--button-label-size-xs);
   }
 
-  &[data-size='sm'] {
+  &:where([data-size='sm']) {
     --button-height: var(--button-height-sm);
     --button-padding-x: var(--button-padding-x-sm);
     --button-label-size: var(--button-label-size-sm);
   }
 
-  &[data-size='md'] {
+  &:where([data-size='md']) {
     --button-height: var(--button-height-md);
     --button-padding-x: var(--button-padding-x-md);
     --button-label-size: var(--button-label-size-md);
   }
 
-  &[data-size='lg'] {
+  &:where([data-size='lg']) {
     --button-height: var(--button-height-lg);
     --button-padding-x: var(--button-padding-x-lg);
     --button-label-size: var(--button-label-size-lg);
   }
 
-  &[data-size='xl'] {
+  &:where([data-size='xl']) {
     --button-height: var(--button-height-xl);
     --button-padding-x: var(--button-padding-x-xl);
     --button-label-size: var(--button-label-size-xl);
   }
 
-  &[data-theme='default'] {
+  &:where([data-theme='default']) {
     color: var(--c-button-tt);
 
     &:not([data-disabled]),

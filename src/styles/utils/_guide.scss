@@ -14,12 +14,14 @@
       font-size: var(--fz-4);
       font-weight: var(--fw-reg);
       line-height: var(--lh-4);
+      color: var(--c-text-5);
     }
     &-title {
       flex: 1 0 25%;
       font-size: var(--fz-4);
       font-weight: var(--fw-med);
       line-height: var(--lh-4);
+      color: var(--c-text-1);
     }
   }
 }
@@ -28,7 +30,6 @@
   font-size: var(--fz-4);
   font-weight: var(--fw-reg);
   line-height: var(--lh-4);
-  color: var(--c-text-5);
 
   code,
   kbd {
@@ -39,15 +40,16 @@
     display: inline-flex;
     height: max-content;
     font-size: var(--fz-4);
-    font-weight: var(--fw-bld);
+    font-weight: var(--fw-med);
     line-height: var(--lh-4);
     border-radius: calc(var(--unit) * 2);
     padding-inline: calc(var(--unit) * 2);
     color: var(--c-accent);
-    background-color: var(--c-bg-3);
+    background-color: rgba(var(--c-a-accent), 0.1);
 
     [data-prefers-color-scheme='light'] & {
-      background-color: var(--c-bg-2);
+      background-color: rgba(var(--c-a-accent), 0.1);
+      // background-color: var(--c-bg-2);
     }
   }
 }

@@ -24,7 +24,7 @@ export const AnchorGroupRender = (
 ) => {
   const { children, ...otherProps } = props;
 
-  const { size, block, theme, variant, className, orientation, ...forwardedProps } = mergeProps(
+  const { block, theme, variant, className, orientation, ...forwardedProps } = mergeProps(
     otherProps,
     defaultProps
   );
@@ -33,11 +33,11 @@ export const AnchorGroupRender = (
     <div
       {...forwardedProps}
       ref={ref}
-      className={clsx('AnchorGroup', className)}
+      className={clsx('anchor-group', className)}
       data-orientation={orientation}
       aria-orientation={orientation}
     >
-      <AnchorGroupProvider value={{ block, size, theme, variant }}>
+      <AnchorGroupProvider value={{ block, theme, variant }}>
         <React.Fragment>{children}</React.Fragment>
       </AnchorGroupProvider>
     </div>

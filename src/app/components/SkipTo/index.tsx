@@ -4,7 +4,7 @@ export type SkipToComponent = React.FC<SkipToProps>;
 
 export const SkipTo: SkipToComponent = () => {
   return (
-    <div className="SkipTo">
+    <div className="skipto">
       <span>Skip To Main</span>
     </div>
   );

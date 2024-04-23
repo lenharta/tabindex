@@ -2,7 +2,7 @@
 @use '../mixins/interactions' as interactions;
 
 @layer reset {
-  .Title {
+  .title {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,9 +10,17 @@
   }
 }
 
-.Title {
+.title {
+  width: 100%;
   display: block;
   text-wrap: var(--title-text-wrap, inherit);
+  direction: ltr;
+  text-align: start;
+
+  @include attributes.where-rtl {
+    direction: rtl;
+    text-align: end;
+  }
 
   &:where([data-line-clamp]) {
     display: -webkit-box;
