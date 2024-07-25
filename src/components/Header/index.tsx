@@ -11,5 +11,5 @@ function Header(props: HeaderProps) {
   );
 }
 
-Header.displayName = 'Header';
+Header.displayName = 'Components.Header';
 export { Header };

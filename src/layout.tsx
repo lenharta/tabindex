@@ -1,16 +1,19 @@
 import * as React from 'react';
 import * as Router from 'react-router-dom';
+import { Side } from '@/components';
 import { AppProvider, ThemeProvider } from '@/store';
-import { Side } from './common';
+import { loader as loadShiki, ShikiProvider } from '@/shiki';
 
 export default function Layout(): JSX.Element {
   return (
     <React.Fragment>
       <ThemeProvider>
-        <AppProvider>
-          <Side />
-          <Router.Outlet />
-        </AppProvider>
+        <ShikiProvider loader={loadShiki}>
+          <AppProvider>
+            <Side />
+            <Router.Outlet />
+          </AppProvider>
+        </ShikiProvider>
       </ThemeProvider>
     </React.Fragment>
   );

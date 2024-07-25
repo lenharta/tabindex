@@ -16,5 +16,5 @@ function PageHero(props: PageHeroProps) {
   );
 }
 
-PageHero.displayName = 'Page.Hero';
+PageHero.displayName = 'Components.Page.Hero';
 export { PageHero };

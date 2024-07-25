@@ -11,5 +11,5 @@ function PageMain(props: PageMainProps) {
   );
 }
 
-PageMain.displayName = 'Page.Main';
+PageMain.displayName = 'Components.Page.Main';
 export { PageMain };

@@ -1,4 +1,2 @@
-export * from './Footer';
-export * from './Header';
-export * from './Page';
-export * from './Side';
+export * from './Text';
+export * from './Snippet';

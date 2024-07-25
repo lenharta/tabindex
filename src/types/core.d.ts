@@ -6,4 +6,16 @@ export declare namespace Core {
   export type Dispatch<T> = React.Dispatch<React.SetStateAction<T>>;
 
   export type ProviderProps = Readonly<{ children?: React.ReactNode | undefined }>;
+
+  export type PrimitiveTypeOf =
+    | 'symbol'
+    | 'bigint'
+    | 'object'
+    | 'string'
+    | 'number'
+    | 'boolean'
+    | 'function'
+    | 'undefined';
+
+  export type CSS = Partial<{ style: React.CSSProperties }>;
 }

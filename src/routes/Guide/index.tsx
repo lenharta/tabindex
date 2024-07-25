@@ -1,4 +1,4 @@
-import { Page } from '@/common';
+import { Page } from '@/components';
 
 function Guide(): JSX.Element {
   return (

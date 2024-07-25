@@ -32,10 +32,12 @@
       "@/utils/*": ["src/utils/*"],
       "@/tests/*": ["src/tests/*"],
       "@/types/*": ["src/types/*"],
+      "@/shiki/*": ["src/shiki/*"],
       "@/common/*": ["src/common/*"],
       "@/routes/*": ["src/routes/*"],
       "@/styles/*": ["src/styles/*"],
-      "@/assets/*": ["src/assets/*"]
+      "@/assets/*": ["src/assets/*"],
+      "@/components/*": ["src/components/*"]
     }
   },
   "include": ["src"],

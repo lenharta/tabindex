@@ -10,6 +10,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <Layout />,
+    errorElement: <Routes.Error />,
     children: [
       { index: true, element: <Routes.Home /> },
       { path: '/guide', element: <Routes.Guide /> },
