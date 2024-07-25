@@ -31,15 +31,16 @@ export default defineConfig(({ mode, command }) => {
       },
       resolve: {
         alias: {
-          '@/*': path.resolve(__dirname, './src/'),
-          '@/app': path.resolve(__dirname, './src/app/'),
-          '@/utils': path.resolve(__dirname, './src/utils/'),
-          '@/types': path.resolve(__dirname, './src/types/'),
-          '@/tests': path.resolve(__dirname, './src/tests/'),
-          '@/store': path.resolve(__dirname, './src/store/'),
-          '@/common': path.resolve(__dirname, './src/common/'),
-          '@/assets': path.resolve(__dirname, './src/assets/'),
-          '@/styles': path.resolve(__dirname, './src/styles/'),
+          '@/*': path.resolve(__dirname, 'src'),
+          '@/app': path.resolve(__dirname, 'src/app'),
+          '@/utils': path.resolve(__dirname, 'src/utils'),
+          '@/types': path.resolve(__dirname, 'src/types'),
+          '@/tests': path.resolve(__dirname, 'src/tests'),
+          '@/store': path.resolve(__dirname, 'src/store'),
+          '@/routes': path.resolve(__dirname, 'src/routes'),
+          '@/common': path.resolve(__dirname, 'src/common'),
+          '@/assets': path.resolve(__dirname, 'src/assets'),
+          '@/styles': path.resolve(__dirname, 'src/styles'),
         },
       },
       define: {
@@ -49,6 +50,20 @@ export default defineConfig(({ mode, command }) => {
   } else {
     return {
       plugins: [react()],
+      resolve: {
+        alias: {
+          '@/*': path.resolve(__dirname, 'src'),
+          '@/app': path.resolve(__dirname, 'src/app'),
+          '@/utils': path.resolve(__dirname, 'src/utils'),
+          '@/types': path.resolve(__dirname, 'src/types'),
+          '@/tests': path.resolve(__dirname, 'src/tests'),
+          '@/store': path.resolve(__dirname, 'src/store'),
+          '@/routes': path.resolve(__dirname, 'src/routes'),
+          '@/common': path.resolve(__dirname, 'src/common'),
+          '@/assets': path.resolve(__dirname, 'src/assets'),
+          '@/styles': path.resolve(__dirname, 'src/styles'),
+        },
+      },
     };
   }
 });

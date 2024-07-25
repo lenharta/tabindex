@@ -10,4 +10,5 @@ LICENSE
 .gitignore
 .git
 
-theme.types.ts
+**/*theme.types.ts
+**/*reset.scss

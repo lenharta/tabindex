@@ -1,0 +1,55 @@
+:root {
+  --tbx-scale: 1;
+  --tbx-space: calc(0.125rem * var(--tbx-scale));
+  --tbx-cursor: default;
+
+  --tbx-ff: 'ibm-plex-sans';
+  --tbx-ff-c: 'ibm-plex-sans-condensed';
+
+  --tbx-fz-body-xs: calc(var(--tbx-space) * 7);
+  --tbx-fz-body-sm: calc(var(--tbx-space) * 8);
+  --tbx-fz-body-md: calc(var(--tbx-space) * 9);
+  --tbx-fz-body-lg: calc(var(--tbx-space) * 10);
+  --tbx-fz-body-xl: calc(var(--tbx-space) * 11);
+
+  --tbx-page-gutter: calc(var(--tbx-space) * 8);
+  --tbx-action-size: calc(var(--tbx-space) * 24);
+
+  --tbx-side-width-tablet: 56px;
+  --tbx-side-width-desktop: 300px;
+
+  --tbx-hero-height-tablet: 40vh;
+  --tbx-hero-height-desktop: 30vh;
+
+  @media screen and (min-width: 40em) {
+    --tbx-page-gutter: calc(var(--tbx-space) * 12);
+    --tbx-side-width: var(--tbx-side-width-tablet);
+    --tbx-hero-height: var(--tbx-hero-height-tablet);
+  }
+
+  @media screen and (min-width: 80em) {
+    --tbx-page-gutter: calc(var(--tbx-space) * 16);
+    --tbx-side-width: var(--tbx-side-width-desktop);
+    --tbx-hero-height: var(--tbx-hero-height-desktop);
+  }
+}
+
+.fz-body-xs {
+  font-size: var(--tbx-fz-body-xs);
+}
+.fz-body-sm {
+  font-size: var(--tbx-fz-body-sm);
+}
+.fz-body-md {
+  font-size: var(--tbx-fz-body-md);
+}
+.fz-body-lg {
+  font-size: var(--tbx-fz-body-lg);
+}
+.fz-body-xl {
+  font-size: var(--tbx-fz-body-xl);
+}
+
+.w-max-600 {
+  max-width: 600px;
+}
