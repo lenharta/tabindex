@@ -18,4 +18,6 @@ export declare namespace Core {
     | 'undefined';
 
   export type CSS = Partial<{ style: React.CSSProperties }>;
+
+  export type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 }

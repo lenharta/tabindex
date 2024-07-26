@@ -1,11 +1,11 @@
 .tbx-text {
-  --tbx-font-size-text-xs: calc(var(--tbx-space) * 7);
+  --tbx-font-size-text-xs: calc(var(--tbx-space) * 6);
   --tbx-font-size-text-sm: calc(var(--tbx-space) * 8);
   --tbx-font-size-text-md: calc(var(--tbx-space) * 9);
   --tbx-font-size-text-lg: calc(var(--tbx-space) * 10);
   --tbx-font-size-text-xl: calc(var(--tbx-space) * 11);
 
-  font-size: var(--tbx-font-size-text, var(--tbx-font-size-text-xs));
+  font-size: var(--tbx-font-size-text, var(--tbx-font-size-text-sm));
 
   &--xs {
     --tbx-font-size-text: var(--tbx-font-size-text-xs);

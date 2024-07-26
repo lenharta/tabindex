@@ -1,2 +1,3 @@
-export * from './Text';
 export * from './Snippet';
+export * from './Text';
+export * from './Title';

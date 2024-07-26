@@ -13,7 +13,15 @@ const router = createBrowserRouter([
     errorElement: <Routes.Error />,
     children: [
       { index: true, element: <Routes.Home /> },
-      { path: '/guide', element: <Routes.Guide /> },
+      { path: '/proto', element: <Routes.Proto /> },
+      {
+        path: '/guide',
+        element: <Routes.Guide />,
+        children: [
+          { index: true, element: <Routes.Guide.Board /> },
+          { path: '/guide/card', element: <Routes.Guide.Card /> },
+        ],
+      },
     ],
   },
 ]);
