@@ -1,59 +1,61 @@
-import React from 'react';
+import * as React from 'react';
 import { keys } from '@/utils';
-import { STORE } from '@/types';
-import { useStorage } from '@/store/local';
+import { App, Core } from '@/types';
 
-export enum THEME_ATTRIBUTES {
-  dir = 'data-prefers-writing-mode',
-  mode = 'data-prefers-color-scheme',
-  accent = 'data-prefers-color-accent',
-  contrast = 'data-prefers-color-contrast',
+const STATE: App.Theme = {
+  dir: 'ltr',
+  mode: 'dark',
+  color: 'blue',
+  contrast: 'no',
+};
+
+const ThemeStateContext = React.createContext({} as App.Theme);
+
+const ThemeDispatchContext = React.createContext({} as App.ThemeDispatch);
+
+function initializer<T extends Record<string, any>>(current: T): T {
+  const read = (k: keyof T) => window.localStorage.getItem(k as any);
+  const fetch = (k: keyof T) => window.localStorage.getItem(k as any);
+  const write = (k: keyof T, v: any) => window.localStorage.setItem(k as any, v);
+
+  keys(current).forEach((prop) => {
+    read(prop) ? current[prop] == fetch(prop) : write(prop, current[prop]);
+  });
+  return current;
 }
 
-export const ThemeStateCTX = React.createContext({} as STORE.ThemeState);
-export const ThemeDispatchCTX = React.createContext({} as STORE.ThemeDispatch);
-
-export const ThemeStateProvider = ThemeStateCTX.Provider;
-export const ThemeDispatchProvider = ThemeDispatchCTX.Provider;
-
-export const useThemeStore = () => React.useContext(ThemeStateCTX);
-export const useThemeDispatch = () => React.useContext(ThemeDispatchCTX);
-
-export const ThemeStore = ({ children }: { children?: React.ReactNode }) => {
-  const state: STORE.ThemeState = { accent: 'blue', mode: 'dark', dir: 'ltr', contrast: 'unset' };
-  const storage = useStorage<STORE.ThemeState>({ key: 'local' });
-
-  const initializer = (current: STORE.ThemeState) => {
-    if (!storage.read() && current) storage.write(current);
-    if (storage.read()) return storage.fetch()!;
-    return current;
+function reducer(state: App.Theme, update: Partial<App.Theme>): App.Theme {
+  return {
+    ...state,
+    ...update,
   };
+}
 
-  const reducer = (state: STORE.ThemeState, update: Partial<STORE.ThemeState>) => {
-    return {
-      ...state,
-      ...update,
-    };
-  };
+function updateAttributes(state: App.Theme, element?: HTMLElement | undefined) {
+  if (!element) return;
 
-  const [theme, setTheme] = React.useReducer(reducer, state, initializer);
+  keys(state).forEach((prop) => {
+    element.setAttribute(`data-prefers-${prop}`, state[prop]);
+  });
+}
+
+function ThemeProvider({ children = null }: Core.ProviderProps) {
+  const [state, dispatch] = React.useReducer(reducer, STATE, initializer);
 
   React.useEffect(() => {
-    const root = document.getElementById('root')!;
-
-    keys(THEME_ATTRIBUTES).forEach((key) => {
-      root.setAttribute(THEME_ATTRIBUTES[key], theme[key]);
-    });
-  }, [theme]);
-
-  const dispatch = (value: Partial<STORE.ThemeState>) => {
-    storage.write({ ...theme, ...value });
-    setTheme(value);
-  };
+    updateAttributes(state, document.getElementsByTagName('html')[0]);
+  }, [state]);
 
   return (
-    <ThemeDispatchProvider value={dispatch}>
-      <ThemeStateProvider value={theme}>{children}</ThemeStateProvider>
-    </ThemeDispatchProvider>
+    <ThemeStateContext.Provider value={state}>
+      <ThemeDispatchContext.Provider value={dispatch}>
+        <React.Fragment>{children}</React.Fragment>
+      </ThemeDispatchContext.Provider>
+    </ThemeStateContext.Provider>
   );
-};
+}
+
+const useThemeState = () => React.useContext(ThemeStateContext);
+const useThemeDispatch = () => React.useContext(ThemeDispatchContext);
+
+export { ThemeProvider, useThemeState, useThemeDispatch };

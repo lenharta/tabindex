@@ -1,0 +1,5 @@
+@use './admin' as *;
+
+@function use-var($token) {
+  @return var(--#{$prefix}-#{$token});
+}
