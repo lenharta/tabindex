@@ -1,0 +1,62 @@
+@mixin focus-target {
+  border-color: var(--tbx-border-color, transparent);
+  border-width: var(--tbx-border-width, 2px);
+  border-style: solid;
+
+  outline-offset: var(--tbx-outline-offset, none);
+  outline-color: var(--tbx-outline-color, transparent);
+  outline-width: var(--tbx-outline-width, 2px);
+  outline-style: solid;
+
+  &:not(:focus-visible) {
+    --tbx-outline-color: transparent;
+    --tbx-outline-offset: none;
+  }
+
+  &:focus-visible {
+    --tbx-outline-color: var(--c-focus);
+    --tbx-outline-offset: 2px;
+  }
+}
+
+@mixin dir($dir: 'ltr') {
+  [data-prefers-dir='#{$dir}'] {
+    @content;
+  }
+}
+
+@mixin has-dir($dir: 'ltr') {
+  &[data-prefers-dir='#{$dir}'] {
+    @content;
+  }
+}
+
+@mixin where-dir($dir: 'ltr') {
+  [data-prefers-dir='#{$dir}'] & {
+    @content;
+  }
+}
+
+@mixin mode($mode: 'dark') {
+  [data-prefers-mode='#{$mode}'] {
+    @content;
+  }
+}
+
+@mixin has-mode($mode: 'dark') {
+  &[data-prefers-mode='#{$mode}'] {
+    @content;
+  }
+}
+
+@mixin where-mode($mode: 'dark') {
+  [data-prefers-mode='#{$mode}'] & {
+    @content;
+  }
+}
+
+@mixin scheme($scheme: 'primary') {
+  [data-scheme='#{$scheme}'] & {
+    @content;
+  }
+}

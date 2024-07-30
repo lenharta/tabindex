@@ -1,0 +1,35 @@
+@use '../mixin' as mixin;
+
+@include mixin.mode('dark') {
+  --c-info: hsl(231, 99%, 66%);
+  --c-danger: hsl(350, 98%, 58%);
+  --c-success: hsl(120, 85%, 34%);
+  --c-warning: hsl(40, 100%, 50%);
+
+  --c-ui-base-00: hsl(225, 01%, 05%);
+  --c-ui-base-01: hsl(225, 01%, 07%);
+  --c-ui-base-02: hsl(225, 01%, 09%);
+  --c-ui-base-03: hsl(225, 01%, 11%);
+
+  --c-ui-text-max: hsla(225, 01%, 99%, 0.99);
+  --c-ui-text-med: hsla(225, 01%, 99%, 0.87);
+  --c-ui-text-low: hsla(225, 01%, 99%, 0.65);
+  --c-ui-text-min: hsla(225, 01%, 99%, 0.43);
+
+  --c-ui-title-max: hsla(225, 01%, 99%, 0.99);
+  --c-ui-title-med: hsla(225, 01%, 99%, 0.87);
+  --c-ui-title-low: hsla(225, 01%, 99%, 0.65);
+  --c-ui-title-min: hsla(225, 01%, 99%, 0.43);
+
+  --c-ui-card: hsla(225, 01%, 99%, 0.1);
+  --c-ui-card-drop-1: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+  --c-ui-card-drop-2: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.2));
+  --c-ui-card-shadow: var(--c-ui-card-drop-1) var(--c-ui-card-drop-2);
+
+  --c-ui-label-enabled: hsla(225, 01%, 87%);
+  --c-ui-label-hovered: hsla(225, 01%, 87%);
+  --c-ui-label-pressed: hsla(225, 01%, 87%);
+  --c-ui-label-selected: hsla(225, 01%, 87%);
+  --c-ui-label-readonly: hsla(225, 01%, 87%);
+  --c-ui-label-disabled: hsla(225, 01%, 87%);
+}

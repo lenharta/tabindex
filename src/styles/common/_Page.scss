@@ -1,0 +1,28 @@
+.tbdx-page {
+  width: 100%;
+  display: block;
+  min-height: 100vh;
+
+  &-hero {
+    width: 100%;
+    height: var(--tbdx-page-hero-height);
+    display: block;
+  }
+
+  &-main {
+    width: var(--tbdx-page-main-width);
+    display: block;
+    margin-top: var(--tbdx-action);
+    margin-left: var(--tbdx-side-width);
+  }
+}
+
+:root {
+  --tks-color-light-root: rgb(245 244 244);
+  --tks-color-light-base: rgb(255, 255, 255);
+  --tks-color-light-text: hsl(225, 5%, 01%);
+
+  --tks-color-dark-base: hsl(225, 5%, 01%);
+  --tks-color-dark-root: hsl(225, 5%, 04%);
+  --tks-color-dark-text: hsl(225, 5%, 01%);
+}

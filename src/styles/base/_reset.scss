@@ -1,154 +1,138 @@
 :root {
-  --root-body-width: 320px;
-  --root-font-size: 16px;
-  --root-font-weight: 400;
-  --root-line-height: 1.6;
-  --root-letter-spacing: initial;
-  --root-moz-font-smoothing: grayscale;
-  --root-webkit-font-smoothing: antialiased;
-  --root-focus-outline: solid 2px dodgerblue;
+  --root-border-width: 0;
+  --root-border-style: solid;
+  --root-border-color: currentColor;
 
   --root-font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial,
     sans-serif, Apple Color Emoji, Segoe UI Emoji;
 
   --root-font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono,
     Courier New, monospace;
+
+  --root-font-size: 16px;
+  --root-font-weight: 400;
+  --root-line-height: 1.5;
+  --root-letter-spacing: initial;
+  --root-text-rendering: optimizeLegibility;
+  --root-moz-font-smoothing: grayscale;
+  --root-webkit-font-smoothing: antialiased;
+  --root-webkit-text-size-adjust: 100%;
 }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  border-width: var(--root-border-width);
+  border-style: var(--root-border-style);
+  border-color: var(--root-border-color);
+}
+
+html {
   display: block;
-  box-sizing: border-box;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
 }
 
-#root {
-  margin: 0;
+#root, #__next {
+  isolation: isolate;
+  display: block;
+  min-height: 100vh;
   padding: 0;
-  position: relative;
-  font-size: inherit;
-  overflow-y: auto;
-  overflow-x: hidden;
-  box-sizing: border-box;
-  font-family: var(--ff-plex);
+  margin: 0;
+}
+
+body {
+  display: block;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+
+  font-size: var(--root-font-size);
+  font-weight: var(--root-font-weight);
+  font-family: var(--root-font-family);
+  line-height: var(--root-line-height);
+  letter-spacing: var(--root-letter-spacing);
+  text-rendering: var(--root-text-rendering);
 
   -webkit-font-smoothing: var(--root-webkit-font-smoothing);
   -moz-osx-font-smoothing: var(--root-moz-font-smoothing);
 
-  text-rendering: optimizeLegibility;
-  letter-spacing: var(--root-letter-spacing);
-  font-weight: var(--root-font-weight);
-  font-family: var(--root-font-family);
-  line-height: var(--root-font-height);
-  font-size: var(--root-font-size);
-
   @media screen and (max-device-width: 500px) {
-    -webkit-text-size-adjust: 100%;
+    -webkit-text-size-adjust: var(--root-webkit-text-size-adjust);
   }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
+div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, 
+pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, 
+kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, 
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, 
+tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, 
+figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, 
+time, mark, audio, video, input, button, select, textarea, option, optgroup, 
+datalist, keygen, meter, progress, dialog, menuitem, picture, source, track, 
+wbr, data, template, slot, main, figure, figcaption, picture, time, mark, bdi,
+bdo, rp, rt, rtc, ruby, noframes, noscript, embed, object, param, video, audio, 
+source, track,canvas, map, area, math, svg, animate, animateMotion, animateTransform, 
+circle, clipPath, defs, desc, discard, ellipse, g, image, line, marker, mask, metadata, 
+path, rect, script, set, svg, switch, symbol, text, textPath, tspan, use, view  {
   padding: 0;
-  font-size: inherit;
-  box-sizing: border-box;
-  vertical-align: baseline;
+  margin: 0;
 }
 
-li,
-ul,
-ol {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  box-sizing: border-box;
-  text-decoration: none;
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
 }
 
-p {
-  margin: 0;
-  padding: 0;
-  font-size: inherit;
-  box-sizing: border-box;
-  vertical-align: baseline;
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+code, kbd {
+  font-family: var(--root-font-family-mono);
+}
+
+img, picture, video, canvas, svg {
+  height: auto;
+  display: block;
+  max-width: 100%;
+}
+
+img, svg, video, canvas, audio, iframe, embed, object {
+  vertical-align: middle;
+}
+
+input, button, textarea, select {
+  font: inherit;
 }
 
 svg + p {
   cursor: default;
 }
 
-code {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  vertical-align: baseline;
-  font-family: var(--root-font-family-mono);
-}
-
-a {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  vertical-align: baseline;
-  display: inline-flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: flex-start;
-  font-size: inherit;
-  font-family: inherit;
-  text-transform: none;
-  text-decoration: none;
-  background-color: inherit;
-  color: inherit;
-}
-
-button {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  vertical-align: baseline;
-  display: inline-flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: flex-start;
-  font-size: inherit;
-  font-family: inherit;
-  text-transform: none;
-  text-decoration: none;
-  background-color: inherit;
-  color: inherit;
-}
-
-label {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  vertical-align: baseline;
-}
-
-input,
-select,
-button,
-textarea {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  vertical-align: baseline;
-  border: none;
-  font: inherit;
+ol, ul {
+  list-style: none;
 }
 
 select {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  vertical-align: baseline;
+  text-transform: none;
+}
+
+a {
+  color: inherit;
+  border: none;
+  background-color: inherit;
+  text-decoration: none;
+  text-transform: none;
+}
+
+button {
+  color: inherit;
+  border: none;
+  background-color: inherit;
+  text-decoration: none;
   text-transform: none;
 }
 
@@ -158,45 +142,5 @@ select {
       transition: none;
       animation: none;
     }
-  }
-}
-
-.wf-menu-logo {
-  width: 32px;
-  height: 32px;
-  border-radius: 1000px;
-  margin-inline: var(--spacing-6);
-  margin-bottom: var(--spacing-8);
-  background-color: var(--c-bg-4);
-}
-
-.wf-menu-icon {
-  min-width: 32px;
-  min-height: 32px;
-  border-radius: 1000px;
-  background-color: var(--c-bg-4);
-}
-
-.wf-menu-label {
-  width: 100%;
-  height: 24px;
-  border-radius: 1000px;
-  background-color: var(--c-bg-4);
-}
-
-.wf-menu-link {
-  width: 100%;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin-bottom: var(--spacing-4);
-
-  .inner {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-4);
-    margin-inline: var(--spacing-6);
   }
 }

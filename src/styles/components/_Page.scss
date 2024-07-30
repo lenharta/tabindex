@@ -1,0 +1,31 @@
+.tbx-page {
+}
+
+.tbx-page-hero {
+  height: var(--tbx-hero-height);
+  display: block;
+
+  &-layout {
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex-direction: column;
+    margin-inline: var(--tbx-gutter);
+    padding-block: var(--tbx-gutter);
+  }
+
+  &-layout h1 {
+    font-size: calc(var(--tbx-space) * 24);
+    font-weight: 300;
+    line-height: 1;
+  }
+}
+
+.tbx-page-main {
+  display: block;
+
+  & > section {
+    padding-inline: var(--tbx-gutter);
+  }
+}

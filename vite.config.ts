@@ -31,15 +31,19 @@ export default defineConfig(({ mode, command }) => {
       },
       resolve: {
         alias: {
-          '@/*': path.resolve(__dirname, './src/'),
-          '@/app': path.resolve(__dirname, './src/app/'),
-          '@/utils': path.resolve(__dirname, './src/utils/'),
-          '@/types': path.resolve(__dirname, './src/types/'),
-          '@/tests': path.resolve(__dirname, './src/tests/'),
-          '@/store': path.resolve(__dirname, './src/store/'),
-          '@/common': path.resolve(__dirname, './src/common/'),
-          '@/assets': path.resolve(__dirname, './src/assets/'),
-          '@/styles': path.resolve(__dirname, './src/styles/'),
+          '@/*': path.resolve(__dirname, 'src'),
+          '@/app': path.resolve(__dirname, 'src/app'),
+          '@/core': path.resolve(__dirname, 'src/core'),
+          '@/shiki': path.resolve(__dirname, 'src/shiki'),
+          '@/store': path.resolve(__dirname, 'src/store'),
+          '@/tests': path.resolve(__dirname, 'src/tests'),
+          '@/types': path.resolve(__dirname, 'src/types'),
+          '@/utils': path.resolve(__dirname, 'src/utils'),
+          '@/assets': path.resolve(__dirname, 'src/assets'),
+          '@/common': path.resolve(__dirname, 'src/common'),
+          '@/config': path.resolve(__dirname, 'src/config'),
+          '@/routes': path.resolve(__dirname, 'src/routes'),
+          '@/styles': path.resolve(__dirname, 'src/styles'),
         },
       },
       define: {
@@ -49,6 +53,23 @@ export default defineConfig(({ mode, command }) => {
   } else {
     return {
       plugins: [react()],
+      resolve: {
+        alias: {
+          '@/*': path.resolve(__dirname, 'src'),
+          '@/app': path.resolve(__dirname, 'src/app'),
+          '@/core': path.resolve(__dirname, 'src/core'),
+          '@/shiki': path.resolve(__dirname, 'src/shiki'),
+          '@/store': path.resolve(__dirname, 'src/store'),
+          '@/tests': path.resolve(__dirname, 'src/tests'),
+          '@/types': path.resolve(__dirname, 'src/types'),
+          '@/utils': path.resolve(__dirname, 'src/utils'),
+          '@/assets': path.resolve(__dirname, 'src/assets'),
+          '@/common': path.resolve(__dirname, 'src/common'),
+          '@/config': path.resolve(__dirname, 'src/config'),
+          '@/routes': path.resolve(__dirname, 'src/routes'),
+          '@/styles': path.resolve(__dirname, 'src/styles'),
+        },
+      },
     };
   }
 });
