@@ -14,14 +14,3 @@ export declare namespace Shiki {
     loader: () => Promise<HighlighterGeneric<any, any>>;
   };
 }
-
-// export type ShikiReturn = { code: string; highlighted: boolean };
-
-// export type ShikiCode = (code: string, language: ShikiLanguage) => ShikiReturn;
-
-// export type ShikiState = HighlighterGeneric<any, any> | null;
-
-// export interface ShikiProviderProps {
-//   children: React.ReactNode;
-//   loadShiki: () => Promise<HighlighterGeneric<any, any>>;
-// }

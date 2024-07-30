@@ -1,10 +1,8 @@
 .tbx-page {
-  display: block;
-  margin-left: var(--tbx-side-width, none);
 }
 
 .tbx-page-hero {
-  height: var(--tbx-hero-height, 50vh);
+  height: var(--tbx-hero-height);
   display: block;
 
   &-layout {
@@ -13,8 +11,8 @@
     align-items: flex-start;
     justify-content: flex-end;
     flex-direction: column;
-    margin-inline: var(--tbx-page-gutter);
-    padding-block: var(--tbx-page-gutter);
+    margin-inline: var(--tbx-gutter);
+    padding-block: var(--tbx-gutter);
   }
 
   &-layout h1 {
@@ -28,69 +26,6 @@
   display: block;
 
   & > section {
-    padding-inline: var(--tbx-page-gutter);
+    padding-inline: var(--tbx-gutter);
   }
-}
-
-.tbx-page-mode-control {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-
-  button {
-    height: calc(var(--tbx-space) * 16);
-    padding-inline: calc(var(--tbx-space) * 8);
-  }
-}
-
-.tbx-wf-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding-inline: 12px;
-  height: 36px;
-  gap: 6px;
-
-  outline-width: 2px;
-  outline-style: solid;
-  outline-color: transparent;
-
-  border-width: 2px;
-  border-style: solid;
-  border-color: transparent;
-
-  &:not(:focus-visible) {
-    outline-color: transparent;
-    outline-offset: none;
-  }
-
-  &:focus-visible {
-    outline-color: dodgerblue;
-    outline-offset: 2px;
-  }
-}
-
-.tbx-wf-label {
-  height: 18px;
-  min-width: 100px;
-}
-
-.tbx-wf-icon {
-  width: 18px;
-  height: 18px;
-}
-
-.tbx-wf-button-group {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-}
-
-.tbx-wf-button {
-  background-color: hsla(340, 57%, 64%, 0.35);
-}
-.tbx-wf-button .tbx-wf-icon,
-.tbx-wf-button .tbx-wf-label {
-  background-color: hsla(340, 57%, 64%, 0.25);
 }

@@ -28,16 +28,17 @@
     "paths": {
       "@/*": ["src/*"],
       "@/app/*": ["src/app/*"],
+      "@/core/*": ["src/core/*"],
+      "@/shiki/*": ["src/shiki/*"],
       "@/store/*": ["src/store/*"],
-      "@/utils/*": ["src/utils/*"],
       "@/tests/*": ["src/tests/*"],
       "@/types/*": ["src/types/*"],
-      "@/shiki/*": ["src/shiki/*"],
-      "@/common/*": ["src/common/*"],
-      "@/routes/*": ["src/routes/*"],
-      "@/styles/*": ["src/styles/*"],
+      "@/utils/*": ["src/utils/*"],
       "@/assets/*": ["src/assets/*"],
-      "@/components/*": ["src/components/*"]
+      "@/common/*": ["src/common/*"],
+      "@/config/*": ["src/config/*"],
+      "@/routes/*": ["src/routes/*"],
+      "@/styles/*": ["src/styles/*"]
     }
   },
   "include": ["src"],

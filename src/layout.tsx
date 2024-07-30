@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as Router from 'react-router-dom';
-import { Side } from '@/components';
+
+import { Side } from '@/common';
 import { AppProvider, ThemeProvider } from '@/store';
 import { loader as loadShiki, ShikiProvider } from '@/shiki';
 

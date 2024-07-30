@@ -1,5 +1,5 @@
-import { Text, Title } from '@/common';
-import { Page } from '@/components';
+import { Page } from '@/common';
+import { Text, Title } from '@/core';
 
 function GuideBoard() {
   return (
@@ -7,7 +7,7 @@ function GuideBoard() {
       <Page.Hero title={<Title as="h1">Guide</Title>} />
       <Page.Main>
         <section>
-          <Title as="h2">Topics</Title>
+          <Title as="h2">Section</Title>
           <Text>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident consectetur iste
             maxime mollitia aspernatur adipisci a assumenda temporibus? Sed animi, eaque mollitia

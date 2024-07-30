@@ -1,4 +1,4 @@
-.guide-card-grid {
+.card-grid {
   display: grid;
   grid-template: auto / repeat(1, 1fr);
 
@@ -13,7 +13,7 @@
   }
 }
 
-.guide-card {
+.card {
   display: grid;
   overflow: hidden;
   position: relative;
@@ -55,5 +55,26 @@
     &:hover {
       text-decoration: underline;
     }
+  }
+}
+
+.tbx-guide-overview {
+  .tbx-title {
+    margin-bottom: var(--tbx-gutter);
+  }
+  .tbx-text:not(:first-of-type) {
+    margin-top: var(--tbx-gutter);
+    max-width: 60em;
+  }
+}
+
+.tbx-guide-preview {
+  margin-top: var(--tbx-gutter);
+
+  .tbx-title {
+    margin-bottom: var(--tbx-gutter);
+  }
+  .tbx-text:not(:first-of-type) {
+    margin-top: var(--tbx-gutter);
   }
 }

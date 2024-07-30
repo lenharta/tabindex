@@ -1,17 +1,9 @@
 .tbx-side {
+  width: var(--tbx-side-width);
+  height: 100vh;
   display: block;
-  background-color: var(--c-elevation-01);
-  width: var(--tbx-side-width, none);
-  height: 100%;
   position: fixed;
   bottom: 0;
   left: 0;
   top: 0;
-
-  @media screen and (min-width: 40em) {
-    --tbx-side-width: var(--tbx-side-width-tablet);
-  }
-  @media screen and (min-width: 80em) {
-    --tbx-side-width: var(--tbx-side-width-desktop);
-  }
 }

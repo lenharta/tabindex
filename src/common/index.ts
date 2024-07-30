@@ -1,3 +1,4 @@
-export * from './Snippet';
-export * from './Text';
-export * from './Title';
+export * from './Footer';
+export * from './Header';
+export * from './Page';
+export * from './Side';
